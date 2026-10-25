@@ -10,6 +10,8 @@
 
 ## 2. 最近状态（不要猜）
 
+- 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
+
 - 已成功的分支：`work/uv310-wireguard/rekey-live`，实机首次握手 + 2 次自动换钥。
 - 最近分支：`rekey-memory`，增加 A/E/R/M 四页状态和有界内存观测；25 项离线场景及 3 项负向控制通过。
 - 最近实机运行在约 138.794 s 首次出现整批 ping/DNS 失败，141.797 s 状态查询断言失败，147.812 s 测试结束失败；最后成功快照尚未完成第一次换钥。后续 USB 枚举只见 ASIX 网卡，未见 UV310。不能断言是 OOM、看门狗或用户拔出。
@@ -22,7 +24,7 @@
 
 1. 阅读本文件、`docs/HARDWARE.md`、`docs/PLATFORM.md`、`docs/RECOVERY.md`；检查 Git 当前提交和 `MANIFEST.sha256`。
 2. `make test` 先离线重放。不运行 `package.py`、`reboot.py`、`efs_*.py`。
-3. 只读列举 USB，核对 VID/PID **和完整接口/endpoint 拓扑**。`05c6:6000` 在正常模式和 DMSS 模式都可能出现。
+3. **以下设备步骤仅在用户确认硬件可用后执行；无硬件时跳过。** 只读列举 USB，核对 VID/PID **和完整接口/endpoint 拓扑**。`05c6:6000` 在正常模式和 DMSS 模式都可能出现。
 4. 正常拓扑下查询 `AT^PROJECTNAME?`，应包含 MDM9600 / UV310。随后有界查询 CPIN、WIFI、wl ver/isup。不要打印/上传 IMEI、IMSI、ICCID 或完整配置。
 5. 读回 `/SyFi/brew/mod/rtecdc_new.bin` 并验证尺寸和完整哈希。没有匹配的私有 stock 备份时不进行候选镜像部署。
 6. 先验证原厂 Wi-Fi 关联、DHCP、网关 ARP、管理页、SIM/蜂窝网络，再考虑新的实验。SIM busy 可能是启动过程，必须记录后续实际状态。
@@ -47,4 +49,4 @@
 
 ## 6. 下一轮优先顺序
 
-先确认设备回到原厂可用；再把断连断言改成有诊断信息的有界日志，区分 USB 消失、拓扑改变、AT ERROR、主机换网和设备重启；然后调查第一次换钥附近的瞬时内存需求。随机数/跨重启新鲜度、独立重启、策略覆盖与稳定性仍是正式完成条件。
+先确认设备回到原厂可用；使用新增observer采集具体错误、clock不连续和host变化，诊断工具尚未做新的实机验收；然后调查第一次换钥附近的瞬时内存需求。随机数/跨重启新鲜度、独立重启、策略覆盖与稳定性仍是正式完成条件。

@@ -574,5 +574,23 @@
     "published_sha256": "3fb0784530e2eec415fcf089110035c75d7f22bc101f991d50e19cdc76312636",
     "workspace_source_sha256": "3fb0784530e2eec415fcf089110035c75d7f22bc101f991d50e19cdc76312636",
     "byte_identical_to_workspace": true
+  },
+  {
+    "path": "tools/stack_audit.py",
+    "published_sha256": "aaeb99052a3d963c24d4a3a22cd58bc952566cd4a69a2538b1e44e77d6f331ce",
+    "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-observe/observe.py",
+    "published_sha256": "fe75a3fa13d4d7c0d4954e0005a42e805b8bbb40941484e26532114e118f907b",
+    "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-observe/test_observe.py",
+    "published_sha256": "27122e785f51b56cca9ec132fad625adfd5cb0f9ca30ac70c375ade3c65ac966",
+    "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
+    "private_material_required": false
   }
 ]

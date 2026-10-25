@@ -36,3 +36,7 @@ memory分支25个场景：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STALE_RESPONSE
 ## Hello World重建
 
 `outputs/new-dongle-hello/tools/build_hello.py`可离线生成68B ARM applet，检查无relocation、固定hash `5f03e8cc08877b82919123b3a94126967a9c415f43b8cab9a270fae7d8d14b58`。此结果只证明重建一致；loader缺省不分发，不能仅clone本仓库就重放历史EXEC实机实验。
+
+## 新增离线入口
+
+`make test-observer`运行23项mocked USB/AT/host故障注入；`make stack-audit`生成compiler frame与可见调用链报告。完整范围、结果和限制见 [OFFLINE_PROGRESS.md](OFFLINE_PROGRESS.md)。这两个入口均不访问真实设备。

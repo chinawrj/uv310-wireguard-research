@@ -16,6 +16,8 @@ ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362 的逆向研究、原生代码与实
 
 ## 导航
 
+- [无硬件阶段：诊断工具和栈资源对照](docs/OFFLINE_PROGRESS.md)
+
 - **[逆向 / Hack 思路与路线选择](HACKING.md)**
 
 - [当前状态与新会话入口](FRESH_START.md)

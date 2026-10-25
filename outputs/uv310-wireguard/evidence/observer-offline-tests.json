@@ -1,0 +1,38 @@
+{
+  "tests_run": 23,
+  "successes": [
+    "test_observe.Cases.test_at_error",
+    "test_observe.Cases.test_bad_host_ip_and_route_failure",
+    "test_observe.Cases.test_claim_failure_still_disposes",
+    "test_observe.Cases.test_cleanup_does_not_hide_primary_failure",
+    "test_observe.Cases.test_cleanup_failure_is_not_success",
+    "test_observe.Cases.test_clock_rollback_rejected",
+    "test_observe.Cases.test_clock_wrap_accepted",
+    "test_observe.Cases.test_device_absent_no_writes",
+    "test_observe.Cases.test_fragmented_reply",
+    "test_observe.Cases.test_host_change_separate_from_status",
+    "test_observe.Cases.test_host_errors_do_not_hide_usb_error",
+    "test_observe.Cases.test_identity_mismatch_no_status_queries_no_raw_response",
+    "test_observe.Cases.test_invalid_memory",
+    "test_observe.Cases.test_missing_pages_query_bound",
+    "test_observe.Cases.test_no_existing_evidence_overwrite_or_device_access",
+    "test_observe.Cases.test_nonallowlisted_query_never_written",
+    "test_observe.Cases.test_oversize_reply",
+    "test_observe.Cases.test_short_write",
+    "test_observe.Cases.test_stale_input_bound",
+    "test_observe.Cases.test_success_pages_and_cleanup",
+    "test_observe.Cases.test_timeout_bounded",
+    "test_observe.Cases.test_usb_detach_errno_not_message",
+    "test_observe.Cases.test_wrong_topology_no_claim_no_write"
+  ],
+  "failure_count": 0,
+  "error_count": 0,
+  "all_passed": true,
+  "real_usb_calls": false,
+  "scope": "Mocked observer fault-injection; no hardware/network/restart",
+  "date": "2026-10-26",
+  "source_sha256": {
+    "work/uv310-wireguard/rekey-observe/observe.py": "fe75a3fa13d4d7c0d4954e0005a42e805b8bbb40941484e26532114e118f907b",
+    "work/uv310-wireguard/rekey-observe/test_observe.py": "27122e785f51b56cca9ec132fad625adfd5cb0f9ca30ac70c375ade3c65ac966"
+  }
+}

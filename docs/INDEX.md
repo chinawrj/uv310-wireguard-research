@@ -149,3 +149,9 @@
 - [firmware-elf-layout.json](../outputs/uv310-wireguard/evidence/firmware-elf-layout.json)
 - [nand-partitions.json](../outputs/uv310-wireguard/evidence/nand-partitions.json)
 - [wl-runtime-info.json](../outputs/uv310-wireguard/evidence/wl-runtime-info.json)
+
+## 无硬件阶段补充
+
+- [observer fault injection](../outputs/uv310-wireguard/evidence/observer-offline-tests.json)
+- [rekey-live stack audit](../outputs/uv310-wireguard/evidence/stack-audit-rekey-live.json)
+- [rekey-memory stack audit](../outputs/uv310-wireguard/evidence/stack-audit-rekey-memory.json)

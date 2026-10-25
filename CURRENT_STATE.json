@@ -56,5 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Read FRESH_START.md; offline tests first; restore read-only device identity and stock networking when device becomes available."
+  "next_step": "Continue offline indirect-call/stack and failure analysis; hardware validation deferred until device available.",
+  "hardware_availability": "User explicitly removed hardware; offline work only",
+  "goal_status": "active",
+  "latest_offline_progress": "docs/OFFLINE_PROGRESS.md",
+  "observer_fault_injection_tests_passed": 23,
+  "observer_live_verified": false
 }
