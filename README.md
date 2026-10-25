@@ -16,6 +16,8 @@ ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362 的逆向研究、原生代码与实
 
 新增离线候选 `rekey-pressure`：控制包分配失败后有界重试，45项QEMU场景与12项负向控制通过，尚未部署。见 [候选说明](docs/ALLOCATION_RETRY.md)。
 
+CI配置与实际执行记录见 [CI.md](docs/CI.md)。
+
 ## 导航
 
 - [控制包分配失败与包所有权验证](docs/ALLOCATOR_FAILURES.md)

@@ -634,5 +634,11 @@
     "previous_published_sha256": "4afe44e8e3d907b011565f89eaeab0287ec33ff1d61d763ec2d7d2b7b601a93e",
     "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
     "private_material_required": false
+  },
+  {
+    "path": "tools/ci_environment.py",
+    "published_sha256": "d73c52d191551379ea0ac1ecacfbdb3c9333f7614745d6df5f7101dd54a47162",
+    "origin": "Explicit allowlisted build-environment recorder for public CI, 2026-10-26",
+    "private_material_required": false
   }
 ]

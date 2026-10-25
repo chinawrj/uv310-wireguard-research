@@ -1,0 +1,61 @@
+name: Offline Cortex-M3 validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      LLVM_CLANG: /usr/bin/clang-18
+      LLVM_LD: /usr/bin/ld.lld-18
+      QEMU_ARM: /usr/bin/qemu-system-arm
+    steps:
+      - name: Check out public sources
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verify publication
+        run: make verify
+      - name: Install offline build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y clang-18 lld-18 qemu-system-arm python3-venv
+          python3 -m venv "$RUNNER_TEMP/uv310-venv"
+          "$RUNNER_TEMP/uv310-venv/bin/python" -m pip install -r requirements-test.txt
+          echo "$RUNNER_TEMP/uv310-venv/bin" >> "$GITHUB_PATH"
+      - name: Record build environment
+        run: python3 tools/ci_environment.py
+      - name: Replay successful historical branch
+        run: make test-live
+      - name: Replay memory-observation branch
+        run: make test
+      - name: Validate allocation retry and nonce lifecycle
+        run: make test-pressure
+      - name: Validate mocked status observer
+        run: make test-observer
+      - name: Compile resource comparisons
+        run: |
+          python3 tools/stack_audit.py --branch rekey-memory
+          python3 tools/stack_audit.py --branch rekey-pressure
+          python3 tools/compare_native_size.py
+      - name: Keep JSON evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: offline-linux-evidence
+          path: .test-results/*.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

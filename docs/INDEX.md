@@ -172,3 +172,7 @@
 
 - [检查方法与边界](NONCE_LIFECYCLE.md)
 - [45项场景与12项负向控制](../outputs/uv310-wireguard/evidence/nonce-lifecycle-tests.json)
+
+## 持续集成
+
+- [工作流与验证范围](CI.md)

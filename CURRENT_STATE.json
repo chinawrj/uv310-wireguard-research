@@ -79,5 +79,10 @@
     "minimum_allocation_retry_ticks": 250,
     "standalone_ready": false,
     "transport_nonce_ledger_tested": true
+  },
+  "offline_ci": {
+    "workflow": ".github/workflows/offline.yml",
+    "runner": "ubuntu-24.04",
+    "first_run_verified": false
   }
 }
