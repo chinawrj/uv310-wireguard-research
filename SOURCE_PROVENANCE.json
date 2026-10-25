@@ -336,18 +336,6 @@
     "byte_identical_to_workspace": true
   },
   {
-    "path": "work/uv310-wireguard/rekey-memory/test-build.py",
-    "published_sha256": "98e12773cbc37e63b85d8fa83fa23fd50aeee55bc4705f5cf1bac4d3ff0b2247",
-    "workspace_source_sha256": "5c0dfe1dbb7f107389e1440f385317b523d3a57ac9834a50b3dbe91434ca3485",
-    "byte_identical_to_workspace": false
-  },
-  {
-    "path": "work/uv310-wireguard/rekey-memory/tests.c",
-    "published_sha256": "843ca1330bde8b9f2764e2ed2b8c3f6c024686879780d6d56bbe9bdbe6dc4ba1",
-    "workspace_source_sha256": "843ca1330bde8b9f2764e2ed2b8c3f6c024686879780d6d56bbe9bdbe6dc4ba1",
-    "byte_identical_to_workspace": true
-  },
-  {
     "path": "work/uv310-wireguard/rng-provider/adapter-tests.c",
     "published_sha256": "b034f5106654754910017a0b88f7390607fa5c953d387f322e0b51c15dc2334e",
     "workspace_source_sha256": "b034f5106654754910017a0b88f7390607fa5c953d387f322e0b51c15dc2334e",
@@ -591,6 +579,26 @@
     "path": "work/uv310-wireguard/rekey-observe/test_observe.py",
     "published_sha256": "27122e785f51b56cca9ec132fad625adfd5cb0f9ca30ac70c375ade3c65ac966",
     "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/tests.c",
+    "published_sha256": "4c72fd68cb8def095065a3c2086c166d99a944c79cb2c3325832f26c3100db3a",
+    "origin": "Public offline allocator fault-injection update, 2026-10-26",
+    "private_material_required": false,
+    "previous_published_sha256": "843ca1330bde8b9f2764e2ed2b8c3f6c024686879780d6d56bbe9bdbe6dc4ba1"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/test-build.py",
+    "published_sha256": "2c30b5e8e77525a7db511a11d095c8a409b4fb9ab5f89c09ff4eece0703549e8",
+    "origin": "Public offline allocator fault-injection update, 2026-10-26",
+    "private_material_required": false,
+    "previous_published_sha256": "98e12773cbc37e63b85d8fa83fa23fd50aeee55bc4705f5cf1bac4d3ff0b2247"
+  },
+  {
+    "path": "tools/test_offline.py",
+    "published_sha256": "a71dc3f44730898763f673782b78829b53f7bab4cc314efb0fc8a2da9f7c1a9d",
+    "origin": "Public offline allocator fault-injection update, 2026-10-26",
     "private_material_required": false
   }
 ]

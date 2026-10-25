@@ -53,3 +53,5 @@ memory版本编译得到131个函数，live为130。最大单函数frame为`wire
 ## 下一步
 
 离线继续：解析间接调用并补栈模型、增加中断/分配失败对照、建立持续集成和更完整的协议/转发异常测试。硬件恢复后：先原厂身份/hash/网络基线，再独立诊断采样，最后以新材料做最小实机实验。不要重新使用旧keyed image；熵源、跨重启freshness、长期运行与UDP性能仍需实机证据。
+
+后续已完成控制包分配失败与延迟释放的7项新增QEMU实验，见 [ALLOCATOR_FAILURES.md](ALLOCATOR_FAILURES.md)。

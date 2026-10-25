@@ -12,10 +12,11 @@ ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362 的逆向研究、原生代码与实
 | 实机正常 Wi-Fi 固件 | 原生 C、双向数据包 hook、WireGuard 加解密与转发 | 单 IPv4 客户端，内存很紧 |
 | `rekey-live` 实机 | 首次握手 + 2 次换钥，88/88 ping、22/22 UDP DNS、换钥后 HTTPS 200 | 一次性主机生成随机池和 TAI 基值；不是独立启动方案 |
 | `rekey-memory` 实机 | 直接测得运行中空闲 payload 4,636 B、最大块 4,444 B | 147.812 s 测试失败；本分支未验证换钥完成 |
-| QEMU Cortex-M3 | 25 个测试场景与 3 个负向变异检查通过 | 不模拟 BCM 外设、射频、SDIO、真实熵源 |
+| QEMU Cortex-M3 | 32 个测试场景与 6 个负向变异检查通过 | 不模拟 BCM 外设、射频、SDIO、真实熵源 |
 
 ## 导航
 
+- [控制包分配失败与包所有权验证](docs/ALLOCATOR_FAILURES.md)
 - [无硬件阶段：诊断工具和栈资源对照](docs/OFFLINE_PROGRESS.md)
 
 - **[逆向 / Hack 思路与路线选择](HACKING.md)**

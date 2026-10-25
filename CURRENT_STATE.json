@@ -56,10 +56,17 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Continue offline indirect-call/stack and failure analysis; hardware validation deferred until device available.",
+  "next_step": "Design and test bounded allocation retry candidate offline; preserve ownership, expiry, counters and authenticated forwarding. Hardware validation deferred.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/OFFLINE_PROGRESS.md",
+  "latest_offline_progress": "docs/ALLOCATOR_FAILURES.md",
   "observer_fault_injection_tests_passed": 23,
-  "observer_live_verified": false
+  "observer_live_verified": false,
+  "allocator_fault_offline_tests": {
+    "total_suites_passed": 32,
+    "negative_controls_detected": 6,
+    "native_source_changed": false,
+    "allocation_null_causes_terminal_stop": true,
+    "live_disconnect_cause_proven": false
+  }
 }

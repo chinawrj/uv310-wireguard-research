@@ -10,10 +10,11 @@ with tempfile.TemporaryDirectory(prefix='uv310-offline-') as tmp:
  r=subprocess.run([sys.executable,f'work/uv310-wireguard/{branch}/test-build.py'],cwd=t)
  if r.returncode:raise SystemExit(r.returncode)
  src=t/f'outputs/uv310-wireguard/evidence/{branch}-tests.json'
- data=json.loads(src.read_text());expected=25 if branch=='rekey-memory' else 20
+ data=json.loads(src.read_text());expected=32 if branch=='rekey-memory' else 20
  assert len(data['suites'])==expected and all(x['passed'] for x in data['suites'])
- assert len(data['negative_controls'])==3 and all(x['detected'] for x in data['negative_controls'])
+ negatives=6 if branch=='rekey-memory' else 3
+ assert len(data['negative_controls'])==negatives and all(x['detected'] for x in data['negative_controls'])
  dest=ROOT/'.test-results';dest.mkdir(exist_ok=True)
  (dest/src.name).write_bytes(src.read_bytes())
- print(f'PASS: {expected} synthetic suites, 3 mutations detected. No USB/network/firmware deployment.')
+ print(f'PASS: {expected} synthetic suites, {negatives} mutations detected. No USB/network/firmware deployment.')
  print('Result:',dest/src.name)

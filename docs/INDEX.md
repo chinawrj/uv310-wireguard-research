@@ -155,3 +155,8 @@
 - [observer fault injection](../outputs/uv310-wireguard/evidence/observer-offline-tests.json)
 - [rekey-live stack audit](../outputs/uv310-wireguard/evidence/stack-audit-rekey-live.json)
 - [rekey-memory stack audit](../outputs/uv310-wireguard/evidence/stack-audit-rekey-memory.json)
+
+## 控制包分配与所有权故障注入
+
+- [解释与设计约束](ALLOCATOR_FAILURES.md)
+- [32项场景与6项负向控制](../outputs/uv310-wireguard/evidence/allocator-fault-tests.json)

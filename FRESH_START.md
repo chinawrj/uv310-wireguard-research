@@ -13,7 +13,7 @@
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
 - 已成功的分支：`work/uv310-wireguard/rekey-live`，实机首次握手 + 2 次自动换钥。
-- 最近分支：`rekey-memory`，增加 A/E/R/M 四页状态和有界内存观测；25 项离线场景及 3 项负向控制通过。
+- 最近实机分支：`rekey-memory`，增加 A/E/R/M 四页状态和有界内存观测。当时25项离线场景、3项负向控制通过；本轮保持native源码不变，测试扩展至32项场景、6项负向控制，见 [ALLOCATOR_FAILURES.md](docs/ALLOCATOR_FAILURES.md)。
 - 最近实机运行在约 138.794 s 首次出现整批 ping/DNS 失败，141.797 s 状态查询断言失败，147.812 s 测试结束失败；最后成功快照尚未完成第一次换钥。后续 USB 枚举只见 ASIX 网卡，未见 UV310。不能断言是 OOM、看门狗或用户拔出。
 - **断连之前**已把设备 EFS 内的活动 Wi-Fi 镜像恢复为原厂并完整读回校验，SHA-256 `4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a`，193,315 B。
 - 此后无法验证原厂运行态，因为设备不在总线上。存储文件已恢复 ≠ 当前 RAM 运行态已验证恢复。

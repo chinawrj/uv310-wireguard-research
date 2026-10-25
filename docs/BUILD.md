@@ -21,13 +21,13 @@ QEMU_ARM=/opt/homebrew/bin/qemu-system-arm make test
 
 Linux可把变量设为已安装工具的绝对路径，或让PATH解析。发布时只在当前Mac环境实际重放，其他系统的可移植性仍需验证。测试驱动从仓库复制工作树到临时目录，不覆盖提交内历史证据，结束后只写`.test-results/`（git忽略）。无需网络、USB、真实配置或stock固件。
 
-memory分支25个场景：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STALE_RESPONSE、RNG_FAIL、QUEUE_EXPIRE、RETRY、RETRY_LIMIT、ALLOC_EXPIRE、COUNT_REKEY、COUNT_REJECT、WRAP、TAI_CARRY、CLAIM_RACE、PUBLISH_EXPIRY、LAB_PACKET、LAB_TIMER、LAB_WORKER、LAB_WRAP、MEMORY、MEMORY_BAD_NODE、MEMORY_CYCLE、MEMORY_SIZE、MEMORY_BAD_STACK。3个负向变异检查：reset_device、lost_response、reject_previous，必须被测试捕获。
+memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STALE_RESPONSE、RNG_FAIL、QUEUE_EXPIRE、RETRY、RETRY_LIMIT、ALLOC_EXPIRE、COUNT_REKEY、COUNT_REJECT、WRAP、TAI_CARRY、CLAIM_RACE、PUBLISH_EXPIRY、LAB_PACKET、LAB_TIMER、LAB_WORKER、LAB_WRAP、MEMORY、MEMORY_BAD_NODE、MEMORY_CYCLE、MEMORY_SIZE、MEMORY_BAD_STACK。新增7项控制包分配/释放故障场景见 [ALLOCATOR_FAILURES.md](ALLOCATOR_FAILURES.md)。6个负向变异检查：reset_device、lost_response、reject_previous、null_alloc_not_closed、malformed_packet_leak、reuse_owned_packet，必须被测试捕获。
 
 `make test-live`重放前一实机成功分支的20项合成suite，仍不接触硬件。QEMU机器为mps2-an385，仅执行Cortex-M3代码与fixture；不会模拟Wi-Fi、SDIO、真实ROM/IRQ/熵源。QEMU通过不是稳定性、带宽或真实硬件执行证据。
 
 ## 源码与生成物
 
-保留原`work/uv310-wireguard`相对布局，便于与日志对照。`wg-port/build/wireguard.c/.h`虽在build目录，却是必要的源适配文件，已明确纳入Git；其余`.o/.elf/.bin`构建产物忽略。native/test/config源码保持原样；两个test-build脚本仅增加环境变量/PATH工具发现。
+保留原`work/uv310-wireguard`相对布局，便于与日志对照。`wg-port/build/wireguard.c/.h`虽在build目录，却是必要的源适配文件，已明确纳入Git；其余`.o/.elf/.bin`构建产物忽略。native/config源码保持历史版本；rekey-memory测试夹具新增分配失败与延迟释放模型，test-build脚本增加相应场景及负向控制。工具支持环境变量/PATH发现。
 
 `prepare.py`是历史增量生成器，依赖上一阶段文本补丁；不应作为默认构建入口。`package.py`是历史实机打包记录，会读取私有stock/config并生成新材料、脚本和镜像；不是公开发布安装命令。脚本包含原始Mac工具路径及实验文件名，移植时先审阅依赖、生成覆盖范围和恢复流程。某些静态分析器需要未公开的ROM/固件和反汇编工具；公开的JSON是当时分析结果，不声称这些分析器在无私有输入时能运行。
 

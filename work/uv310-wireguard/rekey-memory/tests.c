@@ -13,8 +13,29 @@ extern volatile u32 stopped;extern void emit_control(void);
 void fixture_before_publish(u32 next){if(next==9&&inject_publish){inject_publish=0;fixture_clock+=180000;emit_control();}}
 static u8 sent[190];static u32 sent_bytes;
 #define W(a) (*(volatile u32*)(a))
-u32 fake_alloc(u32 n){alloc_calls++;if(expiry_alloc)fixture_clock+=180000;if(n!=512)return 0;u32 p=0x34200;memset((void*)p,0,68);W(p+8)=p+68;W(p+12)=p+580;W(p+16)=p+68;*(u16*)(p+20)=512;*(u8*)(p+29)=1;W(0x2688)+=580;W(0x26a4)+=8;return p;}
-u32 fake_submit(u32 src,u32 dst,u32 p){(void)src;(void)dst;sent_bytes=*(u16*)(p+20);if(sent_bytes<=190)memcpy(sent,(void*)W(p+16),sent_bytes);release_before(p);W(0x2688)-=580;W(0x26a4)-=8;release_after(p);return 0;}extern u32 f_tx,f_rx,f_drop,session_start;extern volatile u32 phase;extern u32 err,rng_pos;extern void worker(void),signal_timer(void*);extern char version[];
+/* Packet ownership is modeled separately from submit return status. */
+static u32 alloc_null,alloc_bad_layout,defer_release,owned_packet,alloc_success,raw_frees,ownership_errors;
+static u32 submit_result;
+static void release_owned(u32 p){
+ if(owned_packet!=p){ownership_errors++;return;}
+ release_before(p);W(0x2688)-=580;W(0x26a4)-=8;owned_packet=0;release_after(p);
+}
+u32 fake_alloc(u32 n){
+ alloc_calls++;if(expiry_alloc)fixture_clock+=180000;
+ if(n!=512||alloc_null)return 0;
+ if(owned_packet){ownership_errors++;return 0;}
+ u32 p=0x34200;owned_packet=p;alloc_success++;
+ memset((void*)p,0,68);W(p+8)=p+68;W(p+12)=p+580;W(p+16)=p+68;
+ *(u16*)(p+20)=512;*(u8*)(p+29)=alloc_bad_layout?0:1;
+ W(0x2688)+=580;W(0x26a4)+=8;return p;
+}
+u32 fake_submit(u32 src,u32 dst,u32 p){
+ (void)src;(void)dst;
+ if(owned_packet!=p){ownership_errors++;return submit_result;}
+ sent_bytes=*(u16*)(p+20);if(sent_bytes<=190)memcpy(sent,(void*)W(p+16),sent_bytes);
+ if(!defer_release)release_owned(p);return submit_result;
+}
+extern u32 f_tx,f_rx,f_drop,session_start;extern volatile u32 phase;extern u32 err,rng_pos;extern void worker(void),signal_timer(void*);extern char version[];
 static struct wireguard_device server;
 static struct wireguard_keypair *active_server_key;
 volatile unsigned failure_line;
@@ -68,6 +89,20 @@ static int late_packet(struct wireguard_keypair*k,int accepted){
  frame(1,reply,64);CHECK(intercept(1,0x35000)==(accepted?0:1));CHECK(f_rx==before+(accepted?1:0));
  if(accepted){frame(1,reply,64);CHECK(intercept(1,0x35000)==1&&f_rx==before+1);}return 0;
 }
+/* Verify external IPv4 stays closed after a terminal allocator fault,
+ * even after allocator capacity returns. LAN bypass remains separate policy. */
+static int terminal_alloc_check(u32 expected,u32 calls,u32 submits,u32 payload,u32 headers){
+ CHECK(stopped&&phase==255&&err==expected&&!control_ready&&!control_packet);
+ CHECK(!owned_packet&&!ownership_errors&&submitted==submits);
+ CHECK(W(0x2688)==payload&&W(0x26a4)==headers);
+ alloc_null=alloc_bad_layout=0;u32 tx=f_tx;
+ for(u32 i=0;i<8;i++){
+  fixture_clock+=1000;signal_timer(0);worker();
+  ordinary(17,13);CHECK(intercept(0,0x35000)==1);
+ }
+ CHECK(stopped&&err==expected&&alloc_calls==calls&&submitted==submits&&f_tx==tx);
+ return 0;
+}
 int tests(void){
 #if defined(TEST_MEMORY) || defined(TEST_MEMORY_BAD_NODE) || defined(TEST_MEMORY_CYCLE) || defined(TEST_MEMORY_SIZE) || defined(TEST_MEMORY_BAD_STACK)
  extern void memory_snapshot(u32*);u32 v[16];
@@ -113,10 +148,23 @@ int tests(void){
 #endif
  W(0x33d18)=0x33e00;W(0x33e18)=0x33f00;W(0x33f04)=0x34000;W(0x33f0c)=0x34100;W(0x34148)=64;W(0x33f3c)=0x33c00;
  ordinary(1,0);CHECK(intercept(0,0x35000)==1&&phase==1);
- signal_timer(0);worker();CHECK(phase==2&&attempts==1);signal_timer(0);CHECK(phase==3&&submitted==freed);
+ signal_timer(0);worker();CHECK(phase==2&&attempts==1);
+#ifdef TEST_ALLOC_NULL_FIRST
+ alloc_null=1;u32 calls=alloc_calls,submits=submitted,payload=W(0x2688),headers=W(0x26a4);
+ signal_timer(0);CHECK(alloc_success==0&&raw_frees==0);
+ return terminal_alloc_check(0xe4,calls+1,submits,payload,headers);
+#endif
+ signal_timer(0);CHECK(phase==3&&submitted==freed);
  CHECK(wireguard_device_init(&server,SERVER_PRIVATE));CHECK(wireguard_peer_init(&server,&server.peers[0],CLIENT_PUBLIC,PRESHARED_KEY));
  CHECK(make_response()==0);CHECK(complete_response()==0);old_response=response;
  struct wireguard_peer*p=&fixture_device()->peers[0];
+#ifdef TEST_ALLOC_NULL_KEEPALIVE
+ fixture_clock=last_keepalive+20000;signal_timer(0);worker();CHECK(phase==9&&control_ready==2);
+ alloc_null=1;u32 calls=alloc_calls,submits=submitted,payload=W(0x2688),headers=W(0x26a4),success=alloc_success;
+ signal_timer(0);CHECK(alloc_success==success&&raw_frees==0&&p->curr_keypair.valid);
+ return terminal_alloc_check(0xe4,calls+1,submits,payload,headers);
+#endif
+
 #if defined(TEST_LAB_PACKET) || defined(TEST_LAB_TIMER) || defined(TEST_LAB_WORKER) || defined(TEST_LAB_WRAP)
 #ifdef TEST_LAB_WRAP
  lab_origin=0xffff0000u;
@@ -160,6 +208,57 @@ int tests(void){
 #endif
  CHECK(phase==2&&attempts==2&&p->curr_keypair.valid&&p->curr_keypair.local_index==first_index);
  CHECK(one_forward(17,19)==0); /* forwarding while initiation is queued */
+#if defined(TEST_ALLOC_NULL_REKEY) || defined(TEST_ALLOC_BAD_LAYOUT)
+ u32 calls=alloc_calls,submits=submitted,payload=W(0x2688),headers=W(0x26a4),success=alloc_success;
+#ifdef TEST_ALLOC_NULL_REKEY
+ alloc_null=1;signal_timer(0);CHECK(alloc_success==success&&raw_frees==0&&p->curr_keypair.valid);
+ return terminal_alloc_check(0xe4,calls+1,submits,payload,headers);
+#else
+ alloc_bad_layout=1;signal_timer(0);CHECK(alloc_success==success+1&&raw_frees==1&&p->curr_keypair.valid);
+ return terminal_alloc_check(0xe5,calls+1,submits,payload,headers);
+#endif
+#endif
+#if defined(TEST_DEFERRED_RELEASE) || defined(TEST_HELD_RELEASE_EXPIRY) || defined(TEST_SUBMIT_NONZERO)
+ u32 submits=submitted,payload=W(0x2688),headers=W(0x26a4),releases=freed;
+ defer_release=1;
+#ifdef TEST_SUBMIT_NONZERO
+ submit_result=7;
+#endif
+ signal_timer(0);CHECK(phase==3&&control_packet==0x34200&&owned_packet==control_packet&&submitted==submits+1&&freed==releases);
+ CHECK(W(0x2688)==payload+580&&W(0x26a4)==headers+8&&!ownership_errors);
+ u32 calls=alloc_calls;CHECK(make_response()==0);
+ /* Unrelated free observations must not release the outstanding packet. */
+ release_before(0x34000);release_after(0x34000);CHECK(control_packet==0x34200&&freed==releases);
+#ifdef TEST_HELD_RELEASE_EXPIRY
+ fixture_clock=first_start+180000;u32 held_tx=f_tx;
+ ordinary(17,13);CHECK(intercept(0,0x35000)==1&&f_tx==held_tx);
+ for(u32 i=0;i<8;i++){signal_timer(0);worker();}
+ CHECK(alloc_calls==calls&&attempts==2&&submitted==submits+1&&control_packet==owned_packet&&!stopped);
+ release_owned(0x34200);defer_release=0;
+ CHECK(freed==releases+1&&!control_packet&&W(0x2688)==payload&&W(0x26a4)==headers);
+ signal_timer(0);worker();CHECK(phase==2&&attempts==3);
+ signal_timer(0);CHECK(make_response()==0);CHECK(complete_response()==0);CHECK(one_forward(17,25)==0);
+#else
+ fixture_clock=last_send+5001;
+ for(u32 i=0;i<8;i++){signal_timer(0);worker();}
+ CHECK(alloc_calls==calls&&attempts==2&&phase==3&&!stopped);
+ frame(1,&response,92);CHECK(intercept(1,0x35000)==1&&phase==4);
+ signal_timer(0);worker();CHECK(phase==9&&renewals==1&&control_ready==2&&control_packet==owned_packet);
+ for(u32 i=0;i<8;i++){signal_timer(0);worker();}
+ CHECK(alloc_calls==calls&&submitted==submits+1&&freed==releases);
+ release_owned(0x34200);CHECK(!control_packet&&freed==releases+1&&!owned_packet);
+ CHECK(W(0x2688)==payload&&W(0x26a4)==headers);
+ /* Duplicate callback observations (not a second real free) are ignored. */
+ release_before(0x34200);release_after(0x34200);CHECK(freed==releases+1&&!control_packet);
+ defer_release=0;signal_timer(0);CHECK(!control_ready&&submitted==submits+2&&submitted==freed);
+ struct wireguard_keypair*k=&server.peers[0].next_keypair;
+ CHECK(wireguard_decrypt_packet(decoded,sent+58,16,U8TO64_LITTLE(sent+50),k));
+ CHECK(wireguard_check_replay(k,U8TO64_LITTLE(sent+50)));keypair_update(&server.peers[0],k);active_server_key=&server.peers[0].curr_keypair;
+ CHECK(one_forward(17,25)==0);
+#endif
+ CHECK(!owned_packet&&!ownership_errors&&submitted==freed&&W(0x2688)==payload&&W(0x26a4)==headers);return 0;
+#endif
+
 #ifdef TEST_QUEUE_EXPIRE
  fixture_clock+=5000;u32 submits=submitted;signal_timer(0);CHECK(submitted==submits&&phase==3&&!control_ready&&!stopped);
  CHECK(one_forward(17,20)==0);worker();CHECK(phase==2&&attempts==3);return 0;
@@ -227,7 +326,7 @@ int tests(void){
 }
 
 static u32 frees;
-void fake_free(u32 ptr){if(ptr==0x34200){W(0x2688)-=580;W(0x26a4)-=8;return;}if(ptr==0x35000)frees++;else frees=999;}
+void fake_free(u32 ptr){if(ptr==0x34200){if(owned_packet!=ptr){ownership_errors++;return;}raw_frees++;release_owned(ptr);return;}if(ptr==0x35000)frees++;else frees=999;}
 extern int packet1(u32,u32,u32);
 static const u8 client[4]={192,168,100,100};
 static u16 be16(const u8*p){return ((u16)p[0]<<8)|p[1];}
