@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-26",
+  "run_id": 40244587977,
+  "job_id": 121323358625,
+  "url": "https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40244587977",
+  "tested_commit": "1a4735e55998a24067141136e9140e9d58e14520",
+  "conclusion": "success",
+  "artifact_id": 12617829310,
+  "artifact_sha256": "2f4bc124b7a7c393be827cddcd9362a58baa4ae2fee58ed380bf29b8e479fe1b",
+  "download_sha_verified": true,
+  "all_test_source_hashes_match": true,
+  "qemu_suites": 97,
+  "negative_controls": 21,
+  "observer_mock_tests": 23,
+  "log_excerpt": [
+    "2026-10-25T23:24:32.6336483Z PASS: 20 synthetic suites, 3 negative controls detected. No USB/network/firmware deployment.",
+    "2026-10-25T23:24:42.3491672Z PASS: 32 synthetic suites, 6 negative controls detected. No USB/network/firmware deployment.",
+    "2026-10-25T23:25:00.2867838Z PASS: 45 synthetic suites, 12 negative controls detected. No USB/network/firmware deployment.",
+    "2026-10-25T23:25:00.4400514Z Ran 23 tests in 0.019s",
+    "2026-10-25T23:25:00.4400767Z OK"
+  ],
+  "hardware_access": false,
+  "device_goal_complete": false
+}

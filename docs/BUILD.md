@@ -19,7 +19,7 @@ LLVM_LD=/opt/homebrew/opt/llvm/bin/ld.lld \
 QEMU_ARM=/opt/homebrew/bin/qemu-system-arm make test
 ```
 
-Linux可把变量设为已安装工具的绝对路径，或让PATH解析。发布时只在当前Mac环境实际重放，其他系统的可移植性仍需验证。测试驱动从仓库复制工作树到临时目录，不覆盖提交内历史证据，结束后只写`.test-results/`（git忽略）。无需网络、USB、真实配置或stock固件。
+Linux可把变量设为已安装工具的绝对路径，或让PATH解析。已在本机macOS arm64和GitHub托管Ubuntu24.04 x86_64实际重放通过，具体版本与结果见 [CI.md](CI.md)；其他环境尚未验证。测试驱动从仓库复制工作树到临时目录，不覆盖提交内历史证据，结束后只写`.test-results/`（git忽略）。无需网络、USB、真实配置或stock固件。
 
 memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STALE_RESPONSE、RNG_FAIL、QUEUE_EXPIRE、RETRY、RETRY_LIMIT、ALLOC_EXPIRE、COUNT_REKEY、COUNT_REJECT、WRAP、TAI_CARRY、CLAIM_RACE、PUBLISH_EXPIRY、LAB_PACKET、LAB_TIMER、LAB_WORKER、LAB_WRAP、MEMORY、MEMORY_BAD_NODE、MEMORY_CYCLE、MEMORY_SIZE、MEMORY_BAD_STACK。新增7项控制包分配/释放故障场景见 [ALLOCATOR_FAILURES.md](ALLOCATOR_FAILURES.md)。6个负向变异检查：reset_device、lost_response、reject_previous、null_alloc_not_closed、malformed_packet_leak、reuse_owned_packet，必须被测试捕获。
 

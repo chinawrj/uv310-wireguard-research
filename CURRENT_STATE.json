@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Offline scheduling/protocol gap review and reproducible CI; hardware acceptance still requires fresh material, stock baseline and live validation.",
+  "next_step": "Offline protocol/scheduling gaps and entropy/freshness design; hardware acceptance pending stock baseline and fresh material.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/NONCE_LIFECYCLE.md",
+  "latest_offline_progress": "docs/CI.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -83,6 +83,12 @@
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",
     "runner": "ubuntu-24.04",
-    "first_run_verified": false
+    "first_run_verified": true,
+    "run_id": 40244587977,
+    "tested_commit": "1a4735e55998a24067141136e9140e9d58e14520",
+    "conclusion": "success",
+    "qemu_suites": 97,
+    "negative_controls": 21,
+    "observer_mock_tests": 23
   }
 }
