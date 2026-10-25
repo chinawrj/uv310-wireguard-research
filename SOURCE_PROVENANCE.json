@@ -640,5 +640,12 @@
     "published_sha256": "d73c52d191551379ea0ac1ecacfbdb3c9333f7614745d6df5f7101dd54a47162",
     "origin": "Explicit allowlisted build-environment recorder for public CI, 2026-10-26",
     "private_material_required": false
+  },
+  {
+    "path": "tools/audit_dhcp_dns.py",
+    "published_sha256": "b536bd8c929ccb3015c598196b32a64d703c9adb9d386dac867dc737318e8205",
+    "workspace_source_sha256": "b536bd8c929ccb3015c598196b32a64d703c9adb9d386dac867dc737318e8205",
+    "byte_identical_to_workspace": true,
+    "origin": "New read-only exact-firmware static audit; proprietary inputs are excluded"
   }
 ]

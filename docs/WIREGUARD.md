@@ -46,3 +46,5 @@ idle worker完成昂贵crypto；timer负责有界控制包发送和到期检查�
 通过`AT+WL=wl ver`读取192B版本缓冲，轮转A/E/R（memory版本另有M）页，每页16个u32字段。A=执行phase、错误、handshake与数据计数、时钟；E=control queue/ownership；R=renewals、RNG/key年龄、deadline；M=堆与栈。准确字段顺序见`rekey-memory/live.py`。页面分别采样，四页组合不是同一瞬时的原子快照，比较时要看各自clock。
 
 状态中的`err`可能记录最后一次非致命drop，比如最后memory快照err50（十进制）不等于握手失败；需结合phase、计数与源码对应分支。切勿只看单一错误数字判断成功/失败。
+
+DNS配置与旁路的进一步静态分析见 [DNS_ROUTING.md](DNS_ROUTING.md)：找到字段不等于已建立可用配置入口，完整Wi-Fi VPN验收仍未完成。

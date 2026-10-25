@@ -59,7 +59,7 @@
   "next_step": "Offline protocol/scheduling gaps and entropy/freshness design; hardware acceptance pending stock baseline and fresh material.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/CI.md",
+  "latest_offline_progress": "docs/DNS_ROUTING.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -90,5 +90,14 @@
     "qemu_suites": 97,
     "negative_controls": 21,
     "observer_mock_tests": 23
+  },
+  "dns_routing_audit": {
+    "static_instruction_anchors": 40,
+    "static_string_anchors": 15,
+    "default_gateway_dns_bypasses_native_tunnel": true,
+    "dhcp_dns_fields_located": true,
+    "web_dns_setter_verified": false,
+    "runtime_message_consumer_chain_proven": false,
+    "routing_fix_deployed": false
   }
 }

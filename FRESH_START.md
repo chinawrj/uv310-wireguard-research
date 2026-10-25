@@ -12,6 +12,8 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
+- DNS离线分析：网关DNS仍旁路；找到DHCP DNS字段与默认回退，但未证明运行中的配置入口。见 [DNS_ROUTING.md](docs/DNS_ROUTING.md)。
+
 - 新离线候选：`rekey-pressure`，控制包分配有限退避重试；45项QEMU场景和12项负向控制通过，未部署、未实机验证。见 [ALLOCATION_RETRY.md](docs/ALLOCATION_RETRY.md) 与 [NONCE_LIFECYCLE.md](docs/NONCE_LIFECYCLE.md)。
 - 公开仓库已在干净Linux CI复现：97项QEMU场景、21项负向控制、23项mock观察器测试通过。它不代表新实机成功，见 [CI.md](docs/CI.md)。
 - 已成功的分支：`work/uv310-wireguard/rekey-live`，实机首次握手 + 2 次自动换钥。
