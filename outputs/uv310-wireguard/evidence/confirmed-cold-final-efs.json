@@ -1,0 +1,12 @@
+{
+  "started_utc": "2026-10-25T22:07:35.801153+00:00",
+  "read_only": true,
+  "efs_commands": [
+    15
+  ],
+  "file_open_or_write": false,
+  "errno": 0,
+  "bytes": 193315,
+  "reply_received": true,
+  "elapsed_seconds": 0.004
+}

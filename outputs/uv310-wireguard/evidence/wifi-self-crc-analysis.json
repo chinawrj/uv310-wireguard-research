@@ -1,0 +1,61 @@
+{
+  "analysis_type": "Offline instruction/literal decoding cross-checked against original and candidate image CRC values",
+  "check_function": "0x24524",
+  "startup_call": "0x2462a BL 0x24524",
+  "crc_rom_call": "0x24596 BL 0x802a20",
+  "range": "[0,0x2f292)",
+  "initial_raw_crc": "0xffffffff",
+  "expected_raw_residue": "0xdebb20e3",
+  "mismatch_loop": "0x2459a LDR expected; 0x2459c CMP; 0x2459e BNE 0x2459a",
+  "stored_crc_offset": "0x2f28e",
+  "stored_crc_endian": "little",
+  "stored_crc_formula": "zlib.crc32(image[0:0x2f28e])",
+  "normalized_runtime_words": [
+    "0x1bc50",
+    "0x8ac4",
+    "0x8ac0",
+    "0x8ac8",
+    "0x8acc",
+    "0x8ad0",
+    "0x1bc54",
+    "0x1bc4c"
+  ],
+  "normalized_magic_word": {
+    "address": "0x8ab0",
+    "value": "0xbbadbadd"
+  },
+  "conditional_skip": "Function first calls ROM 0x802978 using variable-name pointer 0x1bc3c; return 1 skips CRC. No skip flag changed or enabled by this work.",
+  "cases": {
+    "web-assets/rtecdc_new.bin": {
+      "raw_crc_result": "0xdebb20e3",
+      "matches_required_residue": true
+    },
+    "rtecdc_new.boot-probe.bin": {
+      "raw_crc_result": "0x226e772e",
+      "matches_required_residue": false
+    },
+    "rtecdc_new.late-probe.bin": {
+      "raw_crc_result": "0x819f9a90",
+      "matches_required_residue": false
+    },
+    "rtecdc_new.data-control.bin": {
+      "raw_crc_result": "0x336108b",
+      "matches_required_residue": false
+    },
+    "rtecdc_new.postcrc.bin": {
+      "raw_crc_result": "0xdebb20e3",
+      "matches_required_residue": true
+    }
+  },
+  "findings": [
+    "Original stored CRC equals recalculated CRC and yields expected residue",
+    "All previous modified images fail this check even before runtime marker writes",
+    "Writing the marker before this check would also invalidate a repaired CRC",
+    "New probe retains the original check, repairs covered image CRC, and only writes marker after successful return"
+  ],
+  "limits": [
+    "ROM CRC implementation is inferred from exact residue and stored-checksum match, not ROM disassembly",
+    "No execution trace proves where earlier hardware trials stopped",
+    "Data-only cold-start workflow hit USB mode-switch timeout on both candidate and restored stock, so its runtime result is inconclusive"
+  ]
+}

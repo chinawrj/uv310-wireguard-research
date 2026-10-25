@@ -1,0 +1,33 @@
+{
+  "phase": "restored",
+  "software_restart": true,
+  "physical_power_removal": false,
+  "direct_file_writes": false,
+  "candidate_phase_calls_efs_restore": false,
+  "events": [],
+  "active_before_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "diag_enter_reply": "3a",
+  "dmss_parameters_verified": true,
+  "reset_reply": "02",
+  "cd_settle_wait_seconds": 6,
+  "verified_cd_eject": "Disk disk8 ejected",
+  "rows": [
+    {
+      "command": "AT+CPIN?",
+      "response": "AT+CPIN?\r\r\n+CME ERROR: SIM busy\r\n"
+    },
+    {
+      "command": "AT+WIFI?",
+      "response": "AT+WIFI?\r\r\n+WIFI:1\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "response": "AT+WL=wl ver\r\r\nERROR\r\n"
+    },
+    {
+      "command": "AT+WL=wl isup",
+      "response": "AT+WL=wl isup\r\r\nERROR\r\n"
+    }
+  ],
+  "workflow_finished": true
+}

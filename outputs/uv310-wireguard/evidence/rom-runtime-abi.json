@@ -1,0 +1,176 @@
+{
+  "firmware_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "method": "Real captured ROM first two instructions + exact stock RAM-image word; runtime slot values have not been captured",
+  "entries": [
+    {
+      "role": "bounded variadic strbuf formatter",
+      "rom_entry": "0x802518",
+      "ram_dispatch_slot": "0x440",
+      "stock_image_dispatch_value": "0x802521",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "add memory arena",
+      "rom_entry": "0x806220",
+      "ram_dispatch_slot": "0x130",
+      "stock_image_dispatch_value": "0x806229",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "main loop",
+      "rom_entry": "0x806374",
+      "ram_dispatch_slot": "0x148",
+      "stock_image_dispatch_value": "0x80637d",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "timer object allocation candidate",
+      "rom_entry": "0x806394",
+      "ram_dispatch_slot": "0x14c",
+      "stock_image_dispatch_value": "0x80639d",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "aligned heap allocation",
+      "rom_entry": "0x80640c",
+      "ram_dispatch_slot": "0x128",
+      "stock_image_dispatch_value": "0x806415",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "clock accumulator candidate",
+      "rom_entry": "0x806604",
+      "ram_dispatch_slot": "0x150",
+      "stock_image_dispatch_value": "0x80660d",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "timer queue insertion candidate",
+      "rom_entry": "0x806620",
+      "ram_dispatch_slot": "0x16c",
+      "stock_image_dispatch_value": "0x806629",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "packet allocation",
+      "rom_entry": "0x806d80",
+      "ram_dispatch_slot": "0x628",
+      "stock_image_dispatch_value": "0x806d89",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "packet accounting decrement candidate",
+      "rom_entry": "0x806dd4",
+      "ram_dispatch_slot": "0x61c",
+      "stock_image_dispatch_value": "0x806ddd",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "SDPCM link wrapper",
+      "rom_entry": "0x80a994",
+      "ram_dispatch_slot": "0x2c0",
+      "stock_image_dispatch_value": "0x80a99d",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "SDPCM packet operation candidate",
+      "rom_entry": "0x80aa54",
+      "ram_dispatch_slot": "0x2b4",
+      "stock_image_dispatch_value": "0x80aa5d",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "SDPCM ioctl unsupported default",
+      "rom_entry": "0x80aa20",
+      "ram_dispatch_slot": "0x29c",
+      "stock_image_dispatch_value": "0x80aa29",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "Wi-Fi open/up candidate",
+      "rom_entry": "0x80fb50",
+      "ram_dispatch_slot": "0x894",
+      "stock_image_dispatch_value": "0x80fb59",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "Wi-Fi packet transmit candidate",
+      "rom_entry": "0x80fc34",
+      "ram_dispatch_slot": "0x890",
+      "stock_image_dispatch_value": "0x80fc3d",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "Ethernet transmit path candidate",
+      "rom_entry": "0x8281a4",
+      "ram_dispatch_slot": "0x11f4",
+      "stock_image_dispatch_value": "0x8281ad",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    },
+    {
+      "role": "SDPCM send wrapper",
+      "rom_entry": "0x804530",
+      "ram_dispatch_slot": "0x318",
+      "stock_image_dispatch_value": "0x804539",
+      "stock_target_kind": "ROM",
+      "live_dispatch_read": false,
+      "abi_dynamic_validation": false
+    }
+  ],
+  "direct_calls_performed": false,
+  "important": "ROM entry addresses are trampoline dispatchers; account for RAM patches before inferring actual behavior",
+  "packet_observations": {
+    "wl_ops_slot_12": "0x80fc34 receives device pair and packet; references packet flags, calls 0x8281a4 on ordinary path; ownership/return semantics still require tracing",
+    "sdpcm_ops_slot_12": "0x80aa54 forwards through 0x804530; do not assume exact RX/TX semantics from table position",
+    "ethernet_tx_body": "0x8281ac checks 16-bit packet length at +0x14 >=14, reads data pointer +0x10 and EtherType bytes +12/+13; supports Ethernet frame interpretation. This does not prove packet ownership or hook suitability.",
+    "sdpcm_bridge_body": "0x804538 converts/accounts packet then routes via callback table; reverse path 0x8045b8 invokes destination dev->ops[3]. Exact live direction and framing remain to be validated.",
+    "packet_layout_candidates": {
+      "0x10": "data pointer",
+      "0x14": "16-bit length",
+      "0x16": "flags"
+    },
+    "not_same_as_qdsp_host_packet": "Host driver previously used +0x18 length; these are different structures"
+  },
+  "wireguard_running": false,
+  "heap_accounting": {
+    "0x26c8": "Total arena bytes: initialized at 0x1e608, incremented by add-arena 0x806250",
+    "0x2688": "Allocated payload accounting: incremented by malloc 0x806500, decremented by free 0x8062f4",
+    "0x26a4": "Allocated header accounting: +8 at 0x806506, -8 at 0x8062fc",
+    "0x26cc": "Peak allocated payload: conditional update at 0x806510",
+    "0x2690": "Allocation failure counter: increment at 0x806496 and 0x8064e4",
+    "0x26c4": "Free-list first-node pointer, node has payload size +0 and next +4",
+    "0x806534": "Default ROM implementation returns total arena - allocated payload; does not explicitly subtract allocated headers or free-list headers",
+    "live_values_measured": false,
+    "capacity_rule": "Do not equate total arena or total-minus-payload with largest allocatable contiguous block. Need live bounded free-list traversal and stack high-water measurement."
+  }
+}

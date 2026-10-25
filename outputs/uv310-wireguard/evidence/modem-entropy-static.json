@@ -1,0 +1,189 @@
+{
+  "amss_literal_scan": {
+    "sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5",
+    "scope": "aligned uint32 literals in extracted PT_LOAD file bytes only",
+    "matches": [],
+    "absence_is_not_transport_proof": true
+  },
+  "scope": "Own UV310 ALKU7.3.2 extracted DSP2; static analysis only",
+  "source_sha256": {
+    "dsp2-code.bin": "9bcdfd03028be95c1f6285c299e359d79be8e6e4e2f7e06191293b452dd17076",
+    "dsp2-data.bin": "b31d062ece0b896b98c33d8359dfad23cb660e17605059afc239eab13f9919c3",
+    "dsp2-rodata.bin": "588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f",
+    "dsp2-small-data.bin": "366ff74c956a4897f124072f967de5ab76f6ec728c6e85aeb7281a5c527a32f4",
+    "dsp2-paged-code.bin": "a9880ae5b3476beca54136d98f2be87bcae2273867f0cfb317b308a339a74460"
+  },
+  "execution_performed": false,
+  "device_writes": false,
+  "seed_values_read": false,
+  "task_record": {
+    "address": "0x1a920d0",
+    "raw_words": [
+      "0x19c6bea",
+      "0x2f33cb4",
+      "0x0",
+      "0x1000",
+      "0x1f",
+      "0x172f328"
+    ],
+    "name": "secrnd",
+    "entry": "0x172f328"
+  },
+  "ssl_rng_call": {
+    "site": "0x17448dc",
+    "callee": "0x12c4b48",
+    "inferred_register_arguments": {
+      "r0": "mode=1",
+      "r1": "32-byte stack output buffer",
+      "r2": "length=32"
+    },
+    "failure_path": "surrounding SSL routine checks status, bounded retries on code9; failure reports cannot create server random"
+  },
+  "same_core_path": [
+    "0x12c4b48 (mode selector)",
+    "0x1727f18 (pointer/length wrapper)",
+    "0x172ece0 (lock/state/ready handling)",
+    "0x172f720 (zero output, call generator)",
+    "0x1738a38 (stateful generator candidate)"
+  ],
+  "mode_two": "0x1727f34 calls normal fill and redraws zero bytes; do not treat as uniform random byte API",
+  "task_message_layout_inferred": {
+    "request_type": "0x470001",
+    "response_type": "0x470002",
+    "other_handled_type": "0x470003",
+    "handler": "0x172ee4c",
+    "offsets": {
+      "0": "message type overwritten to response",
+      "4": "random fill return status",
+      "8": "output pointer",
+      "12": "unsigned16 length"
+    },
+    "dispatch": "0x172f034 compares types loaded from GP slots",
+    "external_transport": "NOT established; these are internal task messages, not USB/UDP/AT opcodes"
+  },
+  "seed_lifecycle_static": {
+    "candidate_nv_item": "0x1058 (4184)",
+    "read_wrapper": "0x1726a48",
+    "write_wrapper": "0x17269b0",
+    "startup_read": "0x172f3b8 -> 0x172f6b0 -> 0xf031efa8",
+    "startup_write": "0x172f5e0 -> 0x17269b0",
+    "later_save": "0x172ee8c -> 0x172ef18 -> 0xf031ef70",
+    "seed_buffer_bytes": 32,
+    "all_zero_buffer_fallback": "0x172f400..0x172f40c fills 32 bytes with 0xa5; subsequent mixing/conditioning still occurs",
+    "mmio_input_pointer_slot": "0x341f6c0",
+    "mmio_input_address": "0x8d700008",
+    "mmio_identity": "unknown; not credited as TRNG",
+    "durability_atomicity_powerloss": "unverified",
+    "seed_secret_value_inspected": false,
+    "startup_nv_write_failure_path": "0x172f5e8 branches on success; nonzero status reaches log at0x172f608 then task loop0x172f60c. Not proof of fail-closed persistence"
+  },
+  "cross_processor_bridge": {
+    "wifi_cpu": "BCM43362 Cortex-M3",
+    "rng_cpu": "modem DSP2 Hexagon",
+    "direct_call_possible": false,
+    "existing_host_rx": "0xcf4b38: Broadcom event parse at0xd00cd8 or normal Ethernet path0xf74428",
+    "rng_request_in_existing_wifi_handler_proven": false
+  },
+  "disassembly_checked_edges": 11,
+  "direct_call_sites_in_nonpaged_code": [
+    {
+      "site": "0xd46728",
+      "kind": "call",
+      "destination": "0x12c4b48"
+    },
+    {
+      "site": "0x12c4b74",
+      "kind": "jump",
+      "destination": "0x1727f18"
+    },
+    {
+      "site": "0x1727f30",
+      "kind": "jump",
+      "destination": "0x172ece0"
+    },
+    {
+      "site": "0x1727f54",
+      "kind": "call",
+      "destination": "0x1727f18"
+    },
+    {
+      "site": "0x1727f70",
+      "kind": "call",
+      "destination": "0x1727f18"
+    },
+    {
+      "site": "0x172cb40",
+      "kind": "call",
+      "destination": "0x1727f18"
+    },
+    {
+      "site": "0x172e040",
+      "kind": "call",
+      "destination": "0x1727f18"
+    },
+    {
+      "site": "0x172e84c",
+      "kind": "call",
+      "destination": "0x1727f18"
+    },
+    {
+      "site": "0x172ee34",
+      "kind": "call",
+      "destination": "0x172f720"
+    },
+    {
+      "site": "0x172ee64",
+      "kind": "call",
+      "destination": "0x172ece0"
+    },
+    {
+      "site": "0x172eeb4",
+      "kind": "call",
+      "destination": "0x172ece0"
+    },
+    {
+      "site": "0x172f2a0",
+      "kind": "call",
+      "destination": "0x172f720"
+    },
+    {
+      "site": "0x172f304",
+      "kind": "call",
+      "destination": "0x172ee8c"
+    },
+    {
+      "site": "0x173a998",
+      "kind": "call",
+      "destination": "0x172ece0"
+    },
+    {
+      "site": "0x17448dc",
+      "kind": "call",
+      "destination": "0x12c4b48"
+    },
+    {
+      "site": "0x17498ac",
+      "kind": "call",
+      "destination": "0x12c4b48"
+    },
+    {
+      "site": "0x174aa30",
+      "kind": "call",
+      "destination": "0x12c4b48"
+    }
+  ],
+  "limitations": [
+    "Modern LLVM disassembly is an analysis aid; Hexagon v3 instruction semantics/ABI are not execution-validated",
+    "No complete entropy or cipher audit; names and SSL use do not establish security",
+    "No live RNG call, persistent-seed read/write, internal-task-message injection or firmware patch",
+    "No modem-to-Wi-Fi entropy/clock/persistent-state bridge exists yet",
+    "Public address search did not identify the MMIO source; unrelated SoCs were not used as evidence"
+  ],
+  "next_required_work": [
+    "Trace ownership and sender of internal request0x470001, and any existing authenticated transport to Wi-Fi host driver",
+    "Determine0x8d700008 source and seed/reseed readiness/failure semantics before trusting output",
+    "If no usable bridge exists, evaluate safe Wi-Fi memory overlays while retaining entropy validation; do not silently reuse fixed per-build material",
+    "Finish reusable reboot/rekey/reconnect and full Wi-Fi data-plane acceptance"
+  ],
+  "goal_complete": false
+}

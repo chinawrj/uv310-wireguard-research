@@ -1,0 +1,241 @@
+{
+  "count": 512,
+  "min": 390589,
+  "max": 420834,
+  "median": 391014.5,
+  "unique_values": 239,
+  "most_common": [
+    [
+      390669,
+      25
+    ],
+    [
+      390689,
+      22
+    ],
+    [
+      390708,
+      21
+    ],
+    [
+      390649,
+      19
+    ],
+    [
+      390728,
+      18
+    ],
+    [
+      390748,
+      17
+    ],
+    [
+      390629,
+      14
+    ],
+    [
+      391035,
+      14
+    ],
+    [
+      390768,
+      13
+    ],
+    [
+      390729,
+      11
+    ],
+    [
+      390688,
+      11
+    ],
+    [
+      390709,
+      11
+    ]
+  ],
+  "longest_identical_run": 1,
+  "adjacent_equal_count": 0,
+  "train_count": 256,
+  "held_out_count": 256,
+  "train_test_empirical_total_variation": 0.578125,
+  "predictors": [
+    {
+      "predictor": "fixed_training_mode",
+      "test_exact_hits": 7,
+      "test_total": 256,
+      "test_accuracy": 0.02734375,
+      "training": {
+        "value": 390669
+      }
+    },
+    {
+      "predictor": "previous_value",
+      "test_exact_hits": 0,
+      "test_total": 256,
+      "test_accuracy": 0.0,
+      "training": "no fitting; causal previous observed sample"
+    },
+    {
+      "predictor": "training_selected_lag_copy",
+      "test_exact_hits": 11,
+      "test_total": 256,
+      "test_accuracy": 0.04296875,
+      "training": {
+        "selected_lag": 21,
+        "candidates": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "selection_indices": [
+          32,
+          255
+        ]
+      }
+    },
+    {
+      "predictor": "training_modal_difference",
+      "test_exact_hits": 11,
+      "test_total": 256,
+      "test_accuracy": 0.04296875,
+      "training": {
+        "difference": 119
+      }
+    },
+    {
+      "predictor": "training_transition_order1",
+      "test_exact_hits": 70,
+      "test_total": 256,
+      "test_accuracy": 0.2734375,
+      "training": {
+        "contexts": 133,
+        "unseen_context_fallback": "order1 then fixed training mode"
+      }
+    },
+    {
+      "predictor": "training_transition_order2",
+      "test_exact_hits": 69,
+      "test_total": 256,
+      "test_accuracy": 0.26953125,
+      "training": {
+        "contexts": 211,
+        "unseen_context_fallback": "order1 then fixed training mode"
+      }
+    },
+    {
+      "predictor": "training_selected_phase_mode",
+      "test_exact_hits": 14,
+      "test_total": 256,
+      "test_accuracy": 0.0546875,
+      "training": {
+        "period": 27,
+        "phase_modes": [
+          391014,
+          390629,
+          390748,
+          391014,
+          390669,
+          390708,
+          391014,
+          390669,
+          390669,
+          391035,
+          390629,
+          390748,
+          390995,
+          390629,
+          390748,
+          391035,
+          390649,
+          390688,
+          391035,
+          390669,
+          390688,
+          390975,
+          390729,
+          390669,
+          391034,
+          390769,
+          390728
+        ],
+        "candidates": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ]
+      }
+    }
+  ],
+  "entropy_bits_estimated": false,
+  "secure_entropy_established": false,
+  "limitations": [
+    "512 samples from one instrumented startup are insufficient for source validation",
+    "Prediction success demonstrates predictability; prediction failure does not establish unpredictability",
+    "Held-out samples are a continuation of the same boot, not an independent reboot/run",
+    "Phase and lag choices use training only; model list and offsets are fixed before physical capture",
+    "Timing includes sampling/scheduler/instrumentation work and may include interrupts",
+    "Counts are DWT-cycle deltas, not nanoseconds, output bits, or WireGuard performance"
+  ],
+  "analysis_completed": true,
+  "sample_start_index": 612,
+  "physical_startup_result": 0
+}

@@ -1,0 +1,26 @@
+{
+  "device_access_this_round": false,
+  "device_writes_this_round": false,
+  "device_reset_this_round": false,
+  "host_network_changes_this_round": false,
+  "last_live_precheck": "evidence/bridge-precheck.json",
+  "goal_complete": false,
+  "secure_entropy_established": false,
+  "streaming_variant_offline_verified": true,
+  "upstream_core_preserved": true,
+  "mathematical_comparisons": 3788,
+  "negative_controls": 3,
+  "startup_failure_heap_before": 11008,
+  "startup_failure_heap_after": 2808,
+  "upstream_code_before": 16020,
+  "variant_code_after": 16148,
+  "combined_wireguard_fit_proven": false,
+  "timing_changed_requires_new_assessment": true,
+  "next_required_work": [
+    "Implement bounded/cooperative startup before any full-library live entropy probe; unmodified startup is synchronous and no long idle-blocking budget is verified",
+    "Reassess real timing/entropy using this exact streaming variant; online GCD changes the measured inter-sample work, so old captures are not applicable",
+    "Establish simultaneous WireGuard and entropy code/state/heap/stack budget; historical passive-probe free heap is not free heap after WireGuard deployment",
+    "Continue modem RNG bridge as the alternative if safe coexistence cannot be established",
+    "Complete trusted entropy and time/persistent state, reusable boot, rekey/reconnect, full Wi-Fi routing/DNS/MTU and UDP performance"
+  ]
+}

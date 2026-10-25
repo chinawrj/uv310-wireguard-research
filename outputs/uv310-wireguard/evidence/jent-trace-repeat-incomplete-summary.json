@@ -1,0 +1,14 @@
+{
+  "startup_health_passed": true,
+  "valid_raw_prefix_samples": 464,
+  "missing_samples": 48,
+  "missing_pages": [
+    31,
+    32,
+    33
+  ],
+  "full_capture": false,
+  "frozen_cross_boot_score_not_computed_for_this_partial_capture": true,
+  "rollback_complete": true,
+  "export_error": "No valid running page or incomplete terminal diagnostic pages"
+}

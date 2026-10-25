@@ -1,0 +1,16 @@
+{
+  "rtecdc.bin": [
+    "5.90.125.14",
+    "%s: Broadcom SDPCMD CDC driver",
+    "wl%d: Broadcom BCM%04x 802.11 Wireless Controller %s",
+    "RTE (%s-%s%s%s) %s on BCM%s r%d @ %d.%d/%d.%d/%d.%dMHz",
+    "43362a0-roml/sdio-g-pool-wme-apsta-idauth Version: 5.90.125.14 CRC: c9847a93 Date: Wed 2011-05-18 15:33:10 CSTn"
+  ],
+  "rtecdc_new.bin": [
+    "5.90.153.52.1",
+    "%s: Broadcom SDPCMD CDC driver",
+    "wl%d: Broadcom BCM%04x 802.11 Wireless Controller %s",
+    "RTE (%s-%s%s%s) %s on BCM%s r%d @ %d.%d/%d.%d/%d.%dMHz",
+    "43362a2-roml/sdio-apsta-idsup-idauth-pno Version: 5.90.153.52 CRC: 1666babf Date: Sun 2012-01-15 08:05:50 PSTm"
+  ]
+}

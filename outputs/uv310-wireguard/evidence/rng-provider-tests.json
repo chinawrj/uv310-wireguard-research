@@ -1,0 +1,116 @@
+{
+  "scope": "Synthetic Cortex-M3 protocol/native-adapter tests; no device runtime claim",
+  "adapter_suites": [
+    {
+      "name": "baseline",
+      "passed": true,
+      "elf_sha256": "0b220c46c157096d5f07bcfa32ab5a42acab604f58581f9e7085d5db5aeb3b79"
+    },
+    {
+      "name": "BAD_RESPONSE",
+      "passed": true,
+      "elf_sha256": "c08214ee8aa8dbd4a576d5e145453324651cf194ba833fce3025348609733bd4"
+    },
+    {
+      "name": "RETRY",
+      "passed": true,
+      "elf_sha256": "23330e02898ea96202f5c175b445306fa6db17a26636520ffc35ebdbdf6cfa18"
+    },
+    {
+      "name": "EXPIRED_INIT",
+      "passed": true,
+      "elf_sha256": "2098d26bacc2e699342fbcf3bd69a1db7db78cf11dfc8e1c7a62c404255b19ed"
+    },
+    {
+      "name": "EXPIRED_KEEPALIVE",
+      "passed": true,
+      "elf_sha256": "6e7d4f857f418e2bb3333aaf3c889056adc651a9e25289031982ca405e2c7630"
+    },
+    {
+      "name": "WRAP_EXPIRY",
+      "passed": true,
+      "elf_sha256": "d670784d42cb874274572f1956e4fc21977e1bb1ce831a43474b773b4352f10a"
+    },
+    {
+      "name": "ALLOC_EXPIRY",
+      "passed": true,
+      "elf_sha256": "8a78b858e36af57c0619f815b4f5ef0fcc75eb285a8dc833c73da6d26b7011dc"
+    },
+    {
+      "name": "PUBLISH_RACE",
+      "passed": true,
+      "elf_sha256": "1a9b877927b206ecab5bc312d9f3d853a8b2347e0c432156fe0edadc68607b92"
+    },
+    {
+      "name": "LIVE_BOUNDARY",
+      "passed": true,
+      "elf_sha256": "d7759d17704fbfb7aa64265c778efc5f17d22b71a3f96a55bdd6f04dd7940956"
+    },
+    {
+      "name": "RNG_EMPTY",
+      "passed": true,
+      "elf_sha256": "a12cbd8835ccf40954dede1377543d1ec92eadd0824c4d9359a07eb6cded74db"
+    },
+    {
+      "name": "RNG_POSITION_INVALID",
+      "passed": true,
+      "elf_sha256": "19119eab4db8958a60eac4d936177656d9613f3e0d517d58c0135b5a61955f59"
+    }
+  ],
+  "index_cases_rechecked": 16,
+  "provider_failure_cases": 8,
+  "core_suites": [
+    {
+      "name": "index",
+      "passed": true,
+      "elf_sha256": "78eba0e508d7021b102365c2c02d099fd398e405e461e578267156d38ec19bc8"
+    },
+    {
+      "name": "provider",
+      "passed": true,
+      "elf_sha256": "9442a80fff8c74df9a3045a3b9ff6703690bab16f0a1ca63af978425d909de6d"
+    }
+  ],
+  "provider_failure_paths": [
+    "device cookie secret at initialization",
+    "initiator ephemeral",
+    "initiator index",
+    "responder ephemeral",
+    "responder index",
+    "cookie nonce",
+    "expired cookie secret during reply",
+    "expired cookie secret during mac2 verification"
+  ],
+  "positive_cookie_mac_and_recovery_checked": true,
+  "partial_output_on_failure_simulated": true,
+  "whole_current_keypair_preserved_in_handshake_failures": true,
+  "native_exhaustion_and_position_overflow_rejected_before_submit": true,
+  "negative_control_ignored_status_detected": true,
+  "sections_including_test_instrumentation": {
+    ".vectors": 8,
+    ".start": 156,
+    ".hook": 4,
+    ".tests": 3392,
+    ".probe": 14888,
+    ".state": 1820,
+    ".version": 192,
+    ".teststate": 4628
+  },
+  "source_sha256": {
+    "wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "wireguard.h": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d",
+    "checked-random.h": "dc2d1c8043ae45348a3073d8048213fbfe39b02bf7a9f828cf5941276f9f27ea",
+    "native.c": "9ad1d379562ee5e6f585c4a069786875c1a2ad7f0fcd3e5d9c70ad86a92452da",
+    "provider-tests.c": "c155b3730eb7f8e3cfa13af0b858a61f4a2fbd0a561757724b4eebca15b8b7b0",
+    "index-tests.c": "2e6e38fabb5adcc526125aee20cac539852120e74adcdba3cadf487bea51b73c",
+    "adapter-tests.c": "b034f5106654754910017a0b88f7390607fa5c953d387f322e0b51c15dc2334e"
+  },
+  "api_change": "wireguard_create_cookie_reply now returns bool; callers must check before send. Platform must implement wireguard_random_bytes_checked.",
+  "limitations": [
+    "Provider must still be bounded and backed by a qualified entropy source",
+    "No secure entropy qualification or reboot/rekey implementation",
+    "Finite synthetic pool adapter remains a test implementation, not standalone device RNG",
+    "No live image built or deployed"
+  ],
+  "goal_complete": false
+}

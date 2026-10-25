@@ -1,0 +1,12 @@
+[
+  {
+    "command": "AT^PROJECTNAME",
+    "response": "AT^PROJECTNAME\r\r\nERROR\r\n",
+    "bytes": 24
+  },
+  {
+    "command": "AT^PROJECTNAME?",
+    "response": "AT^PROJECTNAME?\r\r\n^PROJECTNAME:MDM9600\tUV310\r\n\r\nOK\r\n",
+    "bytes": 52
+  }
+]

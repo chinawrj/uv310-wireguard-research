@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-25T21:26:11.867704+00:00",
+  "temporary_ipv4": "192.168.100.250",
+  "default_route_changed": false,
+  "dns_changed": false,
+  "device_http_method": "GET",
+  "address_add_exit": 1,
+  "address_add_error": "sudo: a password is required",
+  "temporary_address_absent": true
+}

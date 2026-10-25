@@ -1,0 +1,36 @@
+{
+  "phase": "candidate",
+  "software_restart": true,
+  "physical_power_removal": false,
+  "direct_file_writes": false,
+  "candidate_phase_calls_efs_restore": true,
+  "events": [],
+  "active_before_sha256": "a0dd391a08d715051fdd83c4c70432c2ee37c653ae296c89c105b98386bac56e",
+  "diag_enter_reply": "3a",
+  "dmss_parameters_verified": true,
+  "reset_reply": "02",
+  "cd_settle_wait_seconds": 6,
+  "verified_cd_eject": "Disk disk8 ejected",
+  "restore_attempts": [
+    {
+      "attempt": 1,
+      "returncode": 1
+    },
+    {
+      "attempt": 2,
+      "returncode": 0
+    }
+  ],
+  "stored_stock_restored_before_client_test": true,
+  "rows": [
+    {
+      "command": "AT+CPIN?",
+      "response": "AT+CPIN?\r\r\n+CME ERROR: SIM busy\r\n"
+    },
+    {
+      "command": "AT+WIFI?",
+      "response": "AT+WIFI?\r\r\n+WIFI:1\r\n\r\nOK\r\n"
+    }
+  ],
+  "workflow_finished": true
+}

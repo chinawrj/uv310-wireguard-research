@@ -1,0 +1,26 @@
+{
+  "goal_complete": false,
+  "device_modified_this_round": false,
+  "device_reset_this_round": false,
+  "current_wireguard_running": false,
+  "both_at_ports_silent": true,
+  "efs_stat_timeout": true,
+  "diag_identity_responsive": true,
+  "transport_root_cause_proven": false,
+  "offline_core_fix_verified": true,
+  "fixed_core_path": "work/uv310-wireguard/rng-failclosed/wireguard.c",
+  "fixed_core_sha256": "54422fddf0cb6c7c39d091f39ec83126070c4e7815c18b73454c769cc90451e2",
+  "adapter_test_suites": 9,
+  "rng_fault_cases": 16,
+  "original_negative_control_timeout": true,
+  "code_size_delta_in_same_qemu_harness": 56,
+  "persistence_instruction_checks": 17,
+  "persistent_counter_verified": false,
+  "next_required_work": [
+    "Restore and characterize stable control/runtime before additional live firmware changes: both AT ports silent and EFS STAT timeout while exact DIAG identity responds; do not infer firmware corruption or DTR requirement",
+    "Use rng-failclosed/wireguard.c for subsequent isolated integration: index selection is bounded and both handshake constructors reject/clear failed output; do not deploy old keyed images",
+    "Add explicit error propagation for a future returning/failing entropy provider, then implement fresh-key rekey/reconnect lifecycle with synthetic tests before live use",
+    "Persistent path needs a verified separate durable API/bridge; ASP read-and-clear only changes existing RAM state and whole-config commit is not proven crash-safe",
+    "Still complete secure freshness/persistence, repeatable device startup, Wi-Fi full-route validation and UDP performance against the already-created dedicated peer"
+  ]
+}

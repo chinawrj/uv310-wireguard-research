@@ -1,0 +1,71 @@
+{
+  "scope": "Static analysis of exact stock Hexagon code; no runtime file/config writes",
+  "source_sha256": {
+    "dsp2-code.bin": "9bcdfd03028be95c1f6285c299e359d79be8e6e4e2f7e06191293b452dd17076",
+    "dsp2-rodata.bin": "588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f"
+  },
+  "static_instruction_checks": 17,
+  "registration_names": [
+    "asp_get",
+    "asp_match",
+    "getCfgGeneral",
+    "getCfgZero"
+  ],
+  "asp_get": {
+    "entry": "0x1830650",
+    "read_callback": "0x182fc98",
+    "second_argument_behavior": "When second arg equals string 0, call setter with EMPTY string; not arbitrary-value setter",
+    "clear_call": "0x1830a7c",
+    "live_clear_test_performed": false
+  },
+  "config_request": {
+    "setter": "0x182fc08",
+    "getter": "0x182fc98",
+    "shared_request": "0x254c2c8",
+    "layout": {
+      "8": "key pointer",
+      "12": "operation byte:0 read,1 RAM update,2 persistence commit",
+      "16": "value/output pointer",
+      "20": "completion signal/task reference",
+      "32": "status byte"
+    },
+    "enqueue": "0x182d054 -> 0x12b4d08 queue0x2f00664",
+    "dispatcher": "0x182daa0",
+    "addresses_are_internal_not_wire_commands": true
+  },
+  "ram_update": {
+    "entry": "0x182d268",
+    "list": "0x2f00674+0x14",
+    "existing_key_search": true,
+    "new_key_creation_in_this_setter": false,
+    "max_copied_value_bytes": 1499,
+    "rejects_CR_LF": true,
+    "allocates_replacement_value": true,
+    "durable_write_in_this_bounded_function": false
+  },
+  "commit_path": {
+    "entry": "0x182d9d8",
+    "file": "/web/userseting_nvconfig.txt",
+    "steps": [
+      "allocate 5120-byte serialization buffer",
+      "validate config state",
+      "0x182d214 file removal/preparation path",
+      "open target using flags0x441/mode0x1b6 at0x182da2c",
+      "serialize/write through0x182d8b8",
+      "close through0x182d118",
+      "follow-up call0x117db58"
+    ],
+    "atomic_rename_or_journal_verified": false,
+    "power_loss_durability_verified": false,
+    "api_failure_checks_complete": false
+  },
+  "correction": "0x18362d8 references /web/update_skip; it is not the generic configuration database commit function",
+  "decision": "Do not use asp_get clear or normal whole-config save as a proven crash-safe WireGuard boot counter. Need a verified separate durable-state bridge/API.",
+  "limitations": [
+    "Modern LLVM Hexagon v3 disassembly is not execution-validated; same-packet register reads use old values",
+    "Storage helper names/semantics inferred from local control flow; no power-loss test or filesystem guarantees established",
+    "No generic remotely callable persistence primitive established",
+    "No user configuration/seed values read or modified"
+  ],
+  "goal_complete": false
+}

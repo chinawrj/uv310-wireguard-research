@@ -1,0 +1,148 @@
+{
+  "candidate_sha256": "19cbd4215a8dc561bd13eb95a154678036cc6752a5e7dd8b87f3fd155349e387",
+  "first_capture_passed": false,
+  "original_failure_preserved": true,
+  "first_reported_sample_pairs": 8,
+  "quiet_boot_capture_passed": true,
+  "quiet_before_first_query_seconds": 55,
+  "sample_pairs": 512,
+  "memory_and_hash_raw_values_exported": 1024,
+  "statistics": {
+    "memory": {
+      "samples": 512,
+      "unique_values": 9,
+      "min_cycles": 4119,
+      "max_cycles": 11959,
+      "median_cycles": 4119.0,
+      "mode_cycles": 4119,
+      "mode_count": 503,
+      "most_common": [
+        [
+          4119,
+          503
+        ],
+        [
+          11951,
+          2
+        ],
+        [
+          11954,
+          1
+        ],
+        [
+          11949,
+          1
+        ],
+        [
+          11952,
+          1
+        ],
+        [
+          11948,
+          1
+        ],
+        [
+          11953,
+          1
+        ],
+        [
+          11959,
+          1
+        ]
+      ],
+      "longest_identical_run": 67,
+      "adjacent_equal": 493
+    },
+    "sha3": {
+      "samples": 512,
+      "unique_values": 82,
+      "min_cycles": 91284,
+      "max_cycles": 110776,
+      "median_cycles": 99117.0,
+      "mode_cycles": 91284,
+      "mode_count": 184,
+      "most_common": [
+        [
+          91284,
+          184
+        ],
+        [
+          99117,
+          37
+        ],
+        [
+          99118,
+          35
+        ],
+        [
+          99121,
+          33
+        ],
+        [
+          99120,
+          32
+        ],
+        [
+          99119,
+          26
+        ],
+        [
+          99122,
+          22
+        ],
+        [
+          99116,
+          14
+        ]
+      ],
+      "longest_identical_run": 6,
+      "adjacent_equal": 85
+    }
+  },
+  "context_ipsr": 0,
+  "context_primask": 0,
+  "allocation_failures": 0,
+  "last_sample_cached_tick": 267730,
+  "first_idle_cached_tick": 243,
+  "control_error_replies_during_quiet_capture": 17,
+  "stopped_at_sample_limit": true,
+  "sample_limit_verified_after_traffic": true,
+  "descriptive_prediction_checks": {
+    "memory": {
+      "mode_trained_first_half": 4119,
+      "held_out_constant_prediction_hits": 252,
+      "held_out_mod16_prediction_hits": 252,
+      "held_out_samples": 256,
+      "zero_first_differences": 493,
+      "zero_second_differences": 484,
+      "differences_not_health_test_or_certification": true
+    },
+    "sha3": {
+      "mode_trained_first_half": 91284,
+      "held_out_constant_prediction_hits": 95,
+      "held_out_mod16_prediction_hits": 90,
+      "held_out_samples": 256,
+      "zero_first_differences": 85,
+      "zero_second_differences": 35,
+      "differences_not_health_test_or_certification": true
+    }
+  },
+  "stock_wifi_dns_https_after_sampling_passed": true,
+  "actual_entropy_rate_established": false,
+  "jitterentropy_collector_ported": false,
+  "safe_reboot_entropy_implemented": false,
+  "stock_restored_and_rebooted": true,
+  "research_files_removed": true,
+  "sim_ready": true,
+  "wifi_up": true,
+  "host_wifi_restored": true,
+  "device_internal_wireguard_running": false,
+  "goal_complete": false,
+  "production_ready": false,
+  "next_required_work": [
+    "Assess the raw timing distributions and repeated-boot variability against actual entropy-source requirements; do not credit entropy merely because deltas differ",
+    "Compare lower-cost clock-only and memory/hash controls if startup/query interference remains unresolved",
+    "Port vetted conditioning/health checks with measured resource budget only if source assessment supports it; otherwise pursue modem secure RNG or durable state bridge",
+    "Implement reusable cross-boot freshness, rekey/reconnect and full Wi-Fi routing before autonomous WG acceptance"
+  ]
+}

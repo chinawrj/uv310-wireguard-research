@@ -1,0 +1,48 @@
+{
+  "goal_complete": false,
+  "current_wireguard_running": false,
+  "stock_restored_and_rebooted": true,
+  "research_files_removed": true,
+  "sim_ready": false,
+  "wifi_driver_isup": 1,
+  "context_pointer_probe_live_passed": true,
+  "rom_random_helper_live_call_returned": true,
+  "diagnostic_bytes_captured": 64,
+  "unique_16bit_words": 32,
+  "secure_entropy_established": false,
+  "wireguard_keys_generated_from_capture": false,
+  "new_wireguard_or_performance_test": false,
+  "late_at_silent": true,
+  "late_diag_identity_responsive": true,
+  "current_wifi_driver_readiness_unknown": true,
+  "sample_probe_code_bytes": 751,
+  "sample_reserved_bytes": 2928,
+  "transport_root_cause_proven": false,
+  "analysis_code_frozen_before_capture": true,
+  "context": {
+    "wl": "0x38d3c",
+    "pub": "0x2e90c",
+    "wlc": "0x2e9cc",
+    "register_base": "0x18001000",
+    "register_address": "0x1800165a",
+    "helper_thumb_entry": "0x822715",
+    "dispatch_slot": "0xa20",
+    "dispatch_value": "0x82271d"
+  },
+  "linear_model": {
+    "train_transitions": 16,
+    "heldout_transitions": 15,
+    "basis_rank": 14,
+    "training_consistent": false,
+    "test_predictions_in_train_span": 0,
+    "test_exact_hits": 0,
+    "not_refit_on_test": true
+  },
+  "next_required_work": [
+    "Wi-Fi through device-internal WireGuard remains the primary objective; retain existing first-session dataplane evidence and dedicated peer",
+    "Do not equate a successful ROM register read with cryptographic entropy; establish the exact BCM43362 random-source design/seed behavior or a trusted modem RNG bridge",
+    "Evaluate a one-time provisioned secret plus crash-safe persistent state/monotonic handshake timestamp as an alternative to relying solely on unqualified hardware entropy; device-side persistence API and rollback behavior must be proven first",
+    "Fix transport readiness/session behavior using bounded read-only checks before further EFS mutations; independent processes worked but did not eliminate all timeouts",
+    "Complete repeatable boot, fresh handshake/rekey and reconnect before new Wi-Fi routing/UDP performance acceptance; do not reuse previous per-build test keys"
+  ]
+}

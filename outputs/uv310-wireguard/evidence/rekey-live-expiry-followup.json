@@ -1,0 +1,129 @@
+{
+  "statuses": [
+    {
+      "E": {
+        "attempts": 3,
+        "control_ready": 0,
+        "control_kind": 2,
+        "control_packet": 0,
+        "submitted": 21,
+        "freed": 21,
+        "free_payload_delta": 580,
+        "free_header_delta": 8,
+        "keepalive_tx": 18,
+        "last_send": 411849,
+        "source_context": 113912,
+        "destination_context": 113824,
+        "send_ipsr": 16,
+        "send_mask": 0,
+        "control_errors": 0,
+        "clock": 455856
+      },
+      "R": {
+        "renewals": 2,
+        "handshake_failures": 0,
+        "rng_failed": 0,
+        "pool_bytes": 512,
+        "session_start": 311729,
+        "key_age": 144127,
+        "current_index": 217892662,
+        "previous_index": 0,
+        "current_valid": 1,
+        "previous_valid": 0,
+        "lab_started": 1,
+        "lab_elapsed": 389401,
+        "lab_limit": 360000,
+        "stopped": 1,
+        "allocation_failures": 13,
+        "clock": 455856
+      },
+      "A": {
+        "phase": 255,
+        "err": 233,
+        "tx_count": 3,
+        "rx_count": 3,
+        "rng_pos": 140,
+        "init_time": 0,
+        "response_time": 131,
+        "receive_len": 92,
+        "worker_count": 1699,
+        "f_tx": 155,
+        "f_rx": 169,
+        "f_drop": 84,
+        "f_out_bytes": 12341,
+        "f_in_bytes": 39845,
+        "allocation_failures": 13,
+        "clock": 455856
+      }
+    },
+    {
+      "E": {
+        "attempts": 3,
+        "control_ready": 0,
+        "control_kind": 2,
+        "control_packet": 0,
+        "submitted": 21,
+        "freed": 21,
+        "free_payload_delta": 580,
+        "free_header_delta": 8,
+        "keepalive_tx": 18,
+        "last_send": 411849,
+        "source_context": 113912,
+        "destination_context": 113824,
+        "send_ipsr": 16,
+        "send_mask": 0,
+        "control_errors": 0,
+        "clock": 461858
+      },
+      "R": {
+        "renewals": 2,
+        "handshake_failures": 0,
+        "rng_failed": 0,
+        "pool_bytes": 512,
+        "session_start": 311729,
+        "key_age": 150129,
+        "current_index": 217892662,
+        "previous_index": 0,
+        "current_valid": 1,
+        "previous_valid": 0,
+        "lab_started": 1,
+        "lab_elapsed": 395403,
+        "lab_limit": 360000,
+        "stopped": 1,
+        "allocation_failures": 13,
+        "clock": 461858
+      },
+      "A": {
+        "phase": 255,
+        "err": 233,
+        "tx_count": 3,
+        "rx_count": 3,
+        "rng_pos": 140,
+        "init_time": 0,
+        "response_time": 131,
+        "receive_len": 92,
+        "worker_count": 1699,
+        "f_tx": 155,
+        "f_rx": 169,
+        "f_drop": 86,
+        "f_out_bytes": 12341,
+        "f_in_bytes": 39845,
+        "allocation_failures": 13,
+        "clock": 461858
+      }
+    }
+  ],
+  "query_errors": [
+    "AssertionError(('Missing rekey pages', [], ['AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n', 'AT+WL=wl ver\\r\\r\\nERROR\\r\\n']))"
+  ],
+  "passed": true,
+  "same_ram_session": true,
+  "expiry": {
+    "ping_returncode": 2,
+    "ping_output": "PING 192.168.123.1 (192.168.123.1) from 192.168.100.100: 56 data bytes\nRequest timeout for icmp_seq 0\n\n--- 192.168.123.1 ping statistics ---\n2 packets transmitted, 0 packets received, 100.0% packet loss\n",
+    "native_tx_delta": 0,
+    "drop_delta": 2,
+    "control_submitted_delta": 0,
+    "passed": true
+  }
+}

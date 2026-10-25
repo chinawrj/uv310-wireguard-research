@@ -1,0 +1,9 @@
+{
+  "ipv4_mode_dhcp": true,
+  "en0_ipv4": [
+    "192.168.1.195"
+  ],
+  "temporary_ipv4_absent": true,
+  "host_wifi_restore_ui_requested": true,
+  "original_wifi_connected_ui_verified": true
+}

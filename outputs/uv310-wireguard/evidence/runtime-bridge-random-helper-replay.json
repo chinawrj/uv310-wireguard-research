@@ -1,0 +1,99 @@
+{
+  "scope": "Actual ROM dispatch stub and function instructions; synthetic context/MMIO/output buffer in Unicorn",
+  "rom_sha256": "f96f3e5f1dd2352a71b777ce4fc586cefdc2c62977eae3cef0a82461a8ae5bb4",
+  "ram_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "dispatch_stub": "0x822714 Thumb",
+  "dispatch_slot": "0xa20",
+  "target_thumb_pointer": "0x82271d",
+  "inferred_abi": {
+    "r0": "context; word at +0xc points to register block",
+    "r1": "output pointer; null performs no reads",
+    "r2": "signed byte count; tested nonnegative 0..32",
+    "register_offset": "0x65a, 16-bit reads",
+    "byte_order": "16-bit pairs high byte then low byte; odd final byte takes low byte of next read"
+  },
+  "tests": [
+    {
+      "bytes_requested": 0,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 0,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 1,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 1,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 2,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 1,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 3,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 2,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 16,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 8,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 31,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 16,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 32,
+      "null_output": false,
+      "constant_zero_register": false,
+      "register_reads": 16,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 32,
+      "null_output": true,
+      "constant_zero_register": false,
+      "register_reads": 0,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    },
+    {
+      "bytes_requested": 32,
+      "null_output": false,
+      "constant_zero_register": true,
+      "register_reads": 16,
+      "output_and_guards_verified": true,
+      "sp_and_r4_preserved": true
+    }
+  ],
+  "constant_zero_register_copied_without_failure": true,
+  "limitations": [
+    "No real register sampled; no entropy claim",
+    "No readiness, clock, health, reseed or failure check in the bounded helper",
+    "Caller must validate context, destination and length; do not call arbitrary firmware pointers",
+    "Public D11 header naming is a cross-family clue, not proof of BCM43362 security properties"
+  ],
+  "device_access": false,
+  "secure_entropy_established": false,
+  "wireguard_running": false
+}

@@ -1,0 +1,25 @@
+{
+  "static_rng_path_located": true,
+  "ssl_rng_entry": "0x12c4b48",
+  "secrnd_task_entry": "0x172f328",
+  "candidate_persistent_seed_item": "0x1058",
+  "internal_request_response_ids": [
+    "0x470001",
+    "0x470002"
+  ],
+  "source_files_hash_pinned": 5,
+  "static_edges_checked": 11,
+  "live_rng_call_performed": false,
+  "seed_values_read": false,
+  "device_access_this_round": false,
+  "device_modified_this_round": false,
+  "cross_processor_rng_bridge_verified": false,
+  "secure_entropy_established": false,
+  "goal_complete": false,
+  "next_required_work": [
+    "Trace ownership and sender of internal request0x470001, and any existing authenticated transport to Wi-Fi host driver",
+    "Determine0x8d700008 source and seed/reseed readiness/failure semantics before trusting output",
+    "If no usable bridge exists, evaluate safe Wi-Fi memory overlays while retaining entropy validation; do not silently reuse fixed per-build material",
+    "Finish reusable reboot/rekey/reconnect and full Wi-Fi data-plane acceptance"
+  ]
+}

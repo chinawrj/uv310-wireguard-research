@@ -1,0 +1,53 @@
+{
+  "rom_sha256": "f96f3e5f1dd2352a71b777ce4fc586cefdc2c62977eae3cef0a82461a8ae5bb4",
+  "firmware_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "method": "Offline Thumb disassembly of this exact device ROM; live probe separately required",
+  "layout": {
+    "0x00": "next packet in chain",
+    "0x08": "buffer head",
+    "0x0c": "buffer end (exclusive)",
+    "0x10": "current data",
+    "0x14": "uint16 current length",
+    "0x16": "uint16 flags",
+    "0x1d": "uint8 reference count",
+    "0x20": "pool pointer if flag 0x200",
+    "0x44": "clone original pointer only when flag 0x40, otherwise normal metadata ends here"
+  },
+  "allocation": {
+    "entry": "0x806bc4",
+    "dispatch_slot": "0x18c",
+    "stock_dispatch": "0x806bcd",
+    "argument": "r0 requested length",
+    "return": "r0 lbuf pointer or null",
+    "metadata_bytes": 68,
+    "rounding": "4 bytes",
+    "max_total_bytes": 4164,
+    "body_range": [
+      "0x806bcc",
+      "0x806c20"
+    ],
+    "creates_single_ref": true,
+    "uses_heap_allocator": "0x80640c"
+  },
+  "raw_release": {
+    "entry": "0x806c4c",
+    "dispatch_slot": "0x198",
+    "stock_dispatch": "0x806c55",
+    "argument": "r0 lbuf head",
+    "behavior": "walk next chain; pool 0x200 path resets and returns pool; otherwise refcount/clone-aware free via 0x806b84",
+    "body_range": [
+      "0x806c54",
+      "0x806c86"
+    ]
+  },
+  "accounting": {
+    "0x806d80": "OSH allocation wrapper increments owner counter for nonpool allocation",
+    "0x806d20": "OSH release wrapper optionally invokes TX callback, decrements counter for nonpool chain, then raw release",
+    "0x806d5c": "increments owner counter when importing unaccounted raw chain",
+    "0x806dd4": "decrements owner counter when exporting raw chain",
+    "sdpcm_default_entry": "0x804538 imports via 0x806d5c before framing and dispatch",
+    "wl_default_entry": "0x80fc3c imports via 0x806d5c before Wi-Fi send",
+    "inference": "At hooked ops entry raw packet ownership is likely transferred; this requires caller and live replacement verification before dropping/replacing existing packets."
+  },
+  "scope": "This analysis does not prove safe replacement/drop on every chain, clone, or pooled packet; probe does not release existing traffic packets."
+}

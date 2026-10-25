@@ -1,0 +1,40 @@
+{
+  "scope": "Offline Cortex-M3 full-core portability and resource/rejection assessment; read-only device precheck",
+  "upstream_files_blob_verified": 36,
+  "upstream_translation_units_compiled": 15,
+  "unmodified_core_compiler_optimization": "-O0",
+  "full_core_offline_linked": true,
+  "device_collector_deployed": false,
+  "production_entropy_available": false,
+  "qemu_tests_passed": true,
+  "exact_expected_errors": {
+    "zero_timer": 1,
+    "constant_timer": 2,
+    "fixed_step_timer": 10,
+    "insufficient_memory": 12
+  },
+  "upstream_code_and_constants_bytes": 16020,
+  "fixture_adapter_bytes": 432,
+  "api_caller_bytes": 50,
+  "startup_peak_fixture_heap_bytes": 11008,
+  "previous_measured_spare_heap_bytes": 19492,
+  "comparison_scope": "Prior packet-forwarder runtime measurement, not a new concurrent full-library/WireGuard measurement. All new library code would reside in SRAM in the current append layout. Fixture arena size is not an additional production requirement.",
+  "minimum_code_plus_startup_heap_bytes": 27028,
+  "direct_co_resident_fit_demonstrated": false,
+  "rand_data_bytes": 744,
+  "sha_context_bytes": 448,
+  "max_individual_compiler_frame_bytes": 808,
+  "full_stack_highwater_measured": false,
+  "device_modified_this_round": false,
+  "device_reset_this_round": false,
+  "sim_ready": true,
+  "stock_wifi_up": true,
+  "secret_material_used_by_offline_tests": false,
+  "goal_complete": false,
+  "next_required_work": [
+    "Prioritize modem-side secure RNG or a durable state bridge; direct co-resident full jitterentropy exceeds measured spare RAM before stack overhead",
+    "If pursuing jitterentropy, first demonstrate a safe overlay/reclaim or substantially different allocation scheme without altering entropy assumptions, plus bounded cooperative startup",
+    "Do not infer entropy from the 512 exploratory timing pairs or deterministic QEMU tests; real continuous-library source assessment is still absent",
+    "Finish cross-boot freshness, rekey/reconnect, full Wi-Fi routing and end-to-end performance before Goal acceptance"
+  ]
+}

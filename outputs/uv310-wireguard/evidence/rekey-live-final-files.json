@@ -1,0 +1,17 @@
+{
+  "stock_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "stock_bytes": 193315,
+  "research_files": [
+    {
+      "path": "/SyFi/brew/mod/wg_rekeylive_stock_4b86d71b.bin",
+      "errno": 2,
+      "absent": true
+    },
+    {
+      "path": "/SyFi/brew/mod/wg_rekeylive_probe_stage.bin",
+      "errno": 2,
+      "absent": true
+    }
+  ],
+  "passed": true
+}

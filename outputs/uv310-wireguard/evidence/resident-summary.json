@@ -1,0 +1,87 @@
+{
+  "goal_complete": false,
+  "wireguard_running": false,
+  "resident_runtime_hook_verified": true,
+  "resident_counter_state_retained_across_wifi_traffic": true,
+  "execution_cpu": "BCM43362 Cortex-M3",
+  "reserved_region_bytes": 624,
+  "probe_code_bytes": 48,
+  "before_traffic_counter": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "after_traffic_counter": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "original_control_after_restore": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "real_wifi_client_traffic_passed": true,
+  "traffic": {
+    "context": "Resident 48-byte Cortex-M3 version hook and counter in 624-byte reserved region; original startup file restored without reloading Wi-Fi RAM",
+    "source_ip": "192.168.100.100",
+    "interface": "en0",
+    "device_gateway_interface": "en0",
+    "ipv4_only": true,
+    "rows": [
+      {
+        "url": "http://192.168.100.1/home.asp",
+        "exit_code": 0,
+        "metrics": "200 192.168.100.100 0.044817 8200",
+        "error": ""
+      },
+      {
+        "url": "https://www.wireguard.com/",
+        "exit_code": 0,
+        "metrics": "200 192.168.100.100 1.416644 22066",
+        "error": ""
+      }
+    ],
+    "elapsed_seconds": 1.488,
+    "wireguard_tunnel_test": false
+  },
+  "full_wireguard_memory_budget_verified": false,
+  "long_term_stability_verified": false,
+  "packet_hook_abi_verified": false,
+  "stock_file_restored_and_hash_verified": true,
+  "stock_runtime_restored": true,
+  "stock_wifi_isup": 1,
+  "sim_ready": true,
+  "research_files_removed": true,
+  "host_wifi_restored": "ORIGINAL_WIFI; confirmed native UI",
+  "efs_persistent_writes": true,
+  "raw_nand_or_nv_writes": false,
+  "initial_stage_timeout": "Backup verified; candidate full size then full readback confirmed exact hash on retry; activation occurred only after verification",
+  "pending_cleanup": null,
+  "next_work": [
+    "Measure live free heap/peak allocations and size complete WireGuard code, state and buffers",
+    "Trace candidate sdpcmdev/wl tables, RX/TX ownership and ROM ABI",
+    "Integrate verified RNG/clock/timer and WireGuard core with actual forwarding",
+    "Verify device-native handshake, Wi-Fi routing, restart and UDP performance"
+  ],
+  "evidence": [
+    "resident-memory-map.json",
+    "resident-offline.json",
+    "resident-efs-stage-initial-timeout.json",
+    "resident-stage-interruption-stat.json",
+    "resident-efs-stage.json",
+    "resident-efs-activate.json",
+    "resident-cold-candidate.json",
+    "resident-query-boot.json",
+    "resident-efs-restore.json",
+    "resident-wifi-traffic.json",
+    "resident-query-after-traffic.json",
+    "resident-cold-restored.json",
+    "resident-query-final.json",
+    "resident-final-files.json",
+    "wifi-device-table-candidates.json"
+  ]
+}

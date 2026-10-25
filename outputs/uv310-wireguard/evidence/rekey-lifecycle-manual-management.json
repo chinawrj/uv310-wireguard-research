@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-25T21:27:12.655032+00:00",
+  "manual_ip_applied_via_system_settings": true,
+  "bound_interface": "en0",
+  "default_router_field_empty": true,
+  "http": {
+    "exit_code": 28,
+    "status": "000"
+  },
+  "gateway_arp_resolved": false
+}

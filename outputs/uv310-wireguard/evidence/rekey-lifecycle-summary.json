@@ -1,0 +1,27 @@
+{
+  "goal_complete": false,
+  "device_firmware_modified_this_round": false,
+  "device_reset_this_round": false,
+  "host_network_temporarily_modified": true,
+  "host_network_restored": true,
+  "device_internal_wireguard_running": false,
+  "offline_initiator_renewal_tested": true,
+  "offline_renewal_adapter_path": "work/uv310-wireguard/rekey-lifecycle/native.c",
+  "offline_only_compile_guard": true,
+  "synthetic_suites": 16,
+  "negative_controls": 3,
+  "current_wifi_association_verified": true,
+  "current_dhcp_reply_received": false,
+  "current_management_arp_resolved": false,
+  "current_management_http_reached": false,
+  "current_data_service_recovered": false,
+  "physical_power_off_duration_verified": false,
+  "full_power_removal_user_request_pending": true,
+  "secure_entropy_established": false,
+  "next_required_work": [
+    "Await requested full power removal for at least10seconds and reconnect, then revalidate control/data service before deployment. Association succeeds but DHCP and direct management ARP/HTTP fail; previous AT/EFS silence is unresolved. This is not just a USB-port issue.",
+    "Qualified bounded device RNG and reboot-safe freshness still required. Fixed synthetic RNG/TAI material must not be flashed; no existing private keyed image may be reused.",
+    "Integrate renewal with real memory/clock/packet context only after platform recovery; test worker crypto latency and packet loss, add pending receive-driven renewal/retry jitter and required peer behavior.",
+    "Complete standalone repeatable boot, full Wi-Fi route/DNS/MTU policy, stability and UDP performance against the existing dedicated WireGuard peer."
+  ]
+}

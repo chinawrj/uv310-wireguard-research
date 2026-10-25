@@ -1,0 +1,36 @@
+{
+  "objective": "Establish native execution alongside stock Wi-Fi, prerequisite to device-internal WireGuard",
+  "previous_goal_turn": "progress: live AT+WL discovery",
+  "this_goal_turn": "progress: verified EFS deployment/rollback path and obtained negative real-device boot-probe result",
+  "native_execution_proven": false,
+  "wireguard_running_on_device": false,
+  "qemu_instruction_test_passed": true,
+  "efs_roundtrip_passed": true,
+  "candidate_temporarily_installed": true,
+  "candidate_runtime_version_query": "ERROR after Wi-Fi off/on; no marker observed",
+  "rollback_file_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "rollback_runtime_version": "5.90.153.52.1",
+  "rollback_wifi_isup": 1,
+  "rollback_sim": "READY",
+  "automatic_restart_during_recovery": true,
+  "raw_nand_program_or_erase": false,
+  "persistent_efs_writes": true,
+  "active_firmware_currently_modified": false,
+  "known_probe_files_remaining": false,
+  "open_questions": [
+    "Whether reset-vector redirection is accepted by ROM/firmware initialization",
+    "Whether early probe writes occur before required hardware setup",
+    "Whether image trailer/length/CRC affects loading",
+    "Read-only diagnostic evidence is needed before another modified-image trial"
+  ],
+  "evidence_files": [
+    "boot-probe-offline.json",
+    "efs-probe-io.json",
+    "boot-probe-efs-stage.json",
+    "boot-probe-efs-activate.json",
+    "boot-probe-cycle-candidate.json",
+    "boot-probe-efs-restore.json",
+    "boot-probe-cycle-restored.json",
+    "boot-probe-final-status.json"
+  ]
+}

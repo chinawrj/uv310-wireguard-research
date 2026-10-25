@@ -1,0 +1,23 @@
+{
+  "publication_date": "2026-10-26",
+  "python_files_parsed": 47,
+  "included_upstream_blobs_verified": 21,
+  "known_private_representations_scanned": 123,
+  "known_secret_matches": 0,
+  "byte_preserved_native_memory_source": "c970ff6a685817ae96c2bd2e04460a6a302bf50c8c6a29b234b479d3041835da",
+  "native_memory_runtime_passed": false,
+  "public_stock_or_keyed_firmware_included": false,
+  "public_proprietary_rom_included": false,
+  "independent_offline_replay": {
+    "rekey-live": {
+      "suites_passed": 20,
+      "negative_controls_detected": 3,
+      "all_passed": true
+    },
+    "rekey-memory": {
+      "suites_passed": 25,
+      "negative_controls_detected": 3,
+      "all_passed": true
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "goal_complete": false,
+  "autonomous_wireguard_available": false,
+  "apsr_preserving_idle_90s_verified": true,
+  "apsr_idle_wifi_traffic_verified": true,
+  "apsr_work_events": [
+    82,
+    133,
+    174,
+    278,
+    378
+  ],
+  "autonomous_x25519_selftest_verified": true,
+  "crypto_candidate_90s_verified": true,
+  "crypto_candidate_wifi_traffic_verified": true,
+  "crypto_result": {
+    "phase": 2,
+    "iterations": 3,
+    "start_cached_tick": 15090,
+    "elapsed_cached_ticks": 1,
+    "timer_entries_before": 56,
+    "timer_entries_after": 57,
+    "primask_before": 0,
+    "primask_after": 0,
+    "ipsr_before": 0,
+    "ipsr_after": 0,
+    "output_prefix": 128154812,
+    "mismatches": 0,
+    "unused12": 0,
+    "unused13": 0,
+    "unused14": 0,
+    "unused15": 0
+  },
+  "crypto_work_events": [
+    63,
+    108,
+    161,
+    270,
+    376
+  ],
+  "after_traffic_work_events": 717,
+  "new_registered_timers": 0,
+  "user_keys_in_probe": false,
+  "performance_benchmark_performed": false,
+  "cached_tick_delta_is_not_precise_elapsed_time": true,
+  "prior_failure_root_cause_proven": false,
+  "prior_failed_probe_evidence_preserved": true,
+  "stock_restored_and_rebooted": true,
+  "stock_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "research_files_removed": true,
+  "sim_ready": true,
+  "wifi_up": true,
+  "host_wifi_restored": true,
+  "current_device_internal_wireguard_running": false,
+  "next_required_work": [
+    "Integrate prior real-peer WireGuard state machine into the bounded-live-verified APSR-preserving idle worker; remove AT query and special host trigger dependencies",
+    "Validate autonomous initiation/response and ordinary Wi-Fi traffic with one fresh provisioned test session; do not equate one fresh build with safe reboot persistence",
+    "Establish secure device entropy and timestamp freshness across power cycles before reusable autonomous sessions",
+    "Implement autonomous packet emission, rekey/keepalive/reconnect and fail-closed policy, then DNS/IPv6/MTU and multiple clients",
+    "Verify standalone reboot and actual UDP performance; cached clock delta from crypto probe is not a timing benchmark"
+  ]
+}

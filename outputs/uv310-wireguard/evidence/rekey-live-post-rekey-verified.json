@@ -1,0 +1,22 @@
+{
+  "original_post_harness_passed": false,
+  "original_post_harness_error_preserved": true,
+  "https": {
+    "returncode": 0,
+    "result": "200 192.168.100.100 22066 1.730218",
+    "stderr": "",
+    "native_tx_delta": 25,
+    "native_rx_delta": 37,
+    "dns_policy_scope": "Host resolver may use stock LAN DNS; HTTPS payload bound to en0 and native counters checked"
+  },
+  "expiry": {
+    "ping_returncode": 2,
+    "ping_output": "PING 192.168.123.1 (192.168.123.1) from 192.168.100.100: 56 data bytes\nRequest timeout for icmp_seq 0\n\n--- 192.168.123.1 ping statistics ---\n2 packets transmitted, 0 packets received, 100.0% packet loss\n",
+    "native_tx_delta": 0,
+    "drop_delta": 2,
+    "control_submitted_delta": 0,
+    "passed": true
+  },
+  "supplemental_expiry_source": "rekey-live-expiry-followup.json",
+  "passed": true
+}

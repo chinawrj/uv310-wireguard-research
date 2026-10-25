@@ -1,0 +1,104 @@
+{
+  "scope": "Actual known firmware link addresses with synthetic config and stock cached tick path; no executable image packed or deployed",
+  "source_sha256": {
+    "rekey_native": "dcf131be588697720c5c7e348161a800661a33be9519367ed2c67ec5f0dec3c8",
+    "layout_variant": "c7af2ed6857ac0c0bd4213e9fff5656e7e0d5399a783b6d25ba3c398b1678c85",
+    "core": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f"
+  },
+  "rows": [
+    {
+      "variant": "checked_baseline_256",
+      "synthetic_pool_bytes": 256,
+      "elf_sha256": "da15bb8317e5d467b6d93333f27c94f61f69ca90247392c878f7182ac65bef80",
+      "sections": {
+        ".hook": {
+          "address": "0x9df8",
+          "bytes": 4
+        },
+        ".probe": {
+          "address": "0x2f340",
+          "bytes": 13600
+        },
+        ".state": {
+          "address": "0x32860",
+          "bytes": 1820
+        },
+        ".version": {
+          "address": "0x32f7c",
+          "bytes": 192
+        }
+      },
+      "heap_start": "0x33100",
+      "reserved_bytes": 15984,
+      "extra_vs_historical_passive_probe": 13568,
+      "historical_boot_heap_projection": 10500,
+      "historical_traffic_heap_projection": 5924,
+      "below_original_stack_bottom": true,
+      "no_fixture_symbols": true
+    },
+    {
+      "variant": "renewal_256",
+      "synthetic_pool_bytes": 256,
+      "elf_sha256": "83a69e9bc86f7e2065478d6884e679338ab38091ac7628c7db5a09b36942dcbe",
+      "sections": {
+        ".hook": {
+          "address": "0x9df8",
+          "bytes": 4
+        },
+        ".probe": {
+          "address": "0x2f340",
+          "bytes": 14312
+        },
+        ".state": {
+          "address": "0x32b28",
+          "bytes": 1856
+        },
+        ".version": {
+          "address": "0x33268",
+          "bytes": 192
+        }
+      },
+      "heap_start": "0x33400",
+      "reserved_bytes": 16752,
+      "extra_vs_historical_passive_probe": 14336,
+      "historical_boot_heap_projection": 9732,
+      "historical_traffic_heap_projection": 5156,
+      "below_original_stack_bottom": true,
+      "no_fixture_symbols": true
+    },
+    {
+      "variant": "renewal_1024",
+      "synthetic_pool_bytes": 1024,
+      "elf_sha256": "e82c1c79b5ffd33581a7e4c314e08bfd2df29e959286d81f3329003a8242934c",
+      "sections": {
+        ".hook": {
+          "address": "0x9df8",
+          "bytes": 4
+        },
+        ".probe": {
+          "address": "0x2f340",
+          "bytes": 15080
+        },
+        ".state": {
+          "address": "0x32e28",
+          "bytes": 1856
+        },
+        ".version": {
+          "address": "0x33568",
+          "bytes": 192
+        }
+      },
+      "heap_start": "0x33700",
+      "reserved_bytes": 17520,
+      "extra_vs_historical_passive_probe": 15104,
+      "historical_boot_heap_projection": 8964,
+      "historical_traffic_heap_projection": 4388,
+      "below_original_stack_bottom": true,
+      "no_fixture_symbols": true
+    }
+  ],
+  "historical_heap_values_not_new_measurements": true,
+  "current_heap_peak_verified": false,
+  "hardware_abi_execution_this_round": false,
+  "goal_complete": false
+}

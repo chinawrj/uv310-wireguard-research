@@ -1,0 +1,25 @@
+{
+  "device_access_this_round": false,
+  "device_writes_this_round": false,
+  "host_network_changes_this_round": false,
+  "device_reset_this_round": false,
+  "goal_complete": false,
+  "secure_entropy_established": false,
+  "cooperative_startup_qemu_verified": true,
+  "cooperative_startup_live_verified": false,
+  "one_sample_call_per_step_verified": true,
+  "wall_time_bound_verified": false,
+  "reference_rejection_comparisons": 4,
+  "cancellation_boundaries": 9,
+  "permanent_health_faults": 2,
+  "negative_controls": 4,
+  "state_bytes": 64,
+  "resident_core_bytes": 17200,
+  "next_required_work": [
+    "Measure on-target selftest/allocation/single-sample worst latency and verify main-loop/IRQ adapter before describing startup as wall-time bounded",
+    "Assess raw source quality with exact cooperative scheduling; deterministic synthetic clock passing health checks is explicitly not entropy",
+    "Establish standalone entropy-probe memory margin and rollback; do not deploy the simultaneous WireGuard+entropy image without a measured fit",
+    "Resolve entropy/WireGuard coexistence or validated modem RNG bridge; then add safe persistent timestamp, rekey/reconnect and repeated cold boots",
+    "Complete full independent Wi-Fi routing, DNS/MTU/client policy and UDP performance against the actual peer"
+  ]
+}

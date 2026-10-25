@@ -1,0 +1,18 @@
+{
+  "original_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "candidate_sha256": "a0dd391a08d715051fdd83c4c70432c2ee37c653ae296c89c105b98386bac56e",
+  "candidate_bytes": 210352,
+  "code_constants_bytes": 14948,
+  "state_bytes": 1864,
+  "heap_start": "0x33600",
+  "reserved_bytes": 17264,
+  "historical_traffic_heap_projection": 4644,
+  "current_runtime_heap_verified": false,
+  "crc_check_unchanged": true,
+  "pool_bytes": 256,
+  "no_fixture_symbols": true,
+  "fresh_material_generated": true,
+  "persistent_startup_supported": false,
+  "lab_lifetime_cached_ticks": 360000,
+  "goal_complete": false
+}

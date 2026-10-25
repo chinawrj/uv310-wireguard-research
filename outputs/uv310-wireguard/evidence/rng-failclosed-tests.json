@@ -1,0 +1,92 @@
+{
+  "scope": "Synthetic Cortex-M3 native-adapter/core tests, no device deployment",
+  "adapter_suites": [
+    {
+      "name": "baseline",
+      "passed": true,
+      "elf_sha256": "6de8614c900af3c61fc7c46ec44862bb9bf3dd6c735495d0b25387d5f51c34c3"
+    },
+    {
+      "name": "BAD_RESPONSE",
+      "passed": true,
+      "elf_sha256": "0e03293cafba2c179e9cab93df58450fac7ac530262294a604f12b6be3a6aff5"
+    },
+    {
+      "name": "RETRY",
+      "passed": true,
+      "elf_sha256": "da33b5ffc2bf2d711f9050a6768fad21b4c7bf0ce336919903e0073878c44364"
+    },
+    {
+      "name": "EXPIRED_INIT",
+      "passed": true,
+      "elf_sha256": "ae93872944b13f00ba39b9d6f0d76e5c8ae005031e1a8bb59be63e75516b4a4b"
+    },
+    {
+      "name": "EXPIRED_KEEPALIVE",
+      "passed": true,
+      "elf_sha256": "9d092b225907ab0d8466accbaec5ddb67bad8f1005f05a2c4dcb580fb1555fd9"
+    },
+    {
+      "name": "WRAP_EXPIRY",
+      "passed": true,
+      "elf_sha256": "871eb8508388c9285c102bee0798b9729687d8edd1b2f256be6655e9aa328a5b"
+    },
+    {
+      "name": "ALLOC_EXPIRY",
+      "passed": true,
+      "elf_sha256": "6fef469e17b86a492953c4ed738faaba1e6dbdd381baca924a7854f17629d0cb"
+    },
+    {
+      "name": "PUBLISH_RACE",
+      "passed": true,
+      "elf_sha256": "7d98bc6d37ed69dc3343d8d2341ed798a9b329d9be23ac6b6eefbd36cafa5ada"
+    },
+    {
+      "name": "LIVE_BOUNDARY",
+      "passed": true,
+      "elf_sha256": "761bf4e0ded36ad57a4f3122128ab176db098bb8490a2d2bc3dfbee67da0c743"
+    }
+  ],
+  "fault_cases": 16,
+  "fault_case_scope": [
+    "zero and all-ones index source",
+    "collision with current,previous,next,handshake index",
+    "first usable index at draw16 accepted",
+    "first usable index at draw17 rejected",
+    "initiator and responder failure outputs+handshake zeroed",
+    "existing current transport key preserved"
+  ],
+  "selection_rng_draw_limit": 16,
+  "negative_control": {
+    "original_core_timeout_seconds": 2,
+    "timeout_observed": true,
+    "subprocess_terminated_by_test_harness": true
+  },
+  "analysis": "Bounds index generation only; does not qualify entropy or bound a blocking RNG callback",
+  "original_sections": {
+    ".vectors": 8,
+    ".start": 156,
+    ".hook": 4,
+    ".tests": 3392,
+    ".probe": 14688,
+    ".state": 1820,
+    ".version": 192,
+    ".teststate": 4628
+  },
+  "new_sections": {
+    ".vectors": 8,
+    ".start": 156,
+    ".hook": 4,
+    ".tests": 3392,
+    ".probe": 14744,
+    ".state": 1820,
+    ".version": 192,
+    ".teststate": 4628
+  },
+  "new_core_sha256": "54422fddf0cb6c7c39d091f39ec83126070c4e7815c18b73454c769cc90451e2",
+  "test_source_sha256": "9aa12e89616da5b52b625a23384fa28b79378f4d9fb1524032354d727ce5e652",
+  "no_private_inputs": true,
+  "device_deployed": false,
+  "rekey_implemented": false,
+  "goal_complete": false
+}

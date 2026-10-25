@@ -1,0 +1,153 @@
+{
+  "scope": "Synthetic Cortex-M3 integration, no real radio/clock/entropy/device deployment",
+  "suites": [
+    {
+      "name": "BASELINE",
+      "passed": true,
+      "elf_sha256": "49f392f776e59977532066480d7e0af5031aaa937ccf423e1bdb3e4c541825ff"
+    },
+    {
+      "name": "REKEY",
+      "passed": true,
+      "elf_sha256": "57e12bc3cdffa484fd96f374805d5b87e5234bbba9c796f5e2b25e60b4c1d156"
+    },
+    {
+      "name": "BAD_MAC",
+      "passed": true,
+      "elf_sha256": "4939f519cfd4d2aa54d9572ebf3f46e6cc364e1652a22d6f24889a17f60d8391"
+    },
+    {
+      "name": "BAD_AEAD",
+      "passed": true,
+      "elf_sha256": "0edadfe9faea415e6c875cd39886cf9dafc025abb4050cf504bbfa7f66add202"
+    },
+    {
+      "name": "STALE_RESPONSE",
+      "passed": true,
+      "elf_sha256": "47dec2251ef9158d01d5cfbde1f2420ead6bcc2118e2b7021ebc1390f80d46e4"
+    },
+    {
+      "name": "RNG_FAIL",
+      "passed": true,
+      "elf_sha256": "8725effdfc06a2aefe0bc10c2d7e2f1dc51ca4d09a61dc7499a23589d68820b3"
+    },
+    {
+      "name": "QUEUE_EXPIRE",
+      "passed": true,
+      "elf_sha256": "7121667db4f429ba4f9016b280e0542fc2004d90f1dc2b107e9a942eef817748"
+    },
+    {
+      "name": "RETRY",
+      "passed": true,
+      "elf_sha256": "d092451ec7029d426d51ab72626d73b51ee7ec362c378657249e7efe8437ad69"
+    },
+    {
+      "name": "RETRY_LIMIT",
+      "passed": true,
+      "elf_sha256": "7fcaa6a0e7b03fa721949e43bc7df6f769379363e22c224551e23fd400fdc392"
+    },
+    {
+      "name": "ALLOC_EXPIRE",
+      "passed": true,
+      "elf_sha256": "e314bec3d3db833e95bb489ae0a0a8a8c9ed9af330a6f257298cc7d85d9bd3a7"
+    },
+    {
+      "name": "COUNT_REKEY",
+      "passed": true,
+      "elf_sha256": "3347a2ac1de1ab1e7fdf77a105cb4e0f4a282e9334560797a6d8ac554b78c158"
+    },
+    {
+      "name": "COUNT_REJECT",
+      "passed": true,
+      "elf_sha256": "eb66ef2681b4ecf4015a4db9e58641710b0ddcedccbbc0806857663f5da15b6a"
+    },
+    {
+      "name": "WRAP",
+      "passed": true,
+      "elf_sha256": "c83e0b73869556483fb78354e9e824a883e5e089336ca1a98af55a0a1a05e247"
+    },
+    {
+      "name": "TAI_CARRY",
+      "passed": true,
+      "elf_sha256": "87777dc0037e13a6f4ad1ad4aba5edbab0d9b5f84a97515048ba035dda3a462f"
+    },
+    {
+      "name": "CLAIM_RACE",
+      "passed": true,
+      "elf_sha256": "3fbf747aff17ad3bf34551656972874b5bf6bdcf2d1aa2b2ba326262d742b592"
+    },
+    {
+      "name": "PUBLISH_EXPIRY",
+      "passed": true,
+      "elf_sha256": "76ecca0605b4cf00955e46b6ad36d95a020b8ee6a4b7c3b4a20dd475aba3cf0d"
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "reset_device",
+      "detected": true
+    },
+    {
+      "mutation": "lost_response",
+      "detected": true
+    },
+    {
+      "mutation": "reject_previous",
+      "detected": true
+    }
+  ],
+  "rekey_after_ms": 120000,
+  "reject_at_age_ms": 180000,
+  "retry_after_ms": 5000,
+  "max_cycle_tries": 18,
+  "source_sha256": {
+    "work/uv310-wireguard/rekey-lifecycle/native.c": "dcf131be588697720c5c7e348161a800661a33be9519367ed2c67ec5f0dec3c8",
+    "work/uv310-wireguard/rekey-lifecycle/tests.c": "65ed38b833c56256095150374713d63798781ad2ca1d7b62dc7acbbd4fa5917a",
+    "work/uv310-wireguard/rekey-lifecycle/native-config.h": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "work/uv310-wireguard/rekey-lifecycle/worker.inc": "c94837c526e2c9002b9e7615eab673baa627a75f8c2a828cfe6f3c21387fbff3",
+    "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "work/uv310-wireguard/rng-provider/wireguard.h": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d"
+  },
+  "sections_synthetic_link": {
+    ".vectors": {
+      "bytes": 8,
+      "address": 0
+    },
+    ".start": {
+      "bytes": 88,
+      "address": 4096
+    },
+    ".hook": {
+      "bytes": 4,
+      "address": 40440
+    },
+    ".tests": {
+      "bytes": 3421,
+      "address": 65536
+    },
+    ".probe": {
+      "bytes": 16172,
+      "address": 163840
+    },
+    ".state": {
+      "bytes": 1856,
+      "address": 180016
+    },
+    ".version": {
+      "bytes": 192,
+      "address": 181872
+    },
+    ".teststate": {
+      "bytes": 4728,
+      "address": 221184
+    }
+  },
+  "limitations": [
+    "Fixed synthetic RNG pool and TAI base are not safe standalone platform services",
+    "Worker crypto phases still drop external packets, no packet queue",
+    "No retry jitter, receive-driven early renewal or server-initiated handshake support yet",
+    "Single IPv4 client, LAN DNS bypass and IPv6 policy not expanded",
+    "No live image or throughput result"
+  ],
+  "goal_complete": false
+}

@@ -1,0 +1,154 @@
+{
+  "scope": "Exact UV310 ALKU7.3.2 own-device extracted firmware; static analysis plus separate read-only precheck",
+  "source_sha256": {
+    "dsp2-code.bin": "9bcdfd03028be95c1f6285c299e359d79be8e6e4e2f7e06191293b452dd17076",
+    "dsp2-data.bin": "b31d062ece0b896b98c33d8359dfad23cb660e17605059afc239eab13f9919c3",
+    "dsp2-rodata.bin": "588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f",
+    "dsp2-small-data.bin": "366ff74c956a4897f124072f967de5ab76f6ec728c6e85aeb7281a5c527a32f4",
+    "dsp2-paged-code.bin": "a9880ae5b3476beca54136d98f2be87bcae2273867f0cfb317b308a339a74460"
+  },
+  "static_checks": 13,
+  "firmware_execution_performed": false,
+  "device_writes": false,
+  "rng_bridge_verified": false,
+  "event_protocol_inferred": {
+    "ethertype": "0x886c",
+    "vendor_oui_offset": 19,
+    "vendor_oui_hex": "001018",
+    "user_subtype_offset": 22,
+    "user_subtype_endianness": "big",
+    "accepted_user_subtype": 1,
+    "event_header_offset": 24,
+    "event_header_copy_bytes": 48,
+    "payload_offset": 72,
+    "event_type_offset_within_header": 4,
+    "flags_offset_within_header": 2,
+    "status_offset_within_header": 8,
+    "callback_header_converted_to_host_order": true,
+    "observed_event_switch_values": [
+      5,
+      6,
+      8,
+      10,
+      11,
+      12,
+      16,
+      18,
+      54
+    ],
+    "all_input_validation_proven": false
+  },
+  "callback_layout_inferred": {
+    "context": "r19 = [receive argument r0 + 12]",
+    "raw_frame_callback_offset": "0x2b8",
+    "raw_frame_call_site": "0xcf4bec",
+    "converted_event_callback_offsets": [
+      "0x2ac",
+      "0x2b0",
+      "0x2b4"
+    ],
+    "converted_event_call_site": "0xcf4c1c",
+    "converted_event_arguments": [
+      "pointer to 48-byte stack event header",
+      "payload pointer into received packet"
+    ],
+    "packet_semantics_sequence": "  cf4c04:\t32 40 12 b0\tb0124032 { \tr18 = add(r18,#0x1)\n  cf4c08:\t00 40 74 70\t70744000   \tr0 = r20\n  cf4c0c:\t82 40 02 b0\tb0024082   \tr2 = add(r2,#0x4)\n  cf4c10:\t03 c0 82 91\t9182c003   \tr3 = memw(r2+#0x0) } ",
+    "model_test_passed": true,
+    "runtime_targets_resolved": false,
+    "readiness_callback_offsets": [
+      "0x2bc",
+      "0x2c0"
+    ],
+    "readiness_setter": "0xcf45d0 copies 8 bytes; known init caller at0xcf5d9c supplies a zero pair",
+    "ownership": "receive chain released via0x141593c at0xcf4c90; stack header and payload pointer must not escape without verified copying/refcount"
+  },
+  "special_debug_command_table": {
+    "candidate_address": "0x340bd70",
+    "candidate_entries": [
+      {
+        "index": 0,
+        "name_pointer": "0x19c3c91",
+        "name": "alk_3g_manufacturer",
+        "handler_word": "0xc307cc",
+        "handler_in_code_range": true
+      },
+      {
+        "index": 1,
+        "name_pointer": "0x1",
+        "name": null,
+        "handler_word": "0x1",
+        "handler_in_code_range": false
+      },
+      {
+        "index": 2,
+        "name_pointer": "0x1",
+        "name": null,
+        "handler_word": "0x1",
+        "handler_in_code_range": false
+      },
+      {
+        "index": 3,
+        "name_pointer": "0x2",
+        "name": null,
+        "handler_word": "0x200",
+        "handler_in_code_range": false
+      },
+      {
+        "index": 4,
+        "name_pointer": "0x2",
+        "name": null,
+        "handler_word": "0x1",
+        "handler_in_code_range": false
+      },
+      {
+        "index": 5,
+        "name_pointer": "0x19c52ac",
+        "name": null,
+        "handler_word": "0x38",
+        "handler_in_code_range": false
+      },
+      {
+        "index": 6,
+        "name_pointer": "0x16",
+        "name": null,
+        "handler_word": "0x1a91790",
+        "handler_in_code_range": false
+      },
+      {
+        "index": 7,
+        "name_pointer": "0x2000004",
+        "name": null,
+        "handler_word": "0x0",
+        "handler_in_code_range": false
+      }
+    ],
+    "consistent_eight_entry_table": false,
+    "runtime_initialization_unknown": true,
+    "live_invocation_performed": false,
+    "interpretation": "Do not turn static BRCM branch into a claimed supported command; current bytes are not eight valid string/function pairs"
+  },
+  "paged_search_false_positive": {
+    "address": "0xf01e3bdc",
+    "reason": "surrounding repeated records/unknown encodings indicate data; a rendered add(r17,0x2ac) is not an established executable callback registration",
+    "complete_paged_callgraph_proven": false
+  },
+  "limitations": [
+    "Modern LLVM disassembly is not a validated Hexagon v3 execution model",
+    "Ordinary same-packet reads use old registers; do not interpret printed lines sequentially",
+    "No direct RNG call was found in the bounded event parser, but indirect callback targets remain unresolved; no global absence claim",
+    "Firmware contains mixed code/data; byte-pattern or objdump search hits require control-flow confirmation",
+    "Neither event EtherType nor internal RNG message IDs establish an externally supported entropy protocol"
+  ],
+  "reference": {
+    "title": "Qualcomm Hexagon V73 PRM, section3.3.1 packet execution semantics",
+    "url": "https://developer.qualcomm.com/qfile/70668/80-n2040-53_aa_prm_v73.pdf",
+    "scope": "General packet semantics cross-check only; newer revision is not proof of complete v3 ISA compatibility"
+  },
+  "next_required_work": [
+    "Resolve event callback registration from constructor/copy paths; matching offsets in unrelated structures are not evidence",
+    "Establish a bounded modem-native RNG bridge only after exact target, message ownership and entropy readiness are verified",
+    "Review the isolated offline-tested control-hardening revision for real interrupt behavior and memory footprint, then validate with freshly provisioned material",
+    "Complete secure reboot/rekey/reconnect and complete Wi-Fi forwarding acceptance"
+  ],
+  "goal_complete": false
+}

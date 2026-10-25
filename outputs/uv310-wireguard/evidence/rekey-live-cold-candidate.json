@@ -1,0 +1,15 @@
+{
+  "phase": "candidate",
+  "software_restart": true,
+  "physical_power_removal": false,
+  "file_writes_in_this_script": false,
+  "events": [],
+  "active_before_sha256": "855499cad46ea8dabefa21ec20356e0d7656ccc76ddac116b880512f5f0a1abe",
+  "diag_enter_reply": "3a",
+  "dmss_parameters_verified": true,
+  "reset_reply": "02",
+  "cd_settle_wait_seconds": 6,
+  "verified_cd_eject": "Disk disk8 ejected",
+  "error": "Immediate stored-stock restoration failed",
+  "workflow_finished": false
+}

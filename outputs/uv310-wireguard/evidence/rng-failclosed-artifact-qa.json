@@ -1,0 +1,11 @@
+{
+  "unique_report_section": true,
+  "source_archive_files": 42,
+  "archive_matches_local_sources": true,
+  "upstream_license_included": true,
+  "no_vendor_images_or_private_config_packaged": true,
+  "latest_control_failures_disclosed": true,
+  "live_image_generated": false,
+  "goal_complete": false,
+  "visual_rendering_not_performed": true
+}

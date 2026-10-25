@@ -1,0 +1,17 @@
+{
+  "operation": "activate",
+  "events": [
+    {
+      "operation": "rename",
+      "source": "/SyFi/brew/mod/wg_rekeylive_probe_stage.bin",
+      "destination": "/SyFi/brew/mod/rtecdc_new.bin"
+    }
+  ],
+  "raw_flash_or_nv_writes": false,
+  "active_firmware_path": "/SyFi/brew/mod/rtecdc_new.bin",
+  "original_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "candidate_sha256": "855499cad46ea8dabefa21ec20356e0d7656ccc76ddac116b880512f5f0a1abe",
+  "active_before_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "active_after_sha256": "855499cad46ea8dabefa21ec20356e0d7656ccc76ddac116b880512f5f0a1abe",
+  "passed": true
+}

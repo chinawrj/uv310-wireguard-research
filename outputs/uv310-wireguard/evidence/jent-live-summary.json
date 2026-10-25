@@ -1,0 +1,21 @@
+{
+  "device_read_only_precheck_passed": true,
+  "device_writes_this_round": false,
+  "device_reset_this_round": false,
+  "host_network_changes_this_round": false,
+  "last_live_precheck": "evidence/jent-live-precheck.json",
+  "stock_wifi_runtime_verified": true,
+  "rom_allocator_replay_cases": 50,
+  "heap_adapter_replay_cases": 26,
+  "allocator_adapter_live_verified": false,
+  "live_entropy_probe_deployed": false,
+  "secure_entropy_established": false,
+  "goal_complete": false,
+  "next_required_work": [
+    "Link a standalone, no-WireGuard timing/entropy probe with real allocator/timer adapter and check total code/state/heap/stack footprint before deployment",
+    "Verify live dispatch slots and free-list/accounting margin before any collector allocation; chosen4KiB reserve has not been validated against traffic peaks",
+    "Define cycle-counter enable/restore,64-bit wrap extension and timestamp unit semantics; do not silently substitute uncalibrated cycles for all library time contracts",
+    "Measure per-stage hardware latency and exact-scheduling entropy quality, preserving bounded failure and full rollback",
+    "Resolve concurrent WireGuard/entropy memory or modem RNG bridge, then reusable coldboot/time state,rekey/reconnect/full Wi-Fi routing and UDP performance"
+  ]
+}

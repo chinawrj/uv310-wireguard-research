@@ -1,0 +1,43 @@
+{
+  "source": "https://github.com/forth32/qtools/blob/master/loaders/NPRG9x00p.bin",
+  "bytes": 247260,
+  "sha256": "f3a5ab660c64e2c7f6e1a8c26fe66671726e495f4298b85268b46a0616e2aae0",
+  "verified_git_blob_sha1": "716a2f398117feaf260b9a560157f82531773fa1",
+  "trailer": {
+    "signature": "0xdeadbeef",
+    "chipset_id": "0x2",
+    "load_address": "0x100000"
+  },
+  "exec_handler_address": "0x122394",
+  "exec_handler": [
+    {
+      "address": "0x122394",
+      "instruction": "push {r4, lr}"
+    },
+    {
+      "address": "0x122398",
+      "instruction": "ldr r1, [pc, #0x24]"
+    },
+    {
+      "address": "0x12239c",
+      "instruction": "add r0, r0, #8"
+    },
+    {
+      "address": "0x1223a0",
+      "instruction": "mcr p15, #0, r1, c7, c5, #0"
+    },
+    {
+      "address": "0x1223a4",
+      "instruction": "blx r0"
+    },
+    {
+      "address": "0x1223a8",
+      "instruction": "b #0x122388"
+    }
+  ],
+  "loaded_on_device": true,
+  "compatibility_verified": true,
+  "note": "Generic MDM9x00 loader; source pexec_arm.asm absolute addresses differ from this binary. No full audit of all loader startup code.",
+  "device_result": "After temporary USB absence, re-enumerated as 1bbb:f000. Streaming handshake and ARM Hello World succeeded.",
+  "compatibility_scope": "Observed USB streaming handshake and reply-only ARM applet execution; flash programming not tested."
+}

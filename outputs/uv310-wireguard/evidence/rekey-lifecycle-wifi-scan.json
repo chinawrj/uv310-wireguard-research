@@ -1,0 +1,13 @@
+{
+  "interface": "en0",
+  "matchingCount": 1,
+  "poweredOn": true,
+  "ssidVisibleToCoreWLAN": false,
+  "targetNetworks": [
+    {
+      "channel": 6,
+      "nameVisible": true,
+      "signalDBm": -39
+    }
+  ]
+}

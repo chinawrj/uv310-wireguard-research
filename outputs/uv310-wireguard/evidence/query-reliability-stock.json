@@ -1,0 +1,376 @@
+{
+  "scope": "Read-only stock UV310 AT command pacing; no Wi-Fi client traffic generated",
+  "rows": [
+    {
+      "command": "AT^PROJECTNAME?",
+      "block": "identity",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 1.926,
+      "ok": true,
+      "error": false,
+      "response": "AT^PROJECTNAME?\r\r\n^PROJECTNAME:MDM9600\tUV310\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "precheck",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 5.128,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.615,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 4.278,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.666,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 4.205,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.795,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.814,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.467,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.083,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.375,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.976,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.504,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid1",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 4.008,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 3.983,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 3.209,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 2.789,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 3.584,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 6.079,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 4.007,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 3.139,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 6.31,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 5.384,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 5.005,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 5.673,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "spaced",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 6.816,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 6.404,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.869,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.396,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 4.616,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.092,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.839,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.452,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.313,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 3.534,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 6.412,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 2.562,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "block": "rapid2",
+      "pre_delay_seconds": 0,
+      "elapsed_ms": 7.039,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+WL=wl memuse",
+      "block": "unsupported_control",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 4.847,
+      "ok": false,
+      "error": true,
+      "response": "AT+WL=wl memuse\r\r\nERROR\r\n"
+    },
+    {
+      "command": "AT+WL=wl isup",
+      "block": "final",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 3.032,
+      "ok": true,
+      "error": false,
+      "response": "AT+WL=wl isup\r\r\n1\r\n\r\n\r\nOK\r\n"
+    },
+    {
+      "command": "AT+CPIN?",
+      "block": "final",
+      "pre_delay_seconds": 0.25,
+      "elapsed_ms": 2.108,
+      "ok": true,
+      "error": false,
+      "response": "AT+CPIN?\r\r\n+CPIN: READY\r\n\r\nOK\r\n"
+    }
+  ],
+  "device_modified": false,
+  "completed": true
+}

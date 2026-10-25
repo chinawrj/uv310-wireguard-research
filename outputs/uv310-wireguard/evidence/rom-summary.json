@@ -1,0 +1,34 @@
+{
+  "goal_complete": false,
+  "wireguard_running": false,
+  "rom_capture_complete": true,
+  "rom_size_bytes": 458752,
+  "rom_sha256": "f96f3e5f1dd2352a71b777ce4fc586cefdc2c62977eae3cef0a82461a8ae5bb4",
+  "all_7168_fixed_blocks_present": true,
+  "repeat_read_blocks_verified": 32,
+  "repeat_verification_scope": "32 sequential blocks, not a second full read",
+  "rom_only_retained_locally_in_private_directory": true,
+  "native_c_rom_reader_executed": true,
+  "candidate_reserved_bytes": 2416,
+  "real_wifi_client_traffic_passed": true,
+  "wifi_test_scope": "Two bound-interface requests during native ROM acquisition; no WireGuard tunnel or throughput test",
+  "stock_file_restored_and_hash_verified": true,
+  "stock_runtime_version": "5.90.153.52.1",
+  "stock_wifi_isup": 1,
+  "sim_ready": true,
+  "research_files_removed": true,
+  "mac_wifi_restored": "ORIGINAL_WIFI, native Settings UI confirmed",
+  "long_term_stability_verified": false,
+  "limitations": [
+    "AT ERROR responses occurred intermittently; batches were stopped/resumed with bounded retries and backoff. Root cause unresolved.",
+    "No live packet interception/rewriting, independent WireGuard handshake, NAT/routing or device VPN performance yet",
+    "Heap/clock/packet function descriptions are offline evidence; live ABI and ownership need validation",
+    "No cryptographically secure on-device RNG identified; deterministic QEMU RNG must never be deployed"
+  ],
+  "next_steps": [
+    "Read live bounded heap statistics/free-list and stack high-water; size core plus buffers",
+    "Count-only hooks in both Wi-Fi and SDPCM paths; verify direction, Ethernet layout, ownership and original forwarding",
+    "Verify clock/time and secure RNG, then integrate protocol core and test actual server handshake",
+    "Validate standalone Wi-Fi clients, routing/MTU/DNS, persistence and UDP performance"
+  ]
+}

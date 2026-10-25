@@ -1,0 +1,578 @@
+[
+  {
+    "path": "work/uv310-wireguard/analyze-driver-abi.py",
+    "published_sha256": "5b5d3dfa660a65b991d0a561b9c690df84f71c8d5bffa89deef4b001a2d42da2",
+    "workspace_source_sha256": "5b5d3dfa660a65b991d0a561b9c690df84f71c8d5bffa89deef4b001a2d42da2",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/analyze-rom-runtime.py",
+    "published_sha256": "794b836f3ba42384d4df5c49f5152f40b6e70ba130de58f2ae7d1d13103e6e74",
+    "workspace_source_sha256": "794b836f3ba42384d4df5c49f5152f40b6e70ba130de58f2ae7d1d13103e6e74",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/analyze-wifi-startup.py",
+    "published_sha256": "cfcc95e948242fb2c1df7cc0c2a4c3399f52e62c0279a01f759b91a81f90800a",
+    "workspace_source_sha256": "cfcc95e948242fb2c1df7cc0c2a4c3399f52e62c0279a01f759b91a81f90800a",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/bridge-audit/analyze.py",
+    "published_sha256": "a81603696eb2b924b6aef216940fc6e53a256f4d73f96f9993515dd86de77369",
+    "workspace_source_sha256": "a81603696eb2b924b6aef216940fc6e53a256f4d73f96f9993515dd86de77369",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/control-hardening/entry.S",
+    "published_sha256": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+    "workspace_source_sha256": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/control-hardening/native-config.h",
+    "published_sha256": "08dcf2a3f1c4138a18195995ff3f9b5b4f2efad1c02ab88d420808d2c9ffe2ad",
+    "workspace_source_sha256": "08dcf2a3f1c4138a18195995ff3f9b5b4f2efad1c02ab88d420808d2c9ffe2ad",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/control-hardening/native.c",
+    "published_sha256": "ee34eb387bb6e90a04b3140ce2446c99bafd00ca2ad34baeefe2d9ff4e6248e7",
+    "workspace_source_sha256": "ee34eb387bb6e90a04b3140ce2446c99bafd00ca2ad34baeefe2d9ff4e6248e7",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/control-hardening/start.S",
+    "published_sha256": "8c65d4e2a8608f08a0d20d66aa3b80e5a80f1131d9570a001eaf04eaee966507",
+    "workspace_source_sha256": "8c65d4e2a8608f08a0d20d66aa3b80e5a80f1131d9570a001eaf04eaee966507",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/control-hardening/test.c",
+    "published_sha256": "2caf2e613d1b5c23937fd6deb56028fd6fdf9fcdcfca7b3c06f46bb905065f9e",
+    "workspace_source_sha256": "2caf2e613d1b5c23937fd6deb56028fd6fdf9fcdcfca7b3c06f46bb905065f9e",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/control-hardening/test.ld",
+    "published_sha256": "449d96d38c721139cea2c4f07a7719a995add04f4f474abef53b34c4d554ec90",
+    "workspace_source_sha256": "449d96d38c721139cea2c4f07a7719a995add04f4f474abef53b34c4d554ec90",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/efs_path.py",
+    "published_sha256": "614ada4431ff2b0a0ae714ef966970457ff4c2bb13ca48ac664b38c046c511af",
+    "workspace_source_sha256": "614ada4431ff2b0a0ae714ef966970457ff4c2bb13ca48ac664b38c046c511af",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/efs_probe_io.py",
+    "published_sha256": "e76b5d90358660272735289a4e762c71f1f95c4c3376bd7d30b7ca88078540a6",
+    "workspace_source_sha256": "e76b5d90358660272735289a4e762c71f1f95c4c3376bd7d30b7ca88078540a6",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/emitter-wg/reboot.py",
+    "published_sha256": "2c265a16a34235a975f98b66730015fe9be116facaaf5c11da581847929e9788",
+    "workspace_source_sha256": "2c265a16a34235a975f98b66730015fe9be116facaaf5c11da581847929e9788",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/jent-trace/analyze.py",
+    "published_sha256": "e06d01ed1c99b0dd8a489574d504376197d296dacd5c0ba1f61bdb1b943d7a27",
+    "workspace_source_sha256": "e06d01ed1c99b0dd8a489574d504376197d296dacd5c0ba1f61bdb1b943d7a27",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/jent-trace-repeat/analyze.py",
+    "published_sha256": "3bd20472a48916040d06d6fd9c858f501c8dbabcbd8bfecaf6c459d8b4dda42c",
+    "workspace_source_sha256": "3bd20472a48916040d06d6fd9c858f501c8dbabcbd8bfecaf6c459d8b4dda42c",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/map-rom-abi.py",
+    "published_sha256": "2ee7f4f4d1a74411d442f9f4062788e7cc117c07f35191d645f6d464324572ec",
+    "workspace_source_sha256": "2ee7f4f4d1a74411d442f9f4062788e7cc117c07f35191d645f6d464324572ec",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/modem-entropy/analyze.py",
+    "published_sha256": "23899bf199c3f58b2bf051716f2d2f76bb514dbe0c2ba707e82d415d611c834d",
+    "workspace_source_sha256": "23899bf199c3f58b2bf051716f2d2f76bb514dbe0c2ba707e82d415d611c834d",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/persistence-audit/analyze.py",
+    "published_sha256": "b4cdd7413f778d97f3ecc9162b3ff31012993efa0240505d19cfe334bec02411",
+    "workspace_source_sha256": "b4cdd7413f778d97f3ecc9162b3ff31012993efa0240505d19cfe334bec02411",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/query-reliability/native.py",
+    "published_sha256": "a0ed3dacbeb66b3e50eccd6b9cde796503424a9b34fd14744ba39d3a5d7d6370",
+    "workspace_source_sha256": "a0ed3dacbeb66b3e50eccd6b9cde796503424a9b34fd14744ba39d3a5d7d6370",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/query-reliability/stock.py",
+    "published_sha256": "aa4aff4f54da3d0b33330e556647469f39db67a1f1e3e38acb4e06517c3dd8aa",
+    "workspace_source_sha256": "aa4aff4f54da3d0b33330e556647469f39db67a1f1e3e38acb4e06517c3dd8aa",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-layout/build.py",
+    "published_sha256": "14529e59c1f4b969f5a7f83753f3cc5b3e01ba139f3a1ca29ece43722e63eee9",
+    "workspace_source_sha256": "14529e59c1f4b969f5a7f83753f3cc5b3e01ba139f3a1ca29ece43722e63eee9",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-layout/layout.ld",
+    "published_sha256": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2",
+    "workspace_source_sha256": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-layout/native.c",
+    "published_sha256": "c7af2ed6857ac0c0bd4213e9fff5656e7e0d5399a783b6d25ba3c398b1678c85",
+    "workspace_source_sha256": "c7af2ed6857ac0c0bd4213e9fff5656e7e0d5399a783b6d25ba3c398b1678c85",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/build.py",
+    "published_sha256": "f7c77a21773c001e140978756cc6daacc63c42cc700a14055b601eeaac01624f",
+    "workspace_source_sha256": "f7c77a21773c001e140978756cc6daacc63c42cc700a14055b601eeaac01624f",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/cases.inc",
+    "published_sha256": "239083640ca462ee4afcd3549fecfadd569bb5cd3203166acedc56b8a2ecad17",
+    "workspace_source_sha256": "239083640ca462ee4afcd3549fecfadd569bb5cd3203166acedc56b8a2ecad17",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/native-config.h",
+    "published_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "workspace_source_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/native.c",
+    "published_sha256": "dcf131be588697720c5c7e348161a800661a33be9519367ed2c67ec5f0dec3c8",
+    "workspace_source_sha256": "dcf131be588697720c5c7e348161a800661a33be9519367ed2c67ec5f0dec3c8",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/prepare-tests.py",
+    "published_sha256": "c14d44e0246d73a509f0e53ed746daba4d69ea055ac4b15478159cc3cc28138c",
+    "workspace_source_sha256": "c14d44e0246d73a509f0e53ed746daba4d69ea055ac4b15478159cc3cc28138c",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/prepare.py",
+    "published_sha256": "ec9264e439b8b09f074ce4862542c9f791fd2dc6cb9faf75924686b5b2caedfb",
+    "workspace_source_sha256": "ec9264e439b8b09f074ce4862542c9f791fd2dc6cb9faf75924686b5b2caedfb",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/source-provenance.json",
+    "published_sha256": "c4a42613f87c7b75586ec9c335a3370f03c6578077980d21054ce567094e119b",
+    "workspace_source_sha256": "c4a42613f87c7b75586ec9c335a3370f03c6578077980d21054ce567094e119b",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/tests.c",
+    "published_sha256": "65ed38b833c56256095150374713d63798781ad2ca1d7b62dc7acbbd4fa5917a",
+    "workspace_source_sha256": "65ed38b833c56256095150374713d63798781ad2ca1d7b62dc7acbbd4fa5917a",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-lifecycle/worker.inc",
+    "published_sha256": "c94837c526e2c9002b9e7615eab673baa627a75f8c2a828cfe6f3c21387fbff3",
+    "workspace_source_sha256": "c94837c526e2c9002b9e7615eab673baa627a75f8c2a828cfe6f3c21387fbff3",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/efs_rekey.py",
+    "published_sha256": "b71937a636c7b603571aebe31ad1edf85589f48703451ba8867b22dfcebd90fe",
+    "workspace_source_sha256": "b71937a636c7b603571aebe31ad1edf85589f48703451ba8867b22dfcebd90fe",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/expiry-followup.py",
+    "published_sha256": "ba761cb52d8ffd18a6eaa8cbb8661a6fb3373ddc46d3cbba15af2ed62c0260ff",
+    "workspace_source_sha256": "ba761cb52d8ffd18a6eaa8cbb8661a6fb3373ddc46d3cbba15af2ed62c0260ff",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/final-files.py",
+    "published_sha256": "2b5cdf60aa6996d4bd8e790be85d84822d692a4f0a0450a6e1d1fb15e6a2edbd",
+    "workspace_source_sha256": "2b5cdf60aa6996d4bd8e790be85d84822d692a4f0a0450a6e1d1fb15e6a2edbd",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/final-status.py",
+    "published_sha256": "45ccd12dfdf3a26bc7ac932e801782e5d8736a24680fb2399d2660a8323ea02b",
+    "workspace_source_sha256": "45ccd12dfdf3a26bc7ac932e801782e5d8736a24680fb2399d2660a8323ea02b",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/followup.py",
+    "published_sha256": "e3c2ca7b25b3963493a4771ea6e2583f71e8e26b55abd61eb10214461a649264",
+    "workspace_source_sha256": "e3c2ca7b25b3963493a4771ea6e2583f71e8e26b55abd61eb10214461a649264",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/live.py",
+    "published_sha256": "d1570ed997c715e3dc5df66f813b26f64949cf77c07bc1730ebcc248942626fa",
+    "workspace_source_sha256": "d1570ed997c715e3dc5df66f813b26f64949cf77c07bc1730ebcc248942626fa",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/native-config.h",
+    "published_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "workspace_source_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/native.c",
+    "published_sha256": "f67f2f7111508a121bab4431ec1e9943a0c503cb815b196bb80f79885b28a4dd",
+    "workspace_source_sha256": "f67f2f7111508a121bab4431ec1e9943a0c503cb815b196bb80f79885b28a4dd",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/package.py",
+    "published_sha256": "c8d5638d7592c2923b6ef894a1b3df93f653220f039dfbc613ad469662f4ddad",
+    "workspace_source_sha256": "c8d5638d7592c2923b6ef894a1b3df93f653220f039dfbc613ad469662f4ddad",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/post-rekey.py",
+    "published_sha256": "b6c6f33396796d66798046b9566d97d39d3e5d6f3835a159e516e630f8cb9188",
+    "workspace_source_sha256": "b6c6f33396796d66798046b9566d97d39d3e5d6f3835a159e516e630f8cb9188",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/prepare.py",
+    "published_sha256": "9bf0d0e2985b36a987fd3474fefa771f8cae5dcc0a64377a6c7e81df6f184f92",
+    "workspace_source_sha256": "9bf0d0e2985b36a987fd3474fefa771f8cae5dcc0a64377a6c7e81df6f184f92",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/reboot.py",
+    "published_sha256": "92103497356592c3e9640740d4c534cdc4904fa1ab102739156e9068108474c2",
+    "workspace_source_sha256": "92103497356592c3e9640740d4c534cdc4904fa1ab102739156e9068108474c2",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/test-build.py",
+    "published_sha256": "ddb46d5333ebd9a20725b13d18fe89a234ddaedb44c3a855bde3240673d67c56",
+    "workspace_source_sha256": "d5690f7fa901d5daad9a2fa3efc21cede950875d9152e367a0b904b16ce32292",
+    "byte_identical_to_workspace": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-live/tests.c",
+    "published_sha256": "fd771518699ececd291d3ac0e30d0cee26cd38d903ba043be4561a4af85fba8e",
+    "workspace_source_sha256": "fd771518699ececd291d3ac0e30d0cee26cd38d903ba043be4561a4af85fba8e",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/efs_rekey.py",
+    "published_sha256": "e5b39939afc69cac0ccfe0c4d74cd3174607ff8fea688ccbd7fc4f20798e0c43",
+    "workspace_source_sha256": "e5b39939afc69cac0ccfe0c4d74cd3174607ff8fea688ccbd7fc4f20798e0c43",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/final-files.py",
+    "published_sha256": "50829088478d3a1b9ee5113e75629fc41d3e775609dedbd46dc6ba57db0195d1",
+    "workspace_source_sha256": "50829088478d3a1b9ee5113e75629fc41d3e775609dedbd46dc6ba57db0195d1",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/final-status.py",
+    "published_sha256": "3af9a2ae9f7262d2839e658d9ca68fef30b24d6fa2399d0db65d96e3cd62ae7f",
+    "workspace_source_sha256": "3af9a2ae9f7262d2839e658d9ca68fef30b24d6fa2399d0db65d96e3cd62ae7f",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/followup.py",
+    "published_sha256": "1d15c86c32da288b67e63d1d49237858e4e03465883da6ecbf7ead0c2efa5505",
+    "workspace_source_sha256": "1d15c86c32da288b67e63d1d49237858e4e03465883da6ecbf7ead0c2efa5505",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/live.py",
+    "published_sha256": "6d6ccd4f1e0713e3c1dee58e15b200c0528dc3cb41319c90ce22cea38ac4fb24",
+    "workspace_source_sha256": "6d6ccd4f1e0713e3c1dee58e15b200c0528dc3cb41319c90ce22cea38ac4fb24",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/native-config.h",
+    "published_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "workspace_source_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/native.c",
+    "published_sha256": "c970ff6a685817ae96c2bd2e04460a6a302bf50c8c6a29b234b479d3041835da",
+    "workspace_source_sha256": "c970ff6a685817ae96c2bd2e04460a6a302bf50c8c6a29b234b479d3041835da",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/package.py",
+    "published_sha256": "7bfedd1883d179034416fe2d9dad44771f54d12eaccb00bb71f8c71f962bdd25",
+    "workspace_source_sha256": "7bfedd1883d179034416fe2d9dad44771f54d12eaccb00bb71f8c71f962bdd25",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/prepare.py",
+    "published_sha256": "b753539d63db3172e4c13c707dc1f18df0492bced1526021d1a92943fe34fda8",
+    "workspace_source_sha256": "b753539d63db3172e4c13c707dc1f18df0492bced1526021d1a92943fe34fda8",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/reboot.py",
+    "published_sha256": "0650e1ae1afa3ac423701a24173dd73702daa8e7f4ef9bb5080090b7e0d07825",
+    "workspace_source_sha256": "0650e1ae1afa3ac423701a24173dd73702daa8e7f4ef9bb5080090b7e0d07825",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/test-build.py",
+    "published_sha256": "98e12773cbc37e63b85d8fa83fa23fd50aeee55bc4705f5cf1bac4d3ff0b2247",
+    "workspace_source_sha256": "5c0dfe1dbb7f107389e1440f385317b523d3a57ac9834a50b3dbe91434ca3485",
+    "byte_identical_to_workspace": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-memory/tests.c",
+    "published_sha256": "843ca1330bde8b9f2764e2ed2b8c3f6c024686879780d6d56bbe9bdbe6dc4ba1",
+    "workspace_source_sha256": "843ca1330bde8b9f2764e2ed2b8c3f6c024686879780d6d56bbe9bdbe6dc4ba1",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/adapter-tests.c",
+    "published_sha256": "b034f5106654754910017a0b88f7390607fa5c953d387f322e0b51c15dc2334e",
+    "workspace_source_sha256": "b034f5106654754910017a0b88f7390607fa5c953d387f322e0b51c15dc2334e",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/checked-random.h",
+    "published_sha256": "dc2d1c8043ae45348a3073d8048213fbfe39b02bf7a9f828cf5941276f9f27ea",
+    "workspace_source_sha256": "dc2d1c8043ae45348a3073d8048213fbfe39b02bf7a9f828cf5941276f9f27ea",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/index-tests.c",
+    "published_sha256": "2e6e38fabb5adcc526125aee20cac539852120e74adcdba3cadf487bea51b73c",
+    "workspace_source_sha256": "2e6e38fabb5adcc526125aee20cac539852120e74adcdba3cadf487bea51b73c",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/native.c",
+    "published_sha256": "9ad1d379562ee5e6f585c4a069786875c1a2ad7f0fcd3e5d9c70ad86a92452da",
+    "workspace_source_sha256": "9ad1d379562ee5e6f585c4a069786875c1a2ad7f0fcd3e5d9c70ad86a92452da",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/provider-tests.c",
+    "published_sha256": "c155b3730eb7f8e3cfa13af0b858a61f4a2fbd0a561757724b4eebca15b8b7b0",
+    "workspace_source_sha256": "c155b3730eb7f8e3cfa13af0b858a61f4a2fbd0a561757724b4eebca15b8b7b0",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/wireguard.c",
+    "published_sha256": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "workspace_source_sha256": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-provider/wireguard.h",
+    "published_sha256": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d",
+    "workspace_source_sha256": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-sample/analyze.py",
+    "published_sha256": "df333d99aa4d67f83f008b68b0aa67a8add11fdd690d81de5c5093f0afde444b",
+    "workspace_source_sha256": "df333d99aa4d67f83f008b68b0aa67a8add11fdd690d81de5c5093f0afde444b",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rng-transport/analyze.py",
+    "published_sha256": "7e150df23f31d77e79d0e407cb8625804ad0d2fe54e0c695b0fc96709d09f4d2",
+    "workspace_source_sha256": "7e150df23f31d77e79d0e407cb8625804ad0d2fe54e0c695b0fc96709d09f4d2",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/build/wireguard.c",
+    "published_sha256": "258e8c6f287e6e74d34e59e4dd206816b8b99ec973174151c37878f1ff54b131",
+    "workspace_source_sha256": "258e8c6f287e6e74d34e59e4dd206816b8b99ec973174151c37878f1ff54b131",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/build/wireguard.h",
+    "published_sha256": "766524b41fed5f8a0748714fe245ca4c57b523b82b864db5297ba47e4606aba2",
+    "workspace_source_sha256": "766524b41fed5f8a0748714fe245ca4c57b523b82b864db5297ba47e4606aba2",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/include/stdlib.h",
+    "published_sha256": "7285e900bf1b5dc065f246dc54268e8aef779133e7a3457649223f6f6fab5821",
+    "workspace_source_sha256": "7285e900bf1b5dc065f246dc54268e8aef779133e7a3457649223f6f6fab5821",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/include/string.h",
+    "published_sha256": "3de65dbafa1059c454a6f8627d881cac1fb28affe0bfdce57809df4fac5f42da",
+    "workspace_source_sha256": "3de65dbafa1059c454a6f8627d881cac1fb28affe0bfdce57809df4fac5f42da",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/port_types.h",
+    "published_sha256": "56608e26ed7da84e224f6ea5239a9b15703b78110d503c29aadc4b5d88d6883d",
+    "workspace_source_sha256": "56608e26ed7da84e224f6ea5239a9b15703b78110d503c29aadc4b5d88d6883d",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/runtime.c",
+    "published_sha256": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+    "workspace_source_sha256": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/LICENSE",
+    "published_sha256": "8cb1f80cddb2450820f23142b1601fe288dc4fd31d8b5ea960b8f94617a7c2ca",
+    "workspace_source_sha256": "8cb1f80cddb2450820f23142b1601fe288dc4fd31d8b5ea960b8f94617a7c2ca",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/cortex/scalarmult.c",
+    "published_sha256": "f76ec4ec333510ef3620d630e176bca85d6329ce71d0976f9c5c5344cc7b2b98",
+    "workspace_source_sha256": "f76ec4ec333510ef3620d630e176bca85d6329ce71d0976f9c5c5344cc7b2b98",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/cortex/scalarmult.h",
+    "published_sha256": "1560b17bc438dbc7254d0086a9cca852a13c36969458a23fce28623e62eb6b80",
+    "workspace_source_sha256": "1560b17bc438dbc7254d0086a9cca852a13c36969458a23fce28623e62eb6b80",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c",
+    "published_sha256": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+    "workspace_source_sha256": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.h",
+    "published_sha256": "28095658b2429c68ec550b2b89674b519ac55f82a9d9f1e2ab6265eaf1cb674c",
+    "workspace_source_sha256": "28095658b2429c68ec550b2b89674b519ac55f82a9d9f1e2ab6265eaf1cb674c",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c",
+    "published_sha256": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+    "workspace_source_sha256": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.h",
+    "published_sha256": "83209dce014806ae14b76c00f1649255c48b5529ab14f8dec2d9cc36adc48872",
+    "workspace_source_sha256": "83209dce014806ae14b76c00f1649255c48b5529ab14f8dec2d9cc36adc48872",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c",
+    "published_sha256": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+    "workspace_source_sha256": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.h",
+    "published_sha256": "73ca5b8bdd9b502d93e25f3559724925a3569cafb541af41319a3adbadc6d626",
+    "workspace_source_sha256": "73ca5b8bdd9b502d93e25f3559724925a3569cafb541af41319a3adbadc6d626",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna-32.h",
+    "published_sha256": "34033cb6df27078377900c3b5ed345dfaf225bffdd6a79173bf355aef139febe",
+    "workspace_source_sha256": "34033cb6df27078377900c3b5ed345dfaf225bffdd6a79173bf355aef139febe",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c",
+    "published_sha256": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+    "workspace_source_sha256": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.h",
+    "published_sha256": "48b59a6d1ce4f8ba522103396d69622ef056bcf680908b9c912273f1dac05db7",
+    "workspace_source_sha256": "48b59a6d1ce4f8ba522103396d69622ef056bcf680908b9c912273f1dac05db7",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519-license.txt",
+    "published_sha256": "b1d6ece4743d0b02df2710a9c87d7120d0cac43112168c2197926c0b5a04034c",
+    "workspace_source_sha256": "b1d6ece4743d0b02df2710a9c87d7120d0cac43112168c2197926c0b5a04034c",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c",
+    "published_sha256": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+    "workspace_source_sha256": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.h",
+    "published_sha256": "dd05d099db5140e62cbf6f8189418541cb52de78618b4375abf28b55db99443f",
+    "workspace_source_sha256": "dd05d099db5140e62cbf6f8189418541cb52de78618b4375abf28b55db99443f",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto.c",
+    "published_sha256": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+    "workspace_source_sha256": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/crypto.h",
+    "published_sha256": "77180a1c30a5ce47bfeb8f21098bde9b6e7ddf74d8a7f4e3e8d08abe622eef73",
+    "workspace_source_sha256": "77180a1c30a5ce47bfeb8f21098bde9b6e7ddf74d8a7f4e3e8d08abe622eef73",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/wireguard-platform.h",
+    "published_sha256": "18ca4aac934747c2e184c8eafb9ae269382ce7e3499e8d0d195e8b8fa7b95dd3",
+    "workspace_source_sha256": "18ca4aac934747c2e184c8eafb9ae269382ce7e3499e8d0d195e8b8fa7b95dd3",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/wireguard.c",
+    "published_sha256": "258e8c6f287e6e74d34e59e4dd206816b8b99ec973174151c37878f1ff54b131",
+    "workspace_source_sha256": "258e8c6f287e6e74d34e59e4dd206816b8b99ec973174151c37878f1ff54b131",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/wireguard.h",
+    "published_sha256": "57645ce3e289a809bff8fb1ce869ab3bc1c4920873784b36b492e9942b66d123",
+    "workspace_source_sha256": "57645ce3e289a809bff8fb1ce869ab3bc1c4920873784b36b492e9942b66d123",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/wireguardif.c",
+    "published_sha256": "f9a8e52d2327a5f8753b1284ee38318bbe073625b5914db52521f1ee91faedf1",
+    "workspace_source_sha256": "f9a8e52d2327a5f8753b1284ee38318bbe073625b5914db52521f1ee91faedf1",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream/src/wireguardif.h",
+    "published_sha256": "1dc6eee56b51ada781f5d689467a5908d99b55f576ddf66447d25d6a7cf3ae5e",
+    "workspace_source_sha256": "1dc6eee56b51ada781f5d689467a5908d99b55f576ddf66447d25d6a7cf3ae5e",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/wg-port/upstream-manifest.json",
+    "published_sha256": "3fb0784530e2eec415fcf089110035c75d7f22bc101f991d50e19cdc76312636",
+    "workspace_source_sha256": "3fb0784530e2eec415fcf089110035c75d7f22bc101f991d50e19cdc76312636",
+    "byte_identical_to_workspace": true
+  }
+]

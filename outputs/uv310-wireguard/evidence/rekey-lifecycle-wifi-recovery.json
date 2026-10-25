@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-25T21:25:43.835155+00:00",
+  "ui_carplay_connected": true,
+  "en0_ipv4": [
+    "169.254.169.215"
+  ],
+  "route": {
+    "destination": "default",
+    "interface": "utun10"
+  },
+  "dhcp_reply_available": false,
+  "http": {
+    "skipped": "No UV310 subnet address; do not route request over unrelated VPN"
+  }
+}

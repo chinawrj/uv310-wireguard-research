@@ -1,0 +1,41 @@
+{
+  "bytes": 68,
+  "sha256": "5f03e8cc08877b82919123b3a94126967a9c415f43b8cab9a270fae7d8d14b58",
+  "abi": "qtools patched ARM EXEC, candidate only",
+  "has_relocations": false,
+  "executed_on_device": true,
+  "instructions": [
+    {
+      "offset": "0x0",
+      "instruction": "add r0, pc, #0x18"
+    },
+    {
+      "offset": "0x4",
+      "instruction": "mov r2, #0x21"
+    },
+    {
+      "offset": "0x8",
+      "instruction": "mov r4, r2"
+    },
+    {
+      "offset": "0xc",
+      "instruction": "ldrb r3, [r0], #1"
+    },
+    {
+      "offset": "0x10",
+      "instruction": "strb r3, [r1], #1"
+    },
+    {
+      "offset": "0x14",
+      "instruction": "subs r2, r2, #1"
+    },
+    {
+      "offset": "0x18",
+      "instruction": "bne #0xc"
+    },
+    {
+      "offset": "0x1c",
+      "instruction": "bx lr"
+    }
+  ]
+}

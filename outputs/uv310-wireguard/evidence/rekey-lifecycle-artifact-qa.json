@@ -1,0 +1,12 @@
+{
+  "source_hashes_and_archive_match": true,
+  "source_generators_reproduce_from_archive": true,
+  "license_included": true,
+  "no_private_paths_or_firmware_images_in_archive": true,
+  "non_test_build_explicitly_rejected": true,
+  "report_section_unique": true,
+  "checkpoint_current": true,
+  "host_cleanup_verified": true,
+  "visual_render_checked": false,
+  "live_deployment": false
+}

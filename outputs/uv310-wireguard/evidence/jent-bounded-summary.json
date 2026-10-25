@@ -1,0 +1,31 @@
+{
+  "goal_complete": false,
+  "device_access_this_round": false,
+  "firmware_generated": false,
+  "deployed": false,
+  "secure_entropy_established": false,
+  "probe_only_not_wireguard_rng_api": true,
+  "original_sources_preserved": true,
+  "baseline_reserved_bytes": 18288,
+  "new_reserved_bytes": 17520,
+  "reserved_bytes_saved": 768,
+  "code_bytes_saved": 832,
+  "baseline_worst_emulated_idle_instructions": 552127,
+  "new_worst_emulated_idle_instructions": 240978,
+  "hardware_performance_measured": false,
+  "core_optimization": "-O0",
+  "kat_fault_cases": 3,
+  "additional_cancel_boundaries": 7,
+  "integrated_failure_cases": 7,
+  "qemu_reference_rejection_cases": 4,
+  "qemu_permanent_health_failure_cases": 2,
+  "historical_remaining_before_allocations": 4388,
+  "approx_heap_and_reserve_requirement": 6904,
+  "next_required_work": [
+    "Audit residual collector/health-recovery call graph for a strictly fail-closed startup probe; do not delete health checks or optimize the timing primitives to make footprint pass",
+    "Resolve at least2516B historical after-traffic margin deficit before considering this probe layout; contemporaneous live peaks/fragmentation remain unmeasured",
+    "Bound every startup stage on hardware including remaining240978-instruction synthetic worst case; emulator instruction counts are not latency",
+    "Establish DWT wrap/service assumptions and measured entropy quality before using generated material for WireGuard",
+    "Deliver actual standalone Wi-Fi WireGuard with reboots, persistent freshness, rekey/reconnect, full routing and UDP performance; startup-only probe is not the final RNG API"
+  ]
+}

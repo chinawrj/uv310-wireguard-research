@@ -1,0 +1,58 @@
+{
+  "goal_complete": false,
+  "native_real_peer_handshake_verified": true,
+  "native_authenticated_icmp_echo_verified": true,
+  "host_performs_wireguard_crypto": false,
+  "arbitrary_wifi_tunneling_verified": false,
+  "autonomous_rng_verified": false,
+  "autonomous_scheduling_verified": false,
+  "restart_or_rekey_verified": false,
+  "standalone_vpn_available": false,
+  "current_device_internal_wg_running": false,
+  "native_code_execution_location": "BCM43362 Cortex-M3 Wi-Fi processor",
+  "wireguard_messages_sent_bytes": [
+    148,
+    80
+  ],
+  "wireguard_messages_received_bytes": [
+    92,
+    80
+  ],
+  "initialization_ticks": 313,
+  "response_processing_ticks": 159,
+  "device_tick_units_independently_calibrated": false,
+  "initialization_at_query_ms": 325.7,
+  "response_processing_at_query_ms": 169.5,
+  "throughput_tested": false,
+  "reserved_bytes": 12400,
+  "final_runtime_status": {
+    "phase": 9,
+    "err": 0,
+    "tx_count": 2,
+    "rx_count": 2,
+    "rng_pos": 68,
+    "init_time": 313,
+    "response_time": 159,
+    "receive_len": 80,
+    "echo_verified": 1,
+    "total_arena": 110876,
+    "allocated_payload": 99548,
+    "allocated_headers": 1768,
+    "allocation_failures": 0,
+    "clock": 53073,
+    "keypair_valid": 1,
+    "device_struct_bytes": 968,
+    "query_elapsed_s": 0.0032
+  },
+  "stock_restored_and_rebooted": true,
+  "research_files_removed": true,
+  "sim_ready": true,
+  "stock_wifi_isup": 1,
+  "mac_wifi_restored": "ORIGINAL_WIFI Connected verified in System Settings",
+  "next_required_work": [
+    "Secure device entropy and monotonic timestamp handling across restart",
+    "Autonomous scheduler/timers and rekey/keepalive; remove AT orchestration",
+    "Packet headroom/allocation ownership, bidirectional arbitrary traffic, routing/NAT and checksums",
+    "Independent Wi-Fi client verification, DNS/MTU/IPv6 policy, reboot and UDP performance"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "scope": "Synthetic Cortex-M3 integration, no real radio/clock/entropy/device deployment",
+  "suites": [
+    {
+      "name": "BASELINE",
+      "passed": true,
+      "elf_sha256": "24eaf5e7d2bcecc14c8fd3aab00fd5d8abb648d7b501c47bfe6d68023d937485"
+    },
+    {
+      "name": "REKEY",
+      "passed": true,
+      "elf_sha256": "8c86aad3d91ff9c7fb36745e3172f33f05b42945f763c0cd2fbd2d551d7b0429"
+    },
+    {
+      "name": "BAD_MAC",
+      "passed": true,
+      "elf_sha256": "83ead591cb94fb0f340a26ea3c87389601f8bd5460ce826584187c4d9bebe2e7"
+    },
+    {
+      "name": "BAD_AEAD",
+      "passed": true,
+      "elf_sha256": "548279dbd296f6a60cef23e471fb9be97cf89a1ee9b381d7a0c8977b41c8c6e3"
+    },
+    {
+      "name": "STALE_RESPONSE",
+      "passed": true,
+      "elf_sha256": "2bc3bcb302962f3e60d4580304f1483589b00203eb858defad2cb12d495b0e4b"
+    },
+    {
+      "name": "RNG_FAIL",
+      "passed": true,
+      "elf_sha256": "bec24f79f944bd8de2206e90bf71a177809416d9bcbbe85451a0f0cc887d4fd8"
+    },
+    {
+      "name": "QUEUE_EXPIRE",
+      "passed": true,
+      "elf_sha256": "5bbbf46fa472f4e138d7a70252f8cfdb9178be4fc812a787bb6ef95c4957f95a"
+    },
+    {
+      "name": "RETRY",
+      "passed": true,
+      "elf_sha256": "a4f0ef9591ccbf799a559e7b2d0df2203aefecb72a117ecf1d0eaadd9c289ff9"
+    },
+    {
+      "name": "RETRY_LIMIT",
+      "passed": true,
+      "elf_sha256": "55a42b5e005fa730cd4c2ad5d021a14a58f9e59803ef78cfed728481ed4c8a25"
+    },
+    {
+      "name": "ALLOC_EXPIRE",
+      "passed": true,
+      "elf_sha256": "65a5ae61d12c0272323aefb66b4fba1fd0b28c98569c96228a665be38e5a5dc1"
+    },
+    {
+      "name": "COUNT_REKEY",
+      "passed": true,
+      "elf_sha256": "792a1ae334dc48ac57a765aeec362f10f978887ccc61c5ae1a0531c32e1e98ab"
+    },
+    {
+      "name": "COUNT_REJECT",
+      "passed": true,
+      "elf_sha256": "da2ce19257a2770463a85c1384d83cf31a3619e93daf48fb12b83e5315a3279d"
+    },
+    {
+      "name": "WRAP",
+      "passed": true,
+      "elf_sha256": "033a8fe235e7d22100c736c266358b03ef464fb895b3db17ad83d2f99aea1571"
+    },
+    {
+      "name": "TAI_CARRY",
+      "passed": true,
+      "elf_sha256": "755c8ff2ca87f0cc9e51b90668bde927a33e52d7634b72364e624cd2cab8b71e"
+    },
+    {
+      "name": "CLAIM_RACE",
+      "passed": true,
+      "elf_sha256": "81feadc9bdb933934375eb0ec50da3b819df0762953629a4e387492e829e3911"
+    },
+    {
+      "name": "PUBLISH_EXPIRY",
+      "passed": true,
+      "elf_sha256": "d676bf8b4b7fde606a219c638939cafbf2cb0399dfd87175722536cdbccc2a00"
+    },
+    {
+      "name": "LAB_PACKET",
+      "passed": true,
+      "elf_sha256": "39a9a9d1cdf2425b58ab9f7bf475539378fdd40f001e4f8987ec24f3daaae65a"
+    },
+    {
+      "name": "LAB_TIMER",
+      "passed": true,
+      "elf_sha256": "85b17089a49d74827fa76e6e0a5f2e9f542db6382896be0bbdc9c3a86f047c46"
+    },
+    {
+      "name": "LAB_WORKER",
+      "passed": true,
+      "elf_sha256": "ce6bf7d5f4d0570353464fd38b9944cd93ebea15df16b0cf513e026e103be640"
+    },
+    {
+      "name": "LAB_WRAP",
+      "passed": true,
+      "elf_sha256": "128a75a2cc1905445b89b24edc394815ff085218e28a9010dad456761026b484"
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "reset_device",
+      "detected": true
+    },
+    {
+      "mutation": "lost_response",
+      "detected": true
+    },
+    {
+      "mutation": "reject_previous",
+      "detected": true
+    }
+  ],
+  "rekey_after_ms": 120000,
+  "reject_at_age_ms": 180000,
+  "retry_after_ms": 5000,
+  "max_cycle_tries": 18,
+  "source_sha256": {
+    "work/uv310-wireguard/rekey-live/native.c": "f67f2f7111508a121bab4431ec1e9943a0c503cb815b196bb80f79885b28a4dd",
+    "work/uv310-wireguard/rekey-live/tests.c": "fd771518699ececd291d3ac0e30d0cee26cd38d903ba043be4561a4af85fba8e",
+    "work/uv310-wireguard/rekey-live/native-config.h": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "work/uv310-wireguard/rng-provider/wireguard.h": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d"
+  },
+  "sections_synthetic_link": {
+    ".vectors": {
+      "bytes": 8,
+      "address": 0
+    },
+    ".start": {
+      "bytes": 88,
+      "address": 4096
+    },
+    ".hook": {
+      "bytes": 4,
+      "address": 40440
+    },
+    ".tests": {
+      "bytes": 2201,
+      "address": 65536
+    },
+    ".probe": {
+      "bytes": 16552,
+      "address": 163840
+    },
+    ".state": {
+      "bytes": 1864,
+      "address": 180392
+    },
+    ".version": {
+      "bytes": 192,
+      "address": 182256
+    },
+    ".teststate": {
+      "bytes": 2980,
+      "address": 221184
+    }
+  },
+  "limitations": [
+    "Fixed synthetic RNG pool and TAI base are not safe standalone platform services",
+    "Worker crypto phases still drop external packets, no packet queue",
+    "No retry jitter, receive-driven early renewal or server-initiated handshake support yet",
+    "Single IPv4 client, LAN DNS bypass and IPv6 policy not expanded",
+    "No live image or throughput result"
+  ],
+  "goal_complete": false
+}

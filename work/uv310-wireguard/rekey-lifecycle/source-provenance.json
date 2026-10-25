@@ -1,0 +1,6 @@
+{
+  "base_native_sha256": "9ad1d379562ee5e6f585c4a069786875c1a2ad7f0fcd3e5d9c70ad86a92452da",
+  "new_native_sha256": "dcf131be588697720c5c7e348161a800661a33be9519367ed2c67ec5f0dec3c8",
+  "offline_only_compile_guard": true,
+  "live_image_generated": false
+}

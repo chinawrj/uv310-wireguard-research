@@ -1,0 +1,74 @@
+{
+  "goal_complete": false,
+  "device_internal_wireguard_running": false,
+  "normal_wifi_firmware_native_code_execution_verified": true,
+  "execution_cpu": "BCM43362 Cortex-M3",
+  "probe_bytes": 28,
+  "post_crc_check_retained": true,
+  "real_device_marker": "5.90.153.52.7",
+  "on_disk_version_in_verified_candidate": "5.90.153.52.1",
+  "warm_reload_initial_marker": true,
+  "warm_reload_stability_passed": false,
+  "full_device_boot_marker": true,
+  "full_device_boot_wifi_client_traffic_passed": true,
+  "traffic": {
+    "context": "Post-CRC native probe, full device boot; original boot file already restored without reloading Wi-Fi RAM",
+    "source_ip": "192.168.100.100",
+    "device_gateway_interface": "en0",
+    "ipv4_only": true,
+    "rows": [
+      {
+        "url": "http://192.168.100.1/home.asp",
+        "exit_code": 0,
+        "metrics": "200 192.168.100.100 0.058844 8200",
+        "error": ""
+      },
+      {
+        "url": "https://www.wireguard.com/",
+        "exit_code": 0,
+        "metrics": "200 192.168.100.100 1.810245 22066",
+        "error": ""
+      }
+    ],
+    "wireguard_tunnel_test": false
+  },
+  "full_boot_after_traffic_marker_and_driver_up": true,
+  "long_term_stability_tested": false,
+  "wireguard_tunnel_tested_this_round": false,
+  "stock_file_restored_and_hash_verified": true,
+  "stock_runtime_version": "5.90.153.52.1",
+  "stock_wifi_isup": 1,
+  "sim_ready": true,
+  "research_files_removed": true,
+  "host_wifi_restored": "ORIGINAL_WIFI, native System Settings UI verified",
+  "host_route_or_tunnel_configuration_modified": false,
+  "efs_persistent_writes_performed": true,
+  "raw_nand_program_erase_or_nv_writes": false,
+  "pending_cleanup": null,
+  "next_required_work": [
+    "Reserve resident executable/working memory beyond startup reclaim; appended probe only executes transiently",
+    "Identify RX/TX/SDIO packet hooks and ownership, safe ROM functions, secure RNG, clock/timer APIs",
+    "Integrate WireGuard C core with actual packet forwarding and existing private endpoint configuration",
+    "Verify independent Wi-Fi clients through device-native WireGuard, full restart, UDP performance"
+  ],
+  "evidence": [
+    "wifi-self-crc-analysis.json",
+    "data-control-offline.json",
+    "data-control-cold-candidate.json",
+    "data-control-cold-restored.json",
+    "data-control-efs-restore.json",
+    "postcrc-offline.json",
+    "postcrc-execution-proof.json",
+    "postcrc-efs-stage.json",
+    "postcrc-efs-activate.json",
+    "postcrc-cycle-candidate.json",
+    "postcrc-wifi-traffic.json",
+    "postcrc-fullboot-status.json",
+    "postcrc-efs-restore.json",
+    "postcrc-fullboot-traffic.json",
+    "postcrc-fullboot-after-traffic.json",
+    "postcrc-cold-restored.json",
+    "postcrc-final-status.json",
+    "postcrc-final-files.json"
+  ]
+}

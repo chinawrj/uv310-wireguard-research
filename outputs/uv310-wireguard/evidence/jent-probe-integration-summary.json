@@ -1,0 +1,40 @@
+{
+  "goal_complete": false,
+  "device_read_only_precheck_passed": true,
+  "device_writes_this_round": false,
+  "firmware_generated": false,
+  "probe_deployed": false,
+  "current_wireguard_running": false,
+  "secure_entropy_established": false,
+  "clock_fixture_checks": 14,
+  "integrated_failure_cases": 7,
+  "idle_hook_terminal_flag_cases": 32,
+  "irq_and_masked_entry_deferred": true,
+  "reserved_bytes": 18288,
+  "historical_after_traffic_free_estimate": 3620,
+  "historical_boot_free_estimate": 8196,
+  "approx_runtime_heap_plus_reserve": 6904,
+  "maximum_observed_emulated_instructions_per_idle_call": 552127,
+  "linked_elf_sha256": "b9d49b911273d20bbe3b73ddfa26311684c5bf5c1d0677ca4384a7d9af381a25",
+  "source_sha256": {
+    "port-clock.c": "4db36b54d70aca7181572cd18f6074b6f9f540d4165338c68aea6a59e2ea7227",
+    "clock-test.c": "54c7c8f51a431741fe96d017e8ebdc7c6a2c4d657c45d57d1964810fb071268a",
+    "clock-build.py": "f32f40d6e8f86e89d0ed4ff7dbc72f7b7a4b9e690a9244f5b0f6dec5c9061bd4",
+    "port-heap.c": "04cd964299cb51d346f0f98954115b1f5f05e1ae8fd6f8152e9ad71c15a458cd",
+    "probe.c": "d0b38292dba96d12bd7bbb3d172c986e7155d5374725e6a9c59b81951f9815e2",
+    "runtime.c": "c14dc534612b43c683d54529f10ea669b9b41301329d4c0b6e4871cf638f900e",
+    "link-probe.py": "4c0626f731a13d41ef246bc007f16b1e93e1da782fc58e6954af406bc447c78c",
+    "test-linked-probe.py": "0bd80b1077f6e9af9d92857746896d0a9bdaf1623ec3ab010d5373518a04cf97",
+    "replay-allocator.py": "d609b684ba9fd6905afce62e76cd2cbe7a2357a9201cd40932f7f8902280df05",
+    "precheck.py": "12ec3238d9e330a51a19d56b517662a0cc12bfb5fc221e97802d617166647bf4",
+    "test-port-heap.py": "66a5400dcf094e7cbe39f3024c6ec38bd08e4319f6a8c69ffe1e65fcb170c762",
+    "document-integration.py": "63a9c10d2ee33a2b58d6ca24089879d47cd3f6f7ccb2df5159170634dc6c7435"
+  },
+  "next_required_work": [
+    "Reduce resident probe footprint or establish a different memory/processor design; historical after-traffic free estimate3620B is below startup2808B plus reserve4096B",
+    "Split or otherwise bound self-test work before live deployment; observed maximum552127 emulated instructions is not a real-time bound",
+    "Validate counter service interval versus frequency/wrap and real free-space/peak demand before deployment; no multiple-wrap guarantee exists",
+    "Then measure hardware startup latency and entropy quality with rollback; passing health checks alone does not establish secure entropy",
+    "Resolve WireGuard+entropy co-residency, persistent time/reboot freshness, rekey/reconnect, full Wi-Fi routing and UDP performance"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "scope": "Own BCM43362 rev1 firmware 5.90.153.52.1; offsets are not portable across firmware",
+  "rom_sha256": "f96f3e5f1dd2352a71b777ce4fc586cefdc2c62977eae3cef0a82461a8ae5bb4",
+  "entries": {
+    "schedule_work": {
+      "entry_thumb": "0x8065b1",
+      "dispatch_slot": "0x174",
+      "expected_target": "0x8065b9",
+      "args": [
+        "context",
+        "data",
+        "callback(timer_pointer)",
+        "delay"
+      ],
+      "return": "0 success, -22 failure",
+      "behavior": "Allocate 52-byte timer, set auto-free flag, add one-shot; wrapper releases timer after callback"
+    },
+    "init_timer": {
+      "entry_thumb": "0x806395",
+      "dispatch_slot": "0x14c",
+      "expected_target": "0x80639d",
+      "args": [
+        "context",
+        "data",
+        "main_callback",
+        "aux_callback"
+      ]
+    },
+    "add_timer": {
+      "entry_thumb": "0x8061f5",
+      "dispatch_slot": "0x170",
+      "expected_target": "0x8061fd",
+      "args": [
+        "timer",
+        "delay",
+        "periodic"
+      ],
+      "return": "1 on enqueue success, 0 failure"
+    },
+    "timer_callback_wrapper": {
+      "entry_thumb": "0x806115",
+      "dispatch_slot": "0x178",
+      "expected_target": "0x80611d"
+    },
+    "timer_free": {
+      "entry_thumb": "0x806351",
+      "dispatch_slot": "0x140",
+      "expected_target": "0x806359"
+    },
+    "clock": {
+      "entry_thumb": "0x806605",
+      "dispatch_slot": "0x150",
+      "expected_target": "0x80660d"
+    }
+  },
+  "timer_layout": {
+    "0x00": "context",
+    "0x04": "data",
+    "0x08": "main callback",
+    "0x0c": "aux callback",
+    "0x10": "queue next",
+    "0x14": "queue delta",
+    "0x18": "queue callback",
+    "0x1c": "queue arg",
+    "0x20": "expired byte",
+    "0x24": "delay",
+    "0x28": "active",
+    "0x2c": "periodic",
+    "0x30": "auto-free byte"
+  },
+  "ownership": "One-shot callback must not free its own timer when auto-free is set; scheduler accesses flag and releases after callback returns",
+  "unverified": [
+    "Long-term scheduling reliability",
+    "Heavy cryptography inside timer callback",
+    "Cancellation API",
+    "Autonomous boot registration"
+  ],
+  "references": [
+    "https://raw.githubusercontent.com/seemoo-lab/nexmon/master/patches/common/helper.c",
+    "https://raw.githubusercontent.com/seemoo-lab/nexmon/master/patches/common/wrapper.c"
+  ],
+  "reference_limit": "Nexmon confirms related API shape, not this device addresses; addresses independently derived from exact private ROM. No upstream function bodies copied."
+}

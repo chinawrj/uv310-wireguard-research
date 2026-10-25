@@ -1,0 +1,83 @@
+{
+  "host_wireguard_crypto": false,
+  "special_trigger_packets": 0,
+  "statuses": [
+    {
+      "A": {
+        "phase": 0,
+        "err": 0,
+        "tx_count": 0,
+        "rx_count": 0,
+        "rng_pos": 0,
+        "init_time": 0,
+        "response_time": 0,
+        "receive_len": 0,
+        "worker_count": 61,
+        "f_tx": 0,
+        "f_rx": 0,
+        "f_drop": 0,
+        "f_out_bytes": 0,
+        "f_in_bytes": 0,
+        "allocation_failures": 0,
+        "clock": 17372
+      },
+      "E": {
+        "attempts": 0,
+        "control_ready": 0,
+        "control_kind": 0,
+        "control_packet": 0,
+        "submitted": 0,
+        "freed": 0,
+        "free_payload_delta": 0,
+        "free_header_delta": 0,
+        "keepalive_tx": 0,
+        "last_send": 0,
+        "source_context": 0,
+        "destination_context": 0,
+        "send_ipsr": 0,
+        "send_mask": 0,
+        "control_errors": 0,
+        "clock": 18372
+      },
+      "R": {
+        "renewals": 0,
+        "handshake_failures": 0,
+        "rng_failed": 0,
+        "pool_bytes": 256,
+        "session_start": 0,
+        "key_age": 18441,
+        "current_index": 0,
+        "previous_index": 0,
+        "current_valid": 0,
+        "previous_valid": 0,
+        "lab_started": 0,
+        "lab_elapsed": 0,
+        "lab_limit": 360000,
+        "stopped": 0,
+        "allocation_failures": 0,
+        "clock": 18441
+      },
+      "M": {
+        "arena_bytes": 106012,
+        "allocated_payload": 95072,
+        "allocated_headers": 1672,
+        "peak_payload": 98832,
+        "allocation_failures": 0,
+        "free_payload": 9212,
+        "largest_free_block": 8808,
+        "free_nodes": 7,
+        "free_list_valid": 1,
+        "stack_sentinel_unused": 2596,
+        "stack_floor": 239980,
+        "stack_top": 245100,
+        "stack_bounds_valid": 1,
+        "clock": 18721,
+        "entry_primask": 0,
+        "reserved": 0
+      },
+      "host_monotonic": 199804.851
+    }
+  ],
+  "traffic": [],
+  "passed": true
+}

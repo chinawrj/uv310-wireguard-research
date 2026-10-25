@@ -1,0 +1,34 @@
+{
+  "method": "Offline bounded Hexagon disassembly of extracted DSP2; runtime control test separately recorded",
+  "firmware_download_function": "0xcf84e4",
+  "file_selection": "gp+0x8198 selects rtecdc_new.bin or rtecdc.bin",
+  "file_read_block_bytes": 2048,
+  "transfer_function": "0xcf6610",
+  "transfer_direction_write_value": 1,
+  "file_loop_addresses": [
+    "0xcf85a8",
+    "0xcf85f8",
+    "0xcf85a0"
+  ],
+  "download_state_function": "0xcf7edc",
+  "nvram_layout": "variables placed below RAM-end token; complement/word-count token at RAM end minus four",
+  "upload_ram_function": "0xcf7590",
+  "upload_ram_direction": "r1=0 reads device RAM into host buffer; not a firmware RAM overwrite",
+  "reset_release_call": "0xcf83bc -> 0xcf8490",
+  "startup_original_reset": "0x8b0c",
+  "startup_stack_init": "0x8c96..0x8cc2",
+  "startup_bss_clear": "0x8cc4..0x8cce",
+  "startup_main_call": "0x8cd0 BL 0x18548",
+  "findings": [
+    "File-transfer loop uses actual positive read count and advances by it until EOF",
+    "No fixed image-length check or CRC validation observed in examined transfer loop; this is not proof of absence elsewhere",
+    "dhd_upload_ram reads RAM, including any appended probe; it does not erase it",
+    "Previous failure cause remains unproven",
+    "New probe changes main call after hardware/stack setup and preserves numeric version syntax"
+  ],
+  "limitations": [
+    "Hexagon packet semantics must be respected; raw disassembly is not an execution trace",
+    "Hardware ROM startup, memory mapping and firmware acceptance still require live evidence",
+    "Neither failed probe nor a future marker by itself proves packet forwarding or WireGuard"
+  ]
+}

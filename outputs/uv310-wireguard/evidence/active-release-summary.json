@@ -1,0 +1,15 @@
+{
+  "candidate_sha256": "e3279f7ded4a26303141e5e963e753440f748b5fe0c2486a507f3c760dc17e57",
+  "independent_emission_verified": true,
+  "exact_submitted_packet_heap_release_verified": true,
+  "released_payload_bytes": 580,
+  "released_header_bytes": 8,
+  "async_release_context": {
+    "ipsr": 16,
+    "primask": 0
+  },
+  "scope": "One real independent DNS packet; not queue saturation, general pooled/clone/chain lifetime, or long-running leak test",
+  "stock_restored_and_rebooted": true,
+  "research_files_removed": true,
+  "goal_complete": false
+}

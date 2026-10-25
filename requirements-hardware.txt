@@ -1,0 +1,3 @@
+-r requirements-test.txt
+pyusb>=1.2,<2
+cryptography>=43

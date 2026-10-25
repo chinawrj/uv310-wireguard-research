@@ -1,0 +1,40 @@
+{
+  "candidate_sha256": "304c63f9145499705a3f36b5e2eb2f56f7afbfa21a5a9e48df8e0144e7d06f8d",
+  "bytes": 197040,
+  "code_bytes": 1299,
+  "state_bytes": 160,
+  "heap_start": "0x30200",
+  "crc_check_unchanged": true,
+  "maximum_injected_packets": 1,
+  "wireguard": false,
+  "keys": false,
+  "independent_udp_packet_emission_verified": true,
+  "host_send_count": 1,
+  "injected_dns_id": "0x6b31",
+  "original_dns_id": "0x6b30",
+  "capture_and_send_ipsr": 16,
+  "capture_and_send_primask": 0,
+  "reply_counts_by_id": {
+    "0x6b30": 3,
+    "0x6b31": 3
+  },
+  "duplicate_reply_root_cause": "not established",
+  "final_async_free_verified": false,
+  "allocation_failures_at_submit": 0,
+  "ordinary_wifi_after_emission_verified": true,
+  "stock_restored_and_rebooted": true,
+  "research_files_removed": true,
+  "sim_ready": true,
+  "wifi_up": true,
+  "host_wifi_restored": "ORIGINAL_WIFI verified via System Settings",
+  "goal_complete": false,
+  "production_ready": false,
+  "current_device_internal_wireguard_running": false,
+  "next_required_work": [
+    "Observe final release of independently submitted packets, OSH accounting and bounded queue failure handling before repeated emission",
+    "Integrate timer-context packet emission with idle-context WireGuard crypto; implement retry, keepalive and rekey with correctly synchronized publication",
+    "Establish safe per-boot entropy/freshness and monotonic handshake timestamps; do not reuse current per-build material for new boots",
+    "Complete LAN DNS proxy, IPv6, MTU/error handling and multiple-client routing policy",
+    "Verify standalone repeated boots, reconnect and sustained Wi-Fi UDP performance"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "Offline modem RNG transport and secondary pool audit",
+  "device_access_this_round": false,
+  "device_writes_this_round": false,
+  "host_network_changes_this_round": false,
+  "device_reset_this_round": false,
+  "last_live_precheck": "evidence/bridge-precheck.json",
+  "current_device_state": "Last verified stock firmware; no intervening deployment by this task",
+  "static_instruction_assertions": 23,
+  "static_data_assertions": 7,
+  "cross_processor_rng_bridge_verified": false,
+  "secondary_pool_secure_seeding_verified": false,
+  "secure_entropy_established": false,
+  "seed_values_read": false,
+  "goal_complete": false,
+  "next_required_work": [
+    "Find a verified same-modem task caller / host-DHD callback route with correct buffer ownership; never send internal pointer messages through USB",
+    "Trace external input, readiness and reseed/error behavior for secrnd; do not use the secondary pool until live secure seeding is established",
+    "If no modem bridge is available, reduce full validated M3 entropy-collector memory without weakening health checks and measure it on-device",
+    "Integrate fresh entropy and timestamp/persistent-state handling for reusable boot, rekey and reconnect",
+    "Deploy separately hardened control code with fresh material, then validate full Wi-Fi routing, DNS/MTU, long-term operation and UDP performance"
+  ]
+}

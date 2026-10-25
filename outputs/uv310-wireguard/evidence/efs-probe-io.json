@@ -1,0 +1,37 @@
+{
+  "scope": "Only two new allowlisted probe files; no active firmware replacement",
+  "payload_bytes": 111,
+  "payload_sha256": "ce49e1402742f4bcd0a60e61bbcf3fd2c22447b397243fa10977cc4fc950664b",
+  "events": [
+    {
+      "operation": "preflight_stat",
+      "path": "/SyFi/brew/mod/wg_probe_io_a.bin",
+      "errno": 2
+    },
+    {
+      "operation": "preflight_stat",
+      "path": "/SyFi/brew/mod/wg_probe_io_b.bin",
+      "errno": 2
+    },
+    {
+      "operation": "exclusive_create",
+      "path": "/SyFi/brew/mod/wg_probe_io_a.bin",
+      "errno": 0
+    },
+    {
+      "operation": "write_readback",
+      "matched": true
+    },
+    {
+      "operation": "rename_readback",
+      "matched": true
+    },
+    {
+      "operation": "remove",
+      "path": "/SyFi/brew/mod/wg_probe_io_b.bin",
+      "verified_absent": true
+    }
+  ],
+  "active_firmware_modified": false,
+  "passed": true
+}

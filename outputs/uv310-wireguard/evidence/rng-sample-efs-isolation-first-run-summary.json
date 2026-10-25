@@ -1,0 +1,42 @@
+{
+  "source": "isolate-efs.py tool run completed successfully before retry2, later run overwrote detailed JSON",
+  "initial_and_after_commands": [
+    {
+      "step": "initial",
+      "passed": true,
+      "errno": 0,
+      "size": 193315
+    },
+    {
+      "step": "AT^PROJECTNAME?",
+      "passed": true,
+      "errno": 0,
+      "size": 193315
+    },
+    {
+      "step": "AT+CPIN?",
+      "passed": true,
+      "errno": 0,
+      "size": 193315
+    },
+    {
+      "step": "AT+WIFI?",
+      "passed": true,
+      "errno": 0,
+      "size": 193315
+    },
+    {
+      "step": "AT+WL=wl ver",
+      "passed": true,
+      "errno": 0,
+      "size": 193315
+    },
+    {
+      "step": "AT+WL=wl isup",
+      "passed": true,
+      "errno": 0,
+      "size": 193315
+    }
+  ],
+  "scope": "one USB handle, all checks completed within 0.1s; does not rule out delayed side effects"
+}

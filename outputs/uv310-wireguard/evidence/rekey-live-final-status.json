@@ -1,0 +1,31 @@
+{
+  "commands_read_only": true,
+  "source": "Own firmware: +WL table at 0xf01c1800 -> 0xd380fc -> 0xcf475c; read-only precheck on user-reconnected device; no write/reset",
+  "rows": [
+    {
+      "command": "AT^PROJECTNAME?",
+      "response": "AT^PROJECTNAME?\r\r\n^PROJECTNAME:MDM9600\tUV310\r\n\r\nOK\r\n",
+      "bytes": 52
+    },
+    {
+      "command": "AT+CPIN?",
+      "response": "AT+CPIN?\r\r\n+CPIN: READY\r\n\r\nOK\r\n",
+      "bytes": 31
+    },
+    {
+      "command": "AT+WIFI?",
+      "response": "AT+WIFI?\r\r\n+WIFI:1\r\n\r\nOK\r\n",
+      "bytes": 26
+    },
+    {
+      "command": "AT+WL=wl ver",
+      "response": "AT+WL=wl ver\r\r\n5.90 RC100.5\r\nwl0: Jan 15 2012 08:05:39 version 5.90.153.52.1\r\n\r\n\r\nOK\r\n",
+      "bytes": 86
+    },
+    {
+      "command": "AT+WL=wl isup",
+      "response": "AT+WL=wl isup\r\r\n1\r\n\r\n\r\nOK\r\n",
+      "bytes": 27
+    }
+  ]
+}

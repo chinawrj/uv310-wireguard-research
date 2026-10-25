@@ -1,0 +1,95 @@
+{
+  "scope": "Exact stock ROM/RAM static locations, linear decoding candidates plus emulated helper control flow",
+  "locations": [
+    {
+      "region": "ROM",
+      "address": "0x821e90",
+      "instruction": "ldrh.w r2, [r2, #0x65a]"
+    },
+    {
+      "region": "ROM",
+      "address": "0x82272e",
+      "instruction": "ldrh.w r3, [r3, #0x65a]"
+    },
+    {
+      "region": "ROM",
+      "address": "0x822746",
+      "instruction": "ldrh.w r3, [r3, #0x65a]"
+    },
+    {
+      "region": "ROM",
+      "address": "0x832ed4",
+      "instruction": "ldrh.w r2, [r3, #0x65a]"
+    },
+    {
+      "region": "ROM",
+      "address": "0x837cc2",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "ROM",
+      "address": "0x847a6c",
+      "instruction": "ldrh.w r3, [r2, #0x65a]"
+    },
+    {
+      "region": "ROM",
+      "address": "0x847a70",
+      "instruction": "ldrh.w r2, [r2, #0x65a]"
+    },
+    {
+      "region": "ROM",
+      "address": "0x857f3a",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "ROM",
+      "address": "0x858660",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "RAM",
+      "address": "0xac3a",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "RAM",
+      "address": "0xac46",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "RAM",
+      "address": "0xac6e",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "RAM",
+      "address": "0xac7a",
+      "instruction": "bl #0x822714"
+    },
+    {
+      "region": "RAM",
+      "address": "0xb21e",
+      "instruction": "bl #0x822714"
+    }
+  ],
+  "helper_range": [
+    "0x822714",
+    "0x82274e"
+  ],
+  "helper_instruction_sha256": "43893657c4a2bc310525d6399cc0195d76e996fdaa122588ef9d360e975de50b",
+  "public_register_name_reference": {
+    "url": "https://code.googlesource.com/linux/torvalds/linux/+/56bf6fc266ca14d2b9276c8a62e4ff6783bfe68b/drivers/net/wireless/broadcom/brcm80211/brcmsmac/d11.h",
+    "observation": "tsf_random field, 16-bit, offset0x65a",
+    "scope": "Cross-family D11 layout only; not BCM43362 cryptographic entropy certification"
+  },
+  "confirmed_original_ram_calls": [
+    "0xac3a",
+    "0xac46",
+    "0xac6e",
+    "0xac7a",
+    "0xb21e"
+  ],
+  "runtime_context_and_hardware_readiness_verified": false,
+  "no_live_hardware_register_read_performed": true,
+  "secure_entropy_established": false
+}

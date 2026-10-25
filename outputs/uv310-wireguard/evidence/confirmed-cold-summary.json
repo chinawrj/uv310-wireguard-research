@@ -1,0 +1,29 @@
+{
+  "goal_complete": false,
+  "utc": "2026-10-25T22:08:32.974234+00:00",
+  "user_confirmed_full_power_removal": true,
+  "instrumented_power_measurement": false,
+  "previous_control_data_blocker_resolved": true,
+  "at_and_diag_recovered": true,
+  "efs_recovered": true,
+  "sim_ready": true,
+  "wifi_driver_up": true,
+  "stock_hash_reverified": true,
+  "wifi_dhcp_recovered": true,
+  "wifi_management_http_200": true,
+  "wifi_bound_external_https_200": true,
+  "host_network_restored": true,
+  "device_writes_this_round": false,
+  "software_reset_this_round": false,
+  "current_device_internal_wireguard_running": false,
+  "hardware_layout_only": true,
+  "renewal_256_reserved_bytes": 16752,
+  "renewal_increment_same_256_pool_bytes": 768,
+  "next_required_work": [
+    "Cold power cycle restored actual control and Wi-Fi services; previous device-service blocker is resolved. Do not repeat replug request without new evidence.",
+    "Hardware-address renewal link with synthetic config fits the known image/heap address layout; historical traffic heap projection is5156B for256B pool and4388B for1024B pool, not a fresh peak measurement.",
+    "Integrate bounded actual random provider and cross-reboot timestamp source; AT CCLK was available in prior freshness work but no modem-to-Wi-Fi native bridge exists. Do not treat fixed per-build material as autonomous startup.",
+    "After platform prerequisites, build fresh private one-boot lab material for a bounded rekey interoperability test, with backup/rollback and actual heap observation. Never reuse old keyed candidates.",
+    "Still verify standalone repeated boot, Wi-Fi routing/DNS/MTU policy, long-term renewal and UDP performance; current device remains stock and WireGuard is off."
+  ]
+}

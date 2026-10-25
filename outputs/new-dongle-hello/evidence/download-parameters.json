@@ -1,0 +1,12 @@
+[
+  {
+    "interface": 3,
+    "raw_hex": "7e026ad37e",
+    "nop_replies": [
+      "02"
+    ],
+    "parameters_replies": [
+      "0807014000000000"
+    ]
+  }
+]

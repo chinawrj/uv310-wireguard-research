@@ -1,0 +1,115 @@
+{
+  "analysis_completed": true,
+  "candidate_unchanged": true,
+  "full_second_capture": true,
+  "second_startup_result": 0,
+  "second_count": 512,
+  "second_unique": 209,
+  "second_min": 390589,
+  "second_max": 433726,
+  "second_median": 390799.0,
+  "second_most_common": [
+    [
+      390669,
+      35
+    ],
+    [
+      390708,
+      27
+    ],
+    [
+      390728,
+      21
+    ],
+    [
+      390649,
+      21
+    ],
+    [
+      390689,
+      20
+    ],
+    [
+      390748,
+      18
+    ],
+    [
+      390688,
+      17
+    ],
+    [
+      390709,
+      15
+    ],
+    [
+      390729,
+      14
+    ],
+    [
+      390629,
+      12
+    ]
+  ],
+  "same_ordinal_exact_matches": 19,
+  "identical_prefix_samples": 0,
+  "shared_unique_values": 65,
+  "frozen_first_boot_predictors": [
+    {
+      "predictor": "fixed_training_mode",
+      "exact_hits": 31,
+      "total": 480,
+      "accuracy": 0.06458333333333334
+    },
+    {
+      "predictor": "previous_value",
+      "exact_hits": 0,
+      "total": 480,
+      "accuracy": 0.0
+    },
+    {
+      "predictor": "training_selected_lag_copy",
+      "exact_hits": 19,
+      "total": 480,
+      "accuracy": 0.03958333333333333
+    },
+    {
+      "predictor": "training_modal_difference",
+      "exact_hits": 20,
+      "total": 480,
+      "accuracy": 0.041666666666666664
+    },
+    {
+      "predictor": "training_transition_order1",
+      "exact_hits": 134,
+      "total": 480,
+      "accuracy": 0.2791666666666667
+    },
+    {
+      "predictor": "training_transition_order2",
+      "exact_hits": 136,
+      "total": 480,
+      "accuracy": 0.2833333333333333
+    },
+    {
+      "predictor": "training_selected_phase_mode",
+      "exact_hits": 41,
+      "total": 480,
+      "accuracy": 0.08541666666666667
+    }
+  ],
+  "test_count": 480,
+  "test_indices": [
+    32,
+    511
+  ],
+  "first32_second_boot_samples_used_only_as_causal_context": true,
+  "new_boot_model_fitting_or_phase_alignment": false,
+  "secure_entropy_established": false,
+  "limitations": [
+    "Two software-reset Wi-Fi boots under similar quiet conditions; not power-cycle or stress coverage",
+    "The first32 new samples are causal context only, not model training",
+    "A failed predictor does not establish entropy or security; exact-value shifts can reduce accuracy",
+    "Instrumentation and changed resident layout remain part of the measured source",
+    "No entropy lower bound, cryptographic random output, or WireGuard performance claim"
+  ]
+}
