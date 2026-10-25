@@ -2,6 +2,8 @@
 
 本文件是 2026-10-26 发布时的交接快照，优先于各历史 JSON 中的 `current_*` 字段。老证据中的“已恢复/正在运行”只描述该次实验结束时。
 
+研究路线与关键突破先看 [HACKING.md](HACKING.md)。
+
 ## 1. 用户真正要什么
 
 让这只 **UV310 的 Wi-Fi 客户端**通过设备原生 WireGuard 出口上网；USB ECM/RNDIS 是次要路径。不能用 Mac 上的 VPN、QEMU 协议通过、下载模式 Hello World 替代设备内 Wi-Fi 转发。EC20 和华为 E8372h-155 是此前另外两台设备；本仓库只承接 UV310。
