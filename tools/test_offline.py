@@ -10,11 +10,11 @@ with tempfile.TemporaryDirectory(prefix='uv310-offline-') as tmp:
  r=subprocess.run([sys.executable,f'work/uv310-wireguard/{branch}/test-build.py'],cwd=t)
  if r.returncode:raise SystemExit(r.returncode)
  src=t/f'outputs/uv310-wireguard/evidence/{branch}-tests.json'
- data=json.loads(src.read_text());expected={'rekey-memory':32,'rekey-live':20,'rekey-pressure':41}[branch]
+ data=json.loads(src.read_text());expected={'rekey-memory':32,'rekey-live':20,'rekey-pressure':45}[branch]
  assert len(data['suites'])==expected and all(x['passed'] for x in data['suites'])
- negatives={'rekey-memory':6,'rekey-live':3,'rekey-pressure':9}[branch]
+ negatives={'rekey-memory':6,'rekey-live':3,'rekey-pressure':12}[branch]
  assert len(data['negative_controls'])==negatives and all(x['detected'] for x in data['negative_controls'])
  dest=ROOT/'.test-results';dest.mkdir(exist_ok=True)
  (dest/src.name).write_bytes(src.read_bytes())
- print(f'PASS: {expected} synthetic suites, {negatives} mutations detected. No USB/network/firmware deployment.')
+ print(f'PASS: {expected} synthetic suites, {negatives} negative controls detected. No USB/network/firmware deployment.')
  print('Result:',dest/src.name)

@@ -21,7 +21,7 @@ LLVM_CLANG=/opt/homebrew/opt/llvm/bin/clang python3 tools/stack_audit.py --branc
 LLVM_CLANG=/opt/homebrew/opt/llvm/bin/clang python3 tools/compare_native_size.py
 ```
 
-41项QEMU场景、9项负向变异检查通过。继承的ALLOC_NULL_FIRST/REKEY/KEEPALIVE现在验证恢复而不是终止；畸形packet仍验证释放并终止。覆盖两次失败后第三次成功、持续失败达到次数限制、新控制消息重新获得次数预算、32bit时钟回绕、队列过期、密钥过期、实验期限、分配调用中时间推进、延迟释放与包所有权。
+初始41项QEMU场景、9项负向变异检查通过。后续加入独立nonce记录器与交错场景，共45项场景、12项负向控制通过，见 [NONCE_LIFECYCLE.md](NONCE_LIFECYCLE.md)。继承的ALLOC_NULL_FIRST/REKEY/KEEPALIVE现在验证恢复而不是终止；畸形packet仍验证释放并终止。覆盖两次失败后第三次成功、持续失败达到次数限制、新控制消息重新获得次数预算、32bit时钟回绕、队列过期、密钥过期、实验期限、分配调用中时间推进、延迟释放与包所有权。
 
 恢复场景实际完成合成对端握手及双向加解密UDP校验，并检查随机池位置、握手序号、发送counter和内存记账。没有有效会话的退避期间另行验证外网IPv4不被放行。负向变异包含删除退避、删除次数上限、恢复旧版一次失败就终止、遗漏每条消息的预算重置，均被捕获。测试使用模拟ROM allocator与显式时间推进，不模拟真实SDIO/USB/射频/中断调度。
 

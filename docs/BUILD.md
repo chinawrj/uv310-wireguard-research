@@ -43,4 +43,4 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 
 ## 有界分配重试候选
 
-`make test-pressure`在隔离临时目录重放41项QEMU场景、9项负向变异。`rekey-memory`的32项/6项对照和`rekey-live`的20项/3项保持不变。候选与资源比较见 [ALLOCATION_RETRY.md](ALLOCATION_RETRY.md)；未提供实机打包或部署入口。
+`make test-pressure`在隔离临时目录重放45项QEMU场景、12项负向控制。`rekey-memory`的32项/6项对照和`rekey-live`的20项/3项保持不变。候选与资源比较见 [ALLOCATION_RETRY.md](ALLOCATION_RETRY.md)；未提供实机打包或部署入口。

@@ -41,6 +41,26 @@ static struct wireguard_keypair *active_server_key;
 volatile unsigned failure_line;
 extern struct wireguard_device *fixture_device(void);
 extern u32 renewals,handshake_failures,rng_failed,lab_origin;
+/* Independent test-only ledger at the crypto API boundary. Neither linked
+ * into the native candidate nor a new cryptographic implementation. */
+struct nonce_record {u8 key[32];uint64_t highest;u32 used;};
+static struct nonce_record nonce_records[8];
+static u32 nonce_errors,nonce_encryptions,nonce_keys;
+extern void __real_wireguard_encrypt_packet(u8*,const u8*,size_t,struct wireguard_keypair*);
+void __wrap_wireguard_encrypt_packet(u8*d,const u8*s,size_t len,struct wireguard_keypair*k){
+ struct wireguard_peer*p=&fixture_device()->peers[0];
+ if(k==&p->curr_keypair||k==&p->prev_keypair||k==&p->next_keypair){
+  u32 i;for(i=0;i<nonce_keys;i++)if(!memcmp(nonce_records[i].key,k->sending_key,32))break;
+  if(i==nonce_keys){
+   if(nonce_keys>=8){nonce_errors++;goto encrypt;}
+   memcpy(nonce_records[i].key,k->sending_key,32);nonce_keys++;
+  }
+  if(nonce_records[i].used&&k->sending_counter<=nonce_records[i].highest)nonce_errors++;
+  nonce_records[i].highest=k->sending_counter;nonce_records[i].used=1;nonce_encryptions++;
+ }
+encrypt:
+ __real_wireguard_encrypt_packet(d,s,len,k);
+}
 static u32 fixture_alignment;
 static u8 decoded[1700],reply[1740];
 #define CHECK(x) do{if(!(x)){if(!failure_line)failure_line=__LINE__;return failure_line;}}while(0)
@@ -124,7 +144,7 @@ static int recover_alloc(u32 expected_phase){
  CHECK(rng_pos==random&&attempts==serial&&fixture_device()->peers[0].curr_keypair.sending_counter==counter);
  CHECK(W(0x2688)==payload&&W(0x26a4)==headers);return 0;
 }
-int tests(void){
+static int scenario(void){
 #if defined(TEST_MEMORY) || defined(TEST_MEMORY_BAD_NODE) || defined(TEST_MEMORY_CYCLE) || defined(TEST_MEMORY_SIZE) || defined(TEST_MEMORY_BAD_STACK)
  extern void memory_snapshot(u32*);u32 v[16];
  W(0x26c8)=4096;W(0x2688)=1024;W(0x26a4)=16;W(0x26cc)=2048;W(0x2690)=3;
@@ -181,8 +201,58 @@ int tests(void){
  CHECK(wireguard_device_init(&server,SERVER_PRIVATE));CHECK(wireguard_peer_init(&server,&server.peers[0],CLIENT_PUBLIC,PRESHARED_KEY));
  CHECK(make_response()==0);CHECK(complete_response()==0);old_response=response;
  struct wireguard_peer*p=&fixture_device()->peers[0];
+#ifdef TEST_NONCE_LEDGER_PROBE
+ /* Deliberately reuse the initial keepalive counter. No decrypt/packet check
+  * follows; only the independent ledger should make tests() fail. */
+ p->curr_keypair.sending_counter=0;
+ wireguard_encrypt_packet(decoded,decoded,0,&p->curr_keypair);
+ return 0;
+#endif
 #if defined(TEST_ALLOC_NULL_FIRST) || defined(TEST_PRESSURE_WRAP) || defined(TEST_PRESSURE_SECOND_FAIL)
  CHECK(one_forward(17,25)==0);return 0;
+#endif
+#if defined(TEST_NONCE_DELAYED_KEEPALIVE) || defined(TEST_NONCE_DISCARDED_KEEPALIVE) || defined(TEST_NONCE_REKEY_PRESSURE) || defined(TEST_NONCE_WRAP_INTERLEAVE)
+ /* Queue an encrypted keepalive, then send ordinary traffic while allocation
+  * is unavailable. Sending counters follow encryption order, not submit order. */
+#ifdef TEST_NONCE_WRAP_INTERLEAVE
+ fixture_clock=0xffffff80u;lab_origin=fixture_clock-20000u;
+ p->curr_keypair.keypair_millis=fixture_clock-20000u;last_keepalive=fixture_clock-20000u;
+#else
+ fixture_clock=last_keepalive+20000;
+#endif
+ signal_timer(0);worker();CHECK(control_ready==2&&phase==9);
+ uint64_t queued_counter=p->curr_keypair.sending_counter-1;
+ u32 start_encryptions=nonce_encryptions,start_random=rng_pos,start_attempts=attempts,start_submits=submitted;
+ alloc_null=1;signal_timer(0);CHECK(control_ready==2&&!stopped);
+ CHECK(one_forward(17,17)==0);CHECK(one_forward(17,19)==0);
+ CHECK(p->curr_keypair.sending_counter==queued_counter+3&&nonce_encryptions==start_encryptions+2);
+ CHECK(rng_pos==start_random&&attempts==start_attempts&&submitted==start_submits);
+ fixture_clock+=249;signal_timer(0);worker();CHECK(control_ready==2&&submitted==start_submits);
+#ifdef TEST_NONCE_DISCARDED_KEEPALIVE
+ fixture_clock++;signal_timer(0);CHECK(control_ready==2);
+ fixture_clock+=250;signal_timer(0);CHECK(!control_ready&&!stopped&&submitted==start_submits);
+ CHECK(p->curr_keypair.sending_counter==queued_counter+3&&nonce_encryptions==start_encryptions+2);
+ CHECK(one_forward(17,21)==0);
+ fixture_clock=last_keepalive+20000;signal_timer(0);worker();CHECK(control_ready==2);
+ CHECK(p->curr_keypair.sending_counter==queued_counter+5);
+ alloc_null=0;signal_timer(0);CHECK(U8TO64_LITTLE(sent+50)==queued_counter+4);
+#else
+ alloc_null=0;fixture_clock++;signal_timer(0);CHECK(!control_ready&&submitted==start_submits+1);
+ CHECK(U8TO64_LITTLE(sent+50)==queued_counter&&nonce_encryptions==start_encryptions+2);
+#endif
+ CHECK(wireguard_decrypt_packet(decoded,sent+58,16,U8TO64_LITTLE(sent+50),active_server_key));
+ CHECK(wireguard_check_replay(active_server_key,U8TO64_LITTLE(sent+50)));
+ CHECK(one_forward(17,23)==0);CHECK(!nonce_errors&&nonce_keys==1);
+#ifdef TEST_NONCE_REKEY_PRESSURE
+ u8 prior_key[32];memcpy(prior_key,p->curr_keypair.sending_key,32);
+ fixture_clock=p->curr_keypair.keypair_millis+120000;last_keepalive=fixture_clock;
+ signal_timer(0);worker();CHECK(phase==2&&control_ready==1);
+ CHECK(recover_alloc(2)==0);CHECK(one_forward(17,25)==0);
+ CHECK(make_response()==0);CHECK(complete_response()==0);CHECK(renewals==1);
+ CHECK(memcmp(prior_key,p->curr_keypair.sending_key,32)&&p->curr_keypair.sending_counter==1);
+ CHECK(nonce_keys==2&&!nonce_errors);CHECK(one_forward(17,27)==0);
+#endif
+ CHECK(!nonce_errors&&!owned_packet&&!ownership_errors&&submitted==freed);return 0;
 #endif
 #if defined(TEST_ALLOC_NULL_KEEPALIVE) || defined(TEST_PRESSURE_KEEP_LIMIT) || defined(TEST_PRESSURE_KEY_DEADLINE) || defined(TEST_PRESSURE_LAB_DEADLINE)
  fixture_clock=last_keepalive+20000;signal_timer(0);worker();CHECK(phase==9&&control_ready==2);
@@ -460,6 +530,12 @@ static int forward_tests(void){
  b=ordinary(1,10);b[20]=0x20;CHECK(intercept(0,0x35000)==1&&f_tx==before);
  b=ordinary(1,10);fixture_device()->peers[0].curr_keypair.keypair_millis=wireguard_sys_now()-180001;CHECK(intercept(0,0x35000)==1&&f_tx==before);
  return 0;
+}
+
+int tests(void){
+ int result=scenario();
+ CHECK(!nonce_errors);
+ return result;
 }
 
 void print_fail(unsigned ignored){(void)ignored;unsigned n=failure_line;char msg[]="FAIL line=00000000\n";for(unsigned i=0;i<8;i++)msg[10+i]="0123456789abcdef"[(n>>(28-4*i))&15];register unsigned r0 __asm__("r0")=4;register char*r1 __asm__("r1")=msg;__asm__ volatile("bkpt #0xab" : "+r"(r0):"r"(r1):"memory");}

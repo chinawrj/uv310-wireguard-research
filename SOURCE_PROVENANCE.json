@@ -603,13 +603,6 @@
     "previous_published_sha256": "aaeb99052a3d963c24d4a3a22cd58bc952566cd4a69a2538b1e44e77d6f331ce"
   },
   {
-    "path": "tools/test_offline.py",
-    "published_sha256": "16704888be990a96d20475a45731008ebcbfbd79796a6a69dcc8687eb207993a",
-    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
-    "private_material_required": false,
-    "previous_published_sha256": "a71dc3f44730898763f673782b78829b53f7bab4cc314efb0fc8a2da9f7c1a9d"
-  },
-  {
     "path": "work/uv310-wireguard/rekey-pressure/native-config.h",
     "published_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
     "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
@@ -622,15 +615,24 @@
     "private_material_required": false
   },
   {
-    "path": "work/uv310-wireguard/rekey-pressure/test-build.py",
-    "published_sha256": "4afe44e8e3d907b011565f89eaeab0287ec33ff1d61d763ec2d7d2b7b601a93e",
-    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "path": "tools/test_offline.py",
+    "published_sha256": "bedc4dae3c0ddd14c6354bb021b935ccaaae6f12205b5cd1a6b34f8fceef5925",
+    "previous_published_sha256": "16704888be990a96d20475a45731008ebcbfbd79796a6a69dcc8687eb207993a",
+    "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
     "private_material_required": false
   },
   {
     "path": "work/uv310-wireguard/rekey-pressure/tests.c",
-    "published_sha256": "622f0ec01bea4d2eaa8854b0f95ce6091afc66610cfc74a404bdef84ce4a8360",
-    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "published_sha256": "3e294aaa8ed9e4c02fca6e060f9e7e1f270cbefe912836b4920b75c758ce22c2",
+    "previous_published_sha256": "622f0ec01bea4d2eaa8854b0f95ce6091afc66610cfc74a404bdef84ce4a8360",
+    "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-pressure/test-build.py",
+    "published_sha256": "8b1e4200227c8d92cd7a5869810a28c10ab879e013a215d81910b063465db11e",
+    "previous_published_sha256": "4afe44e8e3d907b011565f89eaeab0287ec33ff1d61d763ec2d7d2b7b601a93e",
+    "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
     "private_material_required": false
   }
 ]

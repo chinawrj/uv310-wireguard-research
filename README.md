@@ -14,7 +14,7 @@ ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362 的逆向研究、原生代码与实
 | `rekey-memory` 实机 | 直接测得运行中空闲 payload 4,636 B、最大块 4,444 B | 147.812 s 测试失败；本分支未验证换钥完成 |
 | QEMU Cortex-M3 | 32 个测试场景与 6 个负向变异检查通过 | 不模拟 BCM 外设、射频、SDIO、真实熵源 |
 
-新增离线候选 `rekey-pressure`：控制包分配失败后有界重试，41项QEMU场景与9项负向变异通过，尚未部署。见 [候选说明](docs/ALLOCATION_RETRY.md)。
+新增离线候选 `rekey-pressure`：控制包分配失败后有界重试，45项QEMU场景与12项负向控制通过，尚未部署。见 [候选说明](docs/ALLOCATION_RETRY.md)。
 
 ## 导航
 

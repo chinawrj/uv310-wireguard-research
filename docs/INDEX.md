@@ -167,3 +167,8 @@
 - [候选QEMU结果](../outputs/uv310-wireguard/evidence/rekey-pressure-tests.json)
 - [候选栈分析](../outputs/uv310-wireguard/evidence/stack-audit-rekey-pressure.json)
 - [目标文件大小对照](../outputs/uv310-wireguard/evidence/native-size-pressure.json)
+
+## 发送nonce生命周期验证
+
+- [检查方法与边界](NONCE_LIFECYCLE.md)
+- [45项场景与12项负向控制](../outputs/uv310-wireguard/evidence/nonce-lifecycle-tests.json)
