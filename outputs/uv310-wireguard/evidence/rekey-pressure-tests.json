@@ -1,0 +1,304 @@
+{
+  "scope": "Synthetic Cortex-M3 integration, no real radio/clock/entropy/device deployment",
+  "suites": [
+    {
+      "name": "BASELINE",
+      "passed": true,
+      "elf_sha256": "2ccc4f7c1e3f88869bad4aa4c8636a866a5642d0a281a6506f1247d31fd95114"
+    },
+    {
+      "name": "REKEY",
+      "passed": true,
+      "elf_sha256": "ca6d0d12de27496819da834d0760fe3ce2fad61f3e2f12bc634a2c370c014b0f"
+    },
+    {
+      "name": "BAD_MAC",
+      "passed": true,
+      "elf_sha256": "82d04d415d83c9d3402423497e8b70acbbda678119801f663f7e8848ed75575f"
+    },
+    {
+      "name": "BAD_AEAD",
+      "passed": true,
+      "elf_sha256": "464596126de48edf4bdc44c2f73e8b71e39ebb450e25901c726a6d773093b8be"
+    },
+    {
+      "name": "STALE_RESPONSE",
+      "passed": true,
+      "elf_sha256": "bab814e9ac91dbcd0b45260ddeb6090377b19be0a09ed5cf11174dd0199db00d"
+    },
+    {
+      "name": "RNG_FAIL",
+      "passed": true,
+      "elf_sha256": "9bed5703eea5d06e15a5b8c2c36e9cb2331aaf75e7189f126d372e8e58c2d3d5"
+    },
+    {
+      "name": "QUEUE_EXPIRE",
+      "passed": true,
+      "elf_sha256": "8500b0e0e0b45ae8723c6593d64f1b3d7891d16fcb6bfa560bad01027ae60475"
+    },
+    {
+      "name": "RETRY",
+      "passed": true,
+      "elf_sha256": "0959852a61d5f51fdaf540ce845eb1f3a56bd25dcc470bc60a41eb2a1effe661"
+    },
+    {
+      "name": "RETRY_LIMIT",
+      "passed": true,
+      "elf_sha256": "c5bb120ada2a09f8d1d158c718db2b663a9e2fffeb5c85b69c0aa771341986ec"
+    },
+    {
+      "name": "ALLOC_EXPIRE",
+      "passed": true,
+      "elf_sha256": "8c7ec84bbb8b293d98010b6d5bc2257b2f295f8406cfdf726b6ab68e70b84008"
+    },
+    {
+      "name": "COUNT_REKEY",
+      "passed": true,
+      "elf_sha256": "c14fe71b8326b20054f62a4785dffe417b9e3435c03a9165b1f7eb9216191c55"
+    },
+    {
+      "name": "COUNT_REJECT",
+      "passed": true,
+      "elf_sha256": "c226e901a833e00eb60bc67f79fa65fec17fbc1d209ac8afa1dbf00caac4b6f5"
+    },
+    {
+      "name": "WRAP",
+      "passed": true,
+      "elf_sha256": "a59b44b7e98d56f38740810888b06c46e35da61f13711f53d4bef0b432a70ed0"
+    },
+    {
+      "name": "TAI_CARRY",
+      "passed": true,
+      "elf_sha256": "a8f235dfe1143b7a8a8e9fb5ec1f7baf9f418bb3377cc954dd4de7dcd54343be"
+    },
+    {
+      "name": "CLAIM_RACE",
+      "passed": true,
+      "elf_sha256": "c0d18e8f8997d7b8a6103dc9201954c7a9c320ba3f594f03f351147c16c00781"
+    },
+    {
+      "name": "PUBLISH_EXPIRY",
+      "passed": true,
+      "elf_sha256": "c3a90b500281f1fd5b72168016a5121eb23ad11106e6e9cd7bae519bf3222295"
+    },
+    {
+      "name": "LAB_PACKET",
+      "passed": true,
+      "elf_sha256": "e8d8a509c31504fa87a1b1d084c52ca24f3aa4fbc37434227bd5b48b4f59e22e"
+    },
+    {
+      "name": "LAB_TIMER",
+      "passed": true,
+      "elf_sha256": "d2dbe8510d97f7d8bd52b2ac0bb7030b86f8cd6df4af2b5a2c62883b40611a33"
+    },
+    {
+      "name": "LAB_WORKER",
+      "passed": true,
+      "elf_sha256": "2f4c8bf2bb604c2ebd0215673d792f779339b0f85ec4e3a3f34eca9a5feeb917"
+    },
+    {
+      "name": "LAB_WRAP",
+      "passed": true,
+      "elf_sha256": "42e59df6557d537c09208b33d7eb06e77becaa6a2ceb539d321ada5b31bfba85"
+    },
+    {
+      "name": "MEMORY",
+      "passed": true,
+      "elf_sha256": "2d9dffcee2f2fbee5ccba1aafec51913465da9ab2849f45d86872305d3184f53"
+    },
+    {
+      "name": "MEMORY_BAD_NODE",
+      "passed": true,
+      "elf_sha256": "2472dedb9059e5c94189718d704f95b1f2299d6efa2e6b14bbc716e7b46bed0f"
+    },
+    {
+      "name": "MEMORY_CYCLE",
+      "passed": true,
+      "elf_sha256": "bdb9c7536191928d72e0e025709a10a16d8671f13687710b7b5f857b3e2f5a0e"
+    },
+    {
+      "name": "MEMORY_SIZE",
+      "passed": true,
+      "elf_sha256": "c12a80067ee94175bcd01332409cb38d8e0139c1a92264a06fdeb15033535d8f"
+    },
+    {
+      "name": "MEMORY_BAD_STACK",
+      "passed": true,
+      "elf_sha256": "3ed0a2cfab731a2ed158dc2e0728d9feeb70cc56933bce615a3feabcf2451e11"
+    },
+    {
+      "name": "ALLOC_NULL_FIRST",
+      "passed": true,
+      "elf_sha256": "188a392a4d00b4700b3acada535e145efad01ccada2739ef4df67b030614fdda"
+    },
+    {
+      "name": "ALLOC_NULL_REKEY",
+      "passed": true,
+      "elf_sha256": "cb93e39baf0785ea6cc8c2df861d8763bdeff5b4af4d8a345572e35b04897301"
+    },
+    {
+      "name": "ALLOC_NULL_KEEPALIVE",
+      "passed": true,
+      "elf_sha256": "f450b64b518d4adebb5c25b52da0a3828e6b44c1bde868b6aa06aadf9196545e"
+    },
+    {
+      "name": "ALLOC_BAD_LAYOUT",
+      "passed": true,
+      "elf_sha256": "b174829cbcce31af8b657b458236bc15c5a5599da647f9e99e7ecbf4785d59bd"
+    },
+    {
+      "name": "DEFERRED_RELEASE",
+      "passed": true,
+      "elf_sha256": "9f993bee2ce1bbbed6a14588e15b05b91e736def1407f970a60ae6f13e2ef5ff"
+    },
+    {
+      "name": "HELD_RELEASE_EXPIRY",
+      "passed": true,
+      "elf_sha256": "ea175e45d3077d85ad63f8d8f291895c3216c19dbe29188fdc75e0f07476725e"
+    },
+    {
+      "name": "SUBMIT_NONZERO",
+      "passed": true,
+      "elf_sha256": "d9afea901ae9b03ba0a78b5e6d08e21c19cb21172099b63630e09fe555b50005"
+    },
+    {
+      "name": "PRESSURE_SECOND_FAIL",
+      "passed": true,
+      "elf_sha256": "143d910341dcdbc7da4c590c2db2e7cda96089ec5bf838cf22f486aa984a6cd9"
+    },
+    {
+      "name": "PRESSURE_WRAP",
+      "passed": true,
+      "elf_sha256": "c9d5d069bc6a8dfa64297b1fa2a9230dbe68534fb9ae4932d734b5f4dba6d1a0"
+    },
+    {
+      "name": "PRESSURE_KEEP_LIMIT",
+      "passed": true,
+      "elf_sha256": "5197c3b90279fabf5df2b6ccebfafac055678205699df1cffc5c0229a64e7ef0"
+    },
+    {
+      "name": "PRESSURE_KEY_DEADLINE",
+      "passed": true,
+      "elf_sha256": "2c23258629f2b339b55409296e62f78269c2899df5d7bdb7734594f1112dc4b8"
+    },
+    {
+      "name": "PRESSURE_LAB_DEADLINE",
+      "passed": true,
+      "elf_sha256": "e9e7c373fcced3ed4ac26594a9d743b508393e0f8a734ea4595deed9441330d5"
+    },
+    {
+      "name": "PRESSURE_INIT_LIMIT",
+      "passed": true,
+      "elf_sha256": "fdc3eb2f5ae01a643066b2f76c23224b5e46fee99d13f690749bc14c4de35ff1"
+    },
+    {
+      "name": "PRESSURE_QUEUE_DEADLINE",
+      "passed": true,
+      "elf_sha256": "890289226e59e027ede634ef9c0099f29837f9b5f154f96e6d5c3b0b8c0b1659"
+    },
+    {
+      "name": "PRESSURE_NULL_EXPIRE",
+      "passed": true,
+      "elf_sha256": "e69077bb3397edf1d045b7bb6ac5098e41e7c3751cc620b065363dcdbdd37eed"
+    },
+    {
+      "name": "PRESSURE_BUDGET_RESET",
+      "passed": true,
+      "elf_sha256": "38b58914a18fc6fad5a4f3e6b79a26b571d4af1541ef5eb0d651400253017232"
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "reset_device",
+      "detected": true
+    },
+    {
+      "mutation": "lost_response",
+      "detected": true
+    },
+    {
+      "mutation": "reject_previous",
+      "detected": true
+    },
+    {
+      "mutation": "malformed_packet_leak",
+      "detected": true
+    },
+    {
+      "mutation": "reuse_owned_packet",
+      "detected": true
+    },
+    {
+      "mutation": "no_alloc_backoff",
+      "detected": true
+    },
+    {
+      "mutation": "unbounded_alloc",
+      "detected": true
+    },
+    {
+      "mutation": "terminal_null",
+      "detected": true
+    },
+    {
+      "mutation": "no_budget_reset",
+      "detected": true
+    }
+  ],
+  "rekey_after_ms": 120000,
+  "reject_at_age_ms": 180000,
+  "retry_after_ms": 5000,
+  "max_cycle_tries": 18,
+  "source_sha256": {
+    "work/uv310-wireguard/rekey-pressure/native.c": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562",
+    "work/uv310-wireguard/rekey-pressure/tests.c": "622f0ec01bea4d2eaa8854b0f95ce6091afc66610cfc74a404bdef84ce4a8360",
+    "work/uv310-wireguard/rekey-pressure/native-config.h": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "work/uv310-wireguard/rng-provider/wireguard.h": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d"
+  },
+  "sections_synthetic_link": {
+    ".vectors": {
+      "bytes": 8,
+      "address": 0
+    },
+    ".start": {
+      "bytes": 88,
+      "address": 4096
+    },
+    ".hook": {
+      "bytes": 4,
+      "address": 40440
+    },
+    ".tests": {
+      "bytes": 3905,
+      "address": 65536
+    },
+    ".probe": {
+      "bytes": 17000,
+      "address": 163840
+    },
+    ".state": {
+      "bytes": 1872,
+      "address": 180840
+    },
+    ".version": {
+      "bytes": 192,
+      "address": 182712
+    },
+    ".teststate": {
+      "bytes": 4744,
+      "address": 221184
+    }
+  },
+  "limitations": [
+    "Fixed synthetic RNG pool and TAI base are not safe standalone platform services",
+    "Worker crypto phases still drop external packets, no packet queue",
+    "No retry jitter, receive-driven early renewal or server-initiated handshake support yet",
+    "Single IPv4 client, LAN DNS bypass and IPv6 policy not expanded",
+    "No live image or throughput result"
+  ],
+  "control_allocation_retry_ticks": 250,
+  "control_allocation_max_tries": 3,
+  "hardware_deployed": false,
+  "goal_complete": false
+}

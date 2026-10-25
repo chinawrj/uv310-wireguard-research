@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,os,re,shutil,subprocess,tempfile
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--branch',choices=['rekey-memory','rekey-live'],default='rekey-memory');args=parser.parse_args()
+parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--branch',choices=['rekey-memory','rekey-live','rekey-pressure'],default='rekey-memory');args=parser.parse_args()
 P=Path('work/uv310-wireguard');N=P/args.branch;R=P/'rng-provider';H=P/'control-hardening';W=P/'wg-port';S=W/'upstream/src'
 CC=os.environ.get('LLVM_CLANG') or shutil.which('clang')
 if not CC:raise SystemExit('Set LLVM_CLANG to an ARM-target-capable clang')

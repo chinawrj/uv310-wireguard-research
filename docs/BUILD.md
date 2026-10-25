@@ -40,3 +40,7 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 ## 新增离线入口
 
 `make test-observer`运行23项mocked USB/AT/host故障注入；`make stack-audit`生成compiler frame与可见调用链报告。完整范围、结果和限制见 [OFFLINE_PROGRESS.md](OFFLINE_PROGRESS.md)。这两个入口均不访问真实设备。
+
+## 有界分配重试候选
+
+`make test-pressure`在隔离临时目录重放41项QEMU场景、9项负向变异。`rekey-memory`的32项/6项对照和`rekey-live`的20项/3项保持不变。候选与资源比较见 [ALLOCATION_RETRY.md](ALLOCATION_RETRY.md)；未提供实机打包或部署入口。

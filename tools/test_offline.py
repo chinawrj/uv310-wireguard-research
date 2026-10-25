@@ -3,16 +3,16 @@ from pathlib import Path
 import json,os,shutil,subprocess,sys,tempfile
 ROOT=Path(__file__).resolve().parents[1]
 branch=sys.argv[1] if len(sys.argv)>1 else 'rekey-memory'
-if branch not in ('rekey-memory','rekey-live'):raise SystemExit('Unknown offline suite')
+if branch not in ('rekey-memory','rekey-live','rekey-pressure'):raise SystemExit('Unknown offline suite')
 with tempfile.TemporaryDirectory(prefix='uv310-offline-') as tmp:
  t=Path(tmp);shutil.copytree(ROOT/'work',t/'work',ignore=shutil.ignore_patterns('__pycache__','*.pyc','*.o','*.elf','*.bin','private','private-*'))
  (t/'outputs/uv310-wireguard/evidence').mkdir(parents=True)
  r=subprocess.run([sys.executable,f'work/uv310-wireguard/{branch}/test-build.py'],cwd=t)
  if r.returncode:raise SystemExit(r.returncode)
  src=t/f'outputs/uv310-wireguard/evidence/{branch}-tests.json'
- data=json.loads(src.read_text());expected=32 if branch=='rekey-memory' else 20
+ data=json.loads(src.read_text());expected={'rekey-memory':32,'rekey-live':20,'rekey-pressure':41}[branch]
  assert len(data['suites'])==expected and all(x['passed'] for x in data['suites'])
- negatives=6 if branch=='rekey-memory' else 3
+ negatives={'rekey-memory':6,'rekey-live':3,'rekey-pressure':9}[branch]
  assert len(data['negative_controls'])==negatives and all(x['detected'] for x in data['negative_controls'])
  dest=ROOT/'.test-results';dest.mkdir(exist_ok=True)
  (dest/src.name).write_bytes(src.read_bytes())

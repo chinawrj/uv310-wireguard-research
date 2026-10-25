@@ -1,4 +1,4 @@
-.PHONY: test test-live test-observer stack-audit verify
+.PHONY: test-pressure test test-live test-observer stack-audit verify
 
 test:
 	python3 tools/test_offline.py rekey-memory
@@ -14,3 +14,6 @@ test-observer:
 
 stack-audit:
 	python3 tools/stack_audit.py
+
+test-pressure:
+	python3 tools/test_offline.py rekey-pressure

@@ -160,3 +160,10 @@
 
 - [解释与设计约束](ALLOCATOR_FAILURES.md)
 - [32项场景与6项负向控制](../outputs/uv310-wireguard/evidence/allocator-fault-tests.json)
+
+## 内存压力下的重试候选
+
+- [行为、验证与限制](ALLOCATION_RETRY.md)
+- [候选QEMU结果](../outputs/uv310-wireguard/evidence/rekey-pressure-tests.json)
+- [候选栈分析](../outputs/uv310-wireguard/evidence/stack-audit-rekey-pressure.json)
+- [目标文件大小对照](../outputs/uv310-wireguard/evidence/native-size-pressure.json)

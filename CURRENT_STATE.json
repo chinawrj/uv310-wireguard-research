@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Design and test bounded allocation retry candidate offline; preserve ownership, expiry, counters and authenticated forwarding. Hardware validation deferred.",
+  "next_step": "Offline review of expiry, scheduling and entropy/freshness gaps; hardware-return acceptance of bounded allocation retry requires fresh material and stock baseline.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/ALLOCATOR_FAILURES.md",
+  "latest_offline_progress": "docs/ALLOCATION_RETRY.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -68,5 +68,15 @@
     "native_source_changed": false,
     "allocation_null_causes_terminal_stop": true,
     "live_disconnect_cause_proven": false
+  },
+  "offline_candidate": {
+    "branch": "rekey-pressure",
+    "native_sha256": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562",
+    "suites_passed": 41,
+    "negative_controls_detected": 9,
+    "hardware_deployed": false,
+    "allocation_attempts_per_message": 3,
+    "minimum_allocation_retry_ticks": 250,
+    "standalone_ready": false
   }
 }

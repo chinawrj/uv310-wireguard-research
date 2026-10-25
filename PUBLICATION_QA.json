@@ -60,5 +60,23 @@
       "files_with_private_value_replacements": [],
       "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
     }
+  },
+  "allocation_retry_candidate": {
+    "date": "2026-10-26",
+    "suites_passed": 41,
+    "negative_controls_detected": 9,
+    "original_native_preserved": true,
+    "new_candidate_deployed": false,
+    "device_access_performed": false,
+    "native_object_code_delta_bytes": 112,
+    "native_object_writable_delta_bytes": 8,
+    "complete_stack_bound_proven": false,
+    "private_scan": {
+      "known_private_value_representations_checked": 123,
+      "files_checked": 267,
+      "remaining_matches": 0,
+      "files_with_private_value_replacements": [],
+      "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
+    }
   }
 }

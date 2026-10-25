@@ -564,12 +564,6 @@
     "byte_identical_to_workspace": true
   },
   {
-    "path": "tools/stack_audit.py",
-    "published_sha256": "aaeb99052a3d963c24d4a3a22cd58bc952566cd4a69a2538b1e44e77d6f331ce",
-    "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
-    "private_material_required": false
-  },
-  {
     "path": "work/uv310-wireguard/rekey-observe/observe.py",
     "published_sha256": "fe75a3fa13d4d7c0d4954e0005a42e805b8bbb40941484e26532114e118f907b",
     "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
@@ -596,9 +590,47 @@
     "previous_published_sha256": "98e12773cbc37e63b85d8fa83fa23fd50aeee55bc4705f5cf1bac4d3ff0b2247"
   },
   {
+    "path": "tools/compare_native_size.py",
+    "published_sha256": "0b60c1fbd78173ac3f9f470ca001928bf1eed467d555ce89cbeb7be01198ffdf",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "tools/stack_audit.py",
+    "published_sha256": "b7aae1bf5b84f0fdbef5d983424918452e22df733e324f5c04d06331466db3fa",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "private_material_required": false,
+    "previous_published_sha256": "aaeb99052a3d963c24d4a3a22cd58bc952566cd4a69a2538b1e44e77d6f331ce"
+  },
+  {
     "path": "tools/test_offline.py",
-    "published_sha256": "a71dc3f44730898763f673782b78829b53f7bab4cc314efb0fc8a2da9f7c1a9d",
-    "origin": "Public offline allocator fault-injection update, 2026-10-26",
+    "published_sha256": "16704888be990a96d20475a45731008ebcbfbd79796a6a69dcc8687eb207993a",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "private_material_required": false,
+    "previous_published_sha256": "a71dc3f44730898763f673782b78829b53f7bab4cc314efb0fc8a2da9f7c1a9d"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-pressure/native-config.h",
+    "published_sha256": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-pressure/native.c",
+    "published_sha256": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-pressure/test-build.py",
+    "published_sha256": "4afe44e8e3d907b011565f89eaeab0287ec33ff1d61d763ec2d7d2b7b601a93e",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
+    "private_material_required": false
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-pressure/tests.c",
+    "published_sha256": "622f0ec01bea4d2eaa8854b0f95ce6091afc66610cfc74a404bdef84ce4a8360",
+    "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
     "private_material_required": false
   }
 ]
