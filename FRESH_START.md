@@ -18,7 +18,7 @@
 
 ## 3. 新会话前十分钟
 
-1. 阅读本文件、`docs/PLATFORM.md`、`docs/RECOVERY.md`；检查 Git 当前提交和 `MANIFEST.sha256`。
+1. 阅读本文件、`docs/HARDWARE.md`、`docs/PLATFORM.md`、`docs/RECOVERY.md`；检查 Git 当前提交和 `MANIFEST.sha256`。
 2. `make test` 先离线重放。不运行 `package.py`、`reboot.py`、`efs_*.py`。
 3. 只读列举 USB，核对 VID/PID **和完整接口/endpoint 拓扑**。`05c6:6000` 在正常模式和 DMSS 模式都可能出现。
 4. 正常拓扑下查询 `AT^PROJECTNAME?`，应包含 MDM9600 / UV310。随后有界查询 CPIN、WIFI、wl ver/isup。不要打印/上传 IMEI、IMSI、ICCID 或完整配置。

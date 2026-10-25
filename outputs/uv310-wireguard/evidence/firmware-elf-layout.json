@@ -1,0 +1,353 @@
+{
+  "amss": {
+    "machine": "EM_ARM",
+    "entry": "0x100000",
+    "segments": [
+      {
+        "p_type": "PT_NULL",
+        "p_offset": "0x0",
+        "p_vaddr": "0x0",
+        "p_paddr": "0x0",
+        "p_filesz": "0x1d4",
+        "p_memsz": "0x0",
+        "p_flags": "0x7000000",
+        "p_align": "0x0"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1000",
+        "p_vaddr": "0x5a9000",
+        "p_paddr": "0x5a9000",
+        "p_filesz": "0x3e8",
+        "p_memsz": "0x1000",
+        "p_flags": "0x2200000",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x8000",
+        "p_vaddr": "0xf0000000",
+        "p_paddr": "0x100000",
+        "p_filesz": "0x1ca8c",
+        "p_memsz": "0x222c0",
+        "p_flags": "0x7",
+        "p_align": "0x8000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x2c000",
+        "p_vaddr": "0xf0024000",
+        "p_paddr": "0x124000",
+        "p_filesz": "0x6000",
+        "p_memsz": "0x6000",
+        "p_flags": "0x6",
+        "p_align": "0x8000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x38000",
+        "p_vaddr": "0xb0000000",
+        "p_paddr": "0x190000",
+        "p_filesz": "0x156c7",
+        "p_memsz": "0x156c7",
+        "p_flags": "0x5",
+        "p_align": "0x8000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x50000",
+        "p_vaddr": "0xb0060000",
+        "p_paddr": "0x1b0000",
+        "p_filesz": "0x188",
+        "p_memsz": "0x13004",
+        "p_flags": "0x6",
+        "p_align": "0x8000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x52000",
+        "p_vaddr": "0x1c4000",
+        "p_paddr": "0x1c4000",
+        "p_filesz": "0x1440fc",
+        "p_memsz": "0x3cb000",
+        "p_flags": "0x81000007",
+        "p_align": "0x2000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x197000",
+        "p_vaddr": "0x58f000",
+        "p_paddr": "0x58f000",
+        "p_filesz": "0x0",
+        "p_memsz": "0x6000",
+        "p_flags": "0x6400006",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x198000",
+        "p_vaddr": "0x595000",
+        "p_paddr": "0x595000",
+        "p_filesz": "0x0",
+        "p_memsz": "0x1000",
+        "p_flags": "0xe400006",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x199000",
+        "p_vaddr": "0x596000",
+        "p_paddr": "0x596000",
+        "p_filesz": "0x2000",
+        "p_memsz": "0x2000",
+        "p_flags": "0x1000006",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x19c000",
+        "p_vaddr": "0x598000",
+        "p_paddr": "0x598000",
+        "p_filesz": "0xb08",
+        "p_memsz": "0xb1c",
+        "p_flags": "0x1000007",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x19d000",
+        "p_vaddr": "0x20000000",
+        "p_paddr": "0x20000000",
+        "p_filesz": "0x24000",
+        "p_memsz": "0x24000",
+        "p_flags": "0x5300005",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1c2000",
+        "p_vaddr": "0xb0028000",
+        "p_paddr": "0x5a0000",
+        "p_filesz": "0x9000",
+        "p_memsz": "0x9000",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      }
+    ],
+    "max_file_extent": 1880064
+  },
+  "dsp1": {
+    "machine": "EM_QDSP6",
+    "entry": "0x3c00000",
+    "segments": [
+      {
+        "p_type": "PT_NULL",
+        "p_offset": "0x0",
+        "p_vaddr": "0x0",
+        "p_paddr": "0x0",
+        "p_filesz": "0x194",
+        "p_memsz": "0x0",
+        "p_flags": "0x7000000",
+        "p_align": "0x0"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1000",
+        "p_vaddr": "0x3f93000",
+        "p_paddr": "0x3f93000",
+        "p_filesz": "0x104",
+        "p_memsz": "0x1000",
+        "p_flags": "0x2200000",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x3000",
+        "p_vaddr": "0x3c00000",
+        "p_paddr": "0x3c00000",
+        "p_filesz": "0x540",
+        "p_memsz": "0x540",
+        "p_flags": "0x7",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x4000",
+        "p_vaddr": "0x3c68000",
+        "p_paddr": "0x3c68000",
+        "p_filesz": "0x15a9c0",
+        "p_memsz": "0x15a9c0",
+        "p_flags": "0x5",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x15f000",
+        "p_vaddr": "0x3dc3000",
+        "p_paddr": "0x3dc3000",
+        "p_filesz": "0x4f080",
+        "p_memsz": "0x4f080",
+        "p_flags": "0x4",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1af000",
+        "p_vaddr": "0x3e14000",
+        "p_paddr": "0x3e14000",
+        "p_filesz": "0x1fcb4",
+        "p_memsz": "0x17e500",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1cf000",
+        "p_vaddr": "0x3bc0000",
+        "p_paddr": "0x3bc0000",
+        "p_filesz": "0x2a080",
+        "p_memsz": "0x2a080",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1fa000",
+        "p_vaddr": "0x4000000",
+        "p_paddr": "0x3c01000",
+        "p_filesz": "0x5040",
+        "p_memsz": "0x5040",
+        "p_flags": "0x5",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1ff800",
+        "p_vaddr": "0x4005800",
+        "p_paddr": "0x3c06800",
+        "p_filesz": "0x139b0",
+        "p_memsz": "0x139b0",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x214000",
+        "p_vaddr": "0x402a000",
+        "p_paddr": "0x3c2a000",
+        "p_filesz": "0x16290",
+        "p_memsz": "0x16290",
+        "p_flags": "0x5",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x22a2c0",
+        "p_vaddr": "0x40402c0",
+        "p_paddr": "0x3c402c0",
+        "p_filesz": "0x27c50",
+        "p_memsz": "0x27c50",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      }
+    ],
+    "max_file_extent": 2432784
+  },
+  "dsp2": {
+    "machine": "EM_QDSP6",
+    "entry": "0xc00000",
+    "segments": [
+      {
+        "p_type": "PT_NULL",
+        "p_offset": "0x0",
+        "p_vaddr": "0x0",
+        "p_paddr": "0x0",
+        "p_filesz": "0x154",
+        "p_memsz": "0x0",
+        "p_flags": "0x7000000",
+        "p_align": "0x0"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1000",
+        "p_vaddr": "0x343e000",
+        "p_paddr": "0x343e000",
+        "p_filesz": "0x103ec",
+        "p_memsz": "0x11000",
+        "p_flags": "0x2200000",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x12000",
+        "p_vaddr": "0xf0000000",
+        "p_paddr": "0xf0000000",
+        "p_filesz": "0xcf5000",
+        "p_memsz": "0xcf5000",
+        "p_flags": "0x5300005",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0xd07000",
+        "p_vaddr": "0xc00000",
+        "p_paddr": "0xc00000",
+        "p_filesz": "0x820",
+        "p_memsz": "0x820",
+        "p_flags": "0x7",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0xd08000",
+        "p_vaddr": "0xc01000",
+        "p_paddr": "0xc01000",
+        "p_filesz": "0xc3c894",
+        "p_memsz": "0xc3c894",
+        "p_flags": "0x5",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1945000",
+        "p_vaddr": "0x183e000",
+        "p_paddr": "0x183e000",
+        "p_filesz": "0x1dec17",
+        "p_memsz": "0x1dec17",
+        "p_flags": "0x4",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1b2f000",
+        "p_vaddr": "0x1a1e000",
+        "p_paddr": "0x1a1e000",
+        "p_filesz": "0x2ea6e4",
+        "p_memsz": "0x19b8600",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1e1a000",
+        "p_vaddr": "0x3400000",
+        "p_paddr": "0x3400000",
+        "p_filesz": "0x2d948",
+        "p_memsz": "0x2d990",
+        "p_flags": "0x6",
+        "p_align": "0x1000"
+      },
+      {
+        "p_type": "PT_LOAD",
+        "p_offset": "0x1e48000",
+        "p_vaddr": "0x342e000",
+        "p_paddr": "0x342e000",
+        "p_filesz": "0xf414",
+        "p_memsz": "0xf414",
+        "p_flags": "0x4",
+        "p_align": "0x1000"
+      }
+    ],
+    "max_file_extent": 31814676
+  }
+}

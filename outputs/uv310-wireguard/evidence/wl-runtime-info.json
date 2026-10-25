@@ -1,0 +1,31 @@
+{
+  "commands_read_only": true,
+  "source": "Own firmware: +WL table at 0xf01c1800 -> 0xd380fc -> 0xcf475c; version-only syntax checks",
+  "rows": [
+    {
+      "command": "AT^PROJECTNAME?",
+      "response": "AT^PROJECTNAME?\r\r\n^PROJECTNAME:MDM9600\tUV310\r\n\r\nOK\r\n",
+      "bytes": 52
+    },
+    {
+      "command": "AT+WL=wl revinfo",
+      "response": "AT+WL=wl revinfo\r\r\nvendorid 0x14e4\r\ndeviceid 0x4343\r\nradiorev 0x2064000\r\nchipnum 0xa962\r\nchiprev 0x1\r\nchippackage 0x9\r\ncorerev 0x19\r\nboardid 0x598\r\nboardvendor 0x14e4\r\nboardrev P207\r\ndriverrev 0x55a9934\r\nucoderev 0x2aa0066\r\nbus 0x0\r\nphytype 0x8\r\nphyrev 0x3\r\nanarev 0x0\r\n\r\n\r\nOK\r\n",
+      "bytes": 278
+    },
+    {
+      "command": "AT+WL=wl cap",
+      "response": "AT+WL=wl cap\r\r\nap sta toe wme 802.11d rm cqa ccx cac mbss16 ampdu amsdurx radio_pwrsave btamp \r\n\r\n\r\nOK\r\n",
+      "bytes": 104
+    },
+    {
+      "command": "AT+WL=wl memuse",
+      "response": "AT+WL=wl memuse\r\r\nERROR\r\n",
+      "bytes": 25
+    },
+    {
+      "command": "AT+WL=wl memsize",
+      "response": "AT+WL=wl memsize\r\r\nERROR\r\n",
+      "bytes": 26
+    }
+  ]
+}

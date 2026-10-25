@@ -1,0 +1,77 @@
+{
+  "scope": "Historical own-device read-only probes and firmware metadata, assembled 2026-10-26; no new hardware commands",
+  "board": "ALEKA UV310-U-5.1 CGWL",
+  "modem_project": "MDM9600 UV310",
+  "arm_loader_midr": "0x41069265",
+  "arm_normal_firmware": {
+    "machine": "EM_ARM",
+    "entry": "0x100000",
+    "indicator_categories": [
+      "L4/Pistachio ARMv5",
+      "REX",
+      "USB hsu driver",
+      "ONCRPC",
+      "DIAG"
+    ]
+  },
+  "dsp_firmware": {
+    "images": [
+      "DSP1",
+      "DSP2"
+    ],
+    "machine": "EM_QDSP6",
+    "dsp2_isa_analysis": "Hexagon v3",
+    "dsp2_indicator_categories": [
+      "rex_qube.c",
+      "Qube TLS",
+      "socket",
+      "WLAN_TRPWIFI",
+      "ipnet",
+      "ASP web configuration"
+    ],
+    "runtime_ownership_of_all_functions_verified": false
+  },
+  "wifi": {
+    "family": "BCM43362",
+    "active_firmware_build_tag": "43362a2-roml",
+    "reported_chipnum": "0xa962",
+    "reported_chiprev": "0x1",
+    "a2_to_chiprev_mapping_verified": false,
+    "processor": "ARM Cortex-M3 / ARMv7-M / Thumb-2",
+    "sram_nominal_bytes": 245760,
+    "rom_nominal_bytes": 458752,
+    "sram_capacity_basis": "Manufacturer datasheet and stock stack top0x3c000; not destructive full RAM test",
+    "rom_capture_bytes": 458752,
+    "transport": "SDIO / SDPCM, firmware and driver evidence; physical PCB traces not inspected"
+  },
+  "nand": {
+    "loader_reported_model": "MT29F1G08ABBDA3W",
+    "read_id": "0x1580a12c",
+    "manufacturer_family": "Micron MT29F1G08",
+    "nominal_capacity_bytes": 134217728,
+    "page_bytes": 2048,
+    "block_bytes": 131072,
+    "basis": "Loader identity, explicit fetch-ID and matched part-family/controller/partition metadata; not full capacity test",
+    "raw_flash_program_or_erase_sent": false,
+    "early_stale_read_id_register": "0x49464e4f",
+    "early_stale_read_id_meaning": "ONFI signature, not the device JEDEC ID"
+  },
+  "unknown": [
+    "Modem external RAM type, manufacturer and total physical capacity",
+    "Actual ARM/QDSP/BCM clock rates in this board",
+    "RF transceiver, PA, PMIC, crystal and antenna part numbers",
+    "Exact PCB bus routing/pins and SDIO live width/clock",
+    "Standalone GNSS/Bluetooth usability",
+    "USB host role and OTG routing",
+    "Full bad-block/spare/ECC inventory"
+  ],
+  "source_sha256": {
+    "platform-probe-live.json": "d5aa3191f0409a2d4a2491e597aa82b3c9e1d2f25c2b7428d6d5be915217ae02",
+    "nand-id-live.json": "a8ec88149a7842222c98a7d3f0ef89fefb1a3dec7904ef631c38dcbb6b8a46b5",
+    "nand-partitions.json": "8dbb4b971e158ba2648848a0c6e6a5e4ff1d911471b2093c29a16736530f08be",
+    "firmware-elf-layout.json": "27513e85e44d8ffd1e4343e5a579cdec18d8796c8280ad0927a7035077147816",
+    "amss-string-indicators.json": "d5838f0bcc0e7106b0e2ff3985b219ab2bbd71fae5256f35acc908dae83f05be",
+    "dsp2-runtime-indicators.json": "6e686dbc4aaa14470e745f4fb14441628a279c359a0b4026cd462e285fab82f6",
+    "wl-runtime-info.json": "95db414d13387279a40e931c21df30fa2ce9b3ab892b7691ef904876235a1ec3"
+  }
+}

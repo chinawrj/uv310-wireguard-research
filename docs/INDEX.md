@@ -142,3 +142,10 @@
 - [wifi-self-crc-analysis.json](../outputs/uv310-wireguard/evidence/wifi-self-crc-analysis.json)
 - [wifi-startup-analysis.json](../outputs/uv310-wireguard/evidence/wifi-startup-analysis.json) — Offline static Thumb-2 disassembly; base address 0 consistent with vector and branch/literal cross references
 
+
+## 硬件补充证据（2026-10-26）
+
+- [hardware-facts.json](../outputs/uv310-wireguard/evidence/hardware-facts.json)
+- [firmware-elf-layout.json](../outputs/uv310-wireguard/evidence/firmware-elf-layout.json)
+- [nand-partitions.json](../outputs/uv310-wireguard/evidence/nand-partitions.json)
+- [wl-runtime-info.json](../outputs/uv310-wireguard/evidence/wl-runtime-info.json)

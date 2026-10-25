@@ -1,0 +1,127 @@
+{
+  "nand_id": "0x1580a12c",
+  "page_bytes": 2048,
+  "block_bytes": 131072,
+  "flash_program_or_erase_sent": false,
+  "reads": [
+    {
+      "row": 0,
+      "sector": 0,
+      "timeout": 0,
+      "status": "0x3020",
+      "buffer_status": "0xff0000",
+      "bytes": 512
+    },
+    {
+      "row": 64,
+      "sector": 0,
+      "timeout": 0,
+      "status": "0x3020",
+      "buffer_status": "0xff0000",
+      "bytes": 512
+    },
+    {
+      "row": 128,
+      "sector": 0,
+      "timeout": 0,
+      "status": "0x3020",
+      "buffer_status": "0xff0000",
+      "bytes": 512
+    },
+    {
+      "row": 129,
+      "sector": 0,
+      "timeout": 0,
+      "status": "0x3020",
+      "buffer_status": "0xff0000",
+      "bytes": 512
+    },
+    {
+      "row": 129,
+      "sector": 1,
+      "timeout": 0,
+      "status": "0x2020",
+      "buffer_status": "0xff0000",
+      "bytes": 512
+    }
+  ],
+  "partitions": [
+    {
+      "name": "0:MIBIB",
+      "start_block": 0,
+      "blocks": 10,
+      "attributes_hex": "ffffff00",
+      "size_bytes": 1310720
+    },
+    {
+      "name": "0:SIM_SECURE",
+      "start_block": 10,
+      "blocks": 6,
+      "attributes_hex": "ffffff00",
+      "size_bytes": 786432
+    },
+    {
+      "name": "0:FSBL",
+      "start_block": 16,
+      "blocks": 3,
+      "attributes_hex": "ffffff00",
+      "size_bytes": 393216
+    },
+    {
+      "name": "0:OSBL",
+      "start_block": 19,
+      "blocks": 5,
+      "attributes_hex": "ffffff00",
+      "size_bytes": 655360
+    },
+    {
+      "name": "0:AMSS",
+      "start_block": 24,
+      "blocks": 27,
+      "attributes_hex": "ffffff00",
+      "size_bytes": 3538944
+    },
+    {
+      "name": "0:DSP1",
+      "start_block": 51,
+      "blocks": 27,
+      "attributes_hex": "ffff0000",
+      "size_bytes": 3538944
+    },
+    {
+      "name": "0:DSP2",
+      "start_block": 78,
+      "blocks": 293,
+      "attributes_hex": "ffff0000",
+      "size_bytes": 38404096
+    },
+    {
+      "name": "0:FTL",
+      "start_block": 371,
+      "blocks": 27,
+      "attributes_hex": "0101ff00",
+      "size_bytes": 3538944
+    },
+    {
+      "name": "0:EFS2QDSP",
+      "start_block": 398,
+      "blocks": 528,
+      "attributes_hex": "ffffff00",
+      "size_bytes": 69206016
+    },
+    {
+      "name": "0:EFS2",
+      "start_block": 926,
+      "blocks": 4294967295,
+      "attributes_hex": "01ffff00",
+      "size_bytes": null
+    }
+  ],
+  "table_header": {
+    "block": 2,
+    "magic1": "0x55ee73aa",
+    "magic2": "0xe35ebddb",
+    "version": 3,
+    "count": 10
+  }
+}

@@ -1,6 +1,6 @@
 # UV310 native WireGuard reverse engineering
 
-ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362a2 的逆向研究、原生代码与实验交接。目标是让连接随身 Wi-Fi 的客户端通过**设备内部**的 WireGuard 上网。
+ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362 的逆向研究、原生代码与实验交接。目标是让连接随身 Wi-Fi 的客户端通过**设备内部**的 WireGuard 上网。
 
 **先读 [FRESH_START.md](FRESH_START.md)**。截至 2026-10-26：已经验证 BCM43362 上的原生 WireGuard 握手、普通 Wi-Fi IPv4 转发、两次自动换钥及实验到期停止转发；尚未做成能够安全反复独立启动的产品固件。最新内存观测分支中途断连，原因未定。
 
@@ -17,6 +17,7 @@ ALEKA UV310-U-5.1 CGWL / MDM9600 / BCM43362a2 的逆向研究、原生代码与�
 ## 导航
 
 - [当前状态与新会话入口](FRESH_START.md)
+- **[硬件架构、芯片、总线与存储](docs/HARDWARE.md)**
 - [平台、处理器与固件](docs/PLATFORM.md)
 - [USB / AT / DIAG / EFS / 下载协议](docs/PROTOCOLS.md)
 - [BCM 地址、镜像格式、内存与 ABI](docs/BCM_RUNTIME.md)

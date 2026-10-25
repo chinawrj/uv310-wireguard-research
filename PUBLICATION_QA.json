@@ -19,5 +19,13 @@
       "negative_controls_detected": 3,
       "all_passed": true
     }
+  },
+  "hardware_documentation_update": {
+    "date": "2026-10-26",
+    "new_device_commands": false,
+    "sources": "Historical own-device metadata and cited manufacturer documents",
+    "code_changed": false,
+    "additional_evidence_files": 4,
+    "physical_chip_markings_verified": false
   }
 }

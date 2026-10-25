@@ -1,14 +1,16 @@
 # 平台与执行环境
 
+完整硬件框图、芯片标识、内存和NAND分区见 [HARDWARE.md](HARDWARE.md)。
+
 ## 硬件/软件定位
 
-目标样机标识 ALEKA UV310-U-5.1 CGWL；AT 项目 MDM9600 UV310；正常固件版本线 MDM9K-ALKU-7.3.2 / ALK5.1，构建时间 2015-11-05 18:20:03。DIAG model 0xfd2、hardware 20460000 用作辅助对照，不能代替完整 USB/项目/镜像验证。
+目标样机标识 ALEKA UV310-U-5.1 CGWL；AT 项目 MDM9600 UV310；正常固件版本线 MDM9K-ALKU-7.3.2 / ALK5.1，DIAG历史构建标记 2015-11-05 18:20:03；AT^SWVER另报18:21:02，应分别保留。DIAG model 0xfd2、hardware 20460000 用作辅助对照，不能代替完整 USB/项目/镜像验证。
 
 | 部分 | 执行环境 | 已做的工作 |
 |---|---|---|
-| 下载/恢复路径 | ARM926（观测 MIDR 0x41069265），ARMv5TE applet | RAM-only Hello World，返回下载协议应答 |
+| ARM控制与下载路径 | ARM926（观测 MIDR 0x41069265）；正常AMSS为ARM ELF，包含L4/REX/USB/ONCRPC线索 | 可控入口为RAM-only Hello World；尚无与正常网络并行的通用ARM程序入口 |
 | 调制解调器正常运行固件 | Qualcomm MDM9600，Hexagon v3 / QDSP 代码 | AT、EFS、Web ASP 配置、Wi-Fi host driver 静态分析 |
-| Wi-Fi 芯片 | BCM43362a2，Cortex-M3 Thumb-2 | 正常运行 RAM 镜像补丁、数据包 hook、原生 WireGuard |
+| Wi-Fi 芯片 | BCM43362，Cortex-M3 Thumb-2；活动固件标记a2，live chiprev=1 | 正常运行 RAM 镜像补丁、数据包 hook、原生 WireGuard |
 | Mac/QEMU | 主机分析工具、mps2-an385 Cortex-M3 fixture | 构建、协议/竞态测试，不模拟真实 BCM 外设 |
 
 正常 USB 可访问 AT 和 DIAG/EFS；文件树和 ASP 页面不等于 Linux shell。没有据此建立 SSH、ADB、POSIX 用户进程或 Linux 内核模块入口。目标实现目前是嵌入 Wi-Fi 固件的 freestanding C。
