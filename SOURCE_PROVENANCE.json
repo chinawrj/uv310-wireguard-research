@@ -643,9 +643,10 @@
   },
   {
     "path": "tools/audit_dhcp_dns.py",
-    "published_sha256": "b536bd8c929ccb3015c598196b32a64d703c9adb9d386dac867dc737318e8205",
-    "workspace_source_sha256": "b536bd8c929ccb3015c598196b32a64d703c9adb9d386dac867dc737318e8205",
+    "published_sha256": "a61dd20ddc48614243edc30cea684727dc4594a6bae33da82eea5249cee9d4f2",
+    "workspace_source_sha256": "a61dd20ddc48614243edc30cea684727dc4594a6bae33da82eea5249cee9d4f2",
     "byte_identical_to_workspace": true,
-    "origin": "New read-only exact-firmware static audit; proprietary inputs are excluded"
+    "origin": "New read-only exact-firmware static audit; proprietary inputs are excluded",
+    "previous_published_sha256": "b536bd8c929ccb3015c598196b32a64d703c9adb9d386dac867dc737318e8205"
   }
 ]

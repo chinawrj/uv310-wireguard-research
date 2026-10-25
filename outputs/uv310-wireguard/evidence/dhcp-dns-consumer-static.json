@@ -1,0 +1,143 @@
+{
+  "scope": "Exact-stock static DHCP/DNS analysis; no device/network operations",
+  "source_sha256": {
+    "dsp2-code.bin": "9bcdfd03028be95c1f6285c299e359d79be8e6e4e2f7e06191293b452dd17076",
+    "dsp2-rodata.bin": "588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f",
+    "dsp2-data.bin": "b31d062ece0b896b98c33d8359dfad23cb660e17605059afc239eab13f9919c3"
+  },
+  "string_anchors_checked": 17,
+  "instruction_anchors_checked": 71,
+  "data_table_entries_checked": 2,
+  "ranges": {
+    "queue_submit": [
+      "0x182e450",
+      "0x182e4b8"
+    ],
+    "queue_dispatch": [
+      "0x182ea90",
+      "0x182eca4"
+    ],
+    "consumer": [
+      "0x182f378",
+      "0x182f3b8"
+    ],
+    "daemon_start": [
+      "0xd7d16c",
+      "0xd7d1d4"
+    ],
+    "daemon_parser": [
+      "0xde6f84",
+      "0xde7154"
+    ],
+    "option_parser": [
+      "0xde7380",
+      "0xde7534"
+    ],
+    "writer": [
+      "0xf73e60",
+      "0xf73fc8"
+    ],
+    "dns_proxy": [
+      "0xf73fe4",
+      "0xf74088"
+    ],
+    "web_handler": [
+      "0x1833fc0",
+      "0x1834444"
+    ],
+    "message_builder": [
+      "0x182e6cc",
+      "0x182e720"
+    ],
+    "initialization": [
+      "0x13cf228",
+      "0x13cf300"
+    ]
+  },
+  "dhcp_writer": {
+    "entry": "0xf73e60",
+    "file": "/etc/udhcpd.conf",
+    "layout_inferred": {
+      "size": 104,
+      "router": "0x08",
+      "subnet": "0x18",
+      "pool_start": "0x28",
+      "pool_end": "0x38",
+      "dns_primary": "0x48",
+      "dns_secondary": "0x58"
+    },
+    "dns_behavior": "Emit nonempty DNS strings; both empty falls back to router",
+    "live_writer_reachability_verified": false
+  },
+  "web_dhcp_set": {
+    "entry": "0x1833fc0",
+    "fields": [
+      "lanIp",
+      "lanNetmask",
+      "lanDhcpType",
+      "dhcpStart",
+      "dhcpEnd",
+      "dhcpLease"
+    ],
+    "zeroed_payload_bytes": 104,
+    "dns_fields_populated_in_reviewed_handler": false,
+    "message_builder": "0x182e6cc",
+    "message_type": "0x50",
+    "payload_offset": "0x1f0",
+    "consumer_to_writer_static_chain_verified": true,
+    "consumer_to_writer_live_execution_verified": false
+  },
+  "consumer_chain": {
+    "queue": "0x2f02c7c",
+    "submit": "0x182e450",
+    "dispatcher_case": "0x182eb60",
+    "consumer": "0x182f378",
+    "payload_copy_bytes": 104,
+    "trampoline": "0x182f39c",
+    "resolved_writer": "0xf73e60",
+    "writer_result_propagated_to_web_request": false
+  },
+  "daemon_config": {
+    "main": "0xd7d16c",
+    "parser": "0xde6f84",
+    "file": "/etc/udhcpd.conf",
+    "option_callback_table_entry": "0x1982308",
+    "option_parser": "0xde732c",
+    "option_list_pointer_storage": "0x338d520",
+    "dns_table_entry": "0x1b155dc",
+    "dns_option_code": 6,
+    "dns_type_flags": 49,
+    "list_flag_checked": true,
+    "configured_dns_offered_to_client_live_verified": false,
+    "hot_reload_verified": false,
+    "persistent_across_boot_verified": false
+  },
+  "initialization": {
+    "entry": "0x13cf228",
+    "parser": "0xf73b38",
+    "primary_dns_required_by_reviewed_existing_config_branch": true,
+    "default_primary_dns": "router address",
+    "actual_boot_execution_verified": false
+  },
+  "dns_proxy": {
+    "writer": "0xf73fe4",
+    "upstream_file": "/etc/resolv.conf",
+    "dhcp_advertisement_equivalent_to_upstream_change": false
+  },
+  "next_action": "Evaluate config injection/reload versus BCM DHCP ACK rewrite; no public setter or native DSP execution bridge proven; live DHCP ACK remains required",
+  "limitations": [
+    "Instruction anchors validate reviewed input, not automatic data-flow correctness",
+    "Hexagon packet operands read old values unless .new; no DSP execution test",
+    "Compiled file and command strings do not establish a Linux userspace",
+    "No public web DNS setter, persistence or running daemon behavior verified",
+    "No DNS routing fix or live Wi-Fi VPN acceptance in this audit"
+  ],
+  "goal_complete": false,
+  "guard_checks": {
+    "wrong_code_rejected_before_disassembly": true,
+    "wrong_rodata_rejected_before_disassembly": true,
+    "wrong_data_rejected_before_disassembly": true,
+    "existing_output_preserved": true,
+    "altered_instruction_expectation_rejected": true
+  }
+}

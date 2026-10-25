@@ -56,7 +56,7 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Offline protocol/scheduling gaps and entropy/freshness design; hardware acceptance pending stock baseline and fresh material.",
+  "next_step": "Offline: evaluate reachable DHCP DNS setter/reload or BCM DHCP ACK rewrite; native DNS bypass, entropy/freshness, routing and hardware acceptance remain unresolved.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
   "latest_offline_progress": "docs/DNS_ROUTING.md",
@@ -92,12 +92,16 @@
     "observer_mock_tests": 23
   },
   "dns_routing_audit": {
-    "static_instruction_anchors": 40,
-    "static_string_anchors": 15,
+    "static_instruction_anchors": 71,
+    "static_string_anchors": 17,
     "default_gateway_dns_bypasses_native_tunnel": true,
     "dhcp_dns_fields_located": true,
     "web_dns_setter_verified": false,
     "runtime_message_consumer_chain_proven": false,
-    "routing_fix_deployed": false
+    "routing_fix_deployed": false,
+    "static_data_table_entries": 2,
+    "consumer_to_writer_static_chain_verified": true,
+    "daemon_dns_option_6_parser_located": true,
+    "dns_reload_or_persistence_verified": false
   }
 }
