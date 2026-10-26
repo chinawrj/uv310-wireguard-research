@@ -52,3 +52,5 @@ Linux需要clang sanitizer runtime，CI已配置安装。Mac有SDK选择问题�
 2. 明确 NAK、无填充空间、异常DHCP、重租约、多个Wi-Fi客户端的策略；不能让“安全失败”变成无法使用的产品。
 3. 处理直接向网关/LAN DNS发查询的旁路；DHCP改写无法约束手动DNS设置，也没有覆盖IPv6。完整VPN需要独立的代理/阻断与例外设计。
 4. 用真实DHCP ACK、客户端默认设置、对端抓包、隧道断开及跨换钥来证明端到端行为。现在没有硬件验收，不能宣告已实现“Wi-Fi所有流量走WireGuard”。
+
+后续状态：已在新的 [rekey-dns候选](NATIVE_DNS.md) 中完成离线native hook集成；不覆盖本文的历史证据边界，实机未验证。

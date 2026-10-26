@@ -48,3 +48,5 @@ idle worker完成昂贵crypto；timer负责有界控制包发送和到期检查�
 状态中的`err`可能记录最后一次非致命drop，比如最后memory快照err50（十进制）不等于握手失败；需结合phase、计数与源码对应分支。切勿只看单一错误数字判断成功/失败。
 
 DNS配置与旁路的进一步静态分析见 [DNS_ROUTING.md](DNS_ROUTING.md)：找到字段不等于已建立可用配置入口，完整Wi-Fi VPN验收仍未完成。
+
+后续状态：已在新的 [rekey-dns候选](NATIVE_DNS.md) 中完成离线native hook集成；不覆盖本文的历史证据边界，实机未验证。

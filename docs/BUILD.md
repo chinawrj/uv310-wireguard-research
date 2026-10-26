@@ -46,3 +46,5 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 `make test-pressure`在隔离临时目录重放45项QEMU场景、12项负向控制。`rekey-memory`的32项/6项对照和`rekey-live`的20项/3项保持不变。候选与资源比较见 [ALLOCATION_RETRY.md](ALLOCATION_RETRY.md)；未提供实机打包或部署入口。
 
 独立DHCP DNS原型测试：`make test-dhcp-dns`。需要主机Clang的sanitizer runtime及Cortex-M3工具链；配置与本机ASan限制见 [DHCP_DNS_TRANSFORMER.md](DHCP_DNS_TRANSFORMER.md)。
+
+后续状态：已在新的 [rekey-dns候选](NATIVE_DNS.md) 中完成离线native hook集成；不覆盖本文的历史证据边界，实机未验证。

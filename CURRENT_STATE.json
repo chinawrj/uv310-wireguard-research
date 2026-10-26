@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Offline: evaluate reachable DHCP DNS setter/reload or BCM DHCP ACK rewrite; native DNS bypass, entropy/freshness, routing and hardware acceptance remain unresolved.",
+  "next_step": "Offline: bounded DHCP expansion when padding is insufficient, telemetry and real-image layout; hardware DHCP visibility, Wi-Fi routing, entropy/freshness and stability remain unverified.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/DHCP_DNS_TRANSFORMER.md",
+  "latest_offline_progress": "docs/NATIVE_DNS.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -70,15 +70,15 @@
     "live_disconnect_cause_proven": false
   },
   "offline_candidate": {
-    "branch": "rekey-pressure",
-    "native_sha256": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562",
-    "suites_passed": 45,
-    "negative_controls_detected": 12,
+    "branch": "rekey-dns",
+    "native_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+    "suites_passed": 62,
+    "negative_controls_detected": 18,
     "hardware_deployed": false,
-    "allocation_attempts_per_message": 3,
-    "minimum_allocation_retry_ticks": 250,
     "standalone_ready": false,
-    "transport_nonce_ledger_tested": true
+    "dhcp_hook_integrated_offline": true,
+    "lan_port53_guard_tested": true,
+    "real_dhcp_hook_visibility_verified": false
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",
@@ -102,19 +102,33 @@
     "static_data_table_entries": 2,
     "consumer_to_writer_static_chain_verified": true,
     "daemon_dns_option_6_parser_located": true,
-    "dns_reload_or_persistence_verified": false
+    "dns_reload_or_persistence_verified": false,
+    "baseline_branch": "rekey-pressure"
   },
   "dhcp_dns_prototype": {
     "host_vectors_passed": 1352,
     "local_sanitizer": "undefined",
     "qemu_vectors_passed": 60,
     "negative_controls_detected": 5,
-    "native_hook_integrated": false,
+    "native_hook_integrated": true,
     "hardware_deployed": false,
     "dns_bypass_fixed": false,
     "linux_sanitizers": "address,undefined",
     "linux_ci_verified": true,
     "linux_ci_run": 40247318186,
-    "tested_commit": "fe924fc748c3788f1250bde912b8733416127e77"
+    "tested_commit": "fe924fc748c3788f1250bde912b8733416127e77",
+    "integration_branch": "rekey-dns",
+    "integration_scope": "Synthetic Cortex-M3 only, not hardware"
+  },
+  "previous_offline_candidate": {
+    "branch": "rekey-pressure",
+    "native_sha256": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562",
+    "suites_passed": 45,
+    "negative_controls_detected": 12,
+    "hardware_deployed": false,
+    "allocation_attempts_per_message": 3,
+    "minimum_allocation_retry_ticks": 250,
+    "standalone_ready": false,
+    "transport_nonce_ledger_tested": true
   }
 }

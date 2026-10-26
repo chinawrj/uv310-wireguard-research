@@ -12,11 +12,13 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
-- 独立DHCP DNS改写原型：1,352个主机向量、60个Cortex-M3向量与5个错误对照通过；Linux ASan+UBSan已复现；尚未接入native hook。见 [DHCP_DNS_TRANSFORMER.md](docs/DHCP_DNS_TRANSFORMER.md)。
+- 最新候选 `rekey-dns` 已离线接入DHCP改写与LAN端口53检查；62场景/18错误对照通过，未部署。限制与资源增量见 [NATIVE_DNS.md](docs/NATIVE_DNS.md)。
+
+- 独立DHCP DNS改写原型：1,352个主机向量、60个Cortex-M3向量与5个错误对照通过；Linux ASan+UBSan已复现；独立模块历史验收见 [DHCP_DNS_TRANSFORMER.md](docs/DHCP_DNS_TRANSFORMER.md)。
 
 - DNS离线分析：网关DNS仍旁路；已接上DHCP内部消息到配置写入、服务到配置解析的静态链；仍未建立可用DNS设置/重载入口。见 [DNS_ROUTING.md](docs/DNS_ROUTING.md)。
 
-- 新离线候选：`rekey-pressure`，控制包分配有限退避重试；45项QEMU场景和12项负向控制通过，未部署、未实机验证。见 [ALLOCATION_RETRY.md](docs/ALLOCATION_RETRY.md) 与 [NONCE_LIFECYCLE.md](docs/NONCE_LIFECYCLE.md)。
+- 上一离线候选：`rekey-pressure`，控制包分配有限退避重试；45项QEMU场景和12项负向控制通过，未部署、未实机验证。见 [ALLOCATION_RETRY.md](docs/ALLOCATION_RETRY.md) 与 [NONCE_LIFECYCLE.md](docs/NONCE_LIFECYCLE.md)。
 - 公开仓库已在干净Linux CI复现：97项QEMU场景、21项负向控制、23项mock观察器测试通过。它不代表新实机成功，见 [CI.md](docs/CI.md)。
 - 已成功的分支：`work/uv310-wireguard/rekey-live`，实机首次握手 + 2 次自动换钥。
 - 最近实机分支：`rekey-memory`，增加 A/E/R/M 四页状态和有界内存观测。当时25项离线场景、3项负向控制通过；本轮保持native源码不变，测试扩展至32项场景、6项负向控制，见 [ALLOCATOR_FAILURES.md](docs/ALLOCATOR_FAILURES.md)。

@@ -1,0 +1,33 @@
+{
+  "scope": "Object-file sums, includes DHCP module for DNS candidate; not linked firmware or runtime memory",
+  "branches": {
+    "rekey-pressure": {
+      "executable_bytes": 6370,
+      "writable_allocated_bytes": 2002,
+      "readonly_allocated_bytes": 1453,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-pressure/native.c": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562"
+      }
+    },
+    "rekey-dns": {
+      "executable_bytes": 7782,
+      "writable_allocated_bytes": 2014,
+      "readonly_allocated_bytes": 1521,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-dns/native.c": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+        "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2"
+      }
+    }
+  },
+  "delta_dns_minus_pressure": {
+    "executable_bytes": 1412,
+    "writable_allocated_bytes": 12,
+    "readonly_allocated_bytes": 68
+  },
+  "compiler": "Homebrew clang version 18.1.6",
+  "limitations": [
+    "No stock firmware link, alignment/GC or image-capacity validation",
+    "No runtime memory/stack high-water or throughput",
+    "Hardware not available; native candidate remains undeployed"
+  ]
+}

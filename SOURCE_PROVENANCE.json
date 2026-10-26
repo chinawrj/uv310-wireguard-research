@@ -597,10 +597,12 @@
   },
   {
     "path": "tools/stack_audit.py",
-    "published_sha256": "b7aae1bf5b84f0fdbef5d983424918452e22df733e324f5c04d06331466db3fa",
+    "published_sha256": "f7f55bf1c886a69283e91ef7f3195d0144063e1838caf20628fffd77e28863ed",
     "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
     "private_material_required": false,
-    "previous_published_sha256": "aaeb99052a3d963c24d4a3a22cd58bc952566cd4a69a2538b1e44e77d6f331ce"
+    "previous_published_sha256": "b7aae1bf5b84f0fdbef5d983424918452e22df733e324f5c04d06331466db3fa",
+    "workspace_source_sha256": "f7f55bf1c886a69283e91ef7f3195d0144063e1838caf20628fffd77e28863ed",
+    "byte_identical_to_workspace": true
   },
   {
     "path": "work/uv310-wireguard/rekey-pressure/native-config.h",
@@ -616,10 +618,12 @@
   },
   {
     "path": "tools/test_offline.py",
-    "published_sha256": "bedc4dae3c0ddd14c6354bb021b935ccaaae6f12205b5cd1a6b34f8fceef5925",
-    "previous_published_sha256": "16704888be990a96d20475a45731008ebcbfbd79796a6a69dcc8687eb207993a",
+    "published_sha256": "47210d77149a2634bdfbbb978234731187f48f4083ac66825cc32fabc736adc4",
+    "previous_published_sha256": "bedc4dae3c0ddd14c6354bb021b935ccaaae6f12205b5cd1a6b34f8fceef5925",
     "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
-    "private_material_required": false
+    "private_material_required": false,
+    "workspace_source_sha256": "47210d77149a2634bdfbbb978234731187f48f4083ac66825cc32fabc736adc4",
+    "byte_identical_to_workspace": true
   },
   {
     "path": "work/uv310-wireguard/rekey-pressure/tests.c",
@@ -669,8 +673,39 @@
   },
   {
     "path": ".github/workflows/offline.yml",
-    "published_sha256": "95f6a8d0f8deee6f7b28b4a9d89ac6983ffd4bb9b08db0d4de2ff7f0e7bcd347",
-    "workspace_source_sha256": "95f6a8d0f8deee6f7b28b4a9d89ac6983ffd4bb9b08db0d4de2ff7f0e7bcd347",
+    "published_sha256": "8f16e650586c4d5b4d2a8e70e02d9cec407c058398e4f2ccfc511a432f8c44c4",
+    "workspace_source_sha256": "8f16e650586c4d5b4d2a8e70e02d9cec407c058398e4f2ccfc511a432f8c44c4",
+    "byte_identical_to_workspace": true,
+    "previous_published_sha256": "95f6a8d0f8deee6f7b28b4a9d89ac6983ffd4bb9b08db0d4de2ff7f0e7bcd347"
+  },
+  {
+    "path": "tools/compare_dns_size.py",
+    "published_sha256": "c1053034e9e79c07b51733b53e513fec2f2f11dffea484ea04d000b016d30cdf",
+    "workspace_source_sha256": "c1053034e9e79c07b51733b53e513fec2f2f11dffea484ea04d000b016d30cdf",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns/test-build.py",
+    "published_sha256": "268c1b367c529de59f4d82f766ade1695a1e683b1df5dfaf281c5c6530254d2b",
+    "workspace_source_sha256": "268c1b367c529de59f4d82f766ade1695a1e683b1df5dfaf281c5c6530254d2b",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns/native-config.h",
+    "published_sha256": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+    "workspace_source_sha256": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns/tests.c",
+    "published_sha256": "c50269c6ed04457901838a46a72bc604b3d5933b04192f2da7dde86ed8f009a0",
+    "workspace_source_sha256": "c50269c6ed04457901838a46a72bc604b3d5933b04192f2da7dde86ed8f009a0",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns/native.c",
+    "published_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+    "workspace_source_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
     "byte_identical_to_workspace": true
   }
 ]
