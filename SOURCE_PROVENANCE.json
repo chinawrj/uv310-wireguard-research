@@ -565,15 +565,19 @@
   },
   {
     "path": "work/uv310-wireguard/rekey-observe/observe.py",
-    "published_sha256": "fe75a3fa13d4d7c0d4954e0005a42e805b8bbb40941484e26532114e118f907b",
-    "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
-    "private_material_required": false
+    "published_sha256": "4536635520f074ae8ebf16d1222599b914fc4d1acbb2b0cf642fd3a8417e4665",
+    "origin": "Public observer N1 protocol and strict parser update, mocked USB tests only",
+    "private_material_required": false,
+    "previous_published_sha256": "fe75a3fa13d4d7c0d4954e0005a42e805b8bbb40941484e26532114e118f907b",
+    "byte_identical_to_workspace": false
   },
   {
     "path": "work/uv310-wireguard/rekey-observe/test_observe.py",
-    "published_sha256": "27122e785f51b56cca9ec132fad625adfd5cb0f9ca30ac70c375ade3c65ac966",
-    "origin": "Developed or revised directly in public repository during offline work, 2026-10-26",
-    "private_material_required": false
+    "published_sha256": "a5248013d33d0bf434a0445e6b799f68a2c2709ee5154be71fc4c34405ed8900",
+    "origin": "Public observer N1 protocol and strict parser update, mocked USB tests only",
+    "private_material_required": false,
+    "previous_published_sha256": "27122e785f51b56cca9ec132fad625adfd5cb0f9ca30ac70c375ade3c65ac966",
+    "byte_identical_to_workspace": false
   },
   {
     "path": "work/uv310-wireguard/rekey-memory/tests.c",

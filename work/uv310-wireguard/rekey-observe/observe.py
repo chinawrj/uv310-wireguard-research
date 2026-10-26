@@ -8,6 +8,8 @@ FIELDS={
 'E':'attempts control_ready control_kind control_packet submitted freed free_payload_delta free_header_delta keepalive_tx last_send source_context destination_context send_ipsr send_mask control_errors clock'.split(),
 'R':'renewals handshake_failures rng_failed pool_bytes session_start key_age current_index previous_index current_valid previous_valid lab_started lab_elapsed lab_limit stopped allocation_failures clock'.split(),
 'M':'arena_bytes allocated_payload allocated_headers peak_payload allocation_failures free_payload largest_free_block free_nodes free_list_valid stack_sentinel_unused stack_floor stack_top stack_bounds_valid clock entry_primask reserved'.split()}
+FIELDS['N']='dhcp_rewrites gateway_udp_rejects lan_dns_guard_drops rx_count rng_pos init_time response_time receive_len worker_count f_tx f_rx f_drop f_out_bytes f_in_bytes allocation_failures clock'.split()
+PROTOCOLS={'aerm':frozenset('AERM'),'n1':frozenset('AERMN')}
 class ObservationError(Exception):
  def __init__(self,code,**details):self.code=code;self.details=details;super().__init__(code)
  def record(self):return {'code':self.code,**self.details}
@@ -31,7 +33,23 @@ def query(d,command,clock=time.monotonic):
   raise ObservationError('AT_TIMEOUT',command=command,bytes=len(data))
  except usb.core.USBError as ex:raise usb_error(ex,'query') from ex
 
-def status(pause=time.sleep):
+def parse_page(raw):
+ # Accept a complete known page line, never a matching substring in arbitrary text.
+ found=[]
+ for line in raw.splitlines():
+  line=line.strip()
+  prefix=b'5.90.153.52.1 '
+  if line.startswith(prefix):line=line[len(prefix):]
+  if len(line)<2 or line[:1] not in (b'A',b'E',b'R',b'M',b'N') or line[1:2]!=b'=':continue
+  m=re.fullmatch(rb'([AERMN])=([0-9a-f]{8}(?:,[0-9a-f]{8}){15})',line)
+  if not m:raise ObservationError('INVALID_STATUS_PAGE',page=chr(line[0]),bytes=len(line))
+  name=m[1].decode();found.append((name,dict(zip(FIELDS[name],[int(v,16) for v in m[2].split(b',')]))))
+ if len(found)>1:raise ObservationError('AMBIGUOUS_STATUS_REPLY',pages=[x[0] for x in found])
+ return found[0] if found else None
+
+def status(pause=time.sleep,protocol='aerm'):
+ if protocol not in PROTOCOLS:raise ValueError('Unsupported status protocol')
+ required=PROTOCOLS[protocol]
  d=None;claimed=False;stage='find';cleanup=[];error=None;result=None
  try:
   d=usb.core.find(idVendor=0x05c6,idProduct=0x6000)
@@ -50,18 +68,18 @@ def status(pause=time.sleep):
   pages={};last_clock=None;counts={'status_queries':0,'unrecognized_replies':0}
   for _ in range(12):
    pause(.15);raw=query(d,'AT+WL=wl ver');counts['status_queries']+=1
-   m=re.search(rb'([AERM])=([0-9a-f]{8}(?:,[0-9a-f]{8}){15})(?![0-9a-f,])',raw)
-   if not m:counts['unrecognized_replies']+=1
+   parsed=parse_page(raw)
+   if parsed is None or parsed[0] not in required:counts['unrecognized_replies']+=1
    else:
-    name=m[1].decode();page=dict(zip(FIELDS[name],[int(v,16) for v in m[2].split(b',')]))
+    name,page=parsed
     now=page['clock']
     if last_clock is not None and ((now-last_clock)&0xffffffff)>=0x80000000:
      raise ObservationError('CLOCK_DISCONTINUITY',previous=last_clock,current=now,page=name)
     last_clock=now;pages[name]=page
-   if len(pages)==4:break
-  if len(pages)!=4:raise ObservationError('MISSING_STATUS_PAGES',received=sorted(pages),**counts)
+   if required.issubset(pages):break
+  if not required.issubset(pages):raise ObservationError('MISSING_STATUS_PAGES',protocol=protocol,received=sorted(pages),missing=sorted(required-set(pages)),**counts)
   if not pages['M']['free_list_valid'] or not pages['M']['stack_bounds_valid']:raise ObservationError('MEMORY_SNAPSHOT_INVALID',memory=pages['M'])
-  result={'pages':pages,'queries':counts,'atomic_cross_page_snapshot':False}
+  result={'protocol':protocol,'pages':pages,'queries':counts,'atomic_cross_page_snapshot':False,'dns_path_verified':False}
  except ObservationError as ex:error=ex
  except usb.core.USBError as ex:error=usb_error(ex,stage)
  finally:
@@ -90,9 +108,9 @@ def host_state():
  rc2,out=read(['/sbin/route','-n','get','192.168.100.1']);m=re.search(r'interface:\s*(\w+)',out)
  return {'interface':'en0','source_ip':ip,'source_ip_exit':rc,'matches_lab_client':ip=='192.168.100.100','gateway_route_interface':m[1] if m and rc2==0 else None,'route_exit':rc2}
 
-def collect():
- result={'scope':'read-only AT/USB and local host diagnostics; no traffic or restart','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'host_before':host_state(),'status_read_ok':False}
- try:result['status']=status();result['status_read_ok']=True
+def collect(protocol='aerm'):
+ result={'protocol':protocol,'scope':'read-only AT/USB and local host diagnostics; no traffic or restart','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'host_before':host_state(),'status_read_ok':False}
+ try:result['status']=status(protocol=protocol);result['status_read_ok']=True
  except ObservationError as ex:result['error']=ex.record()
  except Exception as ex:result['error']={'code':'UNEXPECTED_OBSERVER_ERROR','exception_type':type(ex).__name__}
  result['host_after']=host_state()
@@ -103,10 +121,10 @@ def collect():
  return result
 
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--protocol',choices=sorted(PROTOCOLS),default='aerm');a=ap.parse_args()
  # Exclusive-create prevents replacing earlier experiments, including on failure.
  with a.out.open('x') as f:
-  result=collect();json.dump(result,f,indent=2);f.write('\n')
+  result=collect(protocol=a.protocol);json.dump(result,f,indent=2);f.write('\n')
  print(json.dumps({'status_read_ok':result['status_read_ok'],'error':result.get('error'),'lab_client_ready':result['lab_client_ready'],'host_network_changed':result['host_network_changed']}))
  return 0 if result['status_read_ok'] else 2
 if __name__=='__main__':raise SystemExit(main())

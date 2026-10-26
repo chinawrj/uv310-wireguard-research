@@ -56,11 +56,11 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Integrate explicit N-page observer support and tests before adopting validated isolated proposal; actual hardware still unavailable.",
+  "next_step": "Adopt isolated N telemetry into a candidate with pinned baseline reproducibility; hardware validation and autonomous entropy still outstanding.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
   "latest_offline_progress": "docs/DNS_TELEMETRY.md",
-  "observer_fault_injection_tests_passed": 23,
+  "observer_fault_injection_tests_passed": 36,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
     "total_suites_passed": 32,
@@ -236,6 +236,9 @@
     "functional_validation": true,
     "hardware_verified": false,
     "validation_scope": "Isolated synthetic pool256 control-icf, 67 scenarios and 26 negatives; no observer integration or hardware",
-    "selected_schema": "N fixed 16 words"
+    "selected_schema": "N fixed 16 words",
+    "observer_n1_supported": true,
+    "observer_mock_tests": 36,
+    "observer_hardware_verified": false
   }
 }

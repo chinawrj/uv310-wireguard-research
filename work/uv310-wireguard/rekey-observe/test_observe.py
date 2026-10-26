@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import observe as o
 
 class Fake:
- def __init__(self):self.writes=[];self.queue=[];self.drain=True;self.mode='ok';self.page=0
+ def __init__(self):self.writes=[];self.queue=[];self.drain=True;self.mode='ok';self.page=0;self.pages='AERM'
  def get_active_configuration(self):
   top=o.NORMAL if self.mode!='topology' else {0:[1,129]}
   return [Interface(k,v) for k,v in top.items()]
@@ -18,7 +18,8 @@ class Fake:
   else:
    if self.mode=='missing':self.queue=[b'5.90.153.52.1\r\nOK\r\n']
    else:
-    name='AERM'[self.page%4];self.page+=1;v=[0]*16
+    name=self.pages[self.page%len(self.pages)];self.page+=1;v=[0]*16
+    if name=='N':v[:4]=[0x01020304,0xffffffff,0x87654321,0x12345678]
     if name=='M':v[8]=1;v[12]=int(self.mode!='memory')
     v[13 if name=='M' else 15]=([0xfffffffe,0xffffffff,0,1][self.page-1] if self.mode=='wrap' else (100 if self.page==1 else 50) if self.mode=='rollback' else 0)
     self.queue=[(name+'='+','.join(f'{x:08x}' for x in v)+'\r\nOK\r\n').encode()]
@@ -45,6 +46,62 @@ class Cases(unittest.TestCase):
   self.assertEqual(got.exception.code,code);return got.exception
  def test_success_pages_and_cleanup(self):
   x=o.status(pause=lambda _:None);self.assertEqual(set(x['pages']),set('AERM'));self.assertEqual(x['queries']['status_queries'],4);self.release.assert_called_once();self.dispose.assert_called_once()
+ def test_n1_collects_fifth_page(self):
+  self.d.pages='AERMN';x=o.status(pause=lambda _:None,protocol='n1')
+  self.assertEqual(x['queries']['status_queries'],5);self.assertEqual(set(x['pages']),set('AERMN'));self.assertFalse(x['dns_path_verified'])
+  n=x['pages']['N'];self.assertEqual(n['dhcp_rewrites'],0x01020304);self.assertEqual(n['gateway_udp_rejects'],0xffffffff);self.assertEqual(n['lan_dns_guard_drops'],0x87654321);self.assertEqual(n['rx_count'],0x12345678)
+ def test_n1_old_firmware_is_missing_n_not_success(self):
+  with self.assertRaises(o.ObservationError) as got:o.status(pause=lambda _:None,protocol='n1')
+  self.assertEqual(got.exception.code,'MISSING_STATUS_PAGES');self.assertEqual(got.exception.details['missing'],['N']);self.assertEqual(got.exception.details['status_queries'],12);self.release.assert_called_once()
+ def test_n1_rotation_starts_at_n(self):
+  self.d.pages='NAERM';x=o.status(pause=lambda _:None,protocol='n1');self.assertEqual(x['queries']['status_queries'],5)
+ def test_legacy_ignores_extra_n_and_completes(self):
+  self.d.pages='NAERM';x=o.status(pause=lambda _:None);self.assertEqual(set(x['pages']),set('AERM'));self.assertEqual(x['queries']['unrecognized_replies'],1)
+ def test_unknown_protocol_no_usb_access(self):
+  with self.assertRaises(ValueError):o.status(protocol='unknown')
+  self.find.assert_not_called()
+ def test_strict_page_formats(self):
+  good=b'N='+b','.join([b'00000000']*16)
+  for bad in [good+b',00000000',good[:-1],good.replace(b'00000000',b'0000000g',1),good+b'x',good.replace(b',',b';',1)]:
+   with self.subTest(bad=bad),self.assertRaises(o.ObservationError) as got:o.parse_page(bad)
+   self.assertEqual(got.exception.code,'INVALID_STATUS_PAGE')
+ def test_full_prefixed_page_and_embedded_text(self):
+  good=b'N='+b','.join([b'00000000']*16)
+  self.assertEqual(o.parse_page(b'5.90.153.52.1 '+good+b'\r\nOK\r\n')[0],'N')
+  self.assertIsNone(o.parse_page(b'PRIVATE_PREFIX_'+good))
+ def test_ambiguous_pages_rejected(self):
+  good=b'N='+b','.join([b'00000000']*16)
+  with self.assertRaises(o.ObservationError) as got:o.parse_page(good+b'\r\n'+good)
+  self.assertEqual(got.exception.code,'AMBIGUOUS_STATUS_REPLY')
+ def test_n_clock_rollback_is_not_ignored(self):
+  self.d.pages='NAERM';self.d.mode='rollback'
+  with self.assertRaises(o.ObservationError) as got:o.status(pause=lambda _:None,protocol='n1')
+  self.assertEqual(got.exception.code,'CLOCK_DISCONTINUITY')
+ def test_malformed_n_preserves_cleanup_and_hides_reply(self):
+  self.d.pages='N';write=self.d.write
+  def malformed(*args,**kwargs):
+   n=write(*args,**kwargs)
+   if args[1]==b'AT+WL=wl ver\r':self.d.queue=[b'N=PRIVATE_CONTENT\r\nOK\r\n']
+   return n
+  self.d.write=malformed
+  with self.assertRaises(o.ObservationError) as got:o.status(pause=lambda _:None,protocol='n1')
+  self.assertEqual(got.exception.code,'INVALID_STATUS_PAGE');self.assertNotIn('PRIVATE_CONTENT',str(got.exception.record()));self.release.assert_called_once();self.dispose.assert_called_once()
+ def test_n1_clock_wrap(self):
+  self.d.pages='AERMN';write=self.d.write
+  def wrapped(*args,**kwargs):
+   n=write(*args,**kwargs)
+   if args[1]==b'AT+WL=wl ver\r':
+    name,page=o.parse_page(self.d.queue[0]);page['clock']=(0xfffffffc+self.d.page)&0xffffffff
+    self.d.queue=[(name+'='+','.join(f'{page[k]:08x}' for k in o.FIELDS[name])+'\r\nOK\r\n').encode()]
+   return n
+  self.d.write=wrapped;self.assertEqual(o.status(pause=lambda _:None,protocol='n1')['pages']['N']['clock'],1)
+ def test_duplicate_n_never_counts_as_other_pages(self):
+  self.d.pages='N'
+  with self.assertRaises(o.ObservationError) as got:o.status(pause=lambda _:None,protocol='n1')
+  self.assertEqual(got.exception.code,'MISSING_STATUS_PAGES');self.assertEqual(got.exception.details['missing'],list('AEMR'));self.assertEqual(got.exception.details['status_queries'],12)
+ def test_collect_propagates_protocol(self):
+  with patch.object(o,'host_state',return_value={}),patch.object(o,'status',return_value={}) as status:
+   self.assertTrue(o.collect(protocol='n1')['status_read_ok']);status.assert_called_once_with(protocol='n1')
  def test_device_absent_no_writes(self):
   self.find.return_value=None;self.failcode('ok','DEVICE_ABSENT');self.assertFalse(self.d.writes);self.claim.assert_not_called()
  def test_wrong_topology_no_claim_no_write(self):

@@ -79,4 +79,23 @@ LLVM_CLANG=/path/to/clang LLVM_LD=/path/to/ld.lld \
 QEMU_ARM=/path/to/qemu-system-arm python3 tools/test_dns_telemetry.py
 ```
 
-测试工具要求先生成当前源码对应的预算报告，并核对候选哈希。报告derived_source_sha256是隔离派生源码；顶层source_sha256是公开原始输入。当前未新增Linux独立复现，未修改原native.c，也尚未让observer要求或解释N页；下一步应补协议选择与host解析，而不是直接部署。
+测试工具要求先生成当前源码对应的预算报告，并核对候选哈希。报告derived_source_sha256是隔离派生源码；顶层source_sha256是公开原始输入。该隔离固件测试未新增Linux独立复现，也未修改原native.c。后续host协议支持见下节；不能直接部署。
+
+## 主机观察器已支持N1（离线验证）
+
+`rekey-observe/observe.py`新增显式`--protocol n1`，必须在最多12次状态查询中收齐A/E/R/M/N；如果设备仍只有旧四页，会报`MISSING_STATUS_PAGES`并列出缺少N，不能自动降级为成功。默认`--protocol aerm`维持旧四页要求，遇到额外N页时忽略，适合原候选。未运行任何实机查询。
+
+将来使用已核对的N固件时，查询命令为：
+
+```sh
+python3 work/uv310-wireguard/rekey-observe/observe.py \
+  --protocol n1 --out /path/to/new-observation.json
+```
+
+这是真实USB读取命令，不属于离线测试；硬件缺席时不要执行。输出文件必须不存在，防止覆盖旧证据。仅使用原有身份与版本AT查询，没有新增设备写配置或重启命令。
+
+解析器现在要求完整状态行、准确16个小写十六进制字段与分隔符，可接收固定版本前缀。包含多个已识别页的同一回复拒绝为`AMBIGUOUS_STATUS_REPLY`；畸形已识别页报`INVALID_STATUS_PAGE`，不保存原始回复正文。任意嵌入文本中的类似页字符串不会被识别。
+
+N字段映射已逐项与隔离QEMU提案报告核对一致。[36项mock测试记录](../outputs/uv310-wireguard/evidence/dns-telemetry/observer-tests.json)涵盖原有故障行为，以及五页收集、不同轮转起点、旧固件缺N、重复N不能替代别的页、字段映射、非法字段/多字段/缺字段、时钟回绕/倒退、异常清理与错误内容脱敏。纯离线复现使用`make test-observer`。此前23项是旧版本结果，不覆盖N。
+
+观察器记录协议选择，并明确`dns_path_verified=false`。五页不是跨页原子快照；无boot identity，部分重启时钟变化仍可能不可区分。原生固件仍未正式接入N页，这个host工具通过mock不代表设备已提供该协议，也不代表DNS经隧道验收完成。
