@@ -5,13 +5,15 @@ from elftools.elf.elffile import ELFFile
 P=Path('work/uv310-wireguard');N=P/'rekey-dns-grow';R=P/'rng-provider';H=P/'control-hardening';W=P/'wg-port';S=W/'upstream/src';B=N/'build';B.mkdir(exist_ok=True)
 CC=os.environ.get('LLVM_CLANG') or shutil.which('clang');LD=os.environ.get('LLVM_LD') or shutil.which('ld.lld');Q=os.environ.get('QEMU_ARM') or shutil.which('qemu-system-arm')
 LTO=os.environ.get('UV310_TEST_LTO','0')=='1'
+PROFILE=os.environ.get('UV310_TEST_BUILD_PROFILE','default');assert PROFILE in ('default','control-icf')
+assert PROFILE=='default' or LTO,'control-icf requires LTO'
 POOL_BYTES=int(os.environ.get('UV310_TEST_POOL_BYTES','1024'));assert POOL_BYTES in (256,1024)
-SUFFIX=('-lto' if LTO else '')+('-pool256' if POOL_BYTES==256 else '')
+SUFFIX=('-lto' if LTO else '')+('-pool256' if POOL_BYTES==256 else '')+('-control-icf' if PROFILE=='control-icf' else '')
 assert CC and LD and Q, 'Set LLVM_CLANG, LLVM_LD and QEMU_ARM; see docs/BUILD.md'
 flags=['--target=arm-none-eabi','-mcpu=cortex-m3','-mthumb','-Oz','-ffreestanding','-fno-builtin','-fno-stack-protector','-ffunction-sections','-fdata-sections','-DBYTE_ORDER=1234','-DLITTLE_ENDIAN=1234','-DSYNTHETIC_TEST']+['-I'+str(p) for p in [N,R,W/'build',W/'include',W,S]]
 def obj(p,name,extra=[]):
  out=B/(name+'.o');opt=['-flto'] if LTO and p.suffix=='.c' and p.name not in ('runtime.c','tests.c') else []
- subprocess.run([CC,*flags,*opt,*extra,'-c',str(p),'-o',str(out)],check=True);return str(out)
+ subprocess.run([CC,*flags,*opt,*(['-fno-inline-functions'] if PROFILE=='control-icf' and (name=='native' or p==R/'wireguard.c') else []),*extra,'-c',str(p),'-o',str(out)],check=True);return str(out)
 assert '203,0,113,7' in (N/'native-config.h').read_text()
 shared=[obj(p,p.stem) for p in [R/'wireguard.c',S/'crypto.c',*sorted((S/'crypto/refc').glob('*.c')),W/'runtime.c',H/'entry.S']]
 start=(H/'start.S').read_text().replace(' ldr r1,=failed',' bl print_fail\n ldr r1,=failed').replace('PASS native adapter: handshake, client packet forwarding, NAT, checksums, bounds, rejection','PASS renewal adapter')
@@ -27,7 +29,7 @@ shared.append(obj(P/'dhcp-dns/dhcp_dns_grow.c','dhcp_dns_grow'))
 native=obj(N/'native.c','native')
 def link_run(name,adapter,extra=[]):
  t=obj(N/'tests.c','tests',extra+(['-DISOLATED_SERVER_RNG'] if POOL_BYTES==256 else []));elf=B/(name+'.elf')
- subprocess.run([LD,*(['--wrap=wireguard_random_bytes_checked'] if POOL_BYTES==256 else []),'--wrap=wireguard_encrypt_packet','--gc-sections','-T',str(B/'test.ld'),adapter,*shared,t,'-o',str(elf)],check=True)
+ subprocess.run([LD,*(['--icf=safe'] if PROFILE=='control-icf' else []),*(['--wrap=wireguard_random_bytes_checked'] if POOL_BYTES==256 else []),'--wrap=wireguard_encrypt_packet','--gc-sections','-T',str(B/'test.ld'),adapter,*shared,t,'-o',str(elf)],check=True)
  e=ELFFile(io.BytesIO(elf.read_bytes()));sections={s.name:{'bytes':s['sh_size'],'address':s['sh_addr']} for s in e.iter_sections() if s['sh_flags']&2}
  assert sections['.version']['address']+sections['.version']['bytes']<0x33c00
  assert sections['.teststate']['address']+sections['.teststate']['bytes']<0x3c000
@@ -55,5 +57,5 @@ if POOL_BYTES==256:
  bad=obj(mutant,'native');out,_,_=link_run('negative-recycle-pool',bad,['-DTEST_POOL_RETRY_EXHAUSTION'])
  assert 'FAIL line=' in out and 'PASS renewal' not in out
  negative.append({'mutation':'recycle_exhausted_pool','detected':True});print('PASS negative recycle_exhausted_pool',flush=True)
-result={'remote_peer_rng_isolated':POOL_BYTES==256,'synthetic_pool_bytes':POOL_BYTES,'lto_enabled':LTO,'runtime_and_harness_lto_disabled':LTO,'scope':'Synthetic Cortex-M3 integration, no real radio/clock/entropy/device deployment','suites':rows,'negative_controls':negative,'rekey_after_ms':120000,'reject_at_age_ms':180000,'retry_after_ms':5000,'max_cycle_tries':18,'source_sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [N/'test-build.py',H/'test.ld',N/'native.c',N/'tests.c',N/'native-config.h',P/'dhcp-dns/dhcp_dns.c',P/'dhcp-dns/dhcp_dns.h',P/'dhcp-dns/dhcp_dns_grow.c',P/'dhcp-dns/dhcp_dns_grow.h',R/'wireguard.c',R/'wireguard.h']},'sections_synthetic_link':sections,'limitations':['Fixed synthetic RNG pool and TAI base are not safe standalone platform services','Worker crypto phases still drop external packets, no packet queue','No retry jitter, receive-driven early renewal or server-initiated handshake support yet','Single IPv4 client; ordinary LAN port 53 blocked and DHCP DNS rewritten; broader DNS/IPv6/multiclient policy incomplete','No live image or throughput result'],'control_allocation_retry_ticks':250,'control_allocation_max_tries':3,'client_transport_nonce_ledger':{'enabled':True,'key_slots':8,'strictly_increasing_per_key':True,'linked_into_live_candidate':False},'dhcp_bounded_growth_integrated':True,'dns_integration_synthetic_only':True,'hardware_deployed':False,'goal_complete':False}
+result={'build_profile':PROFILE,'remote_peer_rng_isolated':POOL_BYTES==256,'synthetic_pool_bytes':POOL_BYTES,'lto_enabled':LTO,'runtime_and_harness_lto_disabled':LTO,'scope':'Synthetic Cortex-M3 integration, no real radio/clock/entropy/device deployment','suites':rows,'negative_controls':negative,'rekey_after_ms':120000,'reject_at_age_ms':180000,'retry_after_ms':5000,'max_cycle_tries':18,'source_sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [N/'test-build.py',H/'test.ld',N/'native.c',N/'tests.c',N/'native-config.h',P/'dhcp-dns/dhcp_dns.c',P/'dhcp-dns/dhcp_dns.h',P/'dhcp-dns/dhcp_dns_grow.c',P/'dhcp-dns/dhcp_dns_grow.h',R/'wireguard.c',R/'wireguard.h']},'sections_synthetic_link':sections,'limitations':['Fixed synthetic RNG pool and TAI base are not safe standalone platform services','Worker crypto phases still drop external packets, no packet queue','No retry jitter, receive-driven early renewal or server-initiated handshake support yet','Single IPv4 client; ordinary LAN port 53 blocked and DHCP DNS rewritten; broader DNS/IPv6/multiclient policy incomplete','No live image or throughput result'],'control_allocation_retry_ticks':250,'control_allocation_max_tries':3,'client_transport_nonce_ledger':{'enabled':True,'key_slots':8,'strictly_increasing_per_key':True,'linked_into_live_candidate':False},'dhcp_bounded_growth_integrated':True,'dns_integration_synthetic_only':True,'hardware_deployed':False,'goal_complete':False}
 Path('outputs/uv310-wireguard/evidence/rekey-dns-grow'+SUFFIX+'-tests.json').write_text(json.dumps(result,indent=2)+'\n');print('Wrote rekey-dns-grow'+SUFFIX+'-tests.json',flush=True)

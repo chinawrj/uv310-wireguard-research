@@ -1,4 +1,4 @@
-.PHONY: test-dns-grow-lto test-dns-grow-lto-compact audit-linked-stack audit-layout test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
+.PHONY: test-control-icf audit-inline-profiles test-dns-grow-lto test-dns-grow-lto-compact audit-linked-stack audit-layout test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
 
 test:
 	python3 tools/test_offline.py rekey-memory
@@ -49,3 +49,11 @@ test-dns-grow-lto-compact:
 audit-linked-stack:
 	python3 tools/audit_native_layout.py --pool-bytes 256 --stack-sizes --out .test-results/native-linked-stack-normal.json
 	python3 tools/audit_native_layout.py --pool-bytes 256 --lto --stack-sizes --out .test-results/native-linked-stack-lto.json
+
+# Selected resource profile: same protocol sources, separate evidence files.
+test-control-icf:
+	UV310_TEST_LTO=1 UV310_TEST_BUILD_PROFILE=control-icf python3 tools/test_offline.py rekey-dns-grow
+	UV310_TEST_LTO=1 UV310_TEST_BUILD_PROFILE=control-icf UV310_TEST_POOL_BYTES=256 python3 tools/test_offline.py rekey-dns-grow
+
+audit-inline-profiles:
+	python3 tools/compare_inline_profiles.py

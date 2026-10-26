@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Gain code/state margin without weakening protocol checks; measure real peak memory/stack when hardware returns; DNS telemetry and end-to-end Wi-Fi still incomplete.",
+  "next_step": "Budget readonly DNS telemetry under selected control-icf profile; verify final fresh-private-config layout and real heap/stack/Wi-Fi when hardware returns.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/LTO_VALIDATION.md",
+  "latest_offline_progress": "docs/INLINE_PROFILES.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -81,7 +81,10 @@
     "linux_ci_verified": true,
     "linux_ci_run": 40252774107,
     "tested_commit": "62ae5a21225b0d676aa5b97e9988326340436229",
-    "fits_historical_non_lto_pool256_layout": false
+    "fits_historical_non_lto_pool256_layout": false,
+    "build_profile": "control-icf",
+    "profile_functional_scope": "Synthetic QEMU 1024B and 256B pools; final stock ELF not executed",
+    "profile_pool256_layout_margin_bytes": 256
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",
@@ -173,7 +176,8 @@
     "historical_memory_branch_sizes_reproduced": true,
     "linux_ci_run": 40254309179,
     "linux_layout_matches_local": true,
-    "lto_functional_scope": "Synthetic Cortex-M3, 1024B and 256B fixture pools; not the final production ELF"
+    "lto_functional_scope": "Synthetic Cortex-M3, 1024B and 256B fixture pools; not the final production ELF",
+    "prior_lto_fields_describe": "Default inlining/no ICF profile; newer control-icf results are in optimized_build_profile"
   },
   "lto_validation": {
     "document": "docs/LTO_VALIDATION.md",
@@ -196,5 +200,26 @@
     "linux_ci_verified": true,
     "linux_ci_run": 40256098330,
     "tested_commit": "6f4474b47bb07583c53b09c034e627b53e349a49"
+  },
+  "optimized_build_profile": {
+    "name": "control-icf",
+    "document": "docs/INLINE_PROFILES.md",
+    "native_function_source_changed": false,
+    "lto": true,
+    "noinline_units": [
+      "native.c",
+      "rng-provider/wireguard.c"
+    ],
+    "icf": "safe",
+    "pool256_heap_start": "0x33b00",
+    "historical_ceiling_margin_bytes": 256,
+    "worker_visible_chain_bytes": 1052,
+    "intercept_visible_chain_bytes": 712,
+    "suites_1024": 67,
+    "negative_controls_1024": 20,
+    "suites_256": 67,
+    "negative_controls_256": 21,
+    "hardware_verified": false,
+    "real_private_config_linked": false
   }
 }

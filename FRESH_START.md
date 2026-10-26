@@ -12,9 +12,11 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
+- 最新实验构建profile `control-icf`：256B池形状有256B历史布局余量，可见worker栈链1052B，intercept712B；两种池合成回归通过，尚未部署。见 [INLINE_PROFILES.md](docs/INLINE_PROFILES.md)。
+
 - LTO合成回归已在本机和Linux CI通过：1024B池67场景/20错误对照，256B池67场景/21错误对照；两种池的测试预期与模拟服务器隔离方式不同。见 [LTO_VALIDATION.md](docs/LTO_VALIDATION.md)。
 
-- **最新部署约束**：`rekey-dns-grow`在历史256B池形状、无LTO最终链接下超限512B；LTO形状恰好到上限；已补合成回归，但可见worker栈链增加176B，尚未实机验证。不能按旧方案部署，见 [NATIVE_LAYOUT.md](docs/NATIVE_LAYOUT.md)。
+- **普通/默认profile的历史部署约束**：`rekey-dns-grow`在历史256B池形状、无LTO最终链接下超限512B；LTO形状恰好到上限；已补合成回归，但可见worker栈链增加176B，尚未实机验证。不能按旧方案部署，见 [NATIVE_LAYOUT.md](docs/NATIVE_LAYOUT.md)。
 
 - 原厂Wi-Fi发送前段已离线重放32组合，确认选定路径直接读取packet长度/数据指针；不含DMA/无线发送，也未实机验证。见 [STOCK_PACKET_LENGTH.md](docs/STOCK_PACKET_LENGTH.md)。
 

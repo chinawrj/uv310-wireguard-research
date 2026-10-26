@@ -56,3 +56,5 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 最终链接空间审计发现当前候选超出历史无LTO打包上限，见 [NATIVE_LAYOUT.md](NATIVE_LAYOUT.md)。此前功能/ROM前段通过不证明可部署。
 
 LTO合成回归与最终链接栈审计见 [LTO_VALIDATION.md](LTO_VALIDATION.md)，包括独立模拟服务器的256B池耗尽场景。
+
+后续内联/重复函数合并对照及选中的 `control-icf` 实验profile见 [INLINE_PROFILES.md](INLINE_PROFILES.md)。新profile的256B布局余量仍不是实机内存证明。

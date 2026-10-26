@@ -63,3 +63,5 @@ LLVM_CLANG=/path/to/clang LLVM_LD=/path/to/ld.lld make audit-linked-stack
 [运行40256098330](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40256098330) 对提交 `6f4474b47bb07583c53b09c034e627b53e349a49` 全部通过。1024B LTO为67/20，256B LTO为67/21；报告源码哈希、256B派生配置哈希及artifact digest均核对。Linux最终链接的栈合计与上表一致；有/无栈元数据的allocated sections哈希也一致。
 
 证据：[运行摘要](../outputs/uv310-wireguard/evidence/ci-lto-validation/run.json)、[1024B回归](../outputs/uv310-wireguard/evidence/ci-lto-validation/rekey-dns-grow-lto-tests.json)、[256B回归](../outputs/uv310-wireguard/evidence/ci-lto-validation/rekey-dns-grow-lto-pool256-tests.json)、[普通链接栈](../outputs/uv310-wireguard/evidence/ci-lto-validation/native-linked-stack-normal.json)、[LTO链接栈](../outputs/uv310-wireguard/evidence/ci-lto-validation/native-linked-stack-lto.json)、[不带栈元数据的LTO布局](../outputs/uv310-wireguard/evidence/ci-lto-validation/native-layout-pool256-lto.json)、[环境](../outputs/uv310-wireguard/evidence/ci-lto-validation/ci-environment.json)。未执行真实native ELF、未访问硬件，部署限制不变。
+
+后续内联/重复函数合并对照及选中的 `control-icf` 实验profile见 [INLINE_PROFILES.md](INLINE_PROFILES.md)。新profile的256B布局余量仍不是实机内存证明。

@@ -55,6 +55,8 @@ jobs:
         run: make test-dns-grow-lto
       - name: Validate LTO native adapter and exhausted 256-byte pool
         run: make test-dns-grow-lto-compact
+      - name: Validate control-layer noinline and safe ICF profile
+        run: make test-control-icf
       - name: Validate mocked status observer
         run: make test-observer
       - name: Compile resource comparisons
@@ -69,6 +71,8 @@ jobs:
         run: make audit-layout
       - name: Audit final linked stack frames
         run: make audit-linked-stack
+      - name: Compare LTO inlining and folding profiles
+        run: make audit-inline-profiles
       - name: Keep JSON evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7

@@ -1,0 +1,117 @@
+{
+  "scope": "Synthetic pool256 BOUNDED_REKEY_LAB native layout and visible linked frame comparison only; not functional tests or a runtime benchmark",
+  "branch": "rekey-dns-grow",
+  "profiles": [
+    {
+      "inline_policy": "default",
+      "icf": "none",
+      "probe_bytes": 16368,
+      "state_bytes": 1884,
+      "heap_start": "0x33c00",
+      "historical_ceiling_margin_bytes": 0,
+      "worker_visible_chain_frame_sum_bytes": 1236,
+      "intercept_visible_chain_frame_sum_bytes": 696,
+      "report": "inline-profile-default-none.json",
+      "report_sha256": "825e3083d48ec0185302a8cd306a3d60e28cca6805c82d6a38b7526c684adbcc"
+    },
+    {
+      "inline_policy": "default",
+      "icf": "safe",
+      "probe_bytes": 16280,
+      "state_bytes": 1884,
+      "heap_start": "0x33b00",
+      "historical_ceiling_margin_bytes": 256,
+      "worker_visible_chain_frame_sum_bytes": 1236,
+      "intercept_visible_chain_frame_sum_bytes": 696,
+      "report": "inline-profile-default-safe.json",
+      "report_sha256": "09a53c008c3235fccb93b17a3b0bd044f468719442d3e1bb700de4d40d90b512"
+    },
+    {
+      "inline_policy": "none",
+      "icf": "safe",
+      "probe_bytes": 16672,
+      "state_bytes": 1884,
+      "heap_start": "0x33d00",
+      "historical_ceiling_margin_bytes": -256,
+      "worker_visible_chain_frame_sum_bytes": 1052,
+      "intercept_visible_chain_frame_sum_bytes": 688,
+      "report": "inline-profile-none-safe.json",
+      "report_sha256": "afd2c663d950962aedd4e1378a5cec06553e19f86c2d062bd43b15ecdb3cd238"
+    },
+    {
+      "inline_policy": "wireguard",
+      "icf": "safe",
+      "probe_bytes": 16440,
+      "state_bytes": 1884,
+      "heap_start": "0x33c00",
+      "historical_ceiling_margin_bytes": 0,
+      "worker_visible_chain_frame_sum_bytes": 1052,
+      "intercept_visible_chain_frame_sum_bytes": 688,
+      "report": "inline-profile-wireguard-safe.json",
+      "report_sha256": "740dfd91a29f2650bd7658109db02598b4db2b31b30da3221f134642237d942c"
+    },
+    {
+      "inline_policy": "native",
+      "icf": "safe",
+      "probe_bytes": 16076,
+      "state_bytes": 1884,
+      "heap_start": "0x33b00",
+      "historical_ceiling_margin_bytes": 256,
+      "worker_visible_chain_frame_sum_bytes": 1244,
+      "intercept_visible_chain_frame_sum_bytes": 712,
+      "report": "inline-profile-native-safe.json",
+      "report_sha256": "6b58327559ee33089ca97e6ddd840b0479b8c6e7ae49e4f5c6e8f54fc6d19c49"
+    },
+    {
+      "inline_policy": "dhcp",
+      "icf": "safe",
+      "probe_bytes": 16484,
+      "state_bytes": 1884,
+      "heap_start": "0x33c00",
+      "historical_ceiling_margin_bytes": 0,
+      "worker_visible_chain_frame_sum_bytes": 1236,
+      "intercept_visible_chain_frame_sum_bytes": 656,
+      "report": "inline-profile-dhcp-safe.json",
+      "report_sha256": "fdf8b08119fb7a3aa45b649ef893a7e78836db00e565b9e20b4b58bc1558f942"
+    },
+    {
+      "inline_policy": "handshakes",
+      "icf": "safe",
+      "probe_bytes": 16304,
+      "state_bytes": 1884,
+      "heap_start": "0x33c00",
+      "historical_ceiling_margin_bytes": 0,
+      "worker_visible_chain_frame_sum_bytes": 1356,
+      "intercept_visible_chain_frame_sum_bytes": 696,
+      "report": "inline-profile-handshakes-safe.json",
+      "report_sha256": "f641e5246b3bc27db8a3519c9804a5325ae16c56d4562e4ce9bd36047bbcae28"
+    },
+    {
+      "inline_policy": "control",
+      "icf": "safe",
+      "probe_bytes": 16268,
+      "state_bytes": 1884,
+      "heap_start": "0x33b00",
+      "historical_ceiling_margin_bytes": 256,
+      "worker_visible_chain_frame_sum_bytes": 1052,
+      "intercept_visible_chain_frame_sum_bytes": 712,
+      "report": "inline-profile-control-safe.json",
+      "report_sha256": "8c0a9a427c05afdb1c8fad0216e420e85e31e6cb9eba196b3c8750a20f576429"
+    }
+  ],
+  "selected_for_functional_validation": "control/safe",
+  "hardware_access": false,
+  "deployment_ready": false,
+  "source_sha256": {
+    "tools/compare_inline_profiles.py": "248934bb1d80a6c85bf720fbd224983ca4a7bd0d17fb9772d49912ffafe223eb",
+    "tools/audit_native_layout.py": "c4b63dfb8b406b0bacff7ab09c1b9115fbbdff0d6b53b46de0a3eae9095573b5",
+    "tools/linked_stack.py": "6ac1e9c7256e43d51b7ed554af5a846f0c33e672191a59b2d3eaf42c668993d6",
+    "work/uv310-wireguard/handshake-noinline.h": "f582ff940be6fe6c5ae5e1c5d756caa181ab4d38551422bef804992210a6e1f0"
+  },
+  "limitations": [
+    "Historical ceiling margin is not live heap capacity",
+    "No real private configuration, throughput, IRQ or radio behavior verified",
+    "Visible frame sums are not complete stack bounds",
+    "A favorable layout does not imply the profile is safe to deploy"
+  ]
+}

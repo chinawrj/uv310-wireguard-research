@@ -8,7 +8,9 @@ lto=os.environ.get('UV310_TEST_LTO','0')=='1'
 if lto and branch!='rekey-dns-grow':raise SystemExit('LTO suite only supported for rekey-dns-grow')
 pool=int(os.environ.get('UV310_TEST_POOL_BYTES','1024'))
 if pool not in (256,1024) or (pool==256 and branch!='rekey-dns-grow'):raise SystemExit('Unsupported pool size/suite')
-suffix=('-lto' if lto else '')+('-pool256' if pool==256 else '')
+profile=os.environ.get('UV310_TEST_BUILD_PROFILE','default')
+if profile not in ('default','control-icf') or (profile!='default' and (not lto or branch!='rekey-dns-grow')):raise SystemExit('Unsupported build profile')
+suffix=('-lto' if lto else '')+('-pool256' if pool==256 else '')+('-control-icf' if profile=='control-icf' else '')
 with tempfile.TemporaryDirectory(prefix='uv310-offline-') as tmp:
  t=Path(tmp);shutil.copytree(ROOT/'work',t/'work',ignore=shutil.ignore_patterns('__pycache__','*.pyc','*.o','*.elf','*.bin','private','private-*'))
  if pool==256:
@@ -20,7 +22,7 @@ with tempfile.TemporaryDirectory(prefix='uv310-offline-') as tmp:
  r=subprocess.run([sys.executable,f'work/uv310-wireguard/{branch}/test-build.py'],cwd=t)
  if r.returncode:raise SystemExit(r.returncode)
  src=t/f'outputs/uv310-wireguard/evidence/{branch}{suffix}-tests.json'
- data=json.loads(src.read_text());assert data.get('lto_enabled',False)==lto
+ data=json.loads(src.read_text());assert data.get('lto_enabled',False)==lto and data.get('build_profile','default')==profile
  expected={'rekey-memory':32,'rekey-live':20,'rekey-pressure':45,'rekey-dns':62,'rekey-dns-grow':67}[branch]
  assert len(data['suites'])==expected and all(x['passed'] for x in data['suites'])
  negatives={'rekey-memory':6,'rekey-live':3,'rekey-pressure':12,'rekey-dns':18,'rekey-dns-grow':20}[branch]

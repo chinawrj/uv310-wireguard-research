@@ -1,0 +1,341 @@
+{
+  "synthetic_pool_bytes": 256,
+  "lto_enabled": true,
+  "inline_policy": "control",
+  "icf": "safe",
+  "compiler_flags": [
+    "--target=arm-none-eabi",
+    "-mcpu=cortex-m3",
+    "-mthumb",
+    "-Oz",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-stack-protector",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-DBYTE_ORDER=1234",
+    "-DLITTLE_ENDIAN=1234",
+    "-DBOUNDED_REKEY_LAB",
+    "-flto",
+    "-fstack-size-section"
+  ],
+  "runtime_lto_disabled": true,
+  "scope": "Final native address layout with public synthetic configuration; no stock overlay, no candidate firmware output, no device access",
+  "compiler": "Homebrew clang version 18.1.6",
+  "linker": "Homebrew LLD 18.1.6 (compatible with GNU linkers)",
+  "stock": {
+    "provided": false
+  },
+  "branches": [
+    {
+      "branch": "rekey-dns-grow",
+      "synthetic_pool_bytes": 256,
+      "effective_config_sha256": "3fc526963548440e271c854c455ed9b8153e00c7ebfdb7fd4ce931db3bc1bd27",
+      "sections": [
+        {
+          "name": ".hook",
+          "address": 40440,
+          "bytes": 4,
+          "end": 40444,
+          "nobits": false,
+          "sha256": "f988d64b0178185a33f60fd59a9d7877b0ad2185ab52b7c01b5b586aea4a6f88"
+        },
+        {
+          "name": ".probe",
+          "address": 193344,
+          "bytes": 16268,
+          "end": 209612,
+          "nobits": false,
+          "sha256": "e4c6acb7bea2798adcdff5843e3831e4245acaa4eac908abf38ed22a8757d029"
+        },
+        {
+          "name": ".state",
+          "address": 209616,
+          "bytes": 1884,
+          "end": 211500,
+          "nobits": true,
+          "sha256": "2d2866396343e1af5ae396f5fc7d03f40bb50e53061dabfd4f301131494c00de"
+        },
+        {
+          "name": ".version",
+          "address": 211500,
+          "bytes": 192,
+          "end": 211692,
+          "nobits": false,
+          "sha256": "8ef327b036957bf7976dcf56bdee113e26100a9d4011c91c69af01307b2a265b"
+        }
+      ],
+      "image_end": "0x33aec",
+      "rounded_heap_start": "0x33b00",
+      "historical_heap_ceiling": "0x33c00",
+      "fits_historical_ceiling": true,
+      "ceiling_margin_bytes": 256,
+      "reserved_from_0x2f290_bytes": 18544,
+      "no_test_stub_symbols": true,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-dns-grow/native.c": "35ebbbab1d61232729c84124d7a9142b16c41ff4bf7291e7cb8817f2c2fa4eef",
+        "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto.c": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+        "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+        "work/uv310-wireguard/control-hardening/entry.S": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+        "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+        "work/uv310-wireguard/dhcp-dns/dhcp_dns_grow.c": "8ebfa6ad216867ac522c6940509f28031665c04b4303eee9e57f7062c6203717",
+        "work/uv310-wireguard/rekey-dns-grow/native-config.h": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+        "work/uv310-wireguard/rekey-layout/layout.ld": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2"
+      },
+      "linked_stack": {
+        "scope": "Linked compiler frame metadata plus disassembled direct calls; tail calls added conservatively; no complete bound",
+        "roots": {
+          "worker": {
+            "separate_symbol_present": true,
+            "visible_chain_frame_sum_bytes": 1052,
+            "path": [
+              {
+                "function": "worker",
+                "frame_bytes": 32
+              },
+              {
+                "function": "wireguard_process_handshake_response",
+                "frame_bytes": 352
+              },
+              {
+                "function": "wireguard_kdf1",
+                "frame_bytes": 96
+              },
+              {
+                "function": "wireguard_hmac",
+                "frame_bytes": 280
+              },
+              {
+                "function": "blake2s_init",
+                "frame_bytes": 24
+              },
+              {
+                "function": "blake2s_update",
+                "frame_bytes": 24
+              },
+              {
+                "function": "blake2s_compress",
+                "frame_bytes": 244
+              }
+            ],
+            "missing_frame_or_unresolved_target": [
+              "0x3114a"
+            ],
+            "indirect_register_calls": [
+              "fp",
+              "lr",
+              "r3",
+              "r4",
+              "r5",
+              "r6",
+              "r8",
+              "sb",
+              "sl"
+            ],
+            "cycles": [],
+            "is_complete_stack_bound": false
+          },
+          "intercept": {
+            "separate_symbol_present": true,
+            "visible_chain_frame_sum_bytes": 712,
+            "path": [
+              {
+                "function": "intercept",
+                "frame_bytes": 96
+              },
+              {
+                "function": "forward",
+                "frame_bytes": 80
+              },
+              {
+                "function": "wireguard_decrypt_packet",
+                "frame_bytes": 32
+              },
+              {
+                "function": "chacha20poly1305_decrypt",
+                "frame_bytes": 280
+              },
+              {
+                "function": "generate_poly1305_key",
+                "frame_bytes": 56
+              },
+              {
+                "function": "chacha20",
+                "frame_bytes": 168
+              }
+            ],
+            "missing_frame_or_unresolved_target": [],
+            "indirect_register_calls": [
+              "fp",
+              "lr",
+              "r2",
+              "r3",
+              "r5",
+              "r6",
+              "r8",
+              "sb",
+              "sl"
+            ],
+            "cycles": [],
+            "is_complete_stack_bound": false
+          },
+          "emit_control": {
+            "separate_symbol_present": true,
+            "visible_chain_frame_sum_bytes": 56,
+            "path": [
+              {
+                "function": "emit_control",
+                "frame_bytes": 24
+              },
+              {
+                "function": "OUTLINED_FUNCTION_11",
+                "frame_bytes": 0
+              },
+              {
+                "function": "control_expired",
+                "frame_bytes": 16
+              },
+              {
+                "function": "can_send",
+                "frame_bytes": 16
+              }
+            ],
+            "missing_frame_or_unresolved_target": [
+              "0x2f39e",
+              "0x2f3ce",
+              "0x2f3d2"
+            ],
+            "indirect_register_calls": [
+              "lr"
+            ],
+            "cycles": [],
+            "is_complete_stack_bound": false
+          },
+          "snapshot": {
+            "separate_symbol_present": true,
+            "visible_chain_frame_sum_bytes": 192,
+            "path": [
+              {
+                "function": "snapshot",
+                "frame_bytes": 160
+              },
+              {
+                "function": "memory_snapshot",
+                "frame_bytes": 32
+              }
+            ],
+            "missing_frame_or_unresolved_target": [],
+            "indirect_register_calls": [],
+            "cycles": [],
+            "is_complete_stack_bound": false
+          },
+          "memory_snapshot": {
+            "separate_symbol_present": true,
+            "visible_chain_frame_sum_bytes": 32,
+            "path": [
+              {
+                "function": "memory_snapshot",
+                "frame_bytes": 32
+              }
+            ],
+            "missing_frame_or_unresolved_target": [],
+            "indirect_register_calls": [],
+            "cycles": [],
+            "is_complete_stack_bound": false
+          }
+        },
+        "largest_frames": [
+          {
+            "function": "wireguard_process_handshake_response",
+            "frame_bytes": 352
+          },
+          {
+            "function": "wireguard_hmac",
+            "frame_bytes": 280
+          },
+          {
+            "function": "chacha20poly1305_decrypt",
+            "frame_bytes": 280
+          },
+          {
+            "function": "chacha20poly1305_encrypt",
+            "frame_bytes": 256
+          },
+          {
+            "function": "wireguard_start_session",
+            "frame_bytes": 248
+          },
+          {
+            "function": "x25519",
+            "frame_bytes": 248
+          },
+          {
+            "function": "blake2s_compress",
+            "frame_bytes": 244
+          },
+          {
+            "function": "chacha20",
+            "frame_bytes": 168
+          },
+          {
+            "function": "snapshot",
+            "frame_bytes": 160
+          },
+          {
+            "function": "wireguard_mac",
+            "frame_bytes": 144
+          },
+          {
+            "function": "wireguard_create_handshake_initiation",
+            "frame_bytes": 136
+          },
+          {
+            "function": "wireguard_init",
+            "frame_bytes": 136
+          },
+          {
+            "function": "wireguard_mix_hash",
+            "frame_bytes": 136
+          },
+          {
+            "function": "wireguard_mac_key",
+            "frame_bytes": 136
+          },
+          {
+            "function": "poly1305_blocks",
+            "frame_bytes": 112
+          }
+        ],
+        "frame_records": 111,
+        "disassembler_version": "5.0.7",
+        "limitations": [
+          "ROM/assembly callees, interrupt nesting and stock caller frames are not modeled",
+          "Indirect calls, unrecognized branch forms and missing function/frame symbols can omit paths",
+          "Compiler metadata covers inlining but not runtime stack high-water",
+          "Sums are neither a general upper nor lower bound"
+        ]
+      }
+    }
+  ],
+  "layout_script_sha256": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2",
+  "source_sha256": {
+    "tools/audit_native_layout.py": "c4b63dfb8b406b0bacff7ab09c1b9115fbbdff0d6b53b46de0a3eae9095573b5",
+    "tools/linked_stack.py": "6ac1e9c7256e43d51b7ed554af5a846f0c33e672191a59b2d3eaf42c668993d6"
+  },
+  "hardware_access": false,
+  "real_configuration_used": false,
+  "goal_complete": false,
+  "limitations": [
+    "Synthetic constants can alter final compiler/linker output; real fresh one-boot configuration needs independent audit",
+    "0x33c00 is historical packaging policy, not a measured current safe heap boundary",
+    "No runtime stack/IRQ/heap peak, fragmentation, DMA or firmware boot verified",
+    "No CRC-patched combined image emitted or deployed",
+    "Fitting address layout is not standalone readiness or stability"
+  ]
+}

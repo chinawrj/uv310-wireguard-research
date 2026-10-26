@@ -58,3 +58,5 @@ python3 tools/audit_native_layout.py --pool-bytes 256 \
 [运行40254309179](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40254309179) 已完成。四组矩阵的section地址/尺寸与heap起点逐项等于本机结果，超限结论同样成立。ZIP digest和报告源码哈希已核对；本轮没有执行LTO功能测试。
 
 证据：[运行摘要](../outputs/uv310-wireguard/evidence/ci-native-layout/run.json)、[1024B普通](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool1024.json)、[1024B LTO](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool1024-lto.json)、[256B普通](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool256.json)、[256B LTO](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool256-lto.json)、[Linux工具版本](../outputs/uv310-wireguard/evidence/ci-native-layout/ci-environment.json)。
+
+后续内联/重复函数合并对照及选中的 `control-icf` 实验profile见 [INLINE_PROFILES.md](INLINE_PROFILES.md)。新profile的256B布局余量仍不是实机内存证明。

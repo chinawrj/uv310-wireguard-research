@@ -618,11 +618,11 @@
   },
   {
     "path": "tools/test_offline.py",
-    "published_sha256": "f6f2408cbed06739ca66def70fbf02827605e4ae770c477321a8daee2ae3847d",
-    "previous_published_sha256": "8dabf6aeb90fb0a32b02c80873b85191dd48ed3132add6f0085d7a113b0a085d",
+    "published_sha256": "de893f53e9359fb796dc00e5a53e43e753c51373b458136bf9ec6c4252f900fc",
+    "previous_published_sha256": "f6f2408cbed06739ca66def70fbf02827605e4ae770c477321a8daee2ae3847d",
     "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
     "private_material_required": false,
-    "workspace_source_sha256": "f6f2408cbed06739ca66def70fbf02827605e4ae770c477321a8daee2ae3847d",
+    "workspace_source_sha256": "de893f53e9359fb796dc00e5a53e43e753c51373b458136bf9ec6c4252f900fc",
     "byte_identical_to_workspace": true
   },
   {
@@ -673,10 +673,10 @@
   },
   {
     "path": ".github/workflows/offline.yml",
-    "published_sha256": "f535622fdbfe37769b8c6eb02b222a84d73355d79394264f2760f25168d00a8a",
-    "workspace_source_sha256": "f535622fdbfe37769b8c6eb02b222a84d73355d79394264f2760f25168d00a8a",
+    "published_sha256": "d3bcf999a5b13f89a1a84afc4475a9a26745d1b84079a54a29e440f4fd8b98e9",
+    "workspace_source_sha256": "d3bcf999a5b13f89a1a84afc4475a9a26745d1b84079a54a29e440f4fd8b98e9",
     "byte_identical_to_workspace": true,
-    "previous_published_sha256": "8fa1a0aab664909d35abdef7a83d95f1f3d64c3328c275b1c4730e1704dfb9fe"
+    "previous_published_sha256": "f535622fdbfe37769b8c6eb02b222a84d73355d79394264f2760f25168d00a8a"
   },
   {
     "path": "tools/compare_dns_size.py",
@@ -718,11 +718,11 @@
   },
   {
     "path": "work/uv310-wireguard/rekey-dns-grow/test-build.py",
-    "published_sha256": "58f2d5862f142272dd2dc296b5e98438a6507c6c75cc2b3661b5c203c0f07720",
-    "workspace_source_sha256": "58f2d5862f142272dd2dc296b5e98438a6507c6c75cc2b3661b5c203c0f07720",
+    "published_sha256": "78fc0a70b04a72685f04cf9ef54bf1f23e647ddef7d6a3aa24f5bd36c90042b6",
+    "workspace_source_sha256": "78fc0a70b04a72685f04cf9ef54bf1f23e647ddef7d6a3aa24f5bd36c90042b6",
     "byte_identical_to_workspace": true,
     "note": "Public synthetic offline DHCP growth implementation/test; no private configuration",
-    "previous_published_sha256": "d31da32f2fe35afc5773d3f1d725cfc687f1354b44fe056aecbfd6a4809cd65d"
+    "previous_published_sha256": "58f2d5862f142272dd2dc296b5e98438a6507c6c75cc2b3661b5c203c0f07720"
   },
   {
     "path": "work/uv310-wireguard/rekey-dns-grow/native-config.h",
@@ -769,11 +769,11 @@
   },
   {
     "path": "tools/audit_native_layout.py",
-    "published_sha256": "001d00a43a9a8d7412941409773b39128985297f30b7712b00ec411559fef1b4",
-    "workspace_source_sha256": "001d00a43a9a8d7412941409773b39128985297f30b7712b00ec411559fef1b4",
+    "published_sha256": "c4b63dfb8b406b0bacff7ab09c1b9115fbbdff0d6b53b46de0a3eae9095573b5",
+    "workspace_source_sha256": "c4b63dfb8b406b0bacff7ab09c1b9115fbbdff0d6b53b46de0a3eae9095573b5",
     "byte_identical_to_workspace": true,
     "note": "Synthetic native final-link audit; optional read-only stock hash verification, no deployment image",
-    "previous_published_sha256": "f268ab5a5576905746cb91e556859dfea689b66ef2c9966b81cc31ada2ba70bc"
+    "previous_published_sha256": "001d00a43a9a8d7412941409773b39128985297f30b7712b00ec411559fef1b4"
   },
   {
     "path": "requirements-test.txt",
@@ -788,5 +788,19 @@
     "workspace_source_sha256": "6ac1e9c7256e43d51b7ed554af5a846f0c33e672191a59b2d3eaf42c668993d6",
     "byte_identical_to_workspace": true,
     "note": "Public synthetic LTO validation and linked stack audit"
+  },
+  {
+    "path": "tools/compare_inline_profiles.py",
+    "published_sha256": "248934bb1d80a6c85bf720fbd224983ca4a7bd0d17fb9772d49912ffafe223eb",
+    "workspace_source_sha256": "248934bb1d80a6c85bf720fbd224983ca4a7bd0d17fb9772d49912ffafe223eb",
+    "byte_identical_to_workspace": true,
+    "note": "Offline compile/link profile comparison; synthetic material only"
+  },
+  {
+    "path": "work/uv310-wireguard/handshake-noinline.h",
+    "published_sha256": "f582ff940be6fe6c5ae5e1c5d756caa181ab4d38551422bef804992210a6e1f0",
+    "workspace_source_sha256": "f582ff940be6fe6c5ae5e1c5d756caa181ab4d38551422bef804992210a6e1f0",
+    "byte_identical_to_workspace": true,
+    "note": "Offline compile/link profile comparison; synthetic material only"
   }
 ]
