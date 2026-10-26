@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Budget readonly DNS telemetry under selected control-icf profile; verify final fresh-private-config layout and real heap/stack/Wi-Fi when hardware returns.",
+  "next_step": "Resolve telemetry semantics and layout cost before integration; hardware unavailable, no deployment.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/INLINE_PROFILES.md",
+  "latest_offline_progress": "docs/DNS_TELEMETRY.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -225,5 +225,15 @@
     "linux_ci_run": 40258402606,
     "tested_commit": "60c1b0fec44816269d04fc82199b6df93b1b2d72",
     "all_eight_layout_rows_match_local": true
+  },
+  "dns_telemetry_proposal": {
+    "document": "docs/DNS_TELEMETRY.md",
+    "resource_only": true,
+    "integrated": false,
+    "baseline_probe_bytes": 16268,
+    "proposed_probe_bytes": 16324,
+    "proposed_margin_bytes": 0,
+    "functional_validation": false,
+    "hardware_verified": false
   }
 }

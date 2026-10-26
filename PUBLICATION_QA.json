@@ -286,5 +286,16 @@
       "source_hashes_verified": true,
       "hardware_verified": false
     }
+  },
+  "dns_telemetry_budget": {
+    "native_source_unchanged": true,
+    "resource_only": true,
+    "private_scan": {
+      "known_private_value_representations_checked": 123,
+      "files_checked": 383,
+      "remaining_matches": 0,
+      "files_with_private_value_replacements": [],
+      "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
+    }
   }
 }

@@ -12,6 +12,8 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
+- 最新诊断预算：最小D页增加56B代码，因对齐耗尽256B布局余量；未接入候选，也未做功能验收。现有计数有语义限制，见 [DNS_TELEMETRY.md](docs/DNS_TELEMETRY.md)。
+
 - 最新实验构建profile `control-icf`：256B池形状有256B历史布局余量，可见worker栈链1052B，intercept712B；两种池合成回归在本机及Linux CI通过，八种布局数值一致，尚未部署。见 [INLINE_PROFILES.md](docs/INLINE_PROFILES.md)。
 
 - LTO合成回归已在本机和Linux CI通过：1024B池67场景/20错误对照，256B池67场景/21错误对照；两种池的测试预期与模拟服务器隔离方式不同。见 [LTO_VALIDATION.md](docs/LTO_VALIDATION.md)。

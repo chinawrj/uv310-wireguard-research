@@ -802,5 +802,10 @@
     "workspace_source_sha256": "f582ff940be6fe6c5ae5e1c5d756caa181ab4d38551422bef804992210a6e1f0",
     "byte_identical_to_workspace": true,
     "note": "Offline compile/link profile comparison; synthetic material only"
+  },
+  {
+    "path": "tools/evaluate_dns_telemetry.py",
+    "published_sha256": "d283198452ea3911e5270a5fb2a9bbde5e7856bdb31a03a581a47449cb621d06",
+    "origin": "Authored offline diagnostic layout experiment; no firmware bytes or private configuration"
   }
 ]
