@@ -52,3 +52,7 @@ LLVM_CLANG=/path/to/clang LLVM_LD=/path/to/ld.lld make audit-inline-profiles
 `test-control-icf`分别运行两种池，保存独立结果；默认测试模式仍可复现旧profile。`audit-inline-profiles`明确记录超限实验，不因为一个实验超限就把它隐藏；CI执行成功不代表每种实验都可部署。
 
 下一步可在这点余量中评估只读DNS诊断页的成本，并继续核对stock长度传递/真实布局。部署前仍需全新单次材料、原厂基线、实际heap/stack峰值与Wi-Fi验收；独立启动所需熵源和跨启动新鲜度、IPv6/多客户端、长时间稳定性尚未完成。
+
+## Linux独立复现
+
+[CI 40258402606](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40258402606) 对提交 `60c1b0fec44816269d04fc82199b6df93b1b2d72` 验证成功。两种池分别67/20与67/21通过，八种布局的代码大小、heap起点和可见栈链数值均与本机一致。已核对报告源码哈希、256B派生配置哈希及artifact ZIP SHA-256。[原始证据与运行记录](../outputs/uv310-wireguard/evidence/ci-inline-profiles/run.json)已归档，不依赖14天后过期的Actions附件。此结果仍不包含实机执行。

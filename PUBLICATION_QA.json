@@ -270,10 +270,21 @@
     "complete_stack_bound_proven": false,
     "private_scan": {
       "known_private_value_representations_checked": 123,
-      "files_checked": 367,
+      "files_checked": 380,
       "remaining_matches": 0,
       "files_with_private_value_replacements": [],
       "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
+    },
+    "linux_ci": {
+      "run_id": 40258402606,
+      "url": "https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40258402606",
+      "tested_commit": "60c1b0fec44816269d04fc82199b6df93b1b2d72",
+      "conclusion": "success",
+      "artifact_id": 12624025316,
+      "artifact_sha256": "4e165844371c45de1461c0c331666468017707576815119477a6bc44b92a1870",
+      "all_eight_layout_rows_match_local": true,
+      "source_hashes_verified": true,
+      "hardware_verified": false
     }
   }
 }

@@ -220,6 +220,10 @@
     "suites_256": 67,
     "negative_controls_256": 21,
     "hardware_verified": false,
-    "real_private_config_linked": false
+    "real_private_config_linked": false,
+    "linux_ci_verified": true,
+    "linux_ci_run": 40258402606,
+    "tested_commit": "60c1b0fec44816269d04fc82199b6df93b1b2d72",
+    "all_eight_layout_rows_match_local": true
   }
 }
