@@ -111,6 +111,10 @@
     "negative_controls_detected": 5,
     "native_hook_integrated": false,
     "hardware_deployed": false,
-    "dns_bypass_fixed": false
+    "dns_bypass_fixed": false,
+    "linux_sanitizers": "address,undefined",
+    "linux_ci_verified": true,
+    "linux_ci_run": 40247318186,
+    "tested_commit": "fe924fc748c3788f1250bde912b8733416127e77"
   }
 }

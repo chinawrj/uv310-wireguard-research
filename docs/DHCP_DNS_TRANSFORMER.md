@@ -35,7 +35,7 @@
 - 同一60个命名用例用 Cortex-M3 QEMU 运行，含不同地址对齐及buffer前后保护区，逐字节核对。
 - 5个故意错误对照：跳过UDP完整性检查、错误时部分修改、接受坏DNS总长度、每个分段重新开始DNS偏移、写错checksum；测试均须发现错误。
 
-本机结果：[dhcp-dns-prototype-local.json](../outputs/uv310-wireguard/evidence/dhcp-dns-prototype-local.json)。Mac 的 AddressSanitizer 测试进程在进入主程序前超时；普通版本同一首个用例正常结束。故本机只记录 **UBSan** 通过，不声称ASan通过。默认Linux CI使用 **ASan+UBSan**，结果须以对应运行产物为准。
+本机结果：[dhcp-dns-prototype-local.json](../outputs/uv310-wireguard/evidence/dhcp-dns-prototype-local.json)。Mac 的 AddressSanitizer 测试进程在进入主程序前超时；普通版本同一首个用例正常结束。故本机只记录 **UBSan** 通过，不声称ASan通过。Linux CI运行 [40247318186](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40247318186) 已通过 **ASan+UBSan** 的1,352个向量、60个Cortex-M3向量和5个错误对照；原始JSON已核对artifact摘要及源码hash并归档：[Linux结果](../outputs/uv310-wireguard/evidence/dhcp-dns-prototype-linux.json)。被测源码提交为 `fe924fc748c3788f1250bde912b8733416127e77`。
 
 LLVM 18 Cortex-M3 / Thumb / `-Oz` 独立目标文件：代码1,008字节、可写全局数据0字节、只读allocated section 40字节（含展开信息等，不是全部最终镜像开销）。`dhcp_dns_rewrite` frame72字节，`scan/rewrite_options` 各24字节，最长可见直接链约96字节。不是接入原厂IRQ/调用链后的总栈上界，也不是运行时内存峰值或CPU性能数据。
 

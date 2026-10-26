@@ -1,0 +1,154 @@
+{
+  "scope": "Standalone unintegrated DHCP DNS transformer; synthetic host sanitizers and Cortex-M3 QEMU; no device access",
+  "host_compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "target_compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "host_sanitizers": "address,undefined",
+  "host_golden_vectors": 1352,
+  "qemu_golden_vectors": 60,
+  "exhaustive_truncations": 292,
+  "udp_bitflip_rejections": 1000,
+  "named_cases": [
+    "ack",
+    "offer_two_dns",
+    "split_255_1",
+    "split_1_3",
+    "split_main_file",
+    "split_all_fields",
+    "sname_only",
+    "empty_chunk",
+    "unknown_and_pad",
+    "ipv4_options",
+    "zero_udp_checksum",
+    "odd_udp_length",
+    "ether_padding",
+    "file_ignored_without_overload",
+    "computed_checksum_zero",
+    "insert_ack",
+    "insert_offer",
+    "insert_with_overload",
+    "repeat_rewrite",
+    "no_dns_no_room",
+    "no_dns_short_room",
+    "empty_dns",
+    "dns_aggregate_three",
+    "missing_end",
+    "duplicate_type",
+    "missing_type",
+    "type_two_bytes",
+    "bad_overload_zero",
+    "bad_overload_four",
+    "duplicate_overload",
+    "nested_overload",
+    "type_in_file",
+    "unterminated_file",
+    "nak",
+    "request",
+    "wrong_server",
+    "not_ipv4",
+    "not_udp",
+    "wrong_source_port",
+    "wrong_dest_port",
+    "bad_ip_checksum",
+    "bad_udp_checksum",
+    "bad_cookie",
+    "boot_request",
+    "wrong_htype",
+    "wrong_hlen",
+    "option_truncated",
+    "ip_reserved_flag",
+    "ip_more_fragments",
+    "nonfirst_fragment",
+    "ip_df_allowed",
+    "udp_length_mismatch",
+    "ihl_too_small",
+    "ihl_displaced_udp",
+    "frame_limit",
+    "insertion_would_clobber",
+    "invalid_dns_0",
+    "invalid_dns_1",
+    "invalid_dns_2",
+    "invalid_dns_3"
+  ],
+  "negative_controls": [
+    {
+      "mutation": "skip_udp_integrity",
+      "detected": true,
+      "first_difference": "bad_udp_checksum"
+    },
+    {
+      "mutation": "partial_mutation_on_reject",
+      "detected": true,
+      "first_difference": "bad_udp_checksum"
+    },
+    {
+      "mutation": "accept_bad_dns_length",
+      "detected": true,
+      "first_difference": "empty_dns"
+    },
+    {
+      "mutation": "restart_split_dns_offset",
+      "detected": true,
+      "first_difference": "split_255_1"
+    },
+    {
+      "mutation": "leave_old_checksum",
+      "detected": true,
+      "first_difference": "ack"
+    }
+  ],
+  "compiler_stack_frames": [
+    {
+      "function": "dhcp_dns_rewrite",
+      "bytes": 72,
+      "kind": "static"
+    },
+    {
+      "function": "finish",
+      "bytes": 0,
+      "kind": "static"
+    },
+    {
+      "function": "addsum",
+      "bytes": 16,
+      "kind": "static"
+    },
+    {
+      "function": "scan",
+      "bytes": 24,
+      "kind": "static"
+    },
+    {
+      "function": "rewrite_options",
+      "bytes": 24,
+      "kind": "static"
+    }
+  ],
+  "cortex_m3_object_sizes": {
+    "executable_bytes": 1008,
+    "writable_bytes": 0,
+    "readonly_allocated_bytes": 40
+  },
+  "source_sha256": {
+    "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+    "work/uv310-wireguard/dhcp-dns/dhcp_dns.h": "723a29f6d8eaae1f9abb6900e4c41cf6e10e7eb9af416345994f9964e401376b",
+    "tools/test_dhcp_dns.py": "414f5c5ec6b7315b3257d2107fd7e465575bceb1b8acad9955a1d6c79c6e3931"
+  },
+  "native_hook_integrated": false,
+  "hardware_deployed": false,
+  "dns_bypass_fixed": false,
+  "limitations": [
+    "Single replacement DNS repeated in all existing slots",
+    "No VLAN, IPv6, relay or packet resizing support",
+    "No-space requires future caller policy; never pass silently in protected mode",
+    "Source IP matching is not authentication; trusted packet direction required",
+    "No real DHCP lease, DNS resolution, performance or memory-pressure verification"
+  ],
+  "ci_evidence": {
+    "run_id": 40247318186,
+    "job_id": 121331520164,
+    "tested_commit": "fe924fc748c3788f1250bde912b8733416127e77",
+    "artifact_id": 12619231072,
+    "artifact_sha256": "82b09cb8cb4de44b509576d5a511db7cfc6da4e65abf7c64053edae95cc1676b",
+    "source_hashes_verified": true
+  }
+}

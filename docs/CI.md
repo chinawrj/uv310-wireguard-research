@@ -23,3 +23,7 @@
 实际环境为Linux x86_64、Ubuntu clang/LLD 18.1.3、QEMU8.2.2、Python3.12.3；此前本机是macOS arm64、Homebrew LLVM18.1.6、QEMU10.0.0。下载ZIP的SHA-256与GitHub artifact digest一致，三组测试记录内的源码哈希全部与公开文件一致。
 
 这是功能测试跨环境复现，不是二进制逐字节可复现声明。工具版本不同可能改变机器码和资源统计。安装用的Ubuntu软件包没有固定到完整不可变快照，首次证据已记录实际版本；未来变动会由后续运行重新验证。
+
+## DHCP DNS独立模块
+
+新增 `make test-dhcp-dns`：Linux ASan+UBSan 1,352个报文向量、60个Cortex-M3向量和5个故意错误对照已通过，证据见 [DHCP_DNS_TRANSFORMER.md](DHCP_DNS_TRANSFORMER.md)。这些是新增独立模块测试，不改变上述历史核心WireGuard测试数量，也不表示已接入native hook或修复实机DNS旁路。
