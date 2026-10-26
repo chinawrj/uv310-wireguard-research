@@ -1,0 +1,455 @@
+{
+  "scope": "Synthetic Cortex-M3 integration, no real radio/clock/entropy/device deployment",
+  "suites": [
+    {
+      "name": "BASELINE",
+      "passed": true,
+      "elf_sha256": "2b649f461c82ae7342bd4efc56bc6042259547a8bf1d6634b10101eb982760b6"
+    },
+    {
+      "name": "REKEY",
+      "passed": true,
+      "elf_sha256": "6ea2d005c6ec27f7283446e47eec08d265c90be1caebbdeabb57f7ddd10e1984"
+    },
+    {
+      "name": "BAD_MAC",
+      "passed": true,
+      "elf_sha256": "e6413aacf5e8fa302f62f1bf9ff5a11c118432c03393d60644cce60ee8de4f4b"
+    },
+    {
+      "name": "BAD_AEAD",
+      "passed": true,
+      "elf_sha256": "3b6bc7d0175b6f9bfc652c200b1095f8501c0bdb3ae9708bcb2b79b6a73fb957"
+    },
+    {
+      "name": "STALE_RESPONSE",
+      "passed": true,
+      "elf_sha256": "f27ac77efdae8006083a15b5f0d9e54cfcfb81d501cc660695d6b201e7adefc6"
+    },
+    {
+      "name": "RNG_FAIL",
+      "passed": true,
+      "elf_sha256": "be9f5fcb9ec76e62c7f3e45b12702ef0580ba7dc8ab981f4a7dbae6bf3e40ac1"
+    },
+    {
+      "name": "QUEUE_EXPIRE",
+      "passed": true,
+      "elf_sha256": "5afa16a4bd1ef65463e51ba14fc451c179d42326d6796182bd10514dc9969213"
+    },
+    {
+      "name": "RETRY",
+      "passed": true,
+      "elf_sha256": "c4933a6cba722fc51853eb6ffef4d809d12a1dde7e8a106b00732a2cd4779255"
+    },
+    {
+      "name": "RETRY_LIMIT",
+      "passed": true,
+      "elf_sha256": "37fe66f40e39f86c55a596ff8692a3534d28d4855d2e350487d133a6dbf67d32"
+    },
+    {
+      "name": "ALLOC_EXPIRE",
+      "passed": true,
+      "elf_sha256": "811545415c05d0616ba36176df91237469bc6464cdc33a48b1dff833544fa05b"
+    },
+    {
+      "name": "COUNT_REKEY",
+      "passed": true,
+      "elf_sha256": "ecd176f43fa5ff6af957fe5f7b62f0b4bef9ed24fbec9b4bb0687f6ccddc2a20"
+    },
+    {
+      "name": "COUNT_REJECT",
+      "passed": true,
+      "elf_sha256": "debff98b59f9386acebc7a0f73e26e94469f3ac2d33360b72dd12ea9029643f2"
+    },
+    {
+      "name": "WRAP",
+      "passed": true,
+      "elf_sha256": "04035a48ec8cf22ca29ae48860126dc9aaaa64e1245362614fef16584c804e44"
+    },
+    {
+      "name": "TAI_CARRY",
+      "passed": true,
+      "elf_sha256": "3a34cbe8855dd017b07623cb4d1489db4e862df4e4a815acfad52f8f9c01efbd"
+    },
+    {
+      "name": "CLAIM_RACE",
+      "passed": true,
+      "elf_sha256": "af94bc9921758f0b9292a341d74d8ffe1b3fab879e559ddeda55d341f798ea5e"
+    },
+    {
+      "name": "PUBLISH_EXPIRY",
+      "passed": true,
+      "elf_sha256": "ffc23d8c50028bab8c1e16aa966e1f91eabe057e9a2bc962d5ac92829ca2e1d6"
+    },
+    {
+      "name": "LAB_PACKET",
+      "passed": true,
+      "elf_sha256": "9daf9a9c285eaae460b1f409a9e144cc888d544a06c2af6d2f4fbb01a8210a11"
+    },
+    {
+      "name": "LAB_TIMER",
+      "passed": true,
+      "elf_sha256": "4b4c96cde1982e68dc4f8ce3b0b76366bb74a857a74395acb36c81d0428ebd1c"
+    },
+    {
+      "name": "LAB_WORKER",
+      "passed": true,
+      "elf_sha256": "b871b66e50d32776658dee35aff4d622fa00ce3f24bd763019a2de33c627833a"
+    },
+    {
+      "name": "LAB_WRAP",
+      "passed": true,
+      "elf_sha256": "107aadef223eb735ce4f88374dc05dac2bbce5cf453395c72b0b3045f4155986"
+    },
+    {
+      "name": "MEMORY",
+      "passed": true,
+      "elf_sha256": "0d1a8916801e90cf4b13968032cd77490c78b71198a740953208a7eee4a9833e"
+    },
+    {
+      "name": "MEMORY_BAD_NODE",
+      "passed": true,
+      "elf_sha256": "82fee54e84dac07b1aa8531dc33d2d8e95cc4fe178e43ce0452f4add5dbc68be"
+    },
+    {
+      "name": "MEMORY_CYCLE",
+      "passed": true,
+      "elf_sha256": "43f30c47debabbc51f97640547a116b1eb7d4fa8ce3d0f0184a09c3e2ec99dc7"
+    },
+    {
+      "name": "MEMORY_SIZE",
+      "passed": true,
+      "elf_sha256": "ff129102ee3bbcb81571ea1e3f077b571b17957ee3ca92c08266f20d22d62f17"
+    },
+    {
+      "name": "MEMORY_BAD_STACK",
+      "passed": true,
+      "elf_sha256": "2ca93e3374389f6df8981f1e651b7d28e2fabd22a9854dc18a25d9f980e7b87a"
+    },
+    {
+      "name": "ALLOC_NULL_FIRST",
+      "passed": true,
+      "elf_sha256": "c5ccb04bca554a7c1a168eabc763674e74e834eb8521c836488ea7bb92a323b1"
+    },
+    {
+      "name": "ALLOC_NULL_REKEY",
+      "passed": true,
+      "elf_sha256": "fec4c550ee272937b94a4b6c2bc1dd69f70350274eab10944cd626322461068b"
+    },
+    {
+      "name": "ALLOC_NULL_KEEPALIVE",
+      "passed": true,
+      "elf_sha256": "7cb1201d6c977f8f1ccc3d3e85a068d5f8305909e648d6127794a60477db69ae"
+    },
+    {
+      "name": "ALLOC_BAD_LAYOUT",
+      "passed": true,
+      "elf_sha256": "c17a587523150f41c3a94c82dce48e3e5e268d58982b221ae36876a65f481a74"
+    },
+    {
+      "name": "DEFERRED_RELEASE",
+      "passed": true,
+      "elf_sha256": "c8f8ed856ede40d5653891d350e73bfa82a7a04e193fd48b24ff27aa1f8e01c8"
+    },
+    {
+      "name": "HELD_RELEASE_EXPIRY",
+      "passed": true,
+      "elf_sha256": "2b2154fd6f9934423f6bb366e53cc2b8860209952c0f4a08123b2b9dfad991e7"
+    },
+    {
+      "name": "SUBMIT_NONZERO",
+      "passed": true,
+      "elf_sha256": "e9b3a4ffea8d3c881af7db5c9f2518933fea6596902dadedef7cb92fcbf18284"
+    },
+    {
+      "name": "PRESSURE_SECOND_FAIL",
+      "passed": true,
+      "elf_sha256": "f042aa47b2860397a7968a1b4a8dff5f33ab4e388ce965a3255bda9ec1632557"
+    },
+    {
+      "name": "PRESSURE_WRAP",
+      "passed": true,
+      "elf_sha256": "650803c6dba4b500d47181b002904ff7372edf5fd1010632fe572b2ce7650ed7"
+    },
+    {
+      "name": "PRESSURE_KEEP_LIMIT",
+      "passed": true,
+      "elf_sha256": "9716abc007705c70e1bc54d791e8a0bf7b822bf502d0cfde27af80672bfb423a"
+    },
+    {
+      "name": "PRESSURE_KEY_DEADLINE",
+      "passed": true,
+      "elf_sha256": "64a2d8ae83594f915fc979324f063b061c7118899ecc5b158c26c8e975f7cb75"
+    },
+    {
+      "name": "PRESSURE_LAB_DEADLINE",
+      "passed": true,
+      "elf_sha256": "7872d1ba51b32501e121263702503e96686d35a84027d905b31aea9a998e0ddc"
+    },
+    {
+      "name": "PRESSURE_INIT_LIMIT",
+      "passed": true,
+      "elf_sha256": "74e872744fb3caff6dce9f27386d8f2f19e0b4f0b3fc5bc9c79e88b894e6e976"
+    },
+    {
+      "name": "PRESSURE_QUEUE_DEADLINE",
+      "passed": true,
+      "elf_sha256": "10200b19cb4f3dfa68ea7c4d1dc0d02443cc6a5acb66afe24d8ba023f260d971"
+    },
+    {
+      "name": "PRESSURE_NULL_EXPIRE",
+      "passed": true,
+      "elf_sha256": "a0435a820fc288e75a525ba9164fb7e645582a956be2c3351dc5531316d791e7"
+    },
+    {
+      "name": "PRESSURE_BUDGET_RESET",
+      "passed": true,
+      "elf_sha256": "22e23690d29f8a4e2bd6db9e995021cef339d557ca4f52346027bdddbd6bdc55"
+    },
+    {
+      "name": "NONCE_DELAYED_KEEPALIVE",
+      "passed": true,
+      "elf_sha256": "93e65d0bf3eeda56caeca819ed6c9898472228abf0edc7149ee38ca9483323f6"
+    },
+    {
+      "name": "NONCE_DISCARDED_KEEPALIVE",
+      "passed": true,
+      "elf_sha256": "d00c1080932d1c939649e255b5bf57001b7e293410294788ec7dd218fdfdb261"
+    },
+    {
+      "name": "NONCE_REKEY_PRESSURE",
+      "passed": true,
+      "elf_sha256": "09145ab968ebb2314dd3cb9f765dce0febe08d65d553b00a78332e2372268bb8"
+    },
+    {
+      "name": "NONCE_WRAP_INTERLEAVE",
+      "passed": true,
+      "elf_sha256": "452f6931f7e80efc668cbc766daa3a1ee0f249c443c713862f326c0d8e833687"
+    },
+    {
+      "name": "DNS_HOOK_FREE",
+      "passed": true,
+      "elf_sha256": "f00d656934a362871523bd7fe9e8f5cf67838e9b5d23b3daf30176e31940c98e"
+    },
+    {
+      "name": "DNS_PREBOOT",
+      "passed": true,
+      "elf_sha256": "ef74782b9041a1f4ea43b057061ac762d13a826b55a6e7873f0e566e0cef1bf7"
+    },
+    {
+      "name": "DNS_ACTIVE",
+      "passed": true,
+      "elf_sha256": "f0507b0c7763fac19755565206267c017db394c83a3ef4eec41552d5f60f0862"
+    },
+    {
+      "name": "DNS_STOPPED",
+      "passed": true,
+      "elf_sha256": "f0b4d56ac8206494f168c92b115a1c45ba93722d569ed3cc1d4b15efe4628fdd"
+    },
+    {
+      "name": "DNS_BAD_CHAIN",
+      "passed": true,
+      "elf_sha256": "7fe9be343636e3dee5871542e08a0f89820e99ad448aa5912041c032e82dc21d"
+    },
+    {
+      "name": "DNS_SHARED",
+      "passed": true,
+      "elf_sha256": "ef5071b5a329e38451797e4236a3874a04d05e7fae30eca9b7e23ff5eb26c021"
+    },
+    {
+      "name": "DNS_LAYOUT",
+      "passed": true,
+      "elf_sha256": "b7df279f690a5a553197bd7b0c6a452578c86c5ab8089244de45fb9240256708"
+    },
+    {
+      "name": "DNS_TAIL_BOUNDS",
+      "passed": true,
+      "elf_sha256": "7093e046f87076e10f42d345d0f524726eeb2ac0add610a480aec9fe98744337"
+    },
+    {
+      "name": "DNS_HEAD_BOUNDS",
+      "passed": true,
+      "elf_sha256": "a9bbcc33ca6767a33fc2a7a68f6cd42b1cece361a1e81d798a218f6c29ece9d3"
+    },
+    {
+      "name": "DNS_NO_SPACE",
+      "passed": true,
+      "elf_sha256": "4fb909f63e3e748d490d2943d3674eb7568b077f4487879a8e9db8e481a1285c"
+    },
+    {
+      "name": "DNS_BAD_CHECKSUM",
+      "passed": true,
+      "elf_sha256": "5b85a2bec8386b93e1e2a4dcbac233c687f50055150a8024607bb8290ad91d74"
+    },
+    {
+      "name": "DNS_WRONG_DIRECTION",
+      "passed": true,
+      "elf_sha256": "f75f8c745b4f49bfbde6e5990b9809544f8e9ee04818f64b23adc8d0affb0787"
+    },
+    {
+      "name": "DNS_LAN_UDP",
+      "passed": true,
+      "elf_sha256": "d0d350395da91b43df9f7f56ac7dbf28f675a72fcc244ab6ed43e6238c52df7c"
+    },
+    {
+      "name": "DNS_LAN_TCP",
+      "passed": true,
+      "elf_sha256": "21f3a76f364eb88016abeed3cd0c7bafbbfac75a4e4666cd0ba9901749d03a10"
+    },
+    {
+      "name": "DNS_LAN_FRAGMENT",
+      "passed": true,
+      "elf_sha256": "7c0adac9c52cd0fd5a11ce5c37579b2d1f5b7814171483631b6c3f017b3a96a9"
+    },
+    {
+      "name": "DNS_GATEWAY_REPLY",
+      "passed": true,
+      "elf_sha256": "76ca06bd547c0f2d6c0c1f8189daf772d55fc49eede61eb3c3f9653855a2b179"
+    },
+    {
+      "name": "DNS_EXTERNAL_TUNNEL",
+      "passed": true,
+      "elf_sha256": "4bb7cb3ee9b0a82f1dd6050c546051b744b6cb404bc040926e436c95de362ce1"
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "nonce_ledger_probe",
+      "kind": "intentional fixture counter reuse, native unchanged",
+      "detected": true
+    },
+    {
+      "mutation": "reset_device",
+      "detected": true
+    },
+    {
+      "mutation": "lost_response",
+      "detected": true
+    },
+    {
+      "mutation": "reject_previous",
+      "detected": true
+    },
+    {
+      "mutation": "malformed_packet_leak",
+      "detected": true
+    },
+    {
+      "mutation": "reuse_owned_packet",
+      "detected": true
+    },
+    {
+      "mutation": "no_alloc_backoff",
+      "detected": true
+    },
+    {
+      "mutation": "unbounded_alloc",
+      "detected": true
+    },
+    {
+      "mutation": "terminal_null",
+      "detected": true
+    },
+    {
+      "mutation": "no_budget_reset",
+      "detected": true
+    },
+    {
+      "mutation": "rewind_discarded_nonce",
+      "detected": true
+    },
+    {
+      "mutation": "rewind_before_forward",
+      "detected": true
+    },
+    {
+      "mutation": "skip_dhcp",
+      "detected": true
+    },
+    {
+      "mutation": "dhcp_only_after_handshake",
+      "detected": true
+    },
+    {
+      "mutation": "skip_dhcp_bounds",
+      "detected": true
+    },
+    {
+      "mutation": "skip_lan_dns_out",
+      "detected": true
+    },
+    {
+      "mutation": "skip_lan_dns_in",
+      "detected": true
+    },
+    {
+      "mutation": "ignore_dhcp_failure",
+      "detected": true
+    }
+  ],
+  "rekey_after_ms": 120000,
+  "reject_at_age_ms": 180000,
+  "retry_after_ms": 5000,
+  "max_cycle_tries": 18,
+  "source_sha256": {
+    "work/uv310-wireguard/rekey-dns/native.c": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+    "work/uv310-wireguard/rekey-dns/tests.c": "c50269c6ed04457901838a46a72bc604b3d5933b04192f2da7dde86ed8f009a0",
+    "work/uv310-wireguard/rekey-dns/native-config.h": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+    "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+    "work/uv310-wireguard/dhcp-dns/dhcp_dns.h": "723a29f6d8eaae1f9abb6900e4c41cf6e10e7eb9af416345994f9964e401376b",
+    "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "work/uv310-wireguard/rng-provider/wireguard.h": "0831ec27602c41ee4aa48e5bb54e76ebc210a887673b663dbe980f877d3a337d"
+  },
+  "sections_synthetic_link": {
+    ".vectors": {
+      "bytes": 8,
+      "address": 0
+    },
+    ".start": {
+      "bytes": 88,
+      "address": 4096
+    },
+    ".hook": {
+      "bytes": 4,
+      "address": 40440
+    },
+    ".tests": {
+      "bytes": 4129,
+      "address": 65536
+    },
+    ".probe": {
+      "bytes": 18412,
+      "address": 163840
+    },
+    ".state": {
+      "bytes": 1882,
+      "address": 182256
+    },
+    ".version": {
+      "bytes": 192,
+      "address": 184140
+    },
+    ".teststate": {
+      "bytes": 5536,
+      "address": 221184
+    }
+  },
+  "limitations": [
+    "Fixed synthetic RNG pool and TAI base are not safe standalone platform services",
+    "Worker crypto phases still drop external packets, no packet queue",
+    "No retry jitter, receive-driven early renewal or server-initiated handshake support yet",
+    "Single IPv4 client; ordinary LAN port 53 blocked and DHCP DNS rewritten; broader DNS/IPv6/multiclient policy incomplete",
+    "No live image or throughput result"
+  ],
+  "control_allocation_retry_ticks": 250,
+  "control_allocation_max_tries": 3,
+  "client_transport_nonce_ledger": {
+    "enabled": true,
+    "key_slots": 8,
+    "strictly_increasing_per_key": true,
+    "linked_into_live_candidate": false
+  },
+  "dns_integration_synthetic_only": true,
+  "hardware_deployed": false,
+  "goal_complete": false
+}

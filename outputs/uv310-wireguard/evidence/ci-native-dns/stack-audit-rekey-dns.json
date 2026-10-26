@@ -1,0 +1,442 @@
+{
+  "branch": "rekey-dns",
+  "scope": "Static compiler-reported frames and visible direct-call paths only; no hardware, no QEMU execution, no private build",
+  "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "flags": [
+    "--target=arm-none-eabi",
+    "-mcpu=cortex-m3",
+    "-mthumb",
+    "-Oz",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-stack-protector",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-DBYTE_ORDER=1234",
+    "-DLITTLE_ENDIAN=1234",
+    "-DBOUNDED_REKEY_LAB",
+    "-fstack-usage"
+  ],
+  "fixture_config_sha256": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+  "source_sha256": {
+    "work/uv310-wireguard/rekey-dns/native.c": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+    "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto.c": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+    "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+    "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2"
+  },
+  "roots": {
+    "worker": {
+      "visible_chain_frame_sum_bytes": 1060,
+      "path": [
+        {
+          "function": "worker",
+          "frame_bytes": 32
+        },
+        {
+          "function": "wireguard_process_handshake_response",
+          "frame_bytes": 360
+        },
+        {
+          "function": "wireguard_kdf1",
+          "frame_bytes": 96
+        },
+        {
+          "function": "wireguard_hmac",
+          "frame_bytes": 280
+        },
+        {
+          "function": "OUTLINED_FUNCTION_12",
+          "frame_bytes": 0
+        },
+        {
+          "function": "blake2s_init",
+          "frame_bytes": 24
+        },
+        {
+          "function": "blake2s_update",
+          "frame_bytes": 24
+        },
+        {
+          "function": "blake2s_compress",
+          "frame_bytes": 244
+        }
+      ],
+      "unresolved_targets": [],
+      "cycles": [],
+      "indirect_register_calls": [
+        "r10",
+        "r11",
+        "r3",
+        "r4",
+        "r5",
+        "r6",
+        "r8",
+        "r9"
+      ],
+      "is_complete_stack_bound": false
+    },
+    "intercept": {
+      "visible_chain_frame_sum_bytes": 648,
+      "path": [
+        {
+          "function": "intercept",
+          "frame_bytes": 48
+        },
+        {
+          "function": "forward",
+          "frame_bytes": 64
+        },
+        {
+          "function": "wireguard_decrypt_packet",
+          "frame_bytes": 32
+        },
+        {
+          "function": "chacha20poly1305_decrypt",
+          "frame_bytes": 280
+        },
+        {
+          "function": "generate_poly1305_key",
+          "frame_bytes": 56
+        },
+        {
+          "function": "chacha20",
+          "frame_bytes": 168
+        }
+      ],
+      "unresolved_targets": [],
+      "cycles": [],
+      "indirect_register_calls": [
+        "r11",
+        "r3",
+        "r5",
+        "r8",
+        "r9"
+      ],
+      "is_complete_stack_bound": false
+    },
+    "emit_control": {
+      "visible_chain_frame_sum_bytes": 48,
+      "path": [
+        {
+          "function": "emit_control",
+          "frame_bytes": 24
+        },
+        {
+          "function": "context",
+          "frame_bytes": 24
+        }
+      ],
+      "unresolved_targets": [
+        "raw_alloc",
+        "raw_packet_free",
+        "submit"
+      ],
+      "cycles": [],
+      "indirect_register_calls": [],
+      "is_complete_stack_bound": false
+    },
+    "snapshot": {
+      "visible_chain_frame_sum_bytes": 192,
+      "path": [
+        {
+          "function": "snapshot",
+          "frame_bytes": 160
+        },
+        {
+          "function": "memory_snapshot",
+          "frame_bytes": 32
+        }
+      ],
+      "unresolved_targets": [],
+      "cycles": [],
+      "indirect_register_calls": [],
+      "is_complete_stack_bound": false
+    },
+    "memory_snapshot": {
+      "visible_chain_frame_sum_bytes": 32,
+      "path": [
+        {
+          "function": "memory_snapshot",
+          "frame_bytes": 32
+        }
+      ],
+      "unresolved_targets": [],
+      "cycles": [],
+      "indirect_register_calls": [],
+      "is_complete_stack_bound": false
+    }
+  },
+  "largest_frames": [
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_process_handshake_response",
+      "frame_bytes": 360,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_10",
+        "OUTLINED_FUNCTION_11",
+        "chacha20poly1305_decrypt",
+        "crypto_equal",
+        "wireguard_kdf1",
+        "wireguard_kdf3",
+        "wireguard_mix_hash",
+        "x25519"
+      ],
+      "indirect_register_calls": [
+        "r4",
+        "r5",
+        "r6"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_start_session",
+      "frame_bytes": 280,
+      "allocation_kind": "static",
+      "targets": [
+        "__aeabi_memcpy",
+        "__aeabi_memcpy8",
+        "crypto_zero",
+        "keypair_destroy",
+        "wireguard_kdf2",
+        "wireguard_sys_now"
+      ],
+      "indirect_register_calls": [
+        "r5"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_hmac",
+      "frame_bytes": 280,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_12",
+        "OUTLINED_FUNCTION_3",
+        "blake2s_final",
+        "blake2s_init",
+        "memset"
+      ],
+      "indirect_register_calls": [
+        "r4"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c",
+      "function": "chacha20poly1305_decrypt",
+      "frame_bytes": 280,
+      "allocation_kind": "static",
+      "targets": [
+        "chacha20",
+        "crypto_equal",
+        "generate_poly1305_key",
+        "poly1305_finish"
+      ],
+      "indirect_register_calls": [
+        "r9"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_process_initiation_message",
+      "frame_bytes": 264,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_10",
+        "OUTLINED_FUNCTION_11",
+        "chacha20poly1305_decrypt",
+        "crypto_equal",
+        "memcmp",
+        "memcpy",
+        "peer_lookup_by_pubkey",
+        "wireguard_kdf1",
+        "wireguard_kdf2",
+        "wireguard_mix_hash",
+        "wireguard_sys_now",
+        "x25519"
+      ],
+      "indirect_register_calls": [
+        "r4"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c",
+      "function": "chacha20poly1305_encrypt",
+      "frame_bytes": 256,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_2",
+        "chacha20",
+        "crypto_zero",
+        "generate_poly1305_key",
+        "poly1305_finish"
+      ],
+      "indirect_register_calls": [
+        "r11"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c",
+      "function": "x25519",
+      "frame_bytes": 256,
+      "allocation_kind": "static",
+      "targets": [
+        "condswap",
+        "memcpy",
+        "memset",
+        "mul",
+        "mul1",
+        "propagate"
+      ],
+      "indirect_register_calls": [
+        "r3",
+        "r5",
+        "r6",
+        "r8"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c",
+      "function": "blake2s_compress",
+      "frame_bytes": 244,
+      "allocation_kind": "static",
+      "targets": [],
+      "indirect_register_calls": []
+    },
+    {
+      "source": "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c",
+      "function": "chacha20",
+      "frame_bytes": 168,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_1"
+      ],
+      "indirect_register_calls": [
+        "r11"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/rekey-dns/native.c",
+      "function": "snapshot",
+      "frame_bytes": 160,
+      "allocation_kind": "static",
+      "targets": [
+        "memcpy",
+        "memory_snapshot"
+      ],
+      "indirect_register_calls": []
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_create_handshake_response",
+      "frame_bytes": 160,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_1",
+        "OUTLINED_FUNCTION_4",
+        "OUTLINED_FUNCTION_5",
+        "OUTLINED_FUNCTION_7",
+        "chacha20poly1305_encrypt",
+        "crypto_zero",
+        "memset",
+        "wireguard_generate_private_key",
+        "wireguard_generate_public_key",
+        "wireguard_generate_unique_index",
+        "wireguard_kdf1",
+        "wireguard_kdf3",
+        "wireguard_mac",
+        "wireguard_mix_hash",
+        "wireguard_sys_now",
+        "x25519"
+      ],
+      "indirect_register_calls": [
+        "r4"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "generate_peer_cookie",
+      "frame_bytes": 144,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_7",
+        "blake2s_final",
+        "blake2s_init",
+        "blake2s_update",
+        "generate_cookie_secret",
+        "wireguard_sys_now"
+      ],
+      "indirect_register_calls": []
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_create_handshake_initiation",
+      "frame_bytes": 144,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_0",
+        "OUTLINED_FUNCTION_1",
+        "OUTLINED_FUNCTION_11",
+        "OUTLINED_FUNCTION_4",
+        "OUTLINED_FUNCTION_5",
+        "OUTLINED_FUNCTION_7",
+        "chacha20poly1305_encrypt",
+        "crypto_zero",
+        "memcpy",
+        "memset",
+        "wireguard_generate_private_key",
+        "wireguard_generate_public_key",
+        "wireguard_generate_unique_index",
+        "wireguard_kdf2",
+        "wireguard_mac",
+        "wireguard_mix_hash",
+        "wireguard_sys_now",
+        "wireguard_tai64n_now",
+        "x25519"
+      ],
+      "indirect_register_calls": []
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_init",
+      "frame_bytes": 136,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_12",
+        "OUTLINED_FUNCTION_8",
+        "blake2s_final"
+      ],
+      "indirect_register_calls": [
+        "r6"
+      ]
+    },
+    {
+      "source": "work/uv310-wireguard/rng-provider/wireguard.c",
+      "function": "wireguard_mix_hash",
+      "frame_bytes": 136,
+      "allocation_kind": "static",
+      "targets": [
+        "OUTLINED_FUNCTION_8",
+        "blake2s_final",
+        "blake2s_update"
+      ],
+      "indirect_register_calls": []
+    }
+  ],
+  "compiled_function_count": 139,
+  "direct_standard_heap_calls": [],
+  "limitations": [
+    "Public fixed synthetic material; BOUNDED_REKEY_LAB code path, not previously deployed private binary",
+    "Visible sums conservatively add tail calls; no general upper or lower bound claimed",
+    "Assembly hook frames, exception stacking/nesting, stock callers, ROM callees and unresolved targets not included",
+    "Compiler frames include inlined work but do not measure runtime high-water or failure cause",
+    "No standard malloc call does not rule out native raw_alloc or stock driver allocations",
+    "No throughput, reboot safety or hardware stability established"
+  ]
+}

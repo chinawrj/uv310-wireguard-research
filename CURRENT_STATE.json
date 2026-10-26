@@ -78,7 +78,10 @@
     "standalone_ready": false,
     "dhcp_hook_integrated_offline": true,
     "lan_port53_guard_tested": true,
-    "real_dhcp_hook_visibility_verified": false
+    "real_dhcp_hook_visibility_verified": false,
+    "linux_ci_verified": true,
+    "linux_ci_run": 40251534521,
+    "tested_commit": "7b0bfda604cfa0d302373ebeba4d9c60bae9a16f"
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",

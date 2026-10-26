@@ -71,3 +71,28 @@ LLVM_CLANG=/path/to/clang python3 tools/compare_dns_size.py
 证据：[目标文件](../outputs/uv310-wireguard/evidence/native-size-dns.json)、[栈分析](../outputs/uv310-wireguard/evidence/stack-audit-rekey-dns.json)。没有做真实stock镜像布局/链接容量验证，也没测IRQ总栈或运行时heap峰值。新增代码也可能占用稀缺的片上RAM，不能用历史free heap减去这些数字就宣布余量够用。
 
 下一步：解决无padding时的有界扩展及观测接口，验证真正部署布局；硬件回来后先恢复原厂基线，再证明DHCP包经过hook、默认客户端DNS请求/回复确实经过隧道。最终Goal仍要求实机Wi-Fi、独立启动、新鲜度、稳定性及完整策略验收。
+
+
+## 接续开发与硬件验收门槛
+
+下面是待完成的验收计划，不是已通过结果。
+
+| 阶段 | 必须取得的证据 | 失败时不能宣称的能力 |
+|---|---|---|
+| 无padding的DHCP回复 | 有界扩展前证明packet独占与尾部容量；同步Ethernet frame长度、IPv4总长/校验和、UDP长度/校验和；容量少1字节、恰好、富余三种边界均测试 | 通用DHCP兼容 |
+| 修改的原子性 | 扩展或改写失败时原packet内容与元数据完全不变；成功后仅有预期字节和长度改变；不能越过2048B上限 | 安全修改stock packet |
+| 观测入口 | 能读出改写/拒绝/LAN DNS丢弃计数；读取不改变worker、时钟或packet所有权；记录计数器回绕语义 | 能诊断实机DHCP问题 |
+| stock布局 | 匹配原厂哈希的本地镜像完成真实链接，检查代码/数据/栈/heap地址重叠与可恢复性；不以QEMU布局代替 | 可部署候选 |
+| 新客户端租约 | 抓取该客户端DISCOVER/OFFER/REQUEST/ACK，记录option6地址与native计数变化；确认真实DHCP回复确实经过hook | DHCP设置已生效 |
+| DNS往返 | 使用测试域名与唯一查询ID，关联客户端抓包、peer解密侧抓包和返回答案；确认出口resolver可达且查询不走本地网关 | 默认DNS经过WireGuard |
+| 续租与换钥 | 覆盖单播续租、广播重绑定和会话更新期间查询；记录延迟、失败数及恢复行为 | 持续联网 |
+| 隧道中断 | 对端不可达及实验期限结束后，检查外部DNS和LAN端口53均不明文回落；本地管理仍可恢复 | 失败时没有DNS旁路 |
+| 策略覆盖 | 明确验证IPv6、TCP DNS、手工指定网关DNS、多客户端、LAN服务例外；逐项说明支持与拒绝行为 | 完整Wi-Fi VPN产品 |
+
+硬件可用后先重新确认原厂Wi-Fi、DHCP与蜂窝基线，再使用全新的单次实验材料部署。抓包可能包含个人域名、客户端标识与真实网络配置；公开仓库只保留脱敏统计、合成fixture和可复现步骤。
+
+## Linux独立复现
+
+[CI运行40251534521](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40251534521) 对提交 `7b0bfda604cfa0d302373ebeba4d9c60bae9a16f` 全部通过。新分支62场景/18错误对照、历史分支、独立DHCP sanitizer和mock观察器均通过。归档ZIP哈希与GitHub digest一致；新分支测试、栈审计和大小统计中的源码哈希与仓库逐项一致。Linux编译的资源增量同上表。
+
+证据：[运行与哈希](../outputs/uv310-wireguard/evidence/ci-native-dns/run.json)、[QEMU结果](../outputs/uv310-wireguard/evidence/ci-native-dns/rekey-dns-tests.json)、[目标文件](../outputs/uv310-wireguard/evidence/ci-native-dns/native-size-dns.json)、[栈审计](../outputs/uv310-wireguard/evidence/ci-native-dns/stack-audit-rekey-dns.json)、[工具版本](../outputs/uv310-wireguard/evidence/ci-native-dns/ci-environment.json)。这是跨环境功能复现，仍不证明真实stock路径、内存余量或硬件稳定性。
