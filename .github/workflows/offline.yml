@@ -61,6 +61,8 @@ jobs:
           python3 tools/stack_audit.py --branch rekey-dns
           python3 tools/compare_dns_size.py
           python3 tools/stack_audit.py --branch rekey-dns-grow
+      - name: Report native layout constraints (over-budget candidates included)
+        run: make audit-layout
       - name: Keep JSON evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7

@@ -52,3 +52,5 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 后续有界扩展候选见 [DHCP_GROWTH.md](DHCP_GROWTH.md)：解决有尾部容量时的无padding报文，尚未部署。
 
 原厂长度消费者的后续核对见 [STOCK_PACKET_LENGTH.md](STOCK_PACKET_LENGTH.md)：精确ROM前段离线重放，不是完整发送或实机验收。
+
+最终链接空间审计发现当前候选超出历史无LTO打包上限，见 [NATIVE_LAYOUT.md](NATIVE_LAYOUT.md)。此前功能/ROM前段通过不证明可部署。

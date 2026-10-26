@@ -43,3 +43,5 @@ LLVM_CLANG=/path/to/clang python3 tools/compare_dns_size.py
 长期证据：[运行和哈希](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/run.json)、[扩展模块](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/dhcp-growth-tests.json)、[native场景](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/rekey-dns-grow-tests.json)、[代码大小](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/native-size-dns.json)、[栈审计](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/stack-audit-rekey-dns-grow.json)、[环境](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/ci-environment.json)。未访问设备，不是硬件稳定性证明。
 
 原厂长度消费者的后续核对见 [STOCK_PACKET_LENGTH.md](STOCK_PACKET_LENGTH.md)：精确ROM前段离线重放，不是完整发送或实机验收。
+
+最终链接空间审计发现当前候选超出历史无LTO打包上限，见 [NATIVE_LAYOUT.md](NATIVE_LAYOUT.md)。此前功能/ROM前段通过不证明可部署。

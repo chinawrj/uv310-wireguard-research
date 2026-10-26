@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Offline DNS telemetry, stock linked image capacity and packet length propagation analysis; hardware Wi-Fi/DHCP visibility, entropy/freshness and stability remain unverified.",
+  "next_step": "Resolve native linked-size constraint without weakening checks; validate LTO functionality/stack if selected; DNS telemetry, stock path and real hardware still unverified.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/STOCK_PACKET_LENGTH.md",
+  "latest_offline_progress": "docs/NATIVE_LAYOUT.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -80,7 +80,8 @@
     "real_dhcp_hook_visibility_verified": false,
     "linux_ci_verified": true,
     "linux_ci_run": 40252774107,
-    "tested_commit": "62ae5a21225b0d676aa5b97e9988326340436229"
+    "tested_commit": "62ae5a21225b0d676aa5b97e9988326340436229",
+    "fits_historical_non_lto_pool256_layout": false
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",
@@ -157,5 +158,18 @@
     "native_and_stock_linked_together": false,
     "full_transmit_verified": false,
     "report": "docs/STOCK_PACKET_LENGTH.md"
+  },
+  "native_link_layout_audit": {
+    "document": "docs/NATIVE_LAYOUT.md",
+    "current_candidate": "rekey-dns-grow",
+    "normal_pool256_heap_start": "0x33e00",
+    "historical_ceiling": "0x33c00",
+    "normal_pool256_over_budget_bytes": 512,
+    "lto_pool256_heap_start": "0x33c00",
+    "lto_pool256_margin_bytes": 0,
+    "lto_functional_tests_passed": false,
+    "real_config_link_verified": false,
+    "hardware_memory_verified": false,
+    "historical_memory_branch_sizes_reproduced": true
   }
 }

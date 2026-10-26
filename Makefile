@@ -1,4 +1,4 @@
-.PHONY: test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
+.PHONY: audit-layout test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
 
 test:
 	python3 tools/test_offline.py rekey-memory
@@ -32,3 +32,10 @@ test-dhcp-growth:
 
 test-dns-grow:
 	python3 tools/test_offline.py rekey-dns-grow
+
+# Reports constraint violations; green audit execution does not mean all fit.
+audit-layout:
+	python3 tools/audit_native_layout.py --pool-bytes 1024 --out .test-results/native-layout-pool1024.json
+	python3 tools/audit_native_layout.py --pool-bytes 1024 --lto --out .test-results/native-layout-pool1024-lto.json
+	python3 tools/audit_native_layout.py --pool-bytes 256 --out .test-results/native-layout-pool256.json
+	python3 tools/audit_native_layout.py --pool-bytes 256 --lto --out .test-results/native-layout-pool256-lto.json

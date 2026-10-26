@@ -48,3 +48,5 @@ python3 tools/replay_stock_packet_length.py \
 这项结果提高了“修改packet长度能传到原厂Ethernet入口”的可信度，但上下文、feature flags、packet内存和payload均由测试构造。native扩展函数和ROM前段仍分别测试，尚未在一个真实链接镜像中联跑。没有证明DHCP实际经过hook，也未覆盖可选过滤/加速器、DMA、IRQ、队列、headroom、全部生命周期与后续封装路径。
 
 下一步需继续检查实际Ethernet路径如何使用长度及是否重分配，验证真实stock链接布局与RAM余量，补可读取的DNS统计。硬件回来后必须采集真实flags/路径并完成租约、DNS往返、Wi-Fi路由和稳定性验收。
+
+最终链接空间审计发现当前候选超出历史无LTO打包上限，见 [NATIVE_LAYOUT.md](NATIVE_LAYOUT.md)。此前功能/ROM前段通过不证明可部署。

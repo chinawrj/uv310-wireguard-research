@@ -673,10 +673,10 @@
   },
   {
     "path": ".github/workflows/offline.yml",
-    "published_sha256": "b65575a3c818f90106ed28bb4bf29f2151fa0c64f0992cd942706acc6a8dd225",
-    "workspace_source_sha256": "b65575a3c818f90106ed28bb4bf29f2151fa0c64f0992cd942706acc6a8dd225",
+    "published_sha256": "8fa1a0aab664909d35abdef7a83d95f1f3d64c3328c275b1c4730e1704dfb9fe",
+    "workspace_source_sha256": "8fa1a0aab664909d35abdef7a83d95f1f3d64c3328c275b1c4730e1704dfb9fe",
     "byte_identical_to_workspace": true,
-    "previous_published_sha256": "8f16e650586c4d5b4d2a8e70e02d9cec407c058398e4f2ccfc511a432f8c44c4"
+    "previous_published_sha256": "b65575a3c818f90106ed28bb4bf29f2151fa0c64f0992cd942706acc6a8dd225"
   },
   {
     "path": "tools/compare_dns_size.py",
@@ -764,5 +764,12 @@
     "workspace_source_sha256": "05e3b16720a3145b7e751f812a13925d22bfcffd01fe7d606216938b63b9e058",
     "byte_identical_to_workspace": true,
     "note": "Offline exact-stock prefix replay; owner-provided private images required, no firmware included"
+  },
+  {
+    "path": "tools/audit_native_layout.py",
+    "published_sha256": "f268ab5a5576905746cb91e556859dfea689b66ef2c9966b81cc31ada2ba70bc",
+    "workspace_source_sha256": "f268ab5a5576905746cb91e556859dfea689b66ef2c9966b81cc31ada2ba70bc",
+    "byte_identical_to_workspace": true,
+    "note": "Synthetic native final-link audit; optional read-only stock hash verification, no deployment image"
   }
 ]

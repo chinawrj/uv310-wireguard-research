@@ -1,0 +1,254 @@
+{
+  "synthetic_pool_bytes": 1024,
+  "lto_enabled": true,
+  "runtime_lto_disabled": true,
+  "scope": "Final native address layout with public synthetic configuration; no stock overlay, no candidate firmware output, no device access",
+  "compiler": "Homebrew clang version 18.1.6",
+  "linker": "Homebrew LLD 18.1.6 (compatible with GNU linkers)",
+  "stock": {
+    "provided": false
+  },
+  "branches": [
+    {
+      "branch": "rekey-memory",
+      "synthetic_pool_bytes": 1024,
+      "effective_config_sha256": "0772847678f1cd370ba064fab73ce3c221082046f80cf9e99e120e3764495274",
+      "sections": [
+        {
+          "name": ".hook",
+          "address": 40440,
+          "bytes": 4,
+          "end": 40444,
+          "nobits": false
+        },
+        {
+          "name": ".probe",
+          "address": 193344,
+          "bytes": 15184,
+          "end": 208528,
+          "nobits": false
+        },
+        {
+          "name": ".state",
+          "address": 208528,
+          "bytes": 1860,
+          "end": 210388,
+          "nobits": true
+        },
+        {
+          "name": ".version",
+          "address": 210388,
+          "bytes": 192,
+          "end": 210580,
+          "nobits": false
+        }
+      ],
+      "image_end": "0x33694",
+      "rounded_heap_start": "0x33700",
+      "historical_heap_ceiling": "0x33c00",
+      "fits_historical_ceiling": true,
+      "ceiling_margin_bytes": 1280,
+      "reserved_from_0x2f290_bytes": 17520,
+      "no_test_stub_symbols": true,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-memory/native.c": "c970ff6a685817ae96c2bd2e04460a6a302bf50c8c6a29b234b479d3041835da",
+        "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto.c": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+        "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+        "work/uv310-wireguard/control-hardening/entry.S": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+        "work/uv310-wireguard/rekey-memory/native-config.h": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+        "work/uv310-wireguard/rekey-layout/layout.ld": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2"
+      }
+    },
+    {
+      "branch": "rekey-pressure",
+      "synthetic_pool_bytes": 1024,
+      "effective_config_sha256": "0772847678f1cd370ba064fab73ce3c221082046f80cf9e99e120e3764495274",
+      "sections": [
+        {
+          "name": ".hook",
+          "address": 40440,
+          "bytes": 4,
+          "end": 40444,
+          "nobits": false
+        },
+        {
+          "name": ".probe",
+          "address": 193344,
+          "bytes": 15360,
+          "end": 208704,
+          "nobits": false
+        },
+        {
+          "name": ".state",
+          "address": 208704,
+          "bytes": 1872,
+          "end": 210576,
+          "nobits": true
+        },
+        {
+          "name": ".version",
+          "address": 210576,
+          "bytes": 192,
+          "end": 210768,
+          "nobits": false
+        }
+      ],
+      "image_end": "0x33750",
+      "rounded_heap_start": "0x33800",
+      "historical_heap_ceiling": "0x33c00",
+      "fits_historical_ceiling": true,
+      "ceiling_margin_bytes": 1024,
+      "reserved_from_0x2f290_bytes": 17776,
+      "no_test_stub_symbols": true,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-pressure/native.c": "65b9c193117f0fc7818d20d894abcf5fe57750036434d71e17acf51c20a5e562",
+        "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto.c": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+        "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+        "work/uv310-wireguard/control-hardening/entry.S": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+        "work/uv310-wireguard/rekey-pressure/native-config.h": "f58f50bc3cc238ed7a8dcf5d10c4881483e1c650f4dc9a5db03ccbed970b89e6",
+        "work/uv310-wireguard/rekey-layout/layout.ld": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2"
+      }
+    },
+    {
+      "branch": "rekey-dns",
+      "synthetic_pool_bytes": 1024,
+      "effective_config_sha256": "dbb505b4f5603a07c5c86818c291cab290197607c17520801abe8820216712a5",
+      "sections": [
+        {
+          "name": ".hook",
+          "address": 40440,
+          "bytes": 4,
+          "end": 40444,
+          "nobits": false
+        },
+        {
+          "name": ".probe",
+          "address": 193344,
+          "bytes": 16732,
+          "end": 210076,
+          "nobits": false
+        },
+        {
+          "name": ".state",
+          "address": 210080,
+          "bytes": 1884,
+          "end": 211964,
+          "nobits": true
+        },
+        {
+          "name": ".version",
+          "address": 211964,
+          "bytes": 192,
+          "end": 212156,
+          "nobits": false
+        }
+      ],
+      "image_end": "0x33cbc",
+      "rounded_heap_start": "0x33d00",
+      "historical_heap_ceiling": "0x33c00",
+      "fits_historical_ceiling": false,
+      "ceiling_margin_bytes": -256,
+      "reserved_from_0x2f290_bytes": 19056,
+      "no_test_stub_symbols": true,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-dns/native.c": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+        "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto.c": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+        "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+        "work/uv310-wireguard/control-hardening/entry.S": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+        "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+        "work/uv310-wireguard/rekey-dns/native-config.h": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+        "work/uv310-wireguard/rekey-layout/layout.ld": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2"
+      }
+    },
+    {
+      "branch": "rekey-dns-grow",
+      "synthetic_pool_bytes": 1024,
+      "effective_config_sha256": "dbb505b4f5603a07c5c86818c291cab290197607c17520801abe8820216712a5",
+      "sections": [
+        {
+          "name": ".hook",
+          "address": 40440,
+          "bytes": 4,
+          "end": 40444,
+          "nobits": false
+        },
+        {
+          "name": ".probe",
+          "address": 193344,
+          "bytes": 17136,
+          "end": 210480,
+          "nobits": false
+        },
+        {
+          "name": ".state",
+          "address": 210480,
+          "bytes": 1884,
+          "end": 212364,
+          "nobits": true
+        },
+        {
+          "name": ".version",
+          "address": 212364,
+          "bytes": 192,
+          "end": 212556,
+          "nobits": false
+        }
+      ],
+      "image_end": "0x33e4c",
+      "rounded_heap_start": "0x33f00",
+      "historical_heap_ceiling": "0x33c00",
+      "fits_historical_ceiling": false,
+      "ceiling_margin_bytes": -768,
+      "reserved_from_0x2f290_bytes": 19568,
+      "no_test_stub_symbols": true,
+      "source_sha256": {
+        "work/uv310-wireguard/rekey-dns-grow/native.c": "35ebbbab1d61232729c84124d7a9142b16c41ff4bf7291e7cb8817f2c2fa4eef",
+        "work/uv310-wireguard/rng-provider/wireguard.c": "8c8473366683bdc57f9630080e823f85bbe73b1bce1cc07827664668362f795f",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto.c": "dea5f98cea68fc21532add79765715cfb2cd9e86481471f4d49a80b85f5fef78",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/blake2s.c": "58b725ab01c57f638f2b5bdb7ae02446457c939c45c5f8b8aaa840e25d86bc34",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20poly1305.c": "f5a472f621f6a534cf278b7ae77ea4f6ab8e619f4c38ed26711868387a450881",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/poly1305-donna.c": "c101ef36567ec83a6cc5bbff8dacfc5b6a6aa034bfe69509c986706dd5940520",
+        "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/x25519.c": "8fe426cfcad07432031d27c0b4dc5c6696f5e45c4f110b813be0435d23f17ffa",
+        "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+        "work/uv310-wireguard/control-hardening/entry.S": "50fa103c0cc17f9e7edf9b739ac45933a133c0c3a5a6c3a06ccb102fb08b8a6a",
+        "work/uv310-wireguard/dhcp-dns/dhcp_dns.c": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+        "work/uv310-wireguard/dhcp-dns/dhcp_dns_grow.c": "8ebfa6ad216867ac522c6940509f28031665c04b4303eee9e57f7062c6203717",
+        "work/uv310-wireguard/rekey-dns-grow/native-config.h": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+        "work/uv310-wireguard/rekey-layout/layout.ld": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2"
+      }
+    }
+  ],
+  "layout_script_sha256": "4c0de9730b6bf956b34f2e792e5384ee5e91d1461456cacbcd5d9caa75a3a1d2",
+  "source_sha256": {
+    "tools/audit_native_layout.py": "f268ab5a5576905746cb91e556859dfea689b66ef2c9966b81cc31ada2ba70bc"
+  },
+  "hardware_access": false,
+  "real_configuration_used": false,
+  "goal_complete": false,
+  "limitations": [
+    "Synthetic constants can alter final compiler/linker output; real fresh one-boot configuration needs independent audit",
+    "0x33c00 is historical packaging policy, not a measured current safe heap boundary",
+    "No runtime stack/IRQ/heap peak, fragmentation, DMA or firmware boot verified",
+    "No CRC-patched combined image emitted or deployed",
+    "Fitting address layout is not standalone readiness or stability"
+  ]
+}
