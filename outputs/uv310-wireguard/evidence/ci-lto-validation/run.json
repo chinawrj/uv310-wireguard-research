@@ -1,0 +1,27 @@
+{
+  "run_id": 40256098330,
+  "job_id": 121358152108,
+  "url": "https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40256098330",
+  "tested_commit": "6f4474b47bb07583c53b09c034e627b53e349a49",
+  "conclusion": "success",
+  "artifact_id": 12622791399,
+  "artifact_sha256": "70c7f5291cafc72679c03298727e8c12617d7688a6c8007040784f56043c3fe9",
+  "artifact_digest_verified": true,
+  "source_hashes_verified": true,
+  "compact_fixture_derivation_hash_verified": true,
+  "allocated_section_hashes_unchanged_by_stack_metadata": true,
+  "lto_1024_suites": 67,
+  "lto_1024_negatives": 20,
+  "lto_256_suites": 67,
+  "lto_256_negatives": 21,
+  "hardware_access": false,
+  "final_native_elf_functionally_executed": false,
+  "archived_files": [
+    "rekey-dns-grow-lto-tests.json",
+    "rekey-dns-grow-lto-pool256-tests.json",
+    "native-linked-stack-normal.json",
+    "native-linked-stack-lto.json",
+    "native-layout-pool256-lto.json",
+    "ci-environment.json"
+  ]
+}

@@ -192,6 +192,9 @@
     },
     "complete_stack_bound_proven": false,
     "real_hardware_verified": false,
-    "metadata_does_not_change_allocated_sections": true
+    "metadata_does_not_change_allocated_sections": true,
+    "linux_ci_verified": true,
+    "linux_ci_run": 40256098330,
+    "tested_commit": "6f4474b47bb07583c53b09c034e627b53e349a49"
   }
 }
