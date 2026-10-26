@@ -1,4 +1,4 @@
-.PHONY: test-pressure test test-live test-observer stack-audit verify
+.PHONY: test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
 
 test:
 	python3 tools/test_offline.py rekey-memory
@@ -17,3 +17,7 @@ stack-audit:
 
 test-pressure:
 	python3 tools/test_offline.py rekey-pressure
+
+# Standalone prototype; no native device hook or firmware deployment.
+test-dhcp-dns:
+	python3 tools/test_dhcp_dns.py

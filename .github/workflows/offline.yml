@@ -31,7 +31,7 @@ jobs:
       - name: Install offline build tools
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y clang-18 lld-18 qemu-system-arm python3-venv
+          sudo apt-get install --no-install-recommends -y clang-18 libclang-rt-18-dev lld-18 qemu-system-arm python3-venv
           python3 -m venv "$RUNNER_TEMP/uv310-venv"
           "$RUNNER_TEMP/uv310-venv/bin/python" -m pip install -r requirements-test.txt
           echo "$RUNNER_TEMP/uv310-venv/bin" >> "$GITHUB_PATH"
@@ -43,6 +43,8 @@ jobs:
         run: make test
       - name: Validate allocation retry and nonce lifecycle
         run: make test-pressure
+      - name: Validate DHCP DNS transformer with sanitizers
+        run: make test-dhcp-dns
       - name: Validate mocked status observer
         run: make test-observer
       - name: Compile resource comparisons

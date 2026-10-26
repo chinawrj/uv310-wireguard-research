@@ -648,5 +648,29 @@
     "byte_identical_to_workspace": true,
     "origin": "New read-only exact-firmware static audit; proprietary inputs are excluded",
     "previous_published_sha256": "b536bd8c929ccb3015c598196b32a64d703c9adb9d386dac867dc737318e8205"
+  },
+  {
+    "path": "tools/test_dhcp_dns.py",
+    "published_sha256": "414f5c5ec6b7315b3257d2107fd7e465575bceb1b8acad9955a1d6c79c6e3931",
+    "workspace_source_sha256": "414f5c5ec6b7315b3257d2107fd7e465575bceb1b8acad9955a1d6c79c6e3931",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/dhcp-dns/dhcp_dns.c",
+    "published_sha256": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+    "workspace_source_sha256": "d919865b5c62e3bbc6515e3b4377eb360cb6946a5e3acd33604e08e14c488fd2",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": "work/uv310-wireguard/dhcp-dns/dhcp_dns.h",
+    "published_sha256": "723a29f6d8eaae1f9abb6900e4c41cf6e10e7eb9af416345994f9964e401376b",
+    "workspace_source_sha256": "723a29f6d8eaae1f9abb6900e4c41cf6e10e7eb9af416345994f9964e401376b",
+    "byte_identical_to_workspace": true
+  },
+  {
+    "path": ".github/workflows/offline.yml",
+    "published_sha256": "95f6a8d0f8deee6f7b28b4a9d89ac6983ffd4bb9b08db0d4de2ff7f0e7bcd347",
+    "workspace_source_sha256": "95f6a8d0f8deee6f7b28b4a9d89ac6983ffd4bb9b08db0d4de2ff7f0e7bcd347",
+    "byte_identical_to_workspace": true
   }
 ]

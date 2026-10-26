@@ -59,7 +59,7 @@
   "next_step": "Offline: evaluate reachable DHCP DNS setter/reload or BCM DHCP ACK rewrite; native DNS bypass, entropy/freshness, routing and hardware acceptance remain unresolved.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/DNS_ROUTING.md",
+  "latest_offline_progress": "docs/DHCP_DNS_TRANSFORMER.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -103,5 +103,14 @@
     "consumer_to_writer_static_chain_verified": true,
     "daemon_dns_option_6_parser_located": true,
     "dns_reload_or_persistence_verified": false
+  },
+  "dhcp_dns_prototype": {
+    "host_vectors_passed": 1352,
+    "local_sanitizer": "undefined",
+    "qemu_vectors_passed": 60,
+    "negative_controls_detected": 5,
+    "native_hook_integrated": false,
+    "hardware_deployed": false,
+    "dns_bypass_fixed": false
   }
 }

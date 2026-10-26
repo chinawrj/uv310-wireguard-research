@@ -12,6 +12,8 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
+- 独立DHCP DNS改写原型：1,352个主机UBSan向量、60个Cortex-M3向量与5个错误对照通过；尚未接入native hook。见 [DHCP_DNS_TRANSFORMER.md](docs/DHCP_DNS_TRANSFORMER.md)。
+
 - DNS离线分析：网关DNS仍旁路；已接上DHCP内部消息到配置写入、服务到配置解析的静态链；仍未建立可用DNS设置/重载入口。见 [DNS_ROUTING.md](docs/DNS_ROUTING.md)。
 
 - 新离线候选：`rekey-pressure`，控制包分配有限退避重试；45项QEMU场景和12项负向控制通过，未部署、未实机验证。见 [ALLOCATION_RETRY.md](docs/ALLOCATION_RETRY.md) 与 [NONCE_LIFECYCLE.md](docs/NONCE_LIFECYCLE.md)。
