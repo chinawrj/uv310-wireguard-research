@@ -41,3 +41,5 @@ LLVM_CLANG=/path/to/clang python3 tools/compare_dns_size.py
 [运行40252774107](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40252774107) 对提交 `62ae5a21225b0d676aa5b97e9988326340436229` 全部通过；扩展模块100个host/Cortex-M3向量和7个错误对照、native 67场景/20错误对照均通过。host启用ASan+UBSan，归档ZIP digest与GitHub一致，归档报告的源码哈希逐项与仓库核对。
 
 长期证据：[运行和哈希](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/run.json)、[扩展模块](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/dhcp-growth-tests.json)、[native场景](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/rekey-dns-grow-tests.json)、[代码大小](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/native-size-dns.json)、[栈审计](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/stack-audit-rekey-dns-grow.json)、[环境](../outputs/uv310-wireguard/evidence/ci-dhcp-growth/ci-environment.json)。未访问设备，不是硬件稳定性证明。
+
+原厂长度消费者的后续核对见 [STOCK_PACKET_LENGTH.md](STOCK_PACKET_LENGTH.md)：精确ROM前段离线重放，不是完整发送或实机验收。

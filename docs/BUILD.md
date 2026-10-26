@@ -50,3 +50,5 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 后续状态：已在新的 [rekey-dns候选](NATIVE_DNS.md) 中完成离线native hook集成；不覆盖本文的历史证据边界，实机未验证。
 
 后续有界扩展候选见 [DHCP_GROWTH.md](DHCP_GROWTH.md)：解决有尾部容量时的无padding报文，尚未部署。
+
+原厂长度消费者的后续核对见 [STOCK_PACKET_LENGTH.md](STOCK_PACKET_LENGTH.md)：精确ROM前段离线重放，不是完整发送或实机验收。

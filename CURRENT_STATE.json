@@ -59,7 +59,7 @@
   "next_step": "Offline DNS telemetry, stock linked image capacity and packet length propagation analysis; hardware Wi-Fi/DHCP visibility, entropy/freshness and stability remain unverified.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/DHCP_GROWTH.md",
+  "latest_offline_progress": "docs/STOCK_PACKET_LENGTH.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -146,5 +146,16 @@
     "linux_ci_verified": true,
     "linux_ci_run": 40251534521,
     "tested_commit": "7b0bfda604cfa0d302373ebeba4d9c60bae9a16f"
+  },
+  "stock_packet_length_audit": {
+    "positive_scenarios": 32,
+    "fixture_negative_controls": 3,
+    "input_hash_guards": 2,
+    "real_rom_prefix_replayed": true,
+    "stock_dispatch_checked": true,
+    "hardware_access": false,
+    "native_and_stock_linked_together": false,
+    "full_transmit_verified": false,
+    "report": "docs/STOCK_PACKET_LENGTH.md"
   }
 }

@@ -1,0 +1,320 @@
+{
+  "source_sha256": {
+    "tools/replay_stock_packet_length.py": "05e3b16720a3145b7e751f812a13925d22bfcffd01fe7d606216938b63b9e058"
+  },
+  "emulator_version": "2.1.4",
+  "disassembler_version": "5.0.7",
+  "scope": "Exact owned stock ROM ordinary Wi-Fi transmit prefix; synthetic contexts and payload, stop before deeper Ethernet processing",
+  "rom_sha256": "f96f3e5f1dd2352a71b777ce4fc586cefdc2c62977eae3cef0a82461a8ae5bb4",
+  "stock_sha256": "4b86d71b92529034b2b46da7b93402f67c8aef98d2fc1efa91fc67ff7e5fb85a",
+  "static_anchors": [
+    {
+      "address": "0x80fc34",
+      "instruction": "mov.w ip, #0x800"
+    },
+    {
+      "address": "0x80fc38",
+      "instruction": "ldr.w pc, [ip, #0x90]"
+    },
+    {
+      "address": "0x806d7c",
+      "instruction": "mov r0, r1"
+    },
+    {
+      "address": "0x80fcc8",
+      "instruction": "bl #0x8281a4"
+    },
+    {
+      "address": "0x8281b2",
+      "instruction": "ldrh r0, [r1, #0x14]"
+    },
+    {
+      "address": "0x8281c2",
+      "instruction": "ldr r5, [r1, #0x10]"
+    }
+  ],
+  "stock_dispatch_slots": {
+    "0x890": "0x80fc3d",
+    "0x618": "0x806d65",
+    "0x88c": "0x80f7a9",
+    "0x11f4": "0x8281ad"
+  },
+  "visited_entries": [
+    "0x80fc3c",
+    "0x806d64",
+    "0x80f7a8",
+    "0x8281ac",
+    "0x8281b2",
+    "0x8281c2"
+  ],
+  "positive_scenarios": [
+    {
+      "frame_length": 286,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 286,
+      "passed": true
+    },
+    {
+      "frame_length": 286,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 286,
+      "passed": true
+    },
+    {
+      "frame_length": 286,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 286,
+      "passed": true
+    },
+    {
+      "frame_length": 286,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 286,
+      "passed": true
+    },
+    {
+      "frame_length": 287,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 287,
+      "passed": true
+    },
+    {
+      "frame_length": 287,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 287,
+      "passed": true
+    },
+    {
+      "frame_length": 287,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 287,
+      "passed": true
+    },
+    {
+      "frame_length": 287,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 287,
+      "passed": true
+    },
+    {
+      "frame_length": 288,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 288,
+      "passed": true
+    },
+    {
+      "frame_length": 288,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 288,
+      "passed": true
+    },
+    {
+      "frame_length": 288,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 288,
+      "passed": true
+    },
+    {
+      "frame_length": 288,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 288,
+      "passed": true
+    },
+    {
+      "frame_length": 289,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 289,
+      "passed": true
+    },
+    {
+      "frame_length": 289,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 289,
+      "passed": true
+    },
+    {
+      "frame_length": 289,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 289,
+      "passed": true
+    },
+    {
+      "frame_length": 289,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 289,
+      "passed": true
+    },
+    {
+      "frame_length": 290,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 290,
+      "passed": true
+    },
+    {
+      "frame_length": 290,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 290,
+      "passed": true
+    },
+    {
+      "frame_length": 290,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 290,
+      "passed": true
+    },
+    {
+      "frame_length": 290,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 290,
+      "passed": true
+    },
+    {
+      "frame_length": 291,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 291,
+      "passed": true
+    },
+    {
+      "frame_length": 291,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 291,
+      "passed": true
+    },
+    {
+      "frame_length": 291,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 291,
+      "passed": true
+    },
+    {
+      "frame_length": 291,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 291,
+      "passed": true
+    },
+    {
+      "frame_length": 292,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 292,
+      "passed": true
+    },
+    {
+      "frame_length": 292,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 292,
+      "passed": true
+    },
+    {
+      "frame_length": 292,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 292,
+      "passed": true
+    },
+    {
+      "frame_length": 292,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 292,
+      "passed": true
+    },
+    {
+      "frame_length": 2048,
+      "mark_flag": 0,
+      "already_accounted_flag": 0,
+      "consumer_length": 2048,
+      "passed": true
+    },
+    {
+      "frame_length": 2048,
+      "mark_flag": 0,
+      "already_accounted_flag": 1,
+      "consumer_length": 2048,
+      "passed": true
+    },
+    {
+      "frame_length": 2048,
+      "mark_flag": 1,
+      "already_accounted_flag": 0,
+      "consumer_length": 2048,
+      "passed": true
+    },
+    {
+      "frame_length": 2048,
+      "mark_flag": 1,
+      "already_accounted_flag": 1,
+      "consumer_length": 2048,
+      "passed": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "stale_packet_length",
+      "kind": "synthetic input fixture corruption, original ROM unchanged",
+      "detected": true
+    },
+    {
+      "mutation": "off_by_one_length",
+      "kind": "synthetic input fixture corruption, original ROM unchanged",
+      "detected": true
+    },
+    {
+      "mutation": "wrong_data_pointer",
+      "kind": "synthetic input fixture corruption, original ROM unchanged",
+      "detected": true
+    }
+  ],
+  "entry": "0x80fc34",
+  "stop_before": "0x8281c6",
+  "native_candidate_executed": false,
+  "dhcp_payload_parsed_by_rom": false,
+  "firmware_written": false,
+  "hardware_access": false,
+  "full_transmit_verified": false,
+  "conclusion": "Selected unpatched stock path preserves packet and rereads +0x14 length/+0x10 data; no duplicate length fixup observed before stop",
+  "limitations": [
+    "Contexts, feature flags and packet memory are synthetic; real active flags unknown",
+    "No radio, DMA, IRQ, queueing, encapsulation, headroom or full lifetime model",
+    "Optional filtering/accelerator branches disabled; not all callers/consumers audited",
+    "Native growth and ROM prefix tested separately, not a linked firmware deployment",
+    "This does not prove DHCP is visible at hook or all stock length metadata is covered"
+  ],
+  "input_guard_checks": [
+    {
+      "case": "wrong_rom",
+      "rejected_before_emulation": true,
+      "output_created": false
+    },
+    {
+      "case": "wrong_stock",
+      "rejected_before_emulation": true,
+      "output_created": false
+    }
+  ]
+}

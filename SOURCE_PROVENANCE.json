@@ -757,5 +757,12 @@
     "workspace_source_sha256": "6cd93138eabfb0449918b4b230045c5d814e389976181bdca6be96a7bfa22dec",
     "byte_identical_to_workspace": true,
     "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "tools/replay_stock_packet_length.py",
+    "published_sha256": "05e3b16720a3145b7e751f812a13925d22bfcffd01fe7d606216938b63b9e058",
+    "workspace_source_sha256": "05e3b16720a3145b7e751f812a13925d22bfcffd01fe7d606216938b63b9e058",
+    "byte_identical_to_workspace": true,
+    "note": "Offline exact-stock prefix replay; owner-provided private images required, no firmware included"
   }
 ]
