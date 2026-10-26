@@ -597,11 +597,11 @@
   },
   {
     "path": "tools/stack_audit.py",
-    "published_sha256": "f7f55bf1c886a69283e91ef7f3195d0144063e1838caf20628fffd77e28863ed",
+    "published_sha256": "1b340ad99ebfd0c217cb1bf161c9ab3246b49a03507515ec5a419d18a6344f2e",
     "origin": "Offline bounded control-packet allocation retry candidate, based on public rekey-memory, 2026-10-26",
     "private_material_required": false,
-    "previous_published_sha256": "b7aae1bf5b84f0fdbef5d983424918452e22df733e324f5c04d06331466db3fa",
-    "workspace_source_sha256": "f7f55bf1c886a69283e91ef7f3195d0144063e1838caf20628fffd77e28863ed",
+    "previous_published_sha256": "f7f55bf1c886a69283e91ef7f3195d0144063e1838caf20628fffd77e28863ed",
+    "workspace_source_sha256": "1b340ad99ebfd0c217cb1bf161c9ab3246b49a03507515ec5a419d18a6344f2e",
     "byte_identical_to_workspace": true
   },
   {
@@ -618,11 +618,11 @@
   },
   {
     "path": "tools/test_offline.py",
-    "published_sha256": "47210d77149a2634bdfbbb978234731187f48f4083ac66825cc32fabc736adc4",
-    "previous_published_sha256": "bedc4dae3c0ddd14c6354bb021b935ccaaae6f12205b5cd1a6b34f8fceef5925",
+    "published_sha256": "8dabf6aeb90fb0a32b02c80873b85191dd48ed3132add6f0085d7a113b0a085d",
+    "previous_published_sha256": "47210d77149a2634bdfbbb978234731187f48f4083ac66825cc32fabc736adc4",
     "origin": "Independent transport nonce ledger and interleaving tests, 2026-10-26",
     "private_material_required": false,
-    "workspace_source_sha256": "47210d77149a2634bdfbbb978234731187f48f4083ac66825cc32fabc736adc4",
+    "workspace_source_sha256": "8dabf6aeb90fb0a32b02c80873b85191dd48ed3132add6f0085d7a113b0a085d",
     "byte_identical_to_workspace": true
   },
   {
@@ -673,16 +673,17 @@
   },
   {
     "path": ".github/workflows/offline.yml",
-    "published_sha256": "8f16e650586c4d5b4d2a8e70e02d9cec407c058398e4f2ccfc511a432f8c44c4",
-    "workspace_source_sha256": "8f16e650586c4d5b4d2a8e70e02d9cec407c058398e4f2ccfc511a432f8c44c4",
+    "published_sha256": "b65575a3c818f90106ed28bb4bf29f2151fa0c64f0992cd942706acc6a8dd225",
+    "workspace_source_sha256": "b65575a3c818f90106ed28bb4bf29f2151fa0c64f0992cd942706acc6a8dd225",
     "byte_identical_to_workspace": true,
-    "previous_published_sha256": "95f6a8d0f8deee6f7b28b4a9d89ac6983ffd4bb9b08db0d4de2ff7f0e7bcd347"
+    "previous_published_sha256": "8f16e650586c4d5b4d2a8e70e02d9cec407c058398e4f2ccfc511a432f8c44c4"
   },
   {
     "path": "tools/compare_dns_size.py",
-    "published_sha256": "c1053034e9e79c07b51733b53e513fec2f2f11dffea484ea04d000b016d30cdf",
-    "workspace_source_sha256": "c1053034e9e79c07b51733b53e513fec2f2f11dffea484ea04d000b016d30cdf",
-    "byte_identical_to_workspace": true
+    "published_sha256": "f486498af082c8fd05770052d1247ced73a9c179ad536ca8099063a78828978d",
+    "workspace_source_sha256": "f486498af082c8fd05770052d1247ced73a9c179ad536ca8099063a78828978d",
+    "byte_identical_to_workspace": true,
+    "previous_published_sha256": "c1053034e9e79c07b51733b53e513fec2f2f11dffea484ea04d000b016d30cdf"
   },
   {
     "path": "work/uv310-wireguard/rekey-dns/test-build.py",
@@ -707,5 +708,54 @@
     "published_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
     "workspace_source_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
     "byte_identical_to_workspace": true
+  },
+  {
+    "path": "tools/test_dhcp_growth.py",
+    "published_sha256": "24076610bf91af3144b2397c0431b3b62b32352cacf4dbbdc5ae981febcbf029",
+    "workspace_source_sha256": "24076610bf91af3144b2397c0431b3b62b32352cacf4dbbdc5ae981febcbf029",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns-grow/test-build.py",
+    "published_sha256": "d31da32f2fe35afc5773d3f1d725cfc687f1354b44fe056aecbfd6a4809cd65d",
+    "workspace_source_sha256": "d31da32f2fe35afc5773d3f1d725cfc687f1354b44fe056aecbfd6a4809cd65d",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns-grow/native-config.h",
+    "published_sha256": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+    "workspace_source_sha256": "39784e176c2bdf8191f8e83f88637773c094a9f5f5716477ee257ad82136d9d5",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns-grow/tests.c",
+    "published_sha256": "8612455367befbd161fcea2778abdb4f156d100cbb2d688d6015221ed8b78389",
+    "workspace_source_sha256": "8612455367befbd161fcea2778abdb4f156d100cbb2d688d6015221ed8b78389",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns-grow/native.c",
+    "published_sha256": "35ebbbab1d61232729c84124d7a9142b16c41ff4bf7291e7cb8817f2c2fa4eef",
+    "workspace_source_sha256": "35ebbbab1d61232729c84124d7a9142b16c41ff4bf7291e7cb8817f2c2fa4eef",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/dhcp-dns/dhcp_dns_grow.c",
+    "published_sha256": "8ebfa6ad216867ac522c6940509f28031665c04b4303eee9e57f7062c6203717",
+    "workspace_source_sha256": "8ebfa6ad216867ac522c6940509f28031665c04b4303eee9e57f7062c6203717",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/dhcp-dns/dhcp_dns_grow.h",
+    "published_sha256": "6cd93138eabfb0449918b4b230045c5d814e389976181bdca6be96a7bfa22dec",
+    "workspace_source_sha256": "6cd93138eabfb0449918b4b230045c5d814e389976181bdca6be96a7bfa22dec",
+    "byte_identical_to_workspace": true,
+    "note": "Public synthetic offline DHCP growth implementation/test; no private configuration"
   }
 ]

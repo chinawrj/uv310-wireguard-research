@@ -47,6 +47,10 @@ jobs:
         run: make test-dhcp-dns
       - name: Validate native DHCP and DNS integration
         run: make test-dns
+      - name: Validate bounded DHCP growth with sanitizers
+        run: make test-dhcp-growth
+      - name: Validate native bounded DHCP growth
+        run: make test-dns-grow
       - name: Validate mocked status observer
         run: make test-observer
       - name: Compile resource comparisons
@@ -56,6 +60,7 @@ jobs:
           python3 tools/compare_native_size.py
           python3 tools/stack_audit.py --branch rekey-dns
           python3 tools/compare_dns_size.py
+          python3 tools/stack_audit.py --branch rekey-dns-grow
       - name: Keep JSON evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7

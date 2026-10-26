@@ -48,3 +48,5 @@ memory分支32个场景，原25项：BASELINE、REKEY、BAD_MAC、BAD_AEAD、STA
 独立DHCP DNS原型测试：`make test-dhcp-dns`。需要主机Clang的sanitizer runtime及Cortex-M3工具链；配置与本机ASan限制见 [DHCP_DNS_TRANSFORMER.md](DHCP_DNS_TRANSFORMER.md)。
 
 后续状态：已在新的 [rekey-dns候选](NATIVE_DNS.md) 中完成离线native hook集成；不覆盖本文的历史证据边界，实机未验证。
+
+后续有界扩展候选见 [DHCP_GROWTH.md](DHCP_GROWTH.md)：解决有尾部容量时的无padding报文，尚未部署。

@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Offline: bounded DHCP expansion when padding is insufficient, telemetry and real-image layout; hardware DHCP visibility, Wi-Fi routing, entropy/freshness and stability remain unverified.",
+  "next_step": "Offline DNS telemetry, stock linked image capacity and packet length propagation analysis; hardware Wi-Fi/DHCP visibility, entropy/freshness and stability remain unverified.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/NATIVE_DNS.md",
+  "latest_offline_progress": "docs/DHCP_GROWTH.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -70,18 +70,14 @@
     "live_disconnect_cause_proven": false
   },
   "offline_candidate": {
-    "branch": "rekey-dns",
-    "native_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
-    "suites_passed": 62,
-    "negative_controls_detected": 18,
+    "branch": "rekey-dns-grow",
+    "native_sha256": "35ebbbab1d61232729c84124d7a9142b16c41ff4bf7291e7cb8817f2c2fa4eef",
+    "suites_passed": 67,
+    "negative_controls_detected": 20,
     "hardware_deployed": false,
     "standalone_ready": false,
-    "dhcp_hook_integrated_offline": true,
-    "lan_port53_guard_tested": true,
-    "real_dhcp_hook_visibility_verified": false,
-    "linux_ci_verified": true,
-    "linux_ci_run": 40251534521,
-    "tested_commit": "7b0bfda604cfa0d302373ebeba4d9c60bae9a16f"
+    "dhcp_bounded_growth_integrated_offline": true,
+    "real_dhcp_hook_visibility_verified": false
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",
@@ -133,5 +129,19 @@
     "minimum_allocation_retry_ticks": 250,
     "standalone_ready": false,
     "transport_nonce_ledger_tested": true
+  },
+  "previous_dns_candidate": {
+    "branch": "rekey-dns",
+    "native_sha256": "bc6e010c86175af5fa356dab628775e2700301faf9f049bc04dd1186519a44c3",
+    "suites_passed": 62,
+    "negative_controls_detected": 18,
+    "hardware_deployed": false,
+    "standalone_ready": false,
+    "dhcp_hook_integrated_offline": true,
+    "lan_port53_guard_tested": true,
+    "real_dhcp_hook_visibility_verified": false,
+    "linux_ci_verified": true,
+    "linux_ci_run": 40251534521,
+    "tested_commit": "7b0bfda604cfa0d302373ebeba4d9c60bae9a16f"
   }
 }

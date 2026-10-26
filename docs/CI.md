@@ -31,3 +31,5 @@
 ## native DHCP/DNS集成候选
 
 `make test-dns` 已在 [运行40251534521](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40251534521) 通过62场景/18错误对照。该分支开始在native hook内调用DHCP模块，属于合成packet集成；仍未部署。运行、源码/ZIP哈希、Linux资源报告已长期归档，见 [NATIVE_DNS.md](NATIVE_DNS.md#linux独立复现)。不要将四个分支重复覆盖的场景相加为独立功能数。
+
+新增 `make test-dhcp-growth` 与 `make test-dns-grow`，分别检验有界扩展模块和native集成；对应证据与限制见 [DHCP_GROWTH.md](DHCP_GROWTH.md)。

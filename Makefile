@@ -1,4 +1,4 @@
-.PHONY: test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
+.PHONY: test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
 
 test:
 	python3 tools/test_offline.py rekey-memory
@@ -25,3 +25,10 @@ test-dhcp-dns:
 # Native integration candidate; synthetic one-boot material only.
 test-dns:
 	python3 tools/test_offline.py rekey-dns
+
+# Bounded DHCP buffer growth, synthetic only.
+test-dhcp-growth:
+	python3 tools/test_dhcp_growth.py
+
+test-dns-grow:
+	python3 tools/test_offline.py rekey-dns-grow

@@ -2,12 +2,13 @@
 from pathlib import Path
 import argparse,hashlib,json,os,re,shutil,subprocess,tempfile
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--branch',choices=['rekey-memory','rekey-live','rekey-pressure','rekey-dns'],default='rekey-memory');args=parser.parse_args()
+parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--branch',choices=['rekey-memory','rekey-live','rekey-pressure','rekey-dns','rekey-dns-grow'],default='rekey-memory');args=parser.parse_args()
 P=Path('work/uv310-wireguard');N=P/args.branch;R=P/'rng-provider';H=P/'control-hardening';W=P/'wg-port';S=W/'upstream/src'
 CC=os.environ.get('LLVM_CLANG') or shutil.which('clang')
 if not CC:raise SystemExit('Set LLVM_CLANG to an ARM-target-capable clang')
 sources=[N/'native.c',R/'wireguard.c',S/'crypto.c',*sorted((ROOT/S/'crypto/refc').glob('*.c')),W/'runtime.c']
-if args.branch=='rekey-dns':sources.append(P/'dhcp-dns/dhcp_dns.c')
+if args.branch in ('rekey-dns','rekey-dns-grow'):sources.append(P/'dhcp-dns/dhcp_dns.c')
+if args.branch=='rekey-dns-grow':sources.append(P/'dhcp-dns/dhcp_dns_grow.c')
 sources=[p.relative_to(ROOT) if p.is_absolute() else p for p in sources]
 flags=['--target=arm-none-eabi','-mcpu=cortex-m3','-mthumb','-Oz','-ffreestanding','-fno-builtin','-fno-stack-protector','-ffunction-sections','-fdata-sections','-DBYTE_ORDER=1234','-DLITTLE_ENDIAN=1234','-DBOUNDED_REKEY_LAB','-fstack-usage']+['-I'+str(p) for p in [N,R,W/'build',W/'include',W,S]]
 assert '203,0,113,7' in (ROOT/N/'native-config.h').read_text(),'Only public synthetic configuration permitted'

@@ -54,3 +54,5 @@ Linux需要clang sanitizer runtime，CI已配置安装。Mac有SDK选择问题�
 4. 用真实DHCP ACK、客户端默认设置、对端抓包、隧道断开及跨换钥来证明端到端行为。现在没有硬件验收，不能宣告已实现“Wi-Fi所有流量走WireGuard”。
 
 后续状态：已在新的 [rekey-dns候选](NATIVE_DNS.md) 中完成离线native hook集成；不覆盖本文的历史证据边界，实机未验证。
+
+后续有界扩展候选见 [DHCP_GROWTH.md](DHCP_GROWTH.md)：解决有尾部容量时的无padding报文，尚未部署。

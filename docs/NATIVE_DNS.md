@@ -96,3 +96,5 @@ LLVM_CLANG=/path/to/clang python3 tools/compare_dns_size.py
 [CI运行40251534521](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40251534521) 对提交 `7b0bfda604cfa0d302373ebeba4d9c60bae9a16f` 全部通过。新分支62场景/18错误对照、历史分支、独立DHCP sanitizer和mock观察器均通过。归档ZIP哈希与GitHub digest一致；新分支测试、栈审计和大小统计中的源码哈希与仓库逐项一致。Linux编译的资源增量同上表。
 
 证据：[运行与哈希](../outputs/uv310-wireguard/evidence/ci-native-dns/run.json)、[QEMU结果](../outputs/uv310-wireguard/evidence/ci-native-dns/rekey-dns-tests.json)、[目标文件](../outputs/uv310-wireguard/evidence/ci-native-dns/native-size-dns.json)、[栈审计](../outputs/uv310-wireguard/evidence/ci-native-dns/stack-audit-rekey-dns.json)、[工具版本](../outputs/uv310-wireguard/evidence/ci-native-dns/ci-environment.json)。这是跨环境功能复现，仍不证明真实stock路径、内存余量或硬件稳定性。
+
+后续有界扩展候选见 [DHCP_GROWTH.md](DHCP_GROWTH.md)：解决有尾部容量时的无padding报文，尚未部署。
