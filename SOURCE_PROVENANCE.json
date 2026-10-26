@@ -805,7 +805,18 @@
   },
   {
     "path": "tools/evaluate_dns_telemetry.py",
-    "published_sha256": "d283198452ea3911e5270a5fb2a9bbde5e7856bdb31a03a581a47449cb621d06",
-    "origin": "Authored offline diagnostic layout experiment; no firmware bytes or private configuration"
+    "published_sha256": "f273d0883d733ecd8daec772bfabf1f396ad4107781001aadc045c525d680768",
+    "origin": "Authored isolated synthetic telemetry proposal, no firmware bytes or private configuration",
+    "previous_published_sha256": "d283198452ea3911e5270a5fb2a9bbde5e7856bdb31a03a581a47449cb621d06"
+  },
+  {
+    "path": "tools/test_dns_telemetry.py",
+    "published_sha256": "a5c0d6bf4d92ae3cb0c3e83743700ca458327519a0f487c1a7bf620641bbbc35",
+    "origin": "Authored isolated synthetic telemetry proposal, no firmware bytes or private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns-grow/telemetry-check.c",
+    "published_sha256": "f398b23203d153f0cb1bc7938b078def6fdf14f894725246a6bc19da4c5d7e4b",
+    "origin": "Authored isolated synthetic telemetry proposal, no firmware bytes or private configuration"
   }
 ]

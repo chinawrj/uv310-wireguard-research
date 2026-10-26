@@ -56,7 +56,7 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Resolve telemetry semantics and layout cost before integration; hardware unavailable, no deployment.",
+  "next_step": "Integrate explicit N-page observer support and tests before adopting validated isolated proposal; actual hardware still unavailable.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
   "latest_offline_progress": "docs/DNS_TELEMETRY.md",
@@ -228,12 +228,14 @@
   },
   "dns_telemetry_proposal": {
     "document": "docs/DNS_TELEMETRY.md",
-    "resource_only": true,
+    "resource_only": false,
     "integrated": false,
     "baseline_probe_bytes": 16268,
-    "proposed_probe_bytes": 16324,
-    "proposed_margin_bytes": 0,
-    "functional_validation": false,
-    "hardware_verified": false
+    "proposed_probe_bytes": 16280,
+    "proposed_margin_bytes": 256,
+    "functional_validation": true,
+    "hardware_verified": false,
+    "validation_scope": "Isolated synthetic pool256 control-icf, 67 scenarios and 26 negatives; no observer integration or hardware",
+    "selected_schema": "N fixed 16 words"
   }
 }

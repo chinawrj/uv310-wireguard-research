@@ -45,3 +45,38 @@ python3 tools/evaluate_dns_telemetry.py
 接入前需决定是否为诊断再腾出空间、是否需要更精确的分类计数，并增加D页格式、轮转、保留字段、计数回绕及故意错位字段的验证。旧observer只要求A/E/R/M：即使固件多出D页，它也可能在收齐旧四页后提前返回；必须显式选择需要D页的协议版本，不能把“旧observer成功”当成D页验收。
 
 最终仍需实机确认DHCP hook覆盖、客户端DNS配置和DNS请求/应答经过隧道。离线代码布局不能替代这些证据。
+
+## N页布局优化（后续隔离实验）
+
+保留前述D页失败预算作为历史证据，追加三种实现比较：
+
+| 方案 | probe字节 | 历史布局余量 |
+|---|---:|---:|
+| 原始无新页基线 | 16268 | 256B |
+| 原D页，清空保留字段 | 16324 | 0B |
+| 复用A页字段、显式轮转、保留版本字段 | 16296 | 0B |
+| 独立N标签标识格式，省去重复版本字段 | 16292 | 0B |
+| N格式 + 互斥页分支使用else-if | 16280 | 256B |
+
+最后方案增加12B代码，state仍1884B；heap起点0x33b00，可见worker/intercept/snapshot仍1052/712/192B。仅适用于报告中的合成配置与工具链。独立N标签明确区别于未接入的D提案，不能用D解析器解读N。
+
+N页字段索引固定为：0 dhcp_rewrites、1 gateway_udp_rejects、2 lan_dns_guard_drops、3 rx_count、4 rng_pos、5 init_time、6 response_time、7 receive_len、8 worker_count、9 f_tx、10 f_rx、11 f_drop、12 f_out_bytes、13 f_in_bytes、14 allocation_failures、15 clock。索引3–15继承A页语义。`N`本身标识这份固定schema，后续不兼容修改需要新标签或显式协议协商，不能悄悄复用N。
+
+轮转改为A/E/R/M/N，查询不提供跨页原子性。多个查询者会共同推进轮转，客户端应按标签收集并使用有界查询次数。尚无boot identity，单靠计数回落不能区分回绕与重启。没有新增已观察报文计数；N仍不能单独证明DNS客户端可用。
+
+`tools/evaluate_dns_telemetry.py`现在复现五种布局；最新结果为[追加预算](../outputs/uv310-wireguard/evidence/dns-telemetry/optimized-budget.json)，旧budget.json保持不变。它仍是纯资源测试，功能验证由独立的`tools/test_dns_telemetry.py`执行：按资源报告中的patch及哈希，在临时副本中重建N候选，公开native源码保持原样。
+
+### N页合成回归结果
+
+[本机QEMU结果](../outputs/uv310-wireguard/evidence/dns-telemetry/n-page-tests.json)：256B池control-icf隔离候选通过原67个集成场景；每个场景前执行三轮共15次snapshot，检查标签、16字段的十六进制/分隔符、N计数、继承A字段、NUL与缓冲尾部、零值与uint32最大值表示，以及不清计数、不消耗随机池、不分配/释放packet、不改phase。后三者是该合成初始状态内的观察，不证明任意并发下无副作用。
+
+原21个错误对照与新增5个对照均检出：交换计数、轮转提前回零、错误标签、读取时清零计数、错误NUL。不是26个独立功能，也不是硬件验证。最大值测试检查编码，不是一次真实计数器溢出或host差值算法验证。
+
+```sh
+LLVM_CLANG=/path/to/clang LLVM_LD=/path/to/ld.lld \
+python3 tools/evaluate_dns_telemetry.py
+LLVM_CLANG=/path/to/clang LLVM_LD=/path/to/ld.lld \
+QEMU_ARM=/path/to/qemu-system-arm python3 tools/test_dns_telemetry.py
+```
+
+测试工具要求先生成当前源码对应的预算报告，并核对候选哈希。报告derived_source_sha256是隔离派生源码；顶层source_sha256是公开原始输入。当前未新增Linux独立复现，未修改原native.c，也尚未让observer要求或解释N页；下一步应补协议选择与host解析，而不是直接部署。
