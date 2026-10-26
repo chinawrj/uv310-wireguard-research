@@ -170,6 +170,8 @@
     "lto_functional_tests_passed": false,
     "real_config_link_verified": false,
     "hardware_memory_verified": false,
-    "historical_memory_branch_sizes_reproduced": true
+    "historical_memory_branch_sizes_reproduced": true,
+    "linux_ci_run": 40254309179,
+    "linux_layout_matches_local": true
   }
 }

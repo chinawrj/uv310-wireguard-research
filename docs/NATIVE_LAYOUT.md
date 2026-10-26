@@ -50,3 +50,9 @@ python3 tools/audit_native_layout.py --pool-bytes 256 \
 ```
 
 公开CI可复现四组矩阵，不需要私有stock。首先为LTO建立有效的独立功能/栈验证，或在保留协议功能与边界检查的前提下减少代码；还需记录DNS计数器、核对原厂后续长度传递。设备回来后先恢复原厂基线，重新测最大块和运行峰值，再讨论部署。硬件Wi-Fi、独立启动、随机数/跨启动新鲜度、多客户端与长时间稳定性仍未完成。
+
+## Linux复现
+
+[运行40254309179](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40254309179) 已完成。四组矩阵的section地址/尺寸与heap起点逐项等于本机结果，超限结论同样成立。ZIP digest和报告源码哈希已核对；本轮没有执行LTO功能测试。
+
+证据：[运行摘要](../outputs/uv310-wireguard/evidence/ci-native-layout/run.json)、[1024B普通](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool1024.json)、[1024B LTO](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool1024-lto.json)、[256B普通](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool256.json)、[256B LTO](../outputs/uv310-wireguard/evidence/ci-native-layout/native-layout-pool256-lto.json)、[Linux工具版本](../outputs/uv310-wireguard/evidence/ci-native-layout/ci-environment.json)。

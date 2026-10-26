@@ -1,0 +1,22 @@
+{
+  "run_id": 40254309179,
+  "job_id": 121352752183,
+  "url": "https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40254309179",
+  "tested_commit": "c0483b55793e4e6cdf254423be9ccfd8a115cf1b",
+  "workflow_conclusion": "success",
+  "artifact_id": 12622171219,
+  "artifact_sha256": "fc9bafa8e59f8812ef26df2799af13bf8325f3c69789f7fcff7573e01faae552",
+  "artifact_digest_verified": true,
+  "source_hashes_verified": true,
+  "all_four_layout_matrices_match_local": true,
+  "normal_pool256_candidate_fits": false,
+  "lto_functionality_verified": false,
+  "hardware_access": false,
+  "archived_files": [
+    "native-layout-pool1024.json",
+    "native-layout-pool1024-lto.json",
+    "native-layout-pool256.json",
+    "native-layout-pool256-lto.json",
+    "ci-environment.json"
+  ]
+}
