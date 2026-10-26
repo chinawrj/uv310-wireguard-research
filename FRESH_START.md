@@ -12,7 +12,7 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
-- 最新候选 `rekey-dns-grow` 已离线接入1–6字节有界DHCP扩展，67场景/20错误对照通过；尚未部署。见 [DHCP_GROWTH.md](docs/DHCP_GROWTH.md)。
+- 最新候选 `rekey-dns-grow` 已离线接入1–6字节有界DHCP扩展，67场景/20错误对照已在本机和Linux CI通过，独立模块Linux ASan+UBSan通过；尚未部署。见 [DHCP_GROWTH.md](docs/DHCP_GROWTH.md)。
 
 - 上一DNS候选 `rekey-dns` 已离线接入DHCP改写与LAN端口53检查；62场景/18错误对照已在本机和Linux CI通过，未部署。限制与资源增量见 [NATIVE_DNS.md](docs/NATIVE_DNS.md)。
 

@@ -77,7 +77,10 @@
     "hardware_deployed": false,
     "standalone_ready": false,
     "dhcp_bounded_growth_integrated_offline": true,
-    "real_dhcp_hook_visibility_verified": false
+    "real_dhcp_hook_visibility_verified": false,
+    "linux_ci_verified": true,
+    "linux_ci_run": 40252774107,
+    "tested_commit": "62ae5a21225b0d676aa5b97e9988326340436229"
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",

@@ -1,0 +1,20 @@
+{
+  "run_id": 40252774107,
+  "job_id": 121348061122,
+  "conclusion": "success",
+  "url": "https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40252774107",
+  "tested_commit": "62ae5a21225b0d676aa5b97e9988326340436229",
+  "artifact_id": 12620514719,
+  "artifact_sha256": "774cdc4f195fe3f6e2d8937a46bbfb8cd5592e61f707ea16b956291418622e80",
+  "artifact_digest_verified": true,
+  "source_hashes_verified": true,
+  "archived_files": [
+    "dhcp-growth-tests.json",
+    "rekey-dns-grow-tests.json",
+    "native-size-dns.json",
+    "stack-audit-rekey-dns-grow.json",
+    "ci-environment.json"
+  ],
+  "hardware_access": false,
+  "goal_complete": false
+}
