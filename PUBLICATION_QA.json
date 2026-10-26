@@ -235,5 +235,22 @@
     "artifact_digest_verified": true,
     "source_hashes_verified": true,
     "all_four_layout_matrices_match_local": true
+  },
+  "lto_validation_update": {
+    "lto_1024_suites": 67,
+    "lto_1024_negatives": 20,
+    "lto_256_suites": 67,
+    "lto_256_negatives": 21,
+    "native_function_source_unchanged": true,
+    "hardware_access": false,
+    "complete_stack_bound_proven": false,
+    "fixture_derivation_hash_verified": true,
+    "private_scan": {
+      "known_private_value_representations_checked": 123,
+      "files_checked": 346,
+      "remaining_matches": 0,
+      "files_with_private_value_replacements": [],
+      "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
+    }
   }
 }

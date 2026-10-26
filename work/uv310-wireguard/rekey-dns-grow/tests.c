@@ -37,6 +37,21 @@ u32 fake_submit(u32 src,u32 dst,u32 p){
 }
 extern u32 f_tx,f_rx,f_drop,session_start;extern volatile u32 phase;extern u32 err,rng_pos;extern void worker(void),signal_timer(void*);extern char version[];
 static struct wireguard_device server;
+#ifdef ISOLATED_SERVER_RNG
+/* Test-only deterministic remote peer RNG: never spend the device's pool for
+ * simulated server operations. This fixture is not a cryptographic RNG. */
+static u32 remote_rng_active,remote_rng_state=0x18374651u;
+extern bool __real_wireguard_random_bytes_checked(void*,size_t);
+bool __wrap_wireguard_random_bytes_checked(void *out,size_t n){
+ if(!remote_rng_active)return __real_wireguard_random_bytes_checked(out,n);
+ u8*p=out;while(n--){remote_rng_state^=remote_rng_state<<13;remote_rng_state^=remote_rng_state>>17;remote_rng_state^=remote_rng_state<<5;*p++=(u8)remote_rng_state;}return true;
+}
+#define REMOTE_BEGIN() (remote_rng_active=1)
+#define REMOTE_END() (remote_rng_active=0)
+#else
+#define REMOTE_BEGIN() ((void)0)
+#define REMOTE_END() ((void)0)
+#endif
 static struct wireguard_keypair *active_server_key;
 volatile unsigned failure_line;
 extern struct wireguard_device *fixture_device(void);
@@ -86,7 +101,13 @@ static int make_response(void){
  struct message_handshake_initiation init;memcpy(&init,sent+42,148);
  CHECK(sent_bytes==190&&wireguard_check_mac1(&server,(u8*)&init,116,init.mac1));
  CHECK(wireguard_process_initiation_message(&server,&init)==&server.peers[0]);
- CHECK(wireguard_create_handshake_response(&server,&server.peers[0],&response));
+ #ifdef ISOLATED_SERVER_RNG
+ u32 saved_client_rng=rng_pos;
+ #endif
+ REMOTE_BEGIN();int response_ok=wireguard_create_handshake_response(&server,&server.peers[0],&response);REMOTE_END();CHECK(response_ok);
+ #ifdef ISOLATED_SERVER_RNG
+ CHECK(rng_pos==saved_client_rng);
+ #endif
  wireguard_start_session(&server.peers[0],false);return 0;
 }
 static int complete_response(void){
@@ -203,7 +224,13 @@ static int scenario(void){
 #else
  signal_timer(0);CHECK(phase==3&&submitted==freed);
 #endif
- CHECK(wireguard_device_init(&server,SERVER_PRIVATE));CHECK(wireguard_peer_init(&server,&server.peers[0],CLIENT_PUBLIC,PRESHARED_KEY));
+ #ifdef ISOLATED_SERVER_RNG
+ u32 saved_client_rng=rng_pos;
+ #endif
+ REMOTE_BEGIN();int server_ok=wireguard_device_init(&server,SERVER_PRIVATE)&&wireguard_peer_init(&server,&server.peers[0],CLIENT_PUBLIC,PRESHARED_KEY);REMOTE_END();CHECK(server_ok);
+ #ifdef ISOLATED_SERVER_RNG
+ CHECK(rng_pos==saved_client_rng);
+ #endif
  CHECK(make_response()==0);CHECK(complete_response()==0);old_response=response;
  struct wireguard_peer*p=&fixture_device()->peers[0];
 #ifdef TEST_DNS_ACTIVE
@@ -453,6 +480,23 @@ static int scenario(void){
  fixture_clock=last_send+4999;signal_timer(0);worker();CHECK(phase==3&&attempts==2);
  fixture_clock++;signal_timer(0);worker();CHECK(phase==2&&attempts==3);CHECK(one_forward(17,23)==0);
  signal_timer(0);CHECK(make_response()==0);
+#endif
+#ifdef TEST_POOL_RETRY_EXHAUSTION
+ u32 tries=0;
+ for(;tries<18&&!rng_failed;tries++){
+  fixture_clock=last_send+5000;signal_timer(0);worker();
+  if(!rng_failed){CHECK(phase==2&&!stopped);signal_timer(0);}
+ }
+ /* Entropy failure prevents new handshakes. An already authenticated old
+  * session remains usable only until the normal rejection deadline. */
+ CHECK(tries>0&&tries<18&&!stopped&&phase==9&&rng_failed&&err==2&&rng_pos<=sizeof(RANDOM_POOL)&&!control_ready);
+ CHECK(one_forward(17,21)==0);
+ u32 sent_before=submitted,tx_before=f_tx,random_before=rng_pos;
+ fixture_clock=p->curr_keypair.keypair_millis+180000;
+ ordinary(17,13);CHECK(intercept(0,0x35000)==1);
+ for(u32 i=0;i<4;i++){fixture_clock+=5000;signal_timer(0);worker();}
+ CHECK(submitted==sent_before&&f_tx==tx_before&&rng_pos==random_before&&!control_ready&&rng_failed);
+ return 0;
 #endif
 #ifdef TEST_RETRY_LIMIT
  for(u32 i=0;i<18;i++){

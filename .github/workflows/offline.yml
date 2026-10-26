@@ -51,6 +51,10 @@ jobs:
         run: make test-dhcp-growth
       - name: Validate native bounded DHCP growth
         run: make test-dns-grow
+      - name: Validate LTO native adapter (1024-byte fixture pool)
+        run: make test-dns-grow-lto
+      - name: Validate LTO native adapter and exhausted 256-byte pool
+        run: make test-dns-grow-lto-compact
       - name: Validate mocked status observer
         run: make test-observer
       - name: Compile resource comparisons
@@ -63,6 +67,8 @@ jobs:
           python3 tools/stack_audit.py --branch rekey-dns-grow
       - name: Report native layout constraints (over-budget candidates included)
         run: make audit-layout
+      - name: Audit final linked stack frames
+        run: make audit-linked-stack
       - name: Keep JSON evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7

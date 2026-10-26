@@ -1,4 +1,4 @@
-.PHONY: audit-layout test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
+.PHONY: test-dns-grow-lto test-dns-grow-lto-compact audit-linked-stack audit-layout test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
 
 test:
 	python3 tools/test_offline.py rekey-memory
@@ -39,3 +39,13 @@ audit-layout:
 	python3 tools/audit_native_layout.py --pool-bytes 1024 --lto --out .test-results/native-layout-pool1024-lto.json
 	python3 tools/audit_native_layout.py --pool-bytes 256 --out .test-results/native-layout-pool256.json
 	python3 tools/audit_native_layout.py --pool-bytes 256 --lto --out .test-results/native-layout-pool256-lto.json
+
+test-dns-grow-lto:
+	UV310_TEST_LTO=1 python3 tools/test_offline.py rekey-dns-grow
+
+test-dns-grow-lto-compact:
+	UV310_TEST_LTO=1 UV310_TEST_POOL_BYTES=256 python3 tools/test_offline.py rekey-dns-grow
+
+audit-linked-stack:
+	python3 tools/audit_native_layout.py --pool-bytes 256 --stack-sizes --out .test-results/native-linked-stack-normal.json
+	python3 tools/audit_native_layout.py --pool-bytes 256 --lto --stack-sizes --out .test-results/native-linked-stack-lto.json

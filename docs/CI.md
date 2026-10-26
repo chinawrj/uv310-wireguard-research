@@ -35,3 +35,5 @@
 新增 `make test-dhcp-growth` 与 `make test-dns-grow`，分别检验有界扩展模块和native集成；对应证据与限制见 [DHCP_GROWTH.md](DHCP_GROWTH.md)。
 
 新增 `make audit-layout`，记录四组最终链接矩阵；允许报告超限候选，CI绿色不等于符合内存限制。详情见 [NATIVE_LAYOUT.md](NATIVE_LAYOUT.md)。
+
+LTO合成回归与最终链接栈审计见 [LTO_VALIDATION.md](LTO_VALIDATION.md)，包括独立模拟服务器的256B池耗尽场景。

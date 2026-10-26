@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Resolve native linked-size constraint without weakening checks; validate LTO functionality/stack if selected; DNS telemetry, stock path and real hardware still unverified.",
+  "next_step": "Gain code/state margin without weakening protocol checks; measure real peak memory/stack when hardware returns; DNS telemetry and end-to-end Wi-Fi still incomplete.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/NATIVE_LAYOUT.md",
+  "latest_offline_progress": "docs/LTO_VALIDATION.md",
   "observer_fault_injection_tests_passed": 23,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -167,11 +167,31 @@
     "normal_pool256_over_budget_bytes": 512,
     "lto_pool256_heap_start": "0x33c00",
     "lto_pool256_margin_bytes": 0,
-    "lto_functional_tests_passed": false,
+    "lto_functional_tests_passed": true,
     "real_config_link_verified": false,
     "hardware_memory_verified": false,
     "historical_memory_branch_sizes_reproduced": true,
     "linux_ci_run": 40254309179,
-    "linux_layout_matches_local": true
+    "linux_layout_matches_local": true,
+    "lto_functional_scope": "Synthetic Cortex-M3, 1024B and 256B fixture pools; not the final production ELF"
+  },
+  "lto_validation": {
+    "document": "docs/LTO_VALIDATION.md",
+    "normal_1024_suites": 67,
+    "lto_1024_suites": 67,
+    "lto_256_suites": 67,
+    "lto_256_negative_controls": 21,
+    "remote_peer_rng_isolated_in_compact_test": true,
+    "worker_visible_chain_frame_sum": {
+      "normal": 1060,
+      "lto": 1236
+    },
+    "intercept_visible_chain_frame_sum": {
+      "normal": 648,
+      "lto": 696
+    },
+    "complete_stack_bound_proven": false,
+    "real_hardware_verified": false,
+    "metadata_does_not_change_allocated_sections": true
   }
 }

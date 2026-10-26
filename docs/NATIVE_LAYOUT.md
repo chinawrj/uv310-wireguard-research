@@ -1,5 +1,7 @@
 # Native最终链接布局：DNS候选的部署空间缺口
 
+后续更新：LTO合成回归及最终链接栈审计已补充，见 [LTO_VALIDATION.md](LTO_VALIDATION.md)。下文“尚未测试”是本次布局审计时点；硬件限制与零布局余量结论仍成立。
+
 2026-10-26。本轮没有修改native功能源码，新增 [audit_native_layout.py](../tools/audit_native_layout.py)，用实际native链接脚本、真实ROM入口地址和公开合成配置做最终链接。临时ELF在结束时删除，不合成stock覆盖镜像、不生成新密钥、不部署。
 
 **结论：最新`rekey-dns-grow`在历史256B随机池形状、普通编译方式下，超过原打包器的heap起点上限512B。当前不能按旧打包规则部署。** LTO可以让该形状刚好落到上限，但功能/时序尚未测试，没有新增布局余量，不能据此宣布内存足够。
