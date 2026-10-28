@@ -290,7 +290,10 @@
     "state_bytes": 68,
     "arm_wrapper_text_bytes": 152,
     "native_integrated": false,
-    "arm_executed": false,
-    "hardware_verified": false
+    "arm_executed": true,
+    "hardware_verified": false,
+    "arm_execution_scope": "Standalone Cortex-M3 QEMU only",
+    "arm_oracle_comparisons": 31,
+    "arm_negative_controls": 4
   }
 }

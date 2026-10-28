@@ -1,0 +1,51 @@
+{
+  "scope": "Synthetic Cortex-M3 wrapper only; no native WireGuard or radio integration",
+  "independent_vector_comparisons": 31,
+  "negative_controls_detected": 4,
+  "runs": [
+    {
+      "variant": "baseline",
+      "expected_result_observed": true,
+      "output": "PASS seeded ARM",
+      "elf_sha256": "d65326bc4c5694d3c8e211476faefa51c24e7ea0871ecf56c4641afcedb00be4"
+    },
+    {
+      "variant": "counter-reset",
+      "expected_result_observed": true,
+      "output": "FAIL seeded ARM",
+      "elf_sha256": "87f67dacbb812727c198012c350cacbee337387377743ccff5ab710ce1bcceae"
+    },
+    {
+      "variant": "no-budget",
+      "expected_result_observed": true,
+      "output": "FAIL seeded ARM",
+      "elf_sha256": "191d41018ebaf8b1d8658bf4c9ba25f202126e161615f7d691b31603d5cebcff"
+    },
+    {
+      "variant": "no-wipe",
+      "expected_result_observed": true,
+      "output": "FAIL seeded ARM",
+      "elf_sha256": "79cbb66b4ca5c40cf28b52a33b7c2e3d497ecba95d464673fa853fa7102bde28"
+    },
+    {
+      "variant": "repeat-init",
+      "expected_result_observed": true,
+      "output": "FAIL seeded ARM",
+      "elf_sha256": "c62478d571aef7776b6e6666582b6f9957beaaadbc7c479f2500678e602253e7"
+    }
+  ],
+  "source_sha256": {
+    "work/uv310-wireguard/seeded-rng/seeded_rng.c": "c486056271d675ae73dac194eb40b3b49c72ce1d9dcfc1b0b0ee5d49647bbbb7",
+    "work/uv310-wireguard/seeded-rng/seeded_rng.h": "3c0fb38fbb4cb65630b54cf9cb0b35bf9299e18103c1479e0072524b073d4b0c",
+    "work/uv310-wireguard/seeded-rng/arm-tests.c": "f74bba094c721be99d3136fcebf6cf9daba7d760ec3ff653e36ae4c10539a45a",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.h": "83209dce014806ae14b76c00f1649255c48b5529ab14f8dec2d9cc36adc48872",
+    "work/uv310-wireguard/wg-port/runtime.c": "f1f873e8ba7aa91484be0d249e2da4e48d9febf5d3dc91485b2751ff376b041d",
+    "tools/test_seeded_rng_arm.py": "a0d54f1881b374e280ea2e7a60c84f87f4c71c321a0116982cbd3739fc8b5a2d"
+  },
+  "vectors_sha256": "c864b16bb77f618e135c20e0e883806253b9c5853bf96369ee1e08e1b381de3e",
+  "compiler": "Homebrew clang version 18.1.6",
+  "qemu": "QEMU emulator version 10.0.0",
+  "hardware_verified": false,
+  "full_stack_bound_verified": false
+}

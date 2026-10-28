@@ -864,5 +864,15 @@
     "path": "work/uv310-wireguard/seeded-rng/seeded_rng.h",
     "published_sha256": "3c0fb38fbb4cb65630b54cf9cb0b35bf9299e18103c1479e0072524b073d4b0c",
     "origin": "Authored offline wrapper and independent-oracle tests; upstream ChaCha20 unchanged"
+  },
+  {
+    "path": "tools/test_seeded_rng_arm.py",
+    "published_sha256": "a0d54f1881b374e280ea2e7a60c84f87f4c71c321a0116982cbd3739fc8b5a2d",
+    "origin": "Authored synthetic Cortex-M3 wrapper tests; no real device or firmware content"
+  },
+  {
+    "path": "work/uv310-wireguard/seeded-rng/arm-tests.c",
+    "published_sha256": "f74bba094c721be99d3136fcebf6cf9daba7d760ec3ff653e36ae4c10539a45a",
+    "origin": "Authored synthetic Cortex-M3 wrapper tests; no real device or firmware content"
   }
 ]

@@ -28,3 +28,9 @@ macOS工具链不匹配时同时指定匹配的SDKROOT。工具只创建临时�
 计数器在内存中，状态复制、快照恢复或复用seed会重放输出。负向测试能发现已知回退，不代表运行时包装器会识别任意状态回退。故意缩小预算用于明确失败边界，不意味着可安全无限运行。
 
 下一步要比较具备状态更新/擦除方案的资源成本，再做Cortex-M3执行、真实native链接、并发/中断与WireGuard回归。主机prepare生成的新种子仍没有被候选消费；当前实际候选继续使用原有限池。
+
+## Cortex-M3执行补充
+
+独立QEMU mps2-an385现已通过31组oracle输出比较、生命周期/输出边界检查和4个故意错误变体（counter重置、去除预算、去除擦除、允许重复初始化）。[原始记录](../outputs/uv310-wireguard/evidence/seeded-rng/arm-tests.json)保存源码与ELF哈希。首次测试链接因测试地址0处ARM异常展开节与向量表重叠而失败；测试链接脚本丢弃不使用的异常展开节后通过，没有修改生产源码。
+
+复现：设置LLVM_CLANG、LLVM_LD、QEMU_ARM后运行`python3 tools/test_seeded_rng_arm.py`；仍需cryptography生成独立向量。这个测试只有随机模块与合成启动代码，不加载原厂Wi-Fi固件、不模拟BCM外设，不能证明Wi-Fi共存或正式布局适配。

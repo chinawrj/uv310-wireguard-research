@@ -2,6 +2,8 @@
 
 本文件是 2026-10-28 更新时的交接快照，优先于各历史 JSON 中的 `current_*` 字段。老证据中的“已恢复/正在运行”只描述该次实验结束时。
 
+执行核选择与Wi-Fi共存问题见 [EXECUTION_TARGETS.md](docs/EXECUTION_TARGETS.md)。
+
 研究路线与关键突破先看 [HACKING.md](HACKING.md)。
 
 ## 1. 用户真正要什么
