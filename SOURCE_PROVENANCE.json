@@ -849,5 +849,20 @@
     "path": "work/uv310-wireguard/host-bootstrap/test_prepare.py",
     "published_sha256": "69afa9335fc542f0b72ce776c7cb9a7971368c179d6d46e94dc0cbcfd448fe35",
     "origin": "Authored host material preparation and synthetic fault tests"
+  },
+  {
+    "path": "tools/test_seeded_rng.py",
+    "published_sha256": "654deca1f43b0c91cd51e1adcc10c64aa7c446f6bc50eafec95116218703266f",
+    "origin": "Authored offline wrapper and independent-oracle tests; upstream ChaCha20 unchanged"
+  },
+  {
+    "path": "work/uv310-wireguard/seeded-rng/seeded_rng.c",
+    "published_sha256": "c486056271d675ae73dac194eb40b3b49c72ce1d9dcfc1b0b0ee5d49647bbbb7",
+    "origin": "Authored offline wrapper and independent-oracle tests; upstream ChaCha20 unchanged"
+  },
+  {
+    "path": "work/uv310-wireguard/seeded-rng/seeded_rng.h",
+    "published_sha256": "3c0fb38fbb4cb65630b54cf9cb0b35bf9299e18103c1479e0072524b073d4b0c",
+    "origin": "Authored offline wrapper and independent-oracle tests; upstream ChaCha20 unchanged"
   }
 ]

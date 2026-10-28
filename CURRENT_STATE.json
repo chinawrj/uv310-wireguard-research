@@ -283,5 +283,14 @@
     "material_generation_synthetic_tests": 11,
     "seed_integrated": false,
     "boot_authorized_by_prepare": false
+  },
+  "seeded_rng_prototype": {
+    "document": "docs/SEEDED_RNG.md",
+    "host_checks": 40,
+    "state_bytes": 68,
+    "arm_wrapper_text_bytes": 152,
+    "native_integrated": false,
+    "arm_executed": false,
+    "hardware_verified": false
   }
 }

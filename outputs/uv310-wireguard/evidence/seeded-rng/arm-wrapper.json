@@ -1,0 +1,21 @@
+{
+  "scope": "Relocatable Cortex-M3 wrapper object only; no final link or execution",
+  "text_bytes": 152,
+  "own_static_frames": {
+    "close": 0,
+    "init": 16,
+    "read": 24
+  },
+  "flags": "--target=arm-none-eabi -mcpu=cortex-m3 -mthumb -Oz -ffreestanding -fno-builtin -ffunction-sections -fdata-sections -fstack-usage",
+  "source_sha256": {
+    "work/uv310-wireguard/seeded-rng/seeded_rng.c": "c486056271d675ae73dac194eb40b3b49c72ce1d9dcfc1b0b0ee5d49647bbbb7",
+    "work/uv310-wireguard/seeded-rng/seeded_rng.h": "3c0fb38fbb4cb65630b54cf9cb0b35bf9299e18103c1479e0072524b073d4b0c",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.c": "274a36fceb31a6ebdfd295bfcaa691e9d33fa65ef9392aa8abb04ab9bc854615",
+    "work/uv310-wireguard/wg-port/upstream/src/crypto/refc/chacha20.h": "83209dce014806ae14b76c00f1649255c48b5529ab14f8dec2d9cc36adc48872",
+    "tools/test_seeded_rng.py": "654deca1f43b0c91cd51e1adcc10c64aa7c446f6bc50eafec95116218703266f"
+  },
+  "limitations": [
+    "Excludes ChaCha20 and memset callees, veneers and final LTO effects",
+    "Not a complete stack bound or claim of fit"
+  ]
+}
