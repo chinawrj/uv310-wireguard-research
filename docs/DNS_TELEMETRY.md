@@ -99,3 +99,11 @@ python3 work/uv310-wireguard/rekey-observe/observe.py \
 N字段映射已逐项与隔离QEMU提案报告核对一致。[36项mock测试记录](../outputs/uv310-wireguard/evidence/dns-telemetry/observer-tests.json)涵盖原有故障行为，以及五页收集、不同轮转起点、旧固件缺N、重复N不能替代别的页、字段映射、非法字段/多字段/缺字段、时钟回绕/倒退、异常清理与错误内容脱敏。纯离线复现使用`make test-observer`。此前23项是旧版本结果，不覆盖N。
 
 观察器记录协议选择，并明确`dns_path_verified=false`。五页不是跨页原子快照；无boot identity，部分重启时钟变化仍可能不可区分。原生固件仍未正式接入N页，这个host工具通过mock不代表设备已提供该协议，也不代表DNS经隧道验收完成。
+
+## 2026-10-28：独立候选与统一入口
+
+N页源码现已保存为 [rekey-dns-observe/native.c](../work/uv310-wireguard/rekey-dns-observe/native.c)，与此前通过QEMU验证的exclusive-n-page派生源码逐字节一致；原rekey-dns-grow保持不变作为对照。原源码注释保留以维持哈希一致，目录README标识新候选身份。
+
+统一离线入口是`make test-dns-observe`，先重做五种布局比较、验证候选与对照转换一致，再直接读取该候选进入隔离构建，并执行67场景/26错误对照及观察器mock测试。配置和测试harness仍共享原分支，避免复制后漂移。GitHub工作流已接入这个入口；加入CI步骤本身不是已通过CI的证据。
+
+“独立候选”只表示源码、测试入口和host协议已经连接，不是已生成真实配置镜像，也未证明固件启动或Wi-Fi链路。在恢复硬件前继续保留这些验收边界；不增加自动刷写入口。

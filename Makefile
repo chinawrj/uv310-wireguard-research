@@ -1,3 +1,4 @@
+.PHONY: test-dns-observe
 .PHONY: test-control-icf audit-inline-profiles test-dns-grow-lto test-dns-grow-lto-compact audit-linked-stack audit-layout test-dhcp-growth test-dns-grow test-dns test-dhcp-dns test-pressure test test-live test-observer stack-audit verify
 
 test:
@@ -57,3 +58,9 @@ test-control-icf:
 
 audit-inline-profiles:
 	python3 tools/compare_inline_profiles.py
+
+# Committed N1 candidate, synthetic input only; includes layout comparison.
+test-dns-observe:
+	python3 tools/evaluate_dns_telemetry.py
+	python3 tools/test_dns_telemetry.py
+	$(MAKE) test-observer

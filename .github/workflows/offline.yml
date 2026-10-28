@@ -73,6 +73,8 @@ jobs:
         run: make audit-linked-stack
       - name: Compare LTO inlining and folding profiles
         run: make audit-inline-profiles
+      - name: Validate committed N1 telemetry candidate
+        run: make test-dns-observe
       - name: Keep JSON evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7

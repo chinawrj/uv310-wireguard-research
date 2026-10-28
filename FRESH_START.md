@@ -1,6 +1,6 @@
 # Fresh start：先读这份，再操作设备
 
-本文件是 2026-10-26 发布时的交接快照，优先于各历史 JSON 中的 `current_*` 字段。老证据中的“已恢复/正在运行”只描述该次实验结束时。
+本文件是 2026-10-28 更新时的交接快照，优先于各历史 JSON 中的 `current_*` 字段。老证据中的“已恢复/正在运行”只描述该次实验结束时。
 
 研究路线与关键突破先看 [HACKING.md](HACKING.md)。
 
@@ -12,7 +12,7 @@
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
-- 最新诊断提案N页：隔离副本仅增加12B代码，保留256B布局余量；67个QEMU场景/26个错误对照通过。观察器已支持显式n1模式并通过36项mock测试，固件仍为隔离提案，见 [DNS_TELEMETRY.md](docs/DNS_TELEMETRY.md)。
+- 最新诊断提案N页：隔离副本仅增加12B代码，保留256B布局余量；67个QEMU场景/26个错误对照通过。观察器已支持显式n1模式并通过36项mock测试，源码已保存为rekey-dns-observe独立离线候选，未部署，见 [DNS_TELEMETRY.md](docs/DNS_TELEMETRY.md)。
 
 - 最新实验构建profile `control-icf`：256B池形状有256B历史布局余量，可见worker栈链1052B，intercept712B；两种池合成回归在本机及Linux CI通过，八种布局数值一致，尚未部署。见 [INLINE_PROFILES.md](docs/INLINE_PROFILES.md)。
 

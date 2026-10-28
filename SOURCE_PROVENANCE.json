@@ -677,10 +677,11 @@
   },
   {
     "path": ".github/workflows/offline.yml",
-    "published_sha256": "d3bcf999a5b13f89a1a84afc4475a9a26745d1b84079a54a29e440f4fd8b98e9",
+    "published_sha256": "650e6aa77a16e25ae08eea1be72f0ba8b6c3bbd474dc0301bd3a7e32d5c98922",
     "workspace_source_sha256": "d3bcf999a5b13f89a1a84afc4475a9a26745d1b84079a54a29e440f4fd8b98e9",
     "byte_identical_to_workspace": true,
-    "previous_published_sha256": "f535622fdbfe37769b8c6eb02b222a84d73355d79394264f2760f25168d00a8a"
+    "previous_published_sha256": "d3bcf999a5b13f89a1a84afc4475a9a26745d1b84079a54a29e440f4fd8b98e9",
+    "origin": "Explicit offline N1 candidate and reproducible CI integration; no private configuration"
   },
   {
     "path": "tools/compare_dns_size.py",
@@ -809,18 +810,24 @@
   },
   {
     "path": "tools/evaluate_dns_telemetry.py",
-    "published_sha256": "f273d0883d733ecd8daec772bfabf1f396ad4107781001aadc045c525d680768",
-    "origin": "Authored isolated synthetic telemetry proposal, no firmware bytes or private configuration",
-    "previous_published_sha256": "d283198452ea3911e5270a5fb2a9bbde5e7856bdb31a03a581a47449cb621d06"
+    "published_sha256": "0d6fc8acbdcace7557625758d297e9d99d270fd5942cec170f1be9e585c17cd4",
+    "origin": "Explicit offline N1 candidate and reproducible CI integration; no private configuration",
+    "previous_published_sha256": "f273d0883d733ecd8daec772bfabf1f396ad4107781001aadc045c525d680768"
   },
   {
     "path": "tools/test_dns_telemetry.py",
-    "published_sha256": "a5c0d6bf4d92ae3cb0c3e83743700ca458327519a0f487c1a7bf620641bbbc35",
-    "origin": "Authored isolated synthetic telemetry proposal, no firmware bytes or private configuration"
+    "published_sha256": "151be8a9a90d013f77020f73afe12ef3392259c309d890499b0ae13b1a63a76e",
+    "origin": "Explicit offline N1 candidate and reproducible CI integration; no private configuration",
+    "previous_published_sha256": "a5c0d6bf4d92ae3cb0c3e83743700ca458327519a0f487c1a7bf620641bbbc35"
   },
   {
     "path": "work/uv310-wireguard/rekey-dns-grow/telemetry-check.c",
     "published_sha256": "f398b23203d153f0cb1bc7938b078def6fdf14f894725246a6bc19da4c5d7e4b",
     "origin": "Authored isolated synthetic telemetry proposal, no firmware bytes or private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/rekey-dns-observe/native.c",
+    "published_sha256": "8b2bd1721edd2f8e3714e4f49bc6029aec6dafeac8254ee831efbae14653a5eb",
+    "origin": "Explicit offline N1 candidate and reproducible CI integration; no private configuration"
   }
 ]
