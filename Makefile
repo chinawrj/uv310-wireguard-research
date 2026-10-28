@@ -68,3 +68,4 @@ test-dns-observe:
 .PHONY: test-host-bootstrap
 test-host-bootstrap:
 	python3 work/uv310-wireguard/host-bootstrap/test_check.py
+	python3 work/uv310-wireguard/host-bootstrap/test_prepare.py

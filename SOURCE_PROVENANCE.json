@@ -839,5 +839,15 @@
     "path": "work/uv310-wireguard/host-bootstrap/test_check.py",
     "published_sha256": "986249614264c4669e1ad0cf75f3bd0021e08b9671ec539841b2a570f51286e4",
     "origin": "Authored host-only preflight and synthetic tests; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/host-bootstrap/prepare.py",
+    "published_sha256": "2811a8a92c81b378337c785973d79216b37f5703057db56c6c1328607a8f6084",
+    "origin": "Authored host material preparation and synthetic fault tests"
+  },
+  {
+    "path": "work/uv310-wireguard/host-bootstrap/test_prepare.py",
+    "published_sha256": "69afa9335fc542f0b72ce776c7cb9a7971368c179d6d46e94dc0cbcfd448fe35",
+    "origin": "Authored host material preparation and synthetic fault tests"
   }
 ]

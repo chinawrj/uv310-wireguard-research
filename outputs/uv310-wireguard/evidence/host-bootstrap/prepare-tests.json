@@ -1,0 +1,13 @@
+{
+  "scope": "Synthetic config, mock stock and randomness, temporary private directories; no actual peer materials or device",
+  "tests_run": 11,
+  "passed": true,
+  "test_output": "test_bad_stock_creates_no_material (__main__.Cases.test_bad_stock_creates_no_material) ... ok\ntest_concurrent_same_clock_only_one_prepared (__main__.Cases.test_concurrent_same_clock_only_one_prepared) ... ok\ntest_corrupt_ledger_refused (__main__.Cases.test_corrupt_ledger_refused) ... ok\ntest_incomplete_write_does_not_publish_ready_metadata (__main__.Cases.test_incomplete_write_does_not_publish_ready_metadata) ... ok\ntest_insecure_output_refused (__main__.Cases.test_insecure_output_refused) ... ok\ntest_invalid_clock_refused (__main__.Cases.test_invalid_clock_refused) ... ok\ntest_new_attempt_does_not_overwrite (__main__.Cases.test_new_attempt_does_not_overwrite) ... ok\ntest_permissions_and_no_boot_claim (__main__.Cases.test_permissions_and_no_boot_claim) ... ok\ntest_random_failure_no_material (__main__.Cases.test_random_failure_no_material) ... ok\ntest_same_time_and_rollback_refused (__main__.Cases.test_same_time_and_rollback_refused) ... ok\ntest_symlink_ledger_refused (__main__.Cases.test_symlink_ledger_refused) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.030s\n\nOK\n",
+  "source_sha256": {
+    "work/uv310-wireguard/host-bootstrap/prepare.py": "2811a8a92c81b378337c785973d79216b37f5703057db56c6c1328607a8f6084",
+    "work/uv310-wireguard/host-bootstrap/test_prepare.py": "69afa9335fc542f0b72ce776c7cb9a7971368c179d6d46e94dc0cbcfd448fe35",
+    "work/uv310-wireguard/host-bootstrap/check.py": "b0badfc9e114ba196d50280894aa56ca337b922b3773f5a120c42326044e3469"
+  },
+  "seed_generator_integrated": false,
+  "boot_verified": false
+}

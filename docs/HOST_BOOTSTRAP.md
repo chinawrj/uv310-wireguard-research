@@ -83,3 +83,21 @@ python3 work/uv310-wireguard/host-bootstrap/check.py \
 成功JSON不包含地址或密钥，明确`deployable=false`、`peer_server_verified=false`和`private_config_link_verified=false`。失败仅返回有限错误码，不输出配置正文。退出码0仅表示结构预检通过，2表示检查失败。
 
 `make test-host-bootstrap`通过17项合成测试；[原始记录](../outputs/uv310-wireguard/evidence/host-bootstrap/check-tests.json)归档了输入源码哈希。成功stock路径使用合成文件及mock哈希，不是新的实机镜像验收。材料生成、种子生成器、私有配置最终链接、单次部署和恢复仍待实现。
+
+## 已实现：私有材料准备（尚非启动授权）
+
+`host-bootstrap/prepare.py`读取同一份已验证的配置字节，核对stock，在当前用户拥有的0700目录（目录名必须为`private`）内创建唯一`bootstrap-<attempt>`子目录。文件以独占创建和0600权限写入。不会编译、访问设备/网络或覆写既有材料。
+
+```sh
+python3 work/uv310-wireguard/host-bootstrap/prepare.py \
+  --config /private/path/new-peer.conf --stock /private/path/rtecdc_new.bin \
+  --private-dir /path/to/private
+```
+
+输出包括适合当前有限池候选的`native-config.h`（256B新池）、为未来生成器准备的32B独立`generator-seed.bin`，以及私有`material.json`。主机使用OS支持的`secrets.token_bytes`。seed尚未被native引用，不可将准备成功称为长期随机源已实现。没有读取或复用聊天中的旧配置。
+
+准备过程持有独占文件锁；先用临时文件、replace和文件/目录fsync保留时间区间，再写材料，元数据最后发布。主机时间必须晚于前次保留区间，拒绝回退或紧接着的同时间准备；不修改主机时间。为当前有限池的attempt纳秒增量预留1秒范围，不能直接套用到未来无限生成器。失败可能消耗时间保留，但不应发布完整prepared元数据。
+
+`boot_authorized=false`始终保留；尚未实现写设备前的单次消费状态机。记录丢失、整个目录回滚/拷贝或恶意本机用户破坏不在当前保证内，不能称为防回滚硬件或端到端掉电安全。目录应处在可信的本地父路径内，不能由不可信用户并发替换。Python临时内存尚无可证明的密钥清零保证。
+
+新增[11项合成测试](../outputs/uv310-wireguard/evidence/host-bootstrap/prepare-tests.json)：权限、时间回退/重复、唯一尝试、损坏/符号链接ledger、stock错误、随机源长度错误、写入中断、并发同时间仅一次成功等。随机字节和stock成功路径均为mock，不构成随机源质量评估或实际启动验收。`make test-host-bootstrap`运行预检17项与准备11项。当前未生成真实peer材料，未新增Linux CI复现证据。
