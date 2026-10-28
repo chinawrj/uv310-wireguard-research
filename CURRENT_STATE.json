@@ -56,7 +56,7 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Verify new candidate Linux CI; then inspect unresolved entropy and recovery prerequisites while hardware remains unavailable.",
+  "next_step": "Implement host-only fresh-material prepare/check; evaluate seeded cryptographic generator for longer per-boot operation without changing standard WG timers. Hardware boot/recovery still unverified.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
   "latest_offline_progress": "docs/DNS_TELEMETRY.md",
@@ -78,8 +78,10 @@
     "standalone_ready": false,
     "build_profile": "control-icf",
     "profile_pool256_layout_margin_bytes": 256,
-    "linux_ci_verified": false,
-    "real_dhcp_hook_visibility_verified": false
+    "linux_ci_verified": true,
+    "real_dhcp_hook_visibility_verified": false,
+    "linux_ci_run": 40693225515,
+    "tested_commit": "af8a6d99b212753adbf941bb518db7017facadf7"
   },
   "offline_ci": {
     "workflow": ".github/workflows/offline.yml",
@@ -237,7 +239,9 @@
     "observer_hardware_verified": false,
     "integration_scope": "Committed offline source candidate and N1 observer, not deployment",
     "candidate_path": "work/uv310-wireguard/rekey-dns-observe/native.c",
-    "linux_ci_verified": false
+    "linux_ci_verified": true,
+    "linux_ci_run": 40693225515,
+    "tested_commit": "af8a6d99b212753adbf941bb518db7017facadf7"
   },
   "previous_growth_candidate": {
     "branch": "rekey-dns-grow",
@@ -255,5 +259,17 @@
     "build_profile": "control-icf",
     "profile_functional_scope": "Synthetic QEMU 1024B and 256B pools; final stock ELF not executed",
     "profile_pool256_layout_margin_bytes": 256
+  },
+  "user_selected_delivery_mode": {
+    "mode": "host-assisted bootstrap",
+    "date": "2026-10-28",
+    "document": "docs/HOST_BOOTSTRAP.md",
+    "data_plane": "WireGuard on UV310, not host VPN",
+    "standalone_boot_required_for_this_partial_version": false,
+    "unified_bootstrap_implemented": false,
+    "hardware_verified": false,
+    "longer_host_intervention_interval_accepted": true,
+    "seeded_generator_evaluation_planned": true,
+    "seeded_generator_implemented": false
   }
 }

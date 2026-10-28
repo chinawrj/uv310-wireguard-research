@@ -10,6 +10,8 @@
 
 ## 2. 最近状态（不要猜）
 
+- 2026-10-28用户选择先交付主机引导的半成品；Wi-Fi数据面仍在UV310内。新引导器尚未实现，阶段与恢复风险见 [HOST_BOOTSTRAP.md](docs/HOST_BOOTSTRAP.md)。
+
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
 - 最新诊断提案N页：隔离副本仅增加12B代码，保留256B布局余量；67个QEMU场景/26个错误对照通过。观察器已支持显式n1模式并通过36项mock测试，源码已保存为rekey-dns-observe独立离线候选，未部署，见 [DNS_TELEMETRY.md](docs/DNS_TELEMETRY.md)。

@@ -107,3 +107,5 @@ N页源码现已保存为 [rekey-dns-observe/native.c](../work/uv310-wireguard/r
 统一离线入口是`make test-dns-observe`，先重做五种布局比较、验证候选与对照转换一致，再直接读取该候选进入隔离构建，并执行67场景/26错误对照及观察器mock测试。配置和测试harness仍共享原分支，避免复制后漂移。GitHub工作流已接入这个入口；加入CI步骤本身不是已通过CI的证据。
 
 “独立候选”只表示源码、测试入口和host协议已经连接，不是已生成真实配置镜像，也未证明固件启动或Wi-Fi链路。在恢复硬件前继续保留这些验收边界；不增加自动刷写入口。
+
+[Linux CI 40693225515](https://github.com/chinawrj/uv310-wireguard-research/actions/runs/40693225515)已对提交`af8a6d99b212753adbf941bb518db7017facadf7`验证通过。已核对67场景/26错误对照、候选源码哈希和五组布局结果（与本机一致），[原始CI证据](../outputs/uv310-wireguard/evidence/dns-telemetry/ci-candidate/run.json)已归档。仍无实机证据。
