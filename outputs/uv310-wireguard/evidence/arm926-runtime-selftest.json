@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source_sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5",
+  "positive_instruction_guards": 46,
+  "negative_controls": [
+    {
+      "name": "single_byte_corruption_sha256_guard",
+      "rejected": true,
+      "reason": "Firmware SHA256 mismatch; fixed addresses must not be reused"
+    },
+    {
+      "name": "truncation_sha256_guard",
+      "rejected": true,
+      "reason": "Firmware SHA256 mismatch; fixed addresses must not be reused"
+    },
+    {
+      "name": "entry_wrong_instruction_mode",
+      "rejected": true,
+      "reason": "Instruction guard failed at 0x100000: movs r2, r1"
+    },
+    {
+      "name": "entry_wrong_address_space",
+      "rejected": true,
+      "reason": "Address 0x100000 has 0 file-backed mappings"
+    }
+  ],
+  "hardware_tests": 0,
+  "functional_simulations": 0,
+  "conclusion": "Audit guards exercised; no callback, task, or firmware execution tested"
+}

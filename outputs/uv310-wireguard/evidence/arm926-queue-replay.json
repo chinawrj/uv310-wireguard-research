@@ -1,0 +1,56 @@
+{
+  "schema": "uv310-arm926-dpc-replay-v1",
+  "date": "2026-10-28",
+  "image_sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5",
+  "source_sha256": "74b2bf80dc0d94b348358a4741ac11d105c116d60ce3b1b168435bfb1f4f1063",
+  "emulator": "Unicorn",
+  "unicorn_version": "2.1.4",
+  "capstone_version": "5.0.7",
+  "firmware_code_ranges": [
+    [
+      "0x229ff6",
+      "0x22a096"
+    ]
+  ],
+  "literal_range": [
+    "0x22a0f0",
+    "0x22a144"
+  ],
+  "passed": true,
+  "cases": [
+    "null callback rejected without synchronization or notification",
+    "empty queue prior state 0",
+    "empty queue prior state 1",
+    "callback mode thumb, prior state 0",
+    "callback mode thumb, prior state 1",
+    "callback mode arm, prior state 0",
+    "callback mode arm, prior state 1",
+    "full queue rejected at read index 0",
+    "full queue rejected at read index 1",
+    "full queue rejected at read index 127",
+    "full queue rejected at read index 255",
+    "255-entry FIFO fill/drain and wrap from 0",
+    "255-entry FIFO fill/drain and wrap from 254",
+    "255-entry FIFO fill/drain and wrap from 255"
+  ],
+  "positive_cases": 14,
+  "negative_controls": [
+    "full condition inverted",
+    "callback argument register changed",
+    "callback invocation removed"
+  ],
+  "negative_count": 3,
+  "firmware_bytes_published": false,
+  "hardware_access": false,
+  "stubs": [
+    "synchronization entry/restore",
+    "task signaling",
+    "bounded synthetic ARM/Thumb callbacks"
+  ],
+  "limits": [
+    "Only bounded stock DPC functions executed; not the full firmware",
+    "No real scheduler, MMU, IRQ, cache, watchdog or IPC execution",
+    "No custom-code loader, Wi-Fi forwarding or WireGuard validation",
+    "Mutated instruction copies exist only in emulator memory"
+  ]
+}

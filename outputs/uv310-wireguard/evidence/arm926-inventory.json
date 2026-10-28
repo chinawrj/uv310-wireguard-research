@@ -1,0 +1,684 @@
+{
+  "schema": "uv310-arm926-inventory-v1",
+  "audit_date": "2026-10-28",
+  "audit_mode": "offline structural analysis of existing owner captures",
+  "network_or_device_access": false,
+  "firmware_or_raw_bytes_published": false,
+  "image": {
+    "file": "amss.elf",
+    "bytes": 1880064,
+    "sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5"
+  },
+  "elf": {
+    "class": "ELF32",
+    "endianness": "little",
+    "osabi_byte": "0x61",
+    "type": "ET_EXEC",
+    "machine": "EM_ARM",
+    "entry": "0x100000",
+    "elf_flags": "0x202",
+    "program_header_offset": 52,
+    "program_header_count": 13,
+    "section_header_offset": 0,
+    "section_header_count": 0,
+    "section_headers_present": false,
+    "max_declared_file_end": 1880064,
+    "entry_in_load_virtual_ranges": [],
+    "entry_in_load_physical_ranges": [
+      2
+    ],
+    "segments": [
+      {
+        "index": 0,
+        "type": "PT_NULL",
+        "file_offset": "0x0",
+        "file_end_exclusive": "0x1d4",
+        "vaddr": "0x0",
+        "vaddr_end_exclusive": "0x0",
+        "paddr": "0x0",
+        "paddr_end_exclusive": "0x0",
+        "filesz": 468,
+        "memsz": 0,
+        "memsz_minus_filesz": -468,
+        "flags": "0x7000000",
+        "elf_rwx_bits": "---",
+        "non_rwx_flags": "0x7000000",
+        "alignment": 0,
+        "file_extent_present": true,
+        "file_extent_sha256": "18277ff0b7e8ed63e0694e3e9d22573514c1ccfbfa12c11e4972613fdd5e8a5a"
+      },
+      {
+        "index": 1,
+        "type": "PT_LOAD",
+        "file_offset": "0x1000",
+        "file_end_exclusive": "0x13e8",
+        "vaddr": "0x5a9000",
+        "vaddr_end_exclusive": "0x5aa000",
+        "paddr": "0x5a9000",
+        "paddr_end_exclusive": "0x5aa000",
+        "filesz": 1000,
+        "memsz": 4096,
+        "memsz_minus_filesz": 3096,
+        "flags": "0x2200000",
+        "elf_rwx_bits": "---",
+        "non_rwx_flags": "0x2200000",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": "f7c71e1b6103d11e56f2460c3f643237d3e45b0c81049da52e8c26f3f347d2f9"
+      },
+      {
+        "index": 2,
+        "type": "PT_LOAD",
+        "file_offset": "0x8000",
+        "file_end_exclusive": "0x24a8c",
+        "vaddr": "0xf0000000",
+        "vaddr_end_exclusive": "0xf00222c0",
+        "paddr": "0x100000",
+        "paddr_end_exclusive": "0x1222c0",
+        "filesz": 117388,
+        "memsz": 139968,
+        "memsz_minus_filesz": 22580,
+        "flags": "0x7",
+        "elf_rwx_bits": "rwx",
+        "non_rwx_flags": "0x0",
+        "alignment": 32768,
+        "file_extent_present": true,
+        "file_extent_sha256": "536023be13cbf312bb8955d0c6d3a2c1d37dd06233eebc7ee759d176b8f8ba64"
+      },
+      {
+        "index": 3,
+        "type": "PT_LOAD",
+        "file_offset": "0x2c000",
+        "file_end_exclusive": "0x32000",
+        "vaddr": "0xf0024000",
+        "vaddr_end_exclusive": "0xf002a000",
+        "paddr": "0x124000",
+        "paddr_end_exclusive": "0x12a000",
+        "filesz": 24576,
+        "memsz": 24576,
+        "memsz_minus_filesz": 0,
+        "flags": "0x6",
+        "elf_rwx_bits": "rw-",
+        "non_rwx_flags": "0x0",
+        "alignment": 32768,
+        "file_extent_present": true,
+        "file_extent_sha256": "03726a67e965208c54017b2c147ae7ca6a3d6c692187928f8fe62ae228e8661f"
+      },
+      {
+        "index": 4,
+        "type": "PT_LOAD",
+        "file_offset": "0x38000",
+        "file_end_exclusive": "0x4d6c7",
+        "vaddr": "0xb0000000",
+        "vaddr_end_exclusive": "0xb00156c7",
+        "paddr": "0x190000",
+        "paddr_end_exclusive": "0x1a56c7",
+        "filesz": 87751,
+        "memsz": 87751,
+        "memsz_minus_filesz": 0,
+        "flags": "0x5",
+        "elf_rwx_bits": "r-x",
+        "non_rwx_flags": "0x0",
+        "alignment": 32768,
+        "file_extent_present": true,
+        "file_extent_sha256": "8670e8425a235e4d8d5c5cee1e1a32fb2bf5d64faf5b13d4c0b9fb4931870413"
+      },
+      {
+        "index": 5,
+        "type": "PT_LOAD",
+        "file_offset": "0x50000",
+        "file_end_exclusive": "0x50188",
+        "vaddr": "0xb0060000",
+        "vaddr_end_exclusive": "0xb0073004",
+        "paddr": "0x1b0000",
+        "paddr_end_exclusive": "0x1c3004",
+        "filesz": 392,
+        "memsz": 77828,
+        "memsz_minus_filesz": 77436,
+        "flags": "0x6",
+        "elf_rwx_bits": "rw-",
+        "non_rwx_flags": "0x0",
+        "alignment": 32768,
+        "file_extent_present": true,
+        "file_extent_sha256": "e7dbdba8f3676b867edb9ac713c43bfeb02c719aad07f5ed0c6ee35be6c25dad"
+      },
+      {
+        "index": 6,
+        "type": "PT_LOAD",
+        "file_offset": "0x52000",
+        "file_end_exclusive": "0x1960fc",
+        "vaddr": "0x1c4000",
+        "vaddr_end_exclusive": "0x58f000",
+        "paddr": "0x1c4000",
+        "paddr_end_exclusive": "0x58f000",
+        "filesz": 1327356,
+        "memsz": 3977216,
+        "memsz_minus_filesz": 2649860,
+        "flags": "0x81000007",
+        "elf_rwx_bits": "rwx",
+        "non_rwx_flags": "0x81000000",
+        "alignment": 8192,
+        "file_extent_present": true,
+        "file_extent_sha256": "570be5e805a828aeb98616dba42fa128c295ea1ca29606e102b9bfdc391ce95d"
+      },
+      {
+        "index": 7,
+        "type": "PT_LOAD",
+        "file_offset": "0x197000",
+        "file_end_exclusive": "0x197000",
+        "vaddr": "0x58f000",
+        "vaddr_end_exclusive": "0x595000",
+        "paddr": "0x58f000",
+        "paddr_end_exclusive": "0x595000",
+        "filesz": 0,
+        "memsz": 24576,
+        "memsz_minus_filesz": 24576,
+        "flags": "0x6400006",
+        "elf_rwx_bits": "rw-",
+        "non_rwx_flags": "0x6400000",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": null
+      },
+      {
+        "index": 8,
+        "type": "PT_LOAD",
+        "file_offset": "0x198000",
+        "file_end_exclusive": "0x198000",
+        "vaddr": "0x595000",
+        "vaddr_end_exclusive": "0x596000",
+        "paddr": "0x595000",
+        "paddr_end_exclusive": "0x596000",
+        "filesz": 0,
+        "memsz": 4096,
+        "memsz_minus_filesz": 4096,
+        "flags": "0xe400006",
+        "elf_rwx_bits": "rw-",
+        "non_rwx_flags": "0xe400000",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": null
+      },
+      {
+        "index": 9,
+        "type": "PT_LOAD",
+        "file_offset": "0x199000",
+        "file_end_exclusive": "0x19b000",
+        "vaddr": "0x596000",
+        "vaddr_end_exclusive": "0x598000",
+        "paddr": "0x596000",
+        "paddr_end_exclusive": "0x598000",
+        "filesz": 8192,
+        "memsz": 8192,
+        "memsz_minus_filesz": 0,
+        "flags": "0x1000006",
+        "elf_rwx_bits": "rw-",
+        "non_rwx_flags": "0x1000000",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": "9f1dcbc35c350d6027f98be0f5c8b43b42ca52b7604459c0c42be3aa88913d47"
+      },
+      {
+        "index": 10,
+        "type": "PT_LOAD",
+        "file_offset": "0x19c000",
+        "file_end_exclusive": "0x19cb08",
+        "vaddr": "0x598000",
+        "vaddr_end_exclusive": "0x598b1c",
+        "paddr": "0x598000",
+        "paddr_end_exclusive": "0x598b1c",
+        "filesz": 2824,
+        "memsz": 2844,
+        "memsz_minus_filesz": 20,
+        "flags": "0x1000007",
+        "elf_rwx_bits": "rwx",
+        "non_rwx_flags": "0x1000000",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": "d8ffe028625fc6dcb36e2f181dbb9dbc4a06aed8e15eda7e91c5c7b21363a039"
+      },
+      {
+        "index": 11,
+        "type": "PT_LOAD",
+        "file_offset": "0x19d000",
+        "file_end_exclusive": "0x1c1000",
+        "vaddr": "0x20000000",
+        "vaddr_end_exclusive": "0x20024000",
+        "paddr": "0x20000000",
+        "paddr_end_exclusive": "0x20024000",
+        "filesz": 147456,
+        "memsz": 147456,
+        "memsz_minus_filesz": 0,
+        "flags": "0x5300005",
+        "elf_rwx_bits": "r-x",
+        "non_rwx_flags": "0x5300000",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": "79f6175505739764c9a52a0b219fb8daf57b5deb23f5cc7c52c0b3e0213162bb"
+      },
+      {
+        "index": 12,
+        "type": "PT_LOAD",
+        "file_offset": "0x1c2000",
+        "file_end_exclusive": "0x1cb000",
+        "vaddr": "0xb0028000",
+        "vaddr_end_exclusive": "0xb0031000",
+        "paddr": "0x5a0000",
+        "paddr_end_exclusive": "0x5a9000",
+        "filesz": 36864,
+        "memsz": 36864,
+        "memsz_minus_filesz": 0,
+        "flags": "0x6",
+        "elf_rwx_bits": "rw-",
+        "non_rwx_flags": "0x0",
+        "alignment": 4096,
+        "file_extent_present": true,
+        "file_extent_sha256": "78ab435d4060e6e04e616f358557261d5bedec32d3aea3c4b8c9f07ace188d5c"
+      }
+    ],
+    "interpretation_limits": [
+      "PT_LOAD and low R/W/X bits are reported structurally; vendor high flags are not decoded here.",
+      "memsz minus filesz is not proven to be entirely BSS; packed/pageable content requires loader analysis.",
+      "VA/PA are ELF-declared addresses; MMU setup and live mappings are not verified.",
+      "ELF completeness does not imply a complete boot chain, ROM, NAND clone, or runtime RAM image."
+    ]
+  },
+  "capture_sources": [
+    {
+      "file": "amss-elf-read.json",
+      "sha256": "1046ba0ff7bbf94472f4958e4f91a8a9a2c8a7c1d01133177b25fd4b1285677b",
+      "bytes": 553147
+    },
+    {
+      "file": "amss-header-read.json",
+      "sha256": "05d16de48aaaaac3d91bdb11ce623964bcf30a7b580c2fe338edd78232c3ab09",
+      "bytes": 19688
+    },
+    {
+      "file": "amss-code-read.json",
+      "sha256": "45c76b866089d7a7a26a5c0debf9405956401aded08624d74a3312dd8633ee52",
+      "bytes": 552985
+    },
+    {
+      "file": "nand-partitions.json",
+      "sha256": "8dbb4b971e158ba2648848a0c6e6a5e4ff1d911471b2093c29a16736530f08be",
+      "bytes": 2509
+    }
+  ],
+  "capture": {
+    "reads": 3672,
+    "first": {
+      "row": 1536,
+      "sector": 0
+    },
+    "last": {
+      "row": 2453,
+      "sector": 3
+    },
+    "reader_rejection_masks": {
+      "status": "0x110",
+      "buffer_status": "0x100"
+    },
+    "reads_passing_original_reader_checks": 3672,
+    "reported_error": null,
+    "flash_program_or_erase_sent": false,
+    "status_counts": [
+      {
+        "status": "0x1020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 894
+      },
+      {
+        "status": "0x1020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 24
+      },
+      {
+        "status": "0x20",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 894
+      },
+      {
+        "status": "0x20",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 24
+      },
+      {
+        "status": "0x2020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 897
+      },
+      {
+        "status": "0x2020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 21
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 891
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 26
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0002",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 1
+      }
+    ]
+  },
+  "independent_prefix_capture": {
+    "reads": 128,
+    "first": {
+      "row": 1536,
+      "sector": 0
+    },
+    "last": {
+      "row": 1567,
+      "sector": 3
+    },
+    "reader_rejection_masks": {
+      "status": "0x110",
+      "buffer_status": "0x100"
+    },
+    "reads_passing_original_reader_checks": 128,
+    "reported_error": null,
+    "flash_program_or_erase_sent": false,
+    "status_counts": [
+      {
+        "status": "0x1020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 31
+      },
+      {
+        "status": "0x1020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 1
+      },
+      {
+        "status": "0x20",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 32
+      },
+      {
+        "status": "0x2020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 30
+      },
+      {
+        "status": "0x2020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 2
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 32
+      }
+    ]
+  },
+  "independent_prefix_matches": true,
+  "independent_full_image_repeat_available": false,
+  "earlier_full_partition_attempt": {
+    "reads": 3673,
+    "first": {
+      "row": 1536,
+      "sector": 0
+    },
+    "last": {
+      "row": 2454,
+      "sector": 0
+    },
+    "reader_rejection_masks": {
+      "status": "0x110",
+      "buffer_status": "0x100"
+    },
+    "reads_passing_original_reader_checks": 3672,
+    "reported_error": "Controller reports read error",
+    "flash_program_or_erase_sent": false,
+    "status_counts": [
+      {
+        "status": "0x1020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 894
+      },
+      {
+        "status": "0x1020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 24
+      },
+      {
+        "status": "0x20",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 894
+      },
+      {
+        "status": "0x20",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 24
+      },
+      {
+        "status": "0x2020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 897
+      },
+      {
+        "status": "0x2020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 21
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0000",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 891
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0001",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 26
+      },
+      {
+        "status": "0x3020",
+        "buffer_status": "0xff0002",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 1
+      },
+      {
+        "status": "0x3030",
+        "buffer_status": "0xff0101",
+        "bytes": 512,
+        "timeout": 0,
+        "count": 1
+      }
+    ]
+  },
+  "partition_table": {
+    "file": "block-2-partition-table.bin",
+    "sha256": "0b612db5e9408ffd225bf13f149bf559b7d93645b240eb3022ae87f8ae1cfdde",
+    "partitions": [
+      {
+        "name": "0:MIBIB",
+        "start_block": 0,
+        "blocks": 10,
+        "attributes_hex": "ffffff00",
+        "size_bytes": 1310720
+      },
+      {
+        "name": "0:SIM_SECURE",
+        "start_block": 10,
+        "blocks": 6,
+        "attributes_hex": "ffffff00",
+        "size_bytes": 786432
+      },
+      {
+        "name": "0:FSBL",
+        "start_block": 16,
+        "blocks": 3,
+        "attributes_hex": "ffffff00",
+        "size_bytes": 393216
+      },
+      {
+        "name": "0:OSBL",
+        "start_block": 19,
+        "blocks": 5,
+        "attributes_hex": "ffffff00",
+        "size_bytes": 655360
+      },
+      {
+        "name": "0:AMSS",
+        "start_block": 24,
+        "blocks": 27,
+        "attributes_hex": "ffffff00",
+        "size_bytes": 3538944
+      },
+      {
+        "name": "0:DSP1",
+        "start_block": 51,
+        "blocks": 27,
+        "attributes_hex": "ffff0000",
+        "size_bytes": 3538944
+      },
+      {
+        "name": "0:DSP2",
+        "start_block": 78,
+        "blocks": 293,
+        "attributes_hex": "ffff0000",
+        "size_bytes": 38404096
+      },
+      {
+        "name": "0:FTL",
+        "start_block": 371,
+        "blocks": 27,
+        "attributes_hex": "0101ff00",
+        "size_bytes": 3538944
+      },
+      {
+        "name": "0:EFS2QDSP",
+        "start_block": 398,
+        "blocks": 528,
+        "attributes_hex": "ffffff00",
+        "size_bytes": 69206016
+      },
+      {
+        "name": "0:EFS2",
+        "start_block": 926,
+        "blocks": 4294967295,
+        "attributes_hex": "01ffff00",
+        "size_bytes": null
+      }
+    ]
+  },
+  "amss_partition_coverage": {
+    "partition_bytes": 3538944,
+    "saved_bytes": 1880064,
+    "remaining_bytes_not_saved": 1658880,
+    "read_strategy": "contiguous physical rows; no bad-block remapping in historical capture script",
+    "raw_oob_captured": false
+  },
+  "observed_named_files": [
+    {
+      "file": "amss.elf",
+      "bytes": 1880064,
+      "sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5"
+    },
+    {
+      "file": "amss-first64k.bin",
+      "bytes": 65536,
+      "sha256": "59ada579fbab41eb82d37de79087d8d1bd7f762c4eb10ae6e3e163986b9e3709"
+    },
+    {
+      "file": "dsp1-first64k.bin",
+      "bytes": 65536,
+      "sha256": "28b41392936142b4148dc94c4a1c1df583b10b114998fd1d6472a7ae5d9592ae"
+    },
+    {
+      "file": "dsp2-first64k.bin",
+      "bytes": 65536,
+      "sha256": "ad9d11f8c58d5831c43a26826b15ac106a4fd585180cdebcca749853c4ae3025"
+    },
+    {
+      "file": "block-0-header.bin",
+      "bytes": 512,
+      "sha256": "3be98567fec497edf375a583bc8bb7a44d845955f98d477a15ec252ffb2c3301"
+    },
+    {
+      "file": "block-1-header.bin",
+      "bytes": 512,
+      "sha256": "b70b83a97bb016c9a2766b9e1e472f26bf60c978afb043365c8d3bb24da43f51"
+    },
+    {
+      "file": "block-2-header.bin",
+      "bytes": 512,
+      "sha256": "7807cd9d5a1b7fe660c83d366ba971c5184d9a3d3296045a8b3124ae2e61c4a1"
+    },
+    {
+      "file": "block-2-partition-table.bin",
+      "bytes": 1024,
+      "sha256": "0b612db5e9408ffd225bf13f149bf559b7d93645b240eb3022ae87f8ae1cfdde"
+    }
+  ],
+  "completeness": {
+    "all_amss_elf_declared_file_extents_present": true,
+    "whole_amss_partition_saved": false,
+    "whole_arm_boot_chain_available": false,
+    "known_missing_from_examined_nand_collection": [
+      "FSBL full image",
+      "OSBL full image",
+      "PBL/BootROM dump",
+      "normal-runtime ARM RAM snapshot"
+    ],
+    "dsp1_full_image_available": false,
+    "compression_or_paging_semantics_proven": false,
+    "runtime_arm_custom_code_execution_proven_by_this_audit": false
+  }
+}

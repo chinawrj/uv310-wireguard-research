@@ -1,0 +1,381 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "scope": "offline static analysis; no hardware contacted",
+  "image_sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5",
+  "checks_passed": 78,
+  "instructions": [
+    {
+      "va": "0x23c864",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0x130]"
+    },
+    {
+      "va": "0x23c866",
+      "mode": "Thumb",
+      "instruction": "str r0, [sp, #0x10]"
+    },
+    {
+      "va": "0x23c870",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0x130]"
+    },
+    {
+      "va": "0x23c872",
+      "mode": "Thumb",
+      "instruction": "str r0, [sp, #0x1c]"
+    },
+    {
+      "va": "0x23c898",
+      "mode": "Thumb",
+      "instruction": "blx r4"
+    },
+    {
+      "va": "0x2d020e",
+      "mode": "Thumb",
+      "instruction": "push {r0, r1, r2, r3, r4, r5, r6, r7, lr}"
+    },
+    {
+      "va": "0x2d0366",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0xa8]"
+    },
+    {
+      "va": "0x2d02fc",
+      "mode": "Thumb",
+      "instruction": "strh r1, [r0, #0x22]"
+    },
+    {
+      "va": "0x2d0306",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [r0, #0x10]"
+    },
+    {
+      "va": "0x2d037c",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [r0, #8]"
+    },
+    {
+      "va": "0x2d0148",
+      "mode": "Thumb",
+      "instruction": "str r6, [r5, #0x18]"
+    },
+    {
+      "va": "0x2d014c",
+      "mode": "Thumb",
+      "instruction": "bl #0x2313f2"
+    },
+    {
+      "va": "0x2313f2",
+      "mode": "Thumb",
+      "instruction": "push {r4, lr}"
+    },
+    {
+      "va": "0x231402",
+      "mode": "Thumb",
+      "instruction": "bl #0x28a94e"
+    },
+    {
+      "va": "0x23140a",
+      "mode": "Thumb",
+      "instruction": "bl #0x2296a0"
+    },
+    {
+      "va": "0x231380",
+      "mode": "Thumb",
+      "instruction": "bl #0x2d0188"
+    },
+    {
+      "va": "0x2d018c",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [r0, #0x18]"
+    },
+    {
+      "va": "0x2d0194",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [r0, #0x20]"
+    },
+    {
+      "va": "0x2d0196",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [r0, #0x18]"
+    },
+    {
+      "va": "0x2d019c",
+      "mode": "Thumb",
+      "instruction": "mov r0, sp"
+    },
+    {
+      "va": "0x2d019e",
+      "mode": "Thumb",
+      "instruction": "blx r1"
+    },
+    {
+      "va": "0x2d01ac",
+      "mode": "Thumb",
+      "instruction": "bl #0x2341f2"
+    },
+    {
+      "va": "0x2d01b8",
+      "mode": "Thumb",
+      "instruction": "bl #0x291a00"
+    },
+    {
+      "va": "0x2d0414",
+      "mode": "Thumb",
+      "instruction": "push {r4, r5, lr}"
+    },
+    {
+      "va": "0x2d0428",
+      "mode": "Thumb",
+      "instruction": "bl #0x2d020e"
+    },
+    {
+      "va": "0x2d0430",
+      "mode": "Thumb",
+      "instruction": "push {r0, r1, r2, r3, r4, r5, r6, r7, lr}"
+    },
+    {
+      "va": "0x2d04bc",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0x260]"
+    },
+    {
+      "va": "0x2d04be",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [r4, #0x10]"
+    },
+    {
+      "va": "0x2d052a",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [r4, #0x18]"
+    },
+    {
+      "va": "0x2d0530",
+      "mode": "Thumb",
+      "instruction": "bl #0x2a0356"
+    },
+    {
+      "va": "0x2d0536",
+      "mode": "Thumb",
+      "instruction": "str r0, [r4, #0x18]"
+    },
+    {
+      "va": "0x2d0572",
+      "mode": "Thumb",
+      "instruction": "bl #0x291a00"
+    },
+    {
+      "va": "0x2d0576",
+      "mode": "Thumb",
+      "instruction": "str r4, [r7]"
+    },
+    {
+      "va": "0x2d0aac",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [pc, #0xd8]"
+    },
+    {
+      "va": "0x2d0aae",
+      "mode": "Thumb",
+      "instruction": "str r1, [r4, #0x18]"
+    },
+    {
+      "va": "0x2d0ab2",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [pc, #0xd8]"
+    },
+    {
+      "va": "0x2d0ab4",
+      "mode": "Thumb",
+      "instruction": "str r1, [r4, #0x20]"
+    },
+    {
+      "va": "0x2d11c8",
+      "mode": "Thumb",
+      "instruction": "push {r4, r5, r6, r7, lr}"
+    },
+    {
+      "va": "0x2d11d2",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0x35c]"
+    },
+    {
+      "va": "0x2d1350",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [r5, #4]"
+    },
+    {
+      "va": "0x2d1356",
+      "mode": "Thumb",
+      "instruction": "str r1, [r0, #0x18]"
+    },
+    {
+      "va": "0x2d1358",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [r5, #8]"
+    },
+    {
+      "va": "0x2d135a",
+      "mode": "Thumb",
+      "instruction": "str r1, [r0, #0x1c]"
+    },
+    {
+      "va": "0x2d135c",
+      "mode": "Thumb",
+      "instruction": "ldr r1, [r5, #0x14]"
+    },
+    {
+      "va": "0x2d135e",
+      "mode": "Thumb",
+      "instruction": "str r1, [r0, #0x20]"
+    },
+    {
+      "va": "0x2d15c4",
+      "mode": "Thumb",
+      "instruction": "push {r0, r1, r2, r4, r5, r6, lr}"
+    },
+    {
+      "va": "0x2d1640",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0x398]"
+    },
+    {
+      "va": "0x2d168e",
+      "mode": "Thumb",
+      "instruction": "bl #0x291a00"
+    },
+    {
+      "va": "0x2d16ba",
+      "mode": "Thumb",
+      "instruction": "bl #0x291a00"
+    },
+    {
+      "va": "0x2d16f2",
+      "mode": "Thumb",
+      "instruction": "bl #0x2341f2"
+    },
+    {
+      "va": "0x2d1740",
+      "mode": "Thumb",
+      "instruction": "bl #0x2d0ee0"
+    },
+    {
+      "va": "0x23713e",
+      "mode": "Thumb",
+      "instruction": "blx r3"
+    },
+    {
+      "va": "0x237156",
+      "mode": "Thumb",
+      "instruction": "ldr r0, [pc, #0x60]"
+    }
+  ],
+  "literals": {
+    "0x23c998": "0x2d11c9",
+    "0x23c9a4": "0x2d15c5",
+    "0x2d0410": "0x2e4810",
+    "0x2d0720": "0x2e4858",
+    "0x2d0b88": "0x2d0415",
+    "0x2d0b8c": "0x2d0431",
+    "0x2d1530": "0x2e49d8",
+    "0x2d19dc": "0x2e4b4c",
+    "0x2371b8": "0x2e4ffc",
+    "0x231418": "0x441874",
+    "0x231414": "0x440cd4"
+  },
+  "diagnostic_anchors": [
+    {
+      "record_va": "0x2e4810",
+      "string_va": "0x1f476c",
+      "text": "hsu_al_ecm.c:_ecm_rx_done_internal: unexpected status %d, i=%d, cur_idx=%d"
+    },
+    {
+      "record_va": "0x2e4858",
+      "string_va": "0x1f47b8",
+      "text": "hsu_al_ecm.c:_ecm_tx_done. cur_dsm_item->data_ptr=%x, buffers[i]=%x"
+    },
+    {
+      "record_va": "0x2e49d8",
+      "string_va": "0x2ec250",
+      "text": "hsu_al_ecm.c:hsu_al_ecm_data_open(): Enter"
+    },
+    {
+      "record_va": "0x2e4b4c",
+      "string_va": "0x256974",
+      "text": "hsu_al_ecm.c:hsu_al_ecm_data_transmit(): Instance state=%d (expected opened) (handle=%d)"
+    },
+    {
+      "record_va": "0x2e4b7c",
+      "string_va": "0x285c54",
+      "text": "hsu_al_ecm.c:hsu_al_ecm_data_transmit: sending the chain we got from the application"
+    },
+    {
+      "record_va": "0x2e4ffc",
+      "string_va": "0x1f5148",
+      "text": "oncrpc_pacmark.c:unable to write packet"
+    }
+  ],
+  "smd_metadata_anchors": [
+    {
+      "record_va": "0x2001f950",
+      "source": "smd_packet_memcpy.c",
+      "message": "Assertion (pi->rx_bytes_remaining - bytes_read) <= pi->rx_bytes_remaining failed",
+      "classification": "metadata only; no caller/peer established"
+    },
+    {
+      "record_va": "0x2001f960",
+      "source": "smd_packet_memcpy.c",
+      "message": "smd_packet_memcpy_rx bad state",
+      "classification": "metadata only; no caller/peer established"
+    },
+    {
+      "record_va": "0x2001f970",
+      "source": "smd_packet_memcpy.c",
+      "message": "smd_packet_memcpy_tx bad state",
+      "classification": "metadata only; no caller/peer established"
+    },
+    {
+      "record_va": "0x200217a0",
+      "source": "smd_bridge_server.c",
+      "message": "smd_bridge_server_connect_port: invlid smd port id",
+      "classification": "metadata only; no caller/peer established"
+    },
+    {
+      "record_va": "0x200217b0",
+      "source": "smd_bridge_server.c",
+      "message": "smd_bridge_receive_cmd: unrecognized command %d",
+      "classification": "metadata only; no caller/peer established"
+    }
+  ],
+  "smem_anchors": [
+    {
+      "va": "0x20001b9b",
+      "text": "Bad pointer from smem_alloc.",
+      "classification": "string anchor only"
+    },
+    {
+      "va": "0x20001c72",
+      "text": "SMEM layout mismatch for %d %x != %x",
+      "classification": "string anchor only"
+    },
+    {
+      "va": "0x20011bb6",
+      "text": "Could not allocate Block port SMEM",
+      "classification": "string anchor only"
+    }
+  ],
+  "verdict": {
+    "arm_usb_ecm_packet_path": "bounded code and callback registration verified",
+    "smd_peer_mapping": "not established",
+    "arm_wifi_packet_path": "not established",
+    "arm_udp_socket_api": "not established",
+    "wireguard_arm_deployable": false
+  },
+  "limits": [
+    "No normal-runtime hook, task budget, writable memory or packet interception was tested.",
+    "ECM code presence does not prove active USB mode or routing through ARM on this unit.",
+    "ONCRPC packets are RPC transport framing; they do not prove IP/UDP sockets.",
+    "Fields are local reconstruction, not complete public ABI or safe ownership contract."
+  ]
+}

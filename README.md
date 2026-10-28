@@ -53,3 +53,5 @@ make test
 本仓库不包含用户密钥、真实 WireGuard 配置、原厂 ROM/固件镜像、SIM 身份数据或短信。原生代码、测试夹具、分析脚本和脱敏证据已保留。历史路径保持原样，方便对照原研究记录。
 
 English: research handoff for device-native WireGuard on the BCM43362 inside an ALEKA UV310. Real Wi-Fi forwarding and two autonomous rekeys were observed in a bounded, freshly provisioned laboratory session. Restart-safe entropy/freshness and production stability remain unresolved. This is not an installable firmware release.
+
+最新ARM926并行逆向见[研究总览](docs/ARM926_RESEARCH.md)：AMSS镜像覆盖、启动与worker、USB数据/IPC，以及正常Hello World和Wi-Fi数据面尚缺的条件。

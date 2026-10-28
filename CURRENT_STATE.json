@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Keep M3 as primary execution route; DSP2 alternative gated on normal runtime code entry, task/resource constraints and cellular UDP API. No device access while hardware unavailable.",
+  "next_step": "Offline ARM926 normal-runtime entry and DSP2/ARM packet-channel analysis; keep M3 as existing execution baseline. Hardware unavailable.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
-  "goal_status": "active",
-  "latest_offline_progress": "docs/DSP2_API.md",
+  "goal_status": "paused",
+  "latest_offline_progress": "docs/ARM926_RESEARCH.md",
   "observer_fault_injection_tests_passed": 36,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -312,6 +312,28 @@
     "primary": "BCM43362 M3, historical native execution exists; resource/stability issues unresolved",
     "alternative": "DSP2, offline API feasibility only",
     "dsp1": "Partial image only, role and resources unresolved",
-    "roles_document": "docs/DSP_ROLES.md"
+    "roles_document": "docs/DSP_ROLES.md",
+    "arm926": "Complete declared AMSS ELF available; normal callback worker and USB ECM path under static audit; no normal custom-code loader or Wi-Fi bridge verified"
+  },
+  "goal_status_note": "Goal tracker read on 2026-10-28 remains paused; user explicitly authorized current offline ARM926 research. No hardware work resumed.",
+  "arm926_audit": {
+    "document": "docs/ARM926_RESEARCH.md",
+    "amss_elf_file_extents_complete": true,
+    "amss_bytes": 1880064,
+    "full_arm_boot_chain_available": false,
+    "amss_partition_tail_not_saved": 1658880,
+    "runtime_instruction_anchors": 46,
+    "runtime_literals": 9,
+    "runtime_strings": 3,
+    "ipc_anchors": 78,
+    "inventory_negative_controls": 6,
+    "runtime_negative_controls": 4,
+    "ipc_wrong_image_rejected": true,
+    "dpc_replay_positive_cases": 14,
+    "dpc_replay_mutations_detected": 3,
+    "dpc_replay_scope": "Bounded original queue instructions; synchronization and signaling stubbed; no scheduler or hardware",
+    "normal_runtime_custom_code_loader_verified": false,
+    "wifi_arm_packet_path_verified": false,
+    "hardware_access": false
   }
 }

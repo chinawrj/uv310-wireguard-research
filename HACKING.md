@@ -78,3 +78,7 @@ EFS能够读写指定文件，活动Wi-Fi固件是`/SyFi/brew/mod/rtecdc_new.bin
 ## 2026-10-28：DSP2备选路线的接口审计
 
 沿原厂IPnet/DHD对象边界逆向，而不是先替换固件。已识别同步复制、两套包释放器、256槽RX环及TX队列淘汰；上层发送包装丢弃底层错误，不能把返回0当实际送达。另接齐DSP2读取EFS中的Wi-Fi镜像并写入BCM RAM的主链，这条链不是DSP2程序加载器。下一步门槛是正常任务入口、资源/上下文及蜂窝UDP出口。M3保留为主线。详细证据与API草案见[接口文档](docs/DSP2_API.md)。
+
+## 2026-10-28：ARM926正常共存路线
+
+三路并行核查AMSS完整性、启动/worker、ECM/IPC。完整ELF不等于完整启动链；AMSS分区尾部读取失败须保留，不能说是已确认空白。优先沿原厂已有callback队列寻找最小共存验证，先解决正常代码装载与触发，再分析专用任务和数据桥。USB ECM收发代码只能证明ARM有USB数据适配职责，不能推导Wi-Fi经过ARM。下一步实验门槛与证据入口见[ARM926_RESEARCH.md](docs/ARM926_RESEARCH.md)。

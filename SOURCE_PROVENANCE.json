@@ -877,23 +877,27 @@
   },
   {
     "path": "CURRENT_STATE.json",
-    "published_sha256": "69b8872f9c9f4ff87278c5ee2df4f1230855e82ec19d567427d4365f2ac41b5f",
-    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+    "published_sha256": "b1c71fd484241088501b24dd82a2c47c0442549d822d134d5200b74268ce8a2d",
+    "origin": "Updated in public checkout; offline ARM926 research and evidence integration",
+    "previous_published_sha256": "69b8872f9c9f4ff87278c5ee2df4f1230855e82ec19d567427d4365f2ac41b5f"
   },
   {
     "path": "FRESH_START.md",
-    "published_sha256": "14e7428f53d727f8539e0c6a89f481af3f4a1e6f5f9f84c3e07a71ad031be64f",
-    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+    "published_sha256": "c4f61e111a486137ef26b7837d9cd7d03df8c4cb5a771e70d51e2fe66dce951a",
+    "origin": "Updated in public checkout; offline ARM926 research and evidence integration",
+    "previous_published_sha256": "14e7428f53d727f8539e0c6a89f481af3f4a1e6f5f9f84c3e07a71ad031be64f"
   },
   {
     "path": "HACKING.md",
-    "published_sha256": "93c3e5fb658676cc6a041cba73ff0d023128f31c0f3734949fd221c665c35a7d",
-    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+    "published_sha256": "e5d987448346242a88eed9fa70860a05a420dfd234b585cd205d2e5caaf6a032",
+    "origin": "Updated in public checkout; offline ARM926 research and evidence integration",
+    "previous_published_sha256": "93c3e5fb658676cc6a041cba73ff0d023128f31c0f3734949fd221c665c35a7d"
   },
   {
     "path": "docs/EXECUTION_TARGETS.md",
-    "published_sha256": "2916477ae05547642d75eb4e6c6a8c03946937690cf4d8ae1926647ee1aa55dc",
-    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+    "published_sha256": "9c4e9ca2f8cded21ce2d8b454f429ba9f792a8db64bd1cfea2fb0e6914bcfde7",
+    "origin": "Updated in public checkout; offline ARM926 research and evidence integration",
+    "previous_published_sha256": "2916477ae05547642d75eb4e6c6a8c03946937690cf4d8ae1926647ee1aa55dc"
   },
   {
     "path": "docs/HARDWARE.md",
@@ -944,5 +948,95 @@
     "path": "work/uv310-wireguard/dsp2-api/image_roles.py",
     "published_sha256": "22e61bfe5adbb790dea8e58e9cfec5fe93fa90b33acb15a45eca94709a688c83",
     "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "docs/ARM926_IMAGE_MAP.md",
+    "published_sha256": "54b992031941ec9545e531a000ba0b1bf8324bcd77a2fe35686fa5eccb2d5923",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "docs/ARM926_IPC.md",
+    "published_sha256": "7533c3480251a4d0d1b995e7965f87ec6b66a0fae8064c4530d24993a1c02900",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "docs/ARM926_RESEARCH.md",
+    "published_sha256": "43aa8f1c51735cbc1857031870a16263abd9afef53daaf4bbc4972c89da7ec13",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "docs/ARM926_RUNTIME.md",
+    "published_sha256": "486375293c51011f0214740ded2e63690478c4b446a1fc84cf418d4abd1a6163",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/arm926-inventory-guards.json",
+    "published_sha256": "d78b3ca16abfafbe247e557dfacafee89bad2396856cb110c42f32112b2d27dd",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/arm926-inventory.json",
+    "published_sha256": "be554a094d7dde68a9bad193ddd1da348ad94c636a27f655b7f68ed36f77ab7f",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/arm926-ipc.json",
+    "published_sha256": "14fad2ad3191accc8d3a636061e7987054bcc467ff5c665ae98cca182035e019",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/arm926-queue-replay.json",
+    "published_sha256": "833b25ee277fa782d6959ca9818fdf332cde4be7c104c8cf03252151ead24b10",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/arm926-runtime-selftest.json",
+    "published_sha256": "745bac1cc8492b564e74688f0f41cce1b4774e2ffd33676937265d0017a4df5b",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/arm926-runtime.json",
+    "published_sha256": "ac5e25867b761779793a5816510702565affb4e111ee743534cd4150b74f0491",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "work/uv310-wireguard/arm926-audit/inventory.py",
+    "published_sha256": "afdc7430a8697c76804c2f71e17ac3c8c404c3cc182790bf27d3ffa56541abdb",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "work/uv310-wireguard/arm926-audit/ipc.py",
+    "published_sha256": "3ee7c18b6e5d828c53c9218740ffd1ea35caef7c048c87d9dc2eef678bf66a1b",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "work/uv310-wireguard/arm926-audit/queue_replay.py",
+    "published_sha256": "74b2bf80dc0d94b348358a4741ac11d105c116d60ce3b1b168435bfb1f4f1063",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "work/uv310-wireguard/arm926-audit/runtime.py",
+    "published_sha256": "567def6aaf2c7a47c29e1fcf1bbb642f46c3a708579962a44a95435447167c7f",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "work/uv310-wireguard/arm926-audit/test_inventory.py",
+    "published_sha256": "cfbb8b2b9fa2550a759eac04f9a4e4634d5a7fb0c294b048381f59664bc2f932",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "PUBLICATION_QA.json",
+    "published_sha256": "30030612089a5818768389b9728c793713f27d9a4cd61263b464302aee1ca663",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "README.md",
+    "published_sha256": "5f8bcf7f11d0c422a7fca96efb0acb4d800ec325fdcb55c69ec1f7900fdf3edb",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
+  },
+  {
+    "path": "docs/OFFLINE_PROGRESS.md",
+    "published_sha256": "3c9470f2ffe6eb602c189d8b6684a4c9f6c256a2e19248cf944c8ad221c8946e",
+    "origin": "Authored offline for ARM926 research; derived metadata or original audit source, no proprietary firmware or credentials"
   }
 ]

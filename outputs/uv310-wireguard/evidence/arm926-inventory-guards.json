@@ -1,0 +1,66 @@
+{
+  "schema": "uv310-arm926-inventory-guards-v1",
+  "audit_date": "2026-10-28",
+  "offline": true,
+  "network_or_device_access": false,
+  "firmware_copied_or_executed": false,
+  "inventory_script_sha256": "afdc7430a8697c76804c2f71e17ac3c8c404c3cc182790bf27d3ffa56541abdb",
+  "test_script_sha256": "cfbb8b2b9fa2550a759eac04f9a4e4634d5a7fb0c294b048381f59664bc2f932",
+  "owner_image_identity": {
+    "file": "amss.elf",
+    "bytes": 1880064,
+    "sha256": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5"
+  },
+  "positive_controls": 2,
+  "negative_controls": 6,
+  "all_passed": true,
+  "results": [
+    {
+      "case": "synthetic_valid_header",
+      "expected": "accepted",
+      "passed": true
+    },
+    {
+      "case": "truncated_program_header",
+      "expected": "rejected",
+      "diagnostic": "Truncated program headers",
+      "passed": true
+    },
+    {
+      "case": "file_extent_out_of_bounds",
+      "expected": "rejected",
+      "diagnostic": "Segment 0: truncated file-backed extent",
+      "passed": true
+    },
+    {
+      "case": "filesz_exceeds_memsz",
+      "expected": "rejected",
+      "diagnostic": "Segment 0: filesz exceeds memsz",
+      "passed": true
+    },
+    {
+      "case": "real_owner_capture_baseline",
+      "expected": "accepted",
+      "passed": true
+    },
+    {
+      "case": "missing_sector",
+      "expected": "rejected",
+      "diagnostic": "Sector coverage mismatch",
+      "passed": true
+    },
+    {
+      "case": "wrong_capture_hash",
+      "expected": "rejected",
+      "diagnostic": "Capture image metadata mismatch",
+      "passed": true
+    },
+    {
+      "case": "controller_error_bit",
+      "expected": "rejected",
+      "diagnostic": "Capture controller check failed",
+      "passed": true
+    }
+  ],
+  "scope": "Auditor guard behavior only; no execution, decompression, boot or live Wi-Fi/WireGuard claim"
+}

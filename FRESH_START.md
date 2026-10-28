@@ -12,13 +12,15 @@
 
 ## 2. 最近状态（不要猜）
 
+- 最新为三路并行ARM926离线逆向：AMSS的1,880,064B ELF声明范围完整，整个启动链/分区不完整；已识别正常回调worker及USB ECM数据代码，DPC原厂指令离线重放14组正向/3组变异对照通过，尚无正常代码装载或Wi-Fi跨核路径证明。先读[ARM926_RESEARCH.md](docs/ARM926_RESEARCH.md)。
+
 - 2026-10-28已补DSP2 Wi-Fi加载/控制/收发静态API地图：142个指令锚点、11个字符串及3项审计错误对照；不是可调用SDK，没有部署。DSP2还有蜂窝相关代码线索，DSP1仅64KiB头部，不能假定有空闲核。当前M3仍为主线、DSP2为备选，见[DSP2_API.md](docs/DSP2_API.md)与[DSP_ROLES.md](docs/DSP_ROLES.md)。
 
 - 新增带主机种子的ChaCha20原型：40项主机检查、68B状态，未接入候选；状态泄露与资源限制见 [SEEDED_RNG.md](docs/SEEDED_RNG.md)。
 
 - 2026-10-28用户选择先交付主机引导的半成品；Wi-Fi数据面仍在UV310内。已实现只读配置/stock预检（17项合成测试），材料准备器已通过11项合成测试，设备端种子生成器及部署尚未实现；阶段与恢复风险见 [HOST_BOOTSTRAP.md](docs/HOST_BOOTSTRAP.md)。
 
-- 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
+- 用户已明确拿走硬件。2026-10-28查询Goal工具仍显示paused；用户另行明确授权继续离线研究。本文先前“Goal已恢复active”措辞已更正，不据此恢复硬件操作，不要求重插或轮询USB。历史离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 
 - 最新诊断提案N页：隔离副本仅增加12B代码，保留256B布局余量；67个QEMU场景/26个错误对照通过。观察器已支持显式n1模式并通过36项mock测试，源码已保存为rekey-dns-observe独立离线候选，未部署，见 [DNS_TELEMETRY.md](docs/DNS_TELEMETRY.md)。
 

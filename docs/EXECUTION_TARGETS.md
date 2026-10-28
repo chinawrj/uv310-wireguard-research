@@ -23,3 +23,5 @@
 尚未授权或执行新的基带分区刷写，没有把下载Hello World解释成正常联网的WireGuard执行能力。硬件回来后需要验证原厂基线、短时共存和资源，再谈换执行核或长时间运行。
 
 2026-10-28补充：DSP2的Wi-Fi加载、收发和控制调用链已整理为[DSP2_API.md](DSP2_API.md)；蜂窝代码线索及DSP1片段覆盖范围见[DSP_ROLES.md](DSP_ROLES.md)。DSP2目前是备选，未建立可调用SDK或正常任务内自编代码入口。
+
+2026-10-28 ARM补充：完整AMSS ELF声明范围已核对，正常worker回调与USB ECM包处理已定位。ARM仍缺正常运行的代码装载/触发机制，以及Wi-Fi↔ARM↔蜂窝双向路径和资源实测。不能用USB ECM路径代替Wi-Fi证明。见[ARM926研究总览](ARM926_RESEARCH.md)。
