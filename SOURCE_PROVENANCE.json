@@ -874,5 +874,75 @@
     "path": "work/uv310-wireguard/seeded-rng/arm-tests.c",
     "published_sha256": "f74bba094c721be99d3136fcebf6cf9daba7d760ec3ff653e36ae4c10539a45a",
     "origin": "Authored synthetic Cortex-M3 wrapper tests; no real device or firmware content"
+  },
+  {
+    "path": "CURRENT_STATE.json",
+    "published_sha256": "69b8872f9c9f4ff87278c5ee2df4f1230855e82ec19d567427d4365f2ac41b5f",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "FRESH_START.md",
+    "published_sha256": "14e7428f53d727f8539e0c6a89f481af3f4a1e6f5f9f84c3e07a71ad031be64f",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "HACKING.md",
+    "published_sha256": "93c3e5fb658676cc6a041cba73ff0d023128f31c0f3734949fd221c665c35a7d",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "docs/EXECUTION_TARGETS.md",
+    "published_sha256": "2916477ae05547642d75eb4e6c6a8c03946937690cf4d8ae1926647ee1aa55dc",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "docs/HARDWARE.md",
+    "published_sha256": "38ad502c48ef9f368eee59498cd30fa5351e6c3f4bb21ef18f86100e3c3b1693",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "docs/PLATFORM.md",
+    "published_sha256": "b655997a8dd7ccbcdb723afb8aad174ed14fc16b233edad28e0347f43ecd8d93",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "docs/DSP2_API.md",
+    "published_sha256": "010f7687a2fcab2115e2751d6dfa4d328582e870926686196c83252f8f7a84aa",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "docs/DSP_ROLES.md",
+    "published_sha256": "8b138f1b992a5834e1711e556fe8aacea5b4f3ae56938dac0574961a60a9f1a9",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/dsp-image-roles.json",
+    "published_sha256": "a15ae70561cad01bd7760d77aa7049cdeda874f88d2c114bb7eb75becc7c4257",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/dsp2-api-guards.json",
+    "published_sha256": "76d6bb57c430b143e7cf5ad6a928de50405fb54828894004e36084a6a1035954",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "outputs/uv310-wireguard/evidence/dsp2-api-static.json",
+    "published_sha256": "f36d6093bc9ae284764d81b109b1d5412890dc2a0e90ddce6a2533d658db277e",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "work/uv310-wireguard/dsp2-api/abi_draft.h",
+    "published_sha256": "2ac3c3ea108e74ce8d921044f898882f575890c0178ae9be2d88ebfd6f8c5527",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "work/uv310-wireguard/dsp2-api/audit.py",
+    "published_sha256": "f97ec225ee854b6e31d99a2dd52bf6f8a0c60cd55c1e5517a07435eb127edded",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
+  },
+  {
+    "path": "work/uv310-wireguard/dsp2-api/image_roles.py",
+    "published_sha256": "22e61bfe5adbb790dea8e58e9cfec5fe93fa90b33acb15a45eca94709a688c83",
+    "origin": "Authored in public research checkout; derived offline research, no device access or proprietary binary"
   }
 ]

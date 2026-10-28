@@ -1,0 +1,54 @@
+{
+  "scope": "Static image roles, not runtime task/cycle attribution",
+  "source_sha256": {
+    "dsp1-first64k.bin": "28b41392936142b4148dc94c4a1c1df583b10b114998fd1d6472a7ae5d9592ae",
+    "dsp2-rodata.bin": "588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f",
+    "amss.elf": "388dda0d44c9ed391306c8dbd5851a612b0e68c3dc7faec189234dd7a525c9f5"
+  },
+  "dsp1": {
+    "machine": "EM_QDSP6",
+    "entry": "0x3c00000",
+    "available_file_bytes": 65536,
+    "declared_load_file_extent": 2432784,
+    "complete_image_available": false,
+    "runtime_role_identified": false
+  },
+  "dsp2_selected_markers": [
+    {
+      "text": "lte\\RRC\\src\\lte_rrc_config.c",
+      "rodata_va": "0x19dfda2"
+    },
+    {
+      "text": "lte\\L2\\mac\\src\\lte_mac_dl.c",
+      "rodata_va": "0x19e0a39"
+    },
+    {
+      "text": "lte\\L2\\pdcp\\src\\lte_pdcp_dl.c",
+      "rodata_va": "0x19ded9a"
+    },
+    {
+      "text": "lte_ml1_gps_mrl.c",
+      "rodata_va": "0x19defa2"
+    },
+    {
+      "text": "lte_ml1_gps_timetag_stm.c",
+      "rodata_va": "0x19defb4"
+    },
+    {
+      "text": "geran\\gcommon\\src\\gprs_pdu.c",
+      "rodata_va": "0x19d5d79"
+    },
+    {
+      "text": "geran\\gl1\\src\\gpl1_gprs_shared_transfer.c",
+      "rodata_va": "0x19d5ed3"
+    }
+  ],
+  "amss_selected_marker": "clkrgm_mpss_q6ss.c:Invalid QDSP6 type: %d",
+  "conclusions": [
+    "DSP2 includes cellular protocol/ML1-related clues as well as WLAN/IPnet",
+    "These clues do not prove which core executes every PHY operation",
+    "DSP1 is not established as idle, exclusive modem core or available offload CPU"
+  ],
+  "hardware_access": false,
+  "runtime_mapping_verified": false
+}

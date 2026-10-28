@@ -393,5 +393,22 @@
       "files_with_private_value_replacements": [],
       "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
     }
+  },
+  "dsp2_api": {
+    "instruction_anchors_checked": 142,
+    "strings_checked": 11,
+    "data_words_checked": 1,
+    "guard_negatives_detected": 3,
+    "layout_assertions_compiled": true,
+    "image_role_markers_checked": 8,
+    "firmware_executed": false,
+    "hardware_verified": false,
+    "private_scan": {
+      "known_private_value_representations_checked": 123,
+      "files_checked": 421,
+      "remaining_matches": 0,
+      "files_with_private_value_replacements": [],
+      "scope": "Known local WireGuard keys, peer public keys/endpoints, PSKs, random pools, trigger tokens, Wi-Fi credentials and identifiers; exact-value scan plus structured identifier redaction. Not a proof against every unknown secret."
+    }
   }
 }

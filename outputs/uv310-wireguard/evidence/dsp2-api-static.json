@@ -1,0 +1,741 @@
+{
+  "scope": "UV310 ALKU7.3.2, offline static interpretation only",
+  "hardware_access": false,
+  "firmware_executed": false,
+  "deployable_api": false,
+  "source_sha256": {
+    "dsp2-code.bin": "9bcdfd03028be95c1f6285c299e359d79be8e6e4e2f7e06191293b452dd17076",
+    "dsp2-rodata.bin": "588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f",
+    "dsp2-small-data.bin": "366ff74c956a4897f124072f967de5ab76f6ec728c6e85aeb7281a5c527a32f4"
+  },
+  "elf_entire_text_matches_raw": true,
+  "instruction_anchors_checked": 142,
+  "string_anchors_checked": 11,
+  "data_words_checked": 1,
+  "ranges": {
+    "tx": [
+      "0xcf49f0",
+      "0xcf4b1c"
+    ],
+    "rx": [
+      "0xcf4b38",
+      "0xcf4c98"
+    ],
+    "copy": [
+      "0x141593c",
+      "0x1415b14"
+    ],
+    "bdc": [
+      "0xcfef88",
+      "0xcfeff4"
+    ],
+    "bus": [
+      "0xcfd50c",
+      "0xcfd6a4"
+    ],
+    "tx_queue": [
+      "0xd01754",
+      "0xd0181c"
+    ],
+    "ipnet": [
+      "0xf74344",
+      "0xf74574"
+    ],
+    "ring": [
+      "0xf777d4",
+      "0xf77838"
+    ],
+    "drain": [
+      "0xf77994",
+      "0xf77a7c"
+    ],
+    "setup": [
+      "0xf77a7c",
+      "0xf77c58"
+    ],
+    "deliver": [
+      "0xf77fc4",
+      "0xf78054"
+    ],
+    "append": [
+      "0x1714844",
+      "0x17148c4"
+    ],
+    "release": [
+      "0x1714bb4",
+      "0x1714be8"
+    ],
+    "config_list": [
+      "0xcf5754",
+      "0xcf5788"
+    ],
+    "ioctl": [
+      "0xcf5788",
+      "0xcf58d8"
+    ],
+    "wl": [
+      "0x17f4610",
+      "0x17f469c"
+    ],
+    "task": [
+      "0xcf616c",
+      "0xcf61d8"
+    ],
+    "loader": [
+      "0xcf84e4",
+      "0xcf8940"
+    ],
+    "load_state": [
+      "0xcf7edc",
+      "0xcf84ac"
+    ],
+    "membytes": [
+      "0xcf6610",
+      "0xcf67ac"
+    ],
+    "init_load": [
+      "0xcf5c84",
+      "0xcf5d70"
+    ],
+    "enable": [
+      "0xcf5e18",
+      "0xcf5ea0"
+    ],
+    "chiprev": [
+      "0x171c378",
+      "0x171c3b0"
+    ],
+    "sdio_membytes": [
+      "0xc569c4",
+      "0xc56a14"
+    ]
+  },
+  "anchors": [
+    {
+      "address": "0xcf4a30",
+      "instruction": "r16 = memw(gp+#0x8170)"
+    },
+    {
+      "address": "0xcf4a64",
+      "instruction": "call 0x14159c8"
+    },
+    {
+      "address": "0xcf4a68",
+      "instruction": "r0 = memw(r16+#0x0)"
+    },
+    {
+      "address": "0xcf4a5c",
+      "instruction": "r0 = #0x4"
+    },
+    {
+      "address": "0xcf4b14",
+      "instruction": "r0 = #-0x1"
+    },
+    {
+      "address": "0xcf4ac0",
+      "instruction": "call 0xcfef88"
+    },
+    {
+      "address": "0xcf4ac4",
+      "instruction": "r1 = #0x0"
+    },
+    {
+      "address": "0xcf4ae8",
+      "instruction": "call 0xcfd50c"
+    },
+    {
+      "address": "0xcf4aec",
+      "instruction": "r0 = memw(r16+#0x4)"
+    },
+    {
+      "address": "0xf7435c",
+      "instruction": "call 0xcf49f0"
+    },
+    {
+      "address": "0xf74360",
+      "instruction": "r1 = memw(r16+#0x98)"
+    },
+    {
+      "address": "0xf74364",
+      "instruction": "r2 = memw(r16+#0x4c)"
+    },
+    {
+      "address": "0xf7436c",
+      "instruction": "call 0x1714bb4"
+    },
+    {
+      "address": "0xf74370",
+      "instruction": "r0 = #0x0"
+    },
+    {
+      "address": "0x1714bbc",
+      "instruction": "r2 = memw(r0+#0xa0)"
+    },
+    {
+      "address": "0x1714bcc",
+      "instruction": "r3 = memw_locked(r1)"
+    },
+    {
+      "address": "0x1714be0",
+      "instruction": "jump 0x1714b18"
+    },
+    {
+      "address": "0x14159e0",
+      "instruction": "call 0x1415988"
+    },
+    {
+      "address": "0x1415994",
+      "instruction": "r1 = #0x2200"
+    },
+    {
+      "address": "0x14159fc",
+      "instruction": "r2 = memw(r18+#0x10)"
+    },
+    {
+      "address": "0x1415a18",
+      "instruction": "call 0x1415afc"
+    },
+    {
+      "address": "0x1415afc",
+      "instruction": "r0 = r2"
+    },
+    {
+      "address": "0x1415b00",
+      "instruction": "r2 = r3"
+    },
+    {
+      "address": "0x1415b08",
+      "instruction": "call 0x12ee8a0"
+    },
+    {
+      "address": "0xcfefb8",
+      "instruction": "r3 = #0x20"
+    },
+    {
+      "address": "0xcfefc8",
+      "instruction": "r0 = add(r1,#-0x4)"
+    },
+    {
+      "address": "0xcfefe0",
+      "instruction": "memb(r0+#0x2) = r16"
+    },
+    {
+      "address": "0xcfefe4",
+      "instruction": "r1 = and(r1,#0x7)"
+    },
+    {
+      "address": "0xcfefe8",
+      "instruction": "memb(r0+#0x3) = r2"
+    },
+    {
+      "address": "0xcfd544",
+      "instruction": "r1 = add(r1,#-0xc)"
+    },
+    {
+      "address": "0xcfd5c0",
+      "instruction": "call 0xd01754"
+    },
+    {
+      "address": "0xcfd5cc",
+      "instruction": "if (r0!=#0) jump:t 0xcfd62c"
+    },
+    {
+      "address": "0xcfd5d4",
+      "instruction": "r20 = #-0x16"
+    },
+    {
+      "address": "0xcfd624",
+      "instruction": "call 0x141593c"
+    },
+    {
+      "address": "0xcfd69c",
+      "instruction": "r0 = r20"
+    },
+    {
+      "address": "0xd017f4",
+      "instruction": "call 0x141593c"
+    },
+    {
+      "address": "0xd01808",
+      "instruction": "call 0xc57da0"
+    },
+    {
+      "address": "0xd0180c",
+      "instruction": "r0 = #0x1"
+    },
+    {
+      "address": "0xd01814",
+      "instruction": "r0 = #0x0"
+    },
+    {
+      "address": "0xcf4b90",
+      "instruction": "r18 = memw(r0+#0x10)"
+    },
+    {
+      "address": "0xcf4b94",
+      "instruction": "r2 = memw(r0+#0x18)"
+    },
+    {
+      "address": "0xcf4c58",
+      "instruction": "r1:0 = combine(r2,r18)"
+    },
+    {
+      "address": "0xcf4c68",
+      "instruction": "call 0xf74428"
+    },
+    {
+      "address": "0xcf4c90",
+      "instruction": "call 0x141593c"
+    },
+    {
+      "address": "0xf74438",
+      "instruction": "r1.h = #0x19c"
+    },
+    {
+      "address": "0xf7443c",
+      "instruction": "r18 = memw(gp+#0xab84)"
+    },
+    {
+      "address": "0xf7445c",
+      "instruction": "r19 = add(r18,#0x2c0)"
+    },
+    {
+      "address": "0xf7455c",
+      "instruction": "call 0xf777e4"
+    },
+    {
+      "address": "0xf7449c",
+      "instruction": "call 0x1714844"
+    },
+    {
+      "address": "0xf744a8",
+      "instruction": "call 0x12ee8a0"
+    },
+    {
+      "address": "0xf744ac",
+      "instruction": "r2 = #0xc"
+    },
+    {
+      "address": "0xf744cc",
+      "instruction": "p0 = cmp.gt(r17,r0)"
+    },
+    {
+      "address": "0xf744f8",
+      "instruction": "r17 = sub(r17,r0)"
+    },
+    {
+      "address": "0xf74508",
+      "instruction": "call 0x12ee8a0"
+    },
+    {
+      "address": "0xf74514",
+      "instruction": "call 0xf777d4"
+    },
+    {
+      "address": "0xf74530",
+      "instruction": "call 0x13cf048"
+    },
+    {
+      "address": "0xf7452c",
+      "instruction": "r0 = #0x400"
+    },
+    {
+      "address": "0xf777d4",
+      "instruction": "r1 = memw(r0+#0x30)"
+    },
+    {
+      "address": "0xf777e0",
+      "instruction": "memw(r0+#0x30) = r1"
+    },
+    {
+      "address": "0xf777e8",
+      "instruction": "r2 = memw(r0+#0x34)"
+    },
+    {
+      "address": "0xf77828",
+      "instruction": "r1 = and(r1,#0xff)"
+    },
+    {
+      "address": "0xf77830",
+      "instruction": "r0 = memw(r0+#0x38)"
+    },
+    {
+      "address": "0xf779c0",
+      "instruction": "call 0x1715e50"
+    },
+    {
+      "address": "0xf779c4",
+      "instruction": "r16 = memw(r1+#0x38)"
+    },
+    {
+      "address": "0xf77a14",
+      "instruction": "memw(r0+#0x38) = r18"
+    },
+    {
+      "address": "0xf77a20",
+      "instruction": "memw(r17+#0x34) = r0"
+    },
+    {
+      "address": "0xf77a50",
+      "instruction": "memw(r16+#0x30) = r2"
+    },
+    {
+      "address": "0xf77a5c",
+      "instruction": "memw(r17++#0x4) = r0"
+    },
+    {
+      "address": "0xf77b20",
+      "instruction": "r1.l = #0x4344"
+    },
+    {
+      "address": "0xf77b24",
+      "instruction": "r1 = #0x1"
+    },
+    {
+      "address": "0xf77b2c",
+      "instruction": "memw(r18+#0x468) = r1"
+    },
+    {
+      "address": "0xf77bb4",
+      "instruction": "memw(r18+#0x464) = r2"
+    },
+    {
+      "address": "0xf77c3c",
+      "instruction": "memw(gp+#0xab84) = r0"
+    },
+    {
+      "address": "0xf78048",
+      "instruction": "call 0xced798"
+    },
+    {
+      "address": "0xcf5764",
+      "instruction": "call 0xcf4e8c"
+    },
+    {
+      "address": "0xcf5768",
+      "instruction": "if (r0==#0) jump:nt 0xcf5784"
+    },
+    {
+      "address": "0xcf577c",
+      "instruction": "r16 = add(r16,#0x8)"
+    },
+    {
+      "address": "0xcf5780",
+      "instruction": "r0 = #0x1"
+    },
+    {
+      "address": "0x17f4628",
+      "instruction": "r2 = #0x1c"
+    },
+    {
+      "address": "0x17f4640",
+      "instruction": "memw(r29+#0x4) = r19"
+    },
+    {
+      "address": "0x17f4644",
+      "instruction": "memw(r16+#0x4) = r18"
+    },
+    {
+      "address": "0x17f4648",
+      "instruction": "memw(r16+#0x8) = r17"
+    },
+    {
+      "address": "0x17f4650",
+      "instruction": "memb(r16+#0xc) = r20"
+    },
+    {
+      "address": "0x17f4658",
+      "instruction": "r0 = mux(p0,#0x0,#-0x2)"
+    },
+    {
+      "address": "0x17f4668",
+      "instruction": "r28.h = #0xcf"
+    },
+    {
+      "address": "0x17f466c",
+      "instruction": "r28.l = #0x5788"
+    },
+    {
+      "address": "0xcf5818",
+      "instruction": "r4 = #0x2000"
+    },
+    {
+      "address": "0xcf5820",
+      "instruction": "r4 = minu(r18,r4)"
+    },
+    {
+      "address": "0xcf5824",
+      "instruction": "r1 = memw(r17+#0x18)"
+    },
+    {
+      "address": "0xcf583c",
+      "instruction": "call 0xd015e4"
+    },
+    {
+      "address": "0xcf588c",
+      "instruction": "call 0xcffd68"
+    },
+    {
+      "address": "0xcf58c0",
+      "instruction": "memw(r16+#0x98) = r17"
+    },
+    {
+      "address": "0xcf58c8",
+      "instruction": "r0 = #-0x1"
+    },
+    {
+      "address": "0xcf58d0",
+      "instruction": "r0 = #0x0"
+    },
+    {
+      "address": "0xcf61a0",
+      "instruction": "call 0xcf5754"
+    },
+    {
+      "address": "0xcf61a4",
+      "instruction": "r1 = memw(r17+#0xc)"
+    },
+    {
+      "address": "0xcf61a8",
+      "instruction": "r0 = memw(r17+#0x8)"
+    },
+    {
+      "address": "0xcf61b0",
+      "instruction": "memb(r17+#0x18) = r0"
+    },
+    {
+      "address": "0xcf61bc",
+      "instruction": "r1 = memw(r17+#0x14)"
+    },
+    {
+      "address": "0xcf61c0",
+      "instruction": "call 0x146af58"
+    },
+    {
+      "address": "0xcf61cc",
+      "instruction": "call 0x12b4b28"
+    },
+    {
+      "address": "0xcf5e64",
+      "instruction": "call 0xcf5b04"
+    },
+    {
+      "address": "0xcf5ca8",
+      "instruction": "call 0xcf8930"
+    },
+    {
+      "address": "0xcf5cac",
+      "instruction": "if (r0==#0) jump:t 0xcf5cd8"
+    },
+    {
+      "address": "0xcf5d0c",
+      "instruction": "call 0xcfb774"
+    },
+    {
+      "address": "0xcf8938",
+      "instruction": "jump 0xcf84e4"
+    },
+    {
+      "address": "0xcf8500",
+      "instruction": "call 0xcf7edc"
+    },
+    {
+      "address": "0xcf8504",
+      "instruction": "r1 = #0x1"
+    },
+    {
+      "address": "0xcf852c",
+      "instruction": "r0 = memw(gp+#0x8198)"
+    },
+    {
+      "address": "0xcf8538",
+      "instruction": "r0.l = #0xa0a4"
+    },
+    {
+      "address": "0xcf8544",
+      "instruction": "r0.l = #0xa0c2"
+    },
+    {
+      "address": "0xcf854c",
+      "instruction": "call 0x117f96c"
+    },
+    {
+      "address": "0xcf85ac",
+      "instruction": "call 0x117f8e4"
+    },
+    {
+      "address": "0xcf85b0",
+      "instruction": "r2 = #0x800"
+    },
+    {
+      "address": "0xcf85bc",
+      "instruction": "r4 = r0"
+    },
+    {
+      "address": "0xcf85c0",
+      "instruction": "r3:2 = combine(r20,r19)"
+    },
+    {
+      "address": "0xcf85d0",
+      "instruction": "r1 = #0x1"
+    },
+    {
+      "address": "0xcf85f8",
+      "instruction": "call 0xcf6610"
+    },
+    {
+      "address": "0xcf85a4",
+      "instruction": "r19 = add(r17,r19)"
+    },
+    {
+      "address": "0xcf8670",
+      "instruction": "call 0x117f728"
+    },
+    {
+      "address": "0xcf88d0",
+      "instruction": "r17.l = #0xa195"
+    },
+    {
+      "address": "0xcf88dc",
+      "instruction": "call 0x117f96c"
+    },
+    {
+      "address": "0xcf8824",
+      "instruction": "call 0xcf7e3c"
+    },
+    {
+      "address": "0xcf8878",
+      "instruction": "call 0xcf7edc"
+    },
+    {
+      "address": "0xcf887c",
+      "instruction": "r1 = #0x0"
+    },
+    {
+      "address": "0xcf88c8",
+      "instruction": "r0 = and(r17,#0xff)"
+    },
+    {
+      "address": "0xcf6624",
+      "instruction": "r20 = and(r2,r0)"
+    },
+    {
+      "address": "0xcf661c",
+      "instruction": "r0 = #0x7fff"
+    },
+    {
+      "address": "0xcf6654",
+      "instruction": "call 0xcf6594"
+    },
+    {
+      "address": "0xcf66b0",
+      "instruction": "call 0xc569c4"
+    },
+    {
+      "address": "0xc56a00",
+      "instruction": "call 0xc57324"
+    },
+    {
+      "address": "0xcf7ee4",
+      "instruction": "if (r1==#0) jump:nt 0xcf7fb4"
+    },
+    {
+      "address": "0xcf8224",
+      "instruction": "r1 = lsr(r2,#0x2)"
+    },
+    {
+      "address": "0xcf8238",
+      "instruction": "r1 = sub(#-0x1,r1)"
+    },
+    {
+      "address": "0xcf823c",
+      "instruction": "r0 |= asl(r1,#0x10)"
+    },
+    {
+      "address": "0xcf8278",
+      "instruction": "r2 = add(r2,#-0x4)"
+    },
+    {
+      "address": "0xcf827c",
+      "instruction": "call 0xcf6610"
+    },
+    {
+      "address": "0xcf83c0",
+      "instruction": "call 0xcf8490"
+    },
+    {
+      "address": "0xcf8498",
+      "instruction": "r28.h = #0x171"
+    },
+    {
+      "address": "0xcf849c",
+      "instruction": "r28.l = #0xb954"
+    },
+    {
+      "address": "0x171c384",
+      "instruction": "r2 = extractu(r0,#0x4,#0x10)"
+    },
+    {
+      "address": "0x171c3ac",
+      "instruction": "memw(gp+#0x8198) = r2"
+    }
+  ],
+  "constructor_packet_checked": true,
+  "constructor_interpretation": "ath1 private+0x468 = 0xf74344, not 1; +0x464 = 0xf74378",
+  "rx_ring": {
+    "slots": 256,
+    "producer_offset": 48,
+    "consumer_offset": 52,
+    "slots_offset": 56,
+    "context": "ath1 netif + 0x2c0",
+    "copy_then_publish": true,
+    "live_concurrency_verified": false
+  },
+  "tx_contract": {
+    "source_frame_borrowed_until_return": true,
+    "dhd_copy_consumed_by_bus_path": true,
+    "ipnet_wrapper_releases_input_reference": true,
+    "ipnet_wrapper_discards_tx_status": true,
+    "queue_acceptance_is_delivery": false,
+    "scope": "bounded static paths with initialized valid state"
+  },
+  "wifi_loader": {
+    "orchestrator_image": "DSP2",
+    "execution_target": "BCM43362 RAM plus ROM",
+    "enable_to_init_call": "0xcf5e64 -> 0xcf5b04",
+    "init_to_loader": "0xcf5ca8 -> 0xcf8930 -> 0xcf84e4",
+    "file_selector": "gp+0x8198; zero: rtecdc.bin, nonzero: rtecdc_new.bin",
+    "selector_source": "0x171c384 chip-ID bits16..19, stored at0x171c3ac",
+    "files": [
+      "rtecdc.bin",
+      "rtecdc_new.bin",
+      "nv.txt"
+    ],
+    "file_read_max_bytes": 2048,
+    "ram_transfer": "0xcf6610(bus, write_flag, bcm_address, host_buffer, count)",
+    "write_flag": 1,
+    "read_flag": 0,
+    "backplane_window_bytes": 32768,
+    "start_release_chain": [
+      "0xcf8878 -> 0xcf7edc(bus,0)",
+      "0xcf83c0 -> 0xcf8490 -> 0x171b954"
+    ],
+    "complete_reset_register_sequence_verified": false,
+    "efs_storage_backend_core_identified": false,
+    "loader_return_enum_fully_verified": false,
+    "this_is_a_dsp2_code_loader": false
+  },
+  "control_contract": {
+    "ioctl_size": 28,
+    "buffer_cap": 8192,
+    "host_magic": "0x00444944",
+    "wl_wrapper_leaves_magic_zero": true,
+    "request_producer_and_timeout_verified": false
+  },
+  "limitations": [
+    "Modern LLVM is not a validated Hexagon v3 execution model",
+    "Internal addresses are not SDK exports or a code-loading mechanism",
+    "No cellular UDP API, runtime memory budget or normal code-entry verified",
+    "No runtime return, concurrency, DMA or Wi-Fi acceptance tests"
+  ]
+}

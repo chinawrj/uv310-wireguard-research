@@ -122,3 +122,5 @@ flowchart TB
 USB在本研究中是**设备角色**：正常AT/DIAG、光盘、下载loader；枚举拓扑见[PROTOCOLS.md](PROTOCOLS.md)。没有证据证明板上可以直接启用USB Host/OTG，RNDIS/ECM也不能仅凭芯片能力宣称已配置或已经通过WireGuard。Wi-Fi客户端路径才是已验证的native转发方向。
 
 待补硬件项目：外部RAM颗粒/容量、各核与SDIO实际频率、PMIC/RF器件、天线数量与连接、PCB接口引出、电源电流/热行为、USB实际速率和Host布线、GNSS/蓝牙完整支持情况。用户当前选择软件方式，文档不会把未做的拆机或测量写成确认事实。
+
+2026-10-28补充：DSP2的Wi-Fi加载、收发和控制调用链已整理为[DSP2_API.md](DSP2_API.md)；蜂窝代码线索及DSP1片段覆盖范围见[DSP_ROLES.md](DSP_ROLES.md)。DSP2目前是备选，未建立可调用SDK或正常任务内自编代码入口。

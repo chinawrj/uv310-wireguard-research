@@ -56,10 +56,10 @@
   "standalone_entropy_qualified": false,
   "cross_boot_freshness_verified": false,
   "safe_to_reuse_old_provisioned_image": false,
-  "next_step": "Evaluate a seeded cryptographic generator and final resource footprint; host prepare exists but boot consumption/compile/deploy remain unimplemented.",
+  "next_step": "Keep M3 as primary execution route; DSP2 alternative gated on normal runtime code entry, task/resource constraints and cellular UDP API. No device access while hardware unavailable.",
   "hardware_availability": "User explicitly removed hardware; offline work only",
   "goal_status": "active",
-  "latest_offline_progress": "docs/DNS_TELEMETRY.md",
+  "latest_offline_progress": "docs/DSP2_API.md",
   "observer_fault_injection_tests_passed": 36,
   "observer_live_verified": false,
   "allocator_fault_offline_tests": {
@@ -295,5 +295,23 @@
     "arm_execution_scope": "Standalone Cortex-M3 QEMU only",
     "arm_oracle_comparisons": 31,
     "arm_negative_controls": 4
+  },
+  "dsp2_api_audit": {
+    "document": "docs/DSP2_API.md",
+    "instruction_anchors": 142,
+    "string_anchors": 11,
+    "data_words": 1,
+    "guard_negatives_detected": 3,
+    "wifi_load_rx_tx_control_mapped_statically": true,
+    "callable_sdk": false,
+    "hardware_verified": false,
+    "cellular_udp_api_verified": false,
+    "normal_code_loading_verified": false
+  },
+  "execution_route_assessment": {
+    "primary": "BCM43362 M3, historical native execution exists; resource/stability issues unresolved",
+    "alternative": "DSP2, offline API feasibility only",
+    "dsp1": "Partial image only, role and resources unresolved",
+    "roles_document": "docs/DSP_ROLES.md"
   }
 }

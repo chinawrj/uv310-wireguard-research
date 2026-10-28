@@ -24,3 +24,5 @@
 用于 QDSP 静态分析的切片：`dsp2-code.bin` SHA-256 `9bcdfd03028be95c1f6285c299e359d79be8e6e4e2f7e06191293b452dd17076`；`dsp2-rodata.bin` SHA-256 `588fd80ade91170e5a11431f8d21f78f72e62fd5b189f174863f9b21c018b98f`。这些文件不公开。现有 LLVM 对较新 Hexagon ISA 支持较好，对 v3 的解释必须交叉核对；packet 内并行指令读取旧寄存器值，不能按逐条顺序错误传播。
 
 证据入口：[固件识别](../outputs/uv310-wireguard/evidence/wifi-firmware-identification.json)、[host driver ABI](../outputs/uv310-wireguard/evidence/dsp2-driver-abi.json)、[Hello World](../outputs/new-dongle-hello/evidence/hello-ram-live.json)。
+
+2026-10-28补充：DSP2的Wi-Fi加载、收发和控制调用链已整理为[DSP2_API.md](DSP2_API.md)；蜂窝代码线索及DSP1片段覆盖范围见[DSP_ROLES.md](DSP_ROLES.md)。DSP2目前是备选，未建立可调用SDK或正常任务内自编代码入口。

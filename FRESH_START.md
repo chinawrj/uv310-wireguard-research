@@ -12,6 +12,8 @@
 
 ## 2. 最近状态（不要猜）
 
+- 2026-10-28已补DSP2 Wi-Fi加载/控制/收发静态API地图：142个指令锚点、11个字符串及3项审计错误对照；不是可调用SDK，没有部署。DSP2还有蜂窝相关代码线索，DSP1仅64KiB头部，不能假定有空闲核。当前M3仍为主线、DSP2为备选，见[DSP2_API.md](docs/DSP2_API.md)与[DSP_ROLES.md](docs/DSP_ROLES.md)。
+
 - 新增带主机种子的ChaCha20原型：40项主机检查、68B状态，未接入候选；状态泄露与资源限制见 [SEEDED_RNG.md](docs/SEEDED_RNG.md)。
 
 - 2026-10-28用户选择先交付主机引导的半成品；Wi-Fi数据面仍在UV310内。已实现只读配置/stock预检（17项合成测试），材料准备器已通过11项合成测试，设备端种子生成器及部署尚未实现；阶段与恢复风险见 [HOST_BOOTSTRAP.md](docs/HOST_BOOTSTRAP.md)。

@@ -1,0 +1,11 @@
+{
+  "scope": "Audit guard negative controls, not execution tests",
+  "detected": [
+    "changed raw code rejected",
+    "ELF/raw disagreement rejected",
+    "wrong instruction interpretation rejected"
+  ],
+  "header_c11_layout_assertions_passed": true,
+  "header_test_target": "arm-none-eabi; layout only, no DSP2 code generation",
+  "hardware_access": false
+}
