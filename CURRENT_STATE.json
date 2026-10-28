@@ -271,5 +271,14 @@
     "longer_host_intervention_interval_accepted": true,
     "seeded_generator_evaluation_planned": true,
     "seeded_generator_implemented": false
+  },
+  "host_bootstrap_preflight": {
+    "implemented": true,
+    "document": "docs/HOST_BOOTSTRAP.md",
+    "synthetic_tests": 17,
+    "network_access": false,
+    "device_access": false,
+    "material_generation_implemented": false,
+    "boot_implemented": false
   }
 }

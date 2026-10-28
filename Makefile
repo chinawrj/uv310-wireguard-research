@@ -64,3 +64,7 @@ test-dns-observe:
 	python3 tools/evaluate_dns_telemetry.py
 	python3 tools/test_dns_telemetry.py
 	$(MAKE) test-observer
+
+.PHONY: test-host-bootstrap
+test-host-bootstrap:
+	python3 work/uv310-wireguard/host-bootstrap/test_check.py

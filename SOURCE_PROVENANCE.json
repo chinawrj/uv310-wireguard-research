@@ -829,5 +829,15 @@
     "path": "work/uv310-wireguard/rekey-dns-observe/native.c",
     "published_sha256": "8b2bd1721edd2f8e3714e4f49bc6029aec6dafeac8254ee831efbae14653a5eb",
     "origin": "Explicit offline N1 candidate and reproducible CI integration; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/host-bootstrap/check.py",
+    "published_sha256": "b0badfc9e114ba196d50280894aa56ca337b922b3773f5a120c42326044e3469",
+    "origin": "Authored host-only preflight and synthetic tests; no private configuration"
+  },
+  {
+    "path": "work/uv310-wireguard/host-bootstrap/test_check.py",
+    "published_sha256": "986249614264c4669e1ad0cf75f3bd0021e08b9671ec539841b2a570f51286e4",
+    "origin": "Authored host-only preflight and synthetic tests; no private configuration"
   }
 ]

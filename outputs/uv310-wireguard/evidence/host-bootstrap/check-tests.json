@@ -1,0 +1,11 @@
+{
+  "scope": "Synthetic inputs and mocked stock hash for positive case; no real config, device, or network",
+  "tests_run": 17,
+  "passed": true,
+  "source_sha256": {
+    "work/uv310-wireguard/host-bootstrap/check.py": "b0badfc9e114ba196d50280894aa56ca337b922b3773f5a120c42326044e3469",
+    "work/uv310-wireguard/host-bootstrap/test_check.py": "986249614264c4669e1ad0cf75f3bd0021e08b9671ec539841b2a570f51286e4"
+  },
+  "test_output": "test_bad_and_zero_identity_keys (__main__.Cases.test_bad_and_zero_identity_keys) ... ok\ntest_cli_errors_do_not_echo_secret (__main__.Cases.test_cli_errors_do_not_echo_secret) ... ok\ntest_defaults_rejected (__main__.Cases.test_defaults_rejected) ... ok\ntest_dns_local_or_multiple_rejected (__main__.Cases.test_dns_local_or_multiple_rejected) ... ok\ntest_duplicate_peer (__main__.Cases.test_duplicate_peer) ... ok\ntest_file_permissions_symlink_and_size (__main__.Cases.test_file_permissions_symlink_and_size) ... ok\ntest_hostname_endpoint_no_resolution (__main__.Cases.test_hostname_endpoint_no_resolution) ... ok\ntest_ipv6_and_multiple_addresses (__main__.Cases.test_ipv6_and_multiple_addresses) ... ok\ntest_mtu_and_missing_fields (__main__.Cases.test_mtu_and_missing_fields) ... ok\ntest_ports (__main__.Cases.test_ports) ... ok\ntest_psk_optional_and_valid (__main__.Cases.test_psk_optional_and_valid) ... ok\ntest_split_tunnel_rejected (__main__.Cases.test_split_tunnel_rejected) ... ok\ntest_success_redacted_and_explicitly_not_deployable (__main__.Cases.test_success_redacted_and_explicitly_not_deployable) ... ok\ntest_supported_shape (__main__.Cases.test_supported_shape) ... ok\ntest_unknown_options_not_ignored (__main__.Cases.test_unknown_options_not_ignored) ... ok\ntest_wrong_stock_rejected (__main__.Cases.test_wrong_stock_rejected) ... ok\ntest_zero_psk_permitted (__main__.Cases.test_zero_psk_permitted) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.007s\n\nOK\n",
+  "deployable": false
+}

@@ -10,7 +10,7 @@
 
 ## 2. 最近状态（不要猜）
 
-- 2026-10-28用户选择先交付主机引导的半成品；Wi-Fi数据面仍在UV310内。新引导器尚未实现，阶段与恢复风险见 [HOST_BOOTSTRAP.md](docs/HOST_BOOTSTRAP.md)。
+- 2026-10-28用户选择先交付主机引导的半成品；Wi-Fi数据面仍在UV310内。已实现只读配置/stock预检（17项合成测试），材料生成和部署尚未实现；阶段与恢复风险见 [HOST_BOOTSTRAP.md](docs/HOST_BOOTSTRAP.md)。
 
 - 用户已明确拿走硬件；Goal已恢复active，当前只推进离线任务，不再要求重插或轮询USB。最新离线工作见 [OFFLINE_PROGRESS.md](docs/OFFLINE_PROGRESS.md)。
 

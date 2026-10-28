@@ -66,3 +66,20 @@ Wi-Fi客户端 → UV310内部WireGuard → UV310蜂窝出口 → WireGuard服�
 优先工程路线调整为：主机每次引导提供新高质量种子，设备用经过验证的密码学随机生成器供给本次运行的后续握手，减少对固定随机池容量的依赖，同时保留标准会话换钥。这个方案尚未实现；不能拿普通PRNG或把旧池循环使用来替代。必须检查算法实现/测试向量、状态独占与同步、输出计数耗尽、状态擦除、重启/回滚防重用，以及实际链接和峰值内存成本。
 
 固定新种子不意味着无限期或完整的重新播种能力；状态泄露恢复与持久镜像中的种子暴露也需要单独评估。当前短时实验deadline仍保留。只有先解决上次换钥附近失联和新生成器的实机稳定性，才能逐步延长运行窗口。近期半成品目标因此是“主机单次引导后尽量长时间在网卡内运行”，不是要求用户每两分钟重新输入key。
+
+## 已实现：主机只读配置与stock预检
+
+`work/uv310-wireguard/host-bootstrap/check.py`只读本地文件，不调用USB或网络，不生成随机材料、头文件或镜像。使用例：
+
+```sh
+python3 work/uv310-wireguard/host-bootstrap/check.py \
+  --config /private/path/new-peer.conf --stock /private/path/rtecdc_new.bin
+```
+
+配置文件必须是当前用户拥有且不向组/其他用户开放的普通文件（例如0600），拒绝符号链接；最大64KiB。stock必须匹配193315B及已记录的原厂SHA-256。现支持单Interface/Peer、单IPv4 Address、单IPv4 DNS、IPv4字面量Endpoint和`AllowedIPs=0.0.0.0/0`；PSK可选。MTU省略或1420；此检查不会自动设置客户端MTU。DNS/隧道地址/endpoint不得落入当前硬编码LAN网段。主机不隐式解析DNS名称，需先另行确认实际服务器IPv4。
+
+未知选项会拒绝，包括PersistentKeepalive、PostUp、Table等，避免声称应用了实际未实现的配置。常规导出的配置可能因此需要明确调整，不能把拒绝理解为WireGuard本身不支持这些选项。只检查密钥编码长度和明显非法值，不证明peer公钥与服务器匹配，也不证明选定DNS可达。
+
+成功JSON不包含地址或密钥，明确`deployable=false`、`peer_server_verified=false`和`private_config_link_verified=false`。失败仅返回有限错误码，不输出配置正文。退出码0仅表示结构预检通过，2表示检查失败。
+
+`make test-host-bootstrap`通过17项合成测试；[原始记录](../outputs/uv310-wireguard/evidence/host-bootstrap/check-tests.json)归档了输入源码哈希。成功stock路径使用合成文件及mock哈希，不是新的实机镜像验收。材料生成、种子生成器、私有配置最终链接、单次部署和恢复仍待实现。
